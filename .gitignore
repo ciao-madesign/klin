@@ -1,0 +1,6 @@
+# Upstream Firefox checkout and build output
+/build/work/
+/build/dist/
+*.xpi
+node_modules/
+.DS_Store

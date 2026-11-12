@@ -9,7 +9,7 @@ Klin = stock Firefox (latest release channel) + `config/` + `branding/` + `patch
 | Privacy Engine | Firefox prefs/policies + bundled uBlock Origin |
 | Traffic Engine | Prefs (prefetch, autoplay, tab unloading) + extension for lazy loading and limits |
 | Traffic / CPU / RAM monitor | Extension for network stats; privileged code (patch) for per-site CPU/RAM |
-| Energy & Carbon Monitor | Extension; values are model-based **estimates**, never measurements |
+| Energy & Carbon Monitor | greenweb, pre-installed as a signed external extension (ADR 0003); values are model-based **estimates**, never measurements |
 | Security Manager | Upstream Gecko sandbox, TLS, auto-update; policies for permissions |
 | Extension Manager | Native WebExtensions; Chrome compatibility documented, not promised |
 | Automation Engine | Extension with visual rule editor; sensitive actions require confirmation |

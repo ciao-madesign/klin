@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check this address</title>
+<link rel="stylesheet" href="warning.css">
+</head>
+<body>
+<main>
+  <h1>Check this address</h1>
+  <p class="lead">The site you are opening has a name very close to one you already know. Imitating a familiar name is a common way to steal passwords.</p>
+  <dl>
+    <dt>You are opening</dt><dd id="site" class="name"></dd>
+    <dt>You know</dt><dd id="known" class="name"></dd>
+  </dl>
+  <p id="reason"></p>
+  <div class="actions">
+    <button id="go-known" class="primary" type="button"></button>
+    <button id="back" type="button">Go back</button>
+    <button id="continue" type="button"></button>
+  </div>
+  <p class="note">Klin compared the name with your bookmarks and often-visited sites, on this machine only. If you continue, Klin will not ask again for this site.</p>
+</main>
+<script src="warning.js"></script>
+</body>
+</html>

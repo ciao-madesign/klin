@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Klin Lookalike Warning",
+  "version": "0.1.0",
+  "description": "Warns before opening a site whose name imitates one you already know (bookmarks and often-visited sites). Fully local.",
+  "browser_specific_settings": { "gecko": { "id": "lookalike@klin", "strict_min_version": "128.0" } },
+  "permissions": ["bookmarks", "history", "storage", "webRequest", "webRequestBlocking"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "scripts": ["detect.js", "background.js"] }
+}

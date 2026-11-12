@@ -1,0 +1,10 @@
+{
+  "ublock-origin": {
+    "version": "1.76.0",
+    "id": "uBlock0@raymondhill.net",
+    "source": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+    "sha256": "6f20ff6749193599548770539103069c20948dfcd3e61c3089a67da7bfc3be39",
+    "license": "GPL-3.0-only",
+    "note": "Bundle unmodified (Mozilla-signed). Build must pin version and verify sha256; update on each release."
+  }
+}

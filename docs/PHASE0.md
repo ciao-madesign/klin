@@ -7,7 +7,7 @@ Goal: prototype and final decision on the technical base.
 |---|---|---|
 | Base config: policies and prefs | Verified on Firefox 160.0 (Linux) | Prefs load and take effect; policies load (uBlock install attempted). Details below |
 | Obtain upstream Firefox | Done | Firefox 160.0 tarball downloaded and SHA-512 verified; hosts now allowed in the environment |
-| uBlock Origin test | To do | Needs Firefox; policy installs it from AMO for now, bundling to be decided |
+| uBlock Origin test | Done | v1.76.0 works; see `tests/acceptance/ubo` and findings below |
 | WebExtensions test (storage, content scripts, network stats) | To do | One minimal test extension per capability |
 | Traffic/CPU/RAM/energy baseline | To do | Method below |
 | Ollama integration check | To do | Local HTTP API only; verify CORS/native messaging path from an extension |
@@ -20,8 +20,13 @@ Goal: prototype and final decision on the technical base.
 - **Firefox still talks to Mozilla** even with telemetry off. The audit in `CONNECTIONS.md` cut 11 idle destinations to 6 with prefs and one policy; what remains is security-related (updates, Remote Settings, Safe Browsing, add-on updates).
 - Marionette could not run scripts in headless mode here; prefs were checked with a temporary autoconfig file instead (test-only, not part of Klin).
 
+- **uBlock Origin 1.76.0** (Mozilla-signed, GPL-3.0, MV2, bundled filter lists): installs from a local `.xpi` through the policy (`install_url` as `file://`). On a mock page with 8 third-party ad/tracker requests, Firefox without uBlock loaded all 8, with uBlock 0; first-party content loaded. A first-party `/ads/banner.js` was not blocked (generic filters are conservative).
+- Test caveat: hosts on Firefox's HSTS preload list (e.g. google-analytics.com) are upgraded to https and cannot be tested with the plain-http mock; real-site tests need HTTPS and a different harness.
+- uBlock adds connections to filter-list hosts (see `CONNECTIONS.md`). Decision: keep updates enabled.
+- Manifest V2: uBlock Origin stays on MV2 in Firefox, which Mozilla still supports; this is a long-term risk to track.
+
 ## Next
-uBlock Origin and WebExtensions tests, the audit during real browsing, the baseline measurements, the Ollama check.
+WebExtensions tests, the audit during real browsing, the baseline measurements, the Ollama check.
 
 ## Baseline method (tests/baseline)
 Same device, same network, stock Firefox release. Fixed scenarios: (1) 10 reference sites, cold cache; (2) same, warm cache; (3) 30 min idle with 10 tabs open; (4) video page.

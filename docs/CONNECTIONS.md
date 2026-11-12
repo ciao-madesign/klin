@@ -25,3 +25,17 @@ Stock: 47 requests, 11 destinations. Klin v3: 23 requests, 6 destinations (5 onc
 
 ## Proposed definition for the requirement "no unnecessary proprietary connections"
 Allowed: security updates, security data (Remote Settings, Safe Browsing), extension updates. Everything else off by default. Each remaining connection is documented here and user-switchable where safe. To be confirmed.
+
+## Update: with uBlock Origin 1.76.0 installed (idle, 120 s, fresh profile)
+uBlock downloads its filter lists on first run from third-party hosts, in addition to the Mozilla ones above:
+
+| Destination | Purpose |
+|---|---|
+| ublockorigin.github.io, ublockorigin.pages.dev, cdn.jsdelivr.net | uBlock's own filter lists (main lists, mirrored on three hosts) |
+| raw.githubusercontent.com, curbengh.github.io, malware-filter.gitlab.io, pgl.yoyo.org | Third-party lists (malware, ad servers) |
+| publicsuffix.org | Public suffix list |
+
+Decision (confirmed): keep list updates, since blocking quality depends on them (spec 4.2: updatable lists). Consequences:
+- These hosts see the user's IP and the update timing, not browsing. This must be disclosed in the privacy docs.
+- The default list set (bundled with the extension, loaded locally first) is what ships; Klin should review which lists are enabled to limit the number of hosts, and offer a switch to disable updates.
+- Open: mirror the lists in a Klin-controlled place? Rejected for now (needs infrastructure; spec forbids proprietary servers).

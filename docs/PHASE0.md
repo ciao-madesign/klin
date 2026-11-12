@@ -10,7 +10,7 @@ Goal: prototype and final decision on the technical base.
 | uBlock Origin test | Done | v1.76.0 works; see `tests/acceptance/ubo` and findings below |
 | WebExtensions test (storage, content scripts, network stats) | Done | MV2 and MV3 probe on Firefox 160.0, see findings and `tests/acceptance/webext` |
 | Traffic/CPU/RAM/energy baseline | To do | Method below |
-| Ollama integration check | To do | Local HTTP API only; verify CORS/native messaging path from an extension |
+| Ollama integration check | Partly | Source code read and simulated; a run with the real Ollama and a small model is still to do (needs network access) |
 | Mozilla connections audit | Done (idle) | See `CONNECTIONS.md`: 11 destinations down to 6 |
 | Decide privileged-code needs | Partly | Per-site CPU/RAM confirmed to need a patch; SQLite vs IndexedDB and workspaces UI still open |
 
@@ -31,6 +31,8 @@ Goal: prototype and final decision on the technical base.
 - **MV3 caveat:** the default extension CSP includes `upload-insecure-requests`, which upgrades http to https. Not an issue for https sites; to re-check for `http://127.0.0.1` (Ollama) with the default CSP.
 - **Packaging:** temporary add-ons work on the release build; permanent unsigned add-ons do not (release ignores `xpinstall.signatures.required`). Klin's own extensions will need either Mozilla signing, or installation as built-in/system extensions inside our build.
 - Decision: write Klin extensions as **MV3** (event-page background); uBlock Origin remains MV2. Workspaces map to containers for cookie/storage isolation, with UI from a patch or sidebar.
+
+- **Ollama and extensions (read from Ollama's source + simulation).** By default Ollama refuses requests that carry a browser-extension origin (`moz-extension://`): the default allowed list is only localhost/127.0.0.1/0.0.0.0 plus a few app schemes; extensions must be added with `OLLAMA_ORIGINS`. In the simulation Firefox sends no Origin on a simple GET (listing models worked) but sends `moz-extension://...` on POST, so the real calls (`/api/generate`, `/api/chat`) get HTTP 403. **Fix verified in the simulation:** the extension rewrites the Origin header of its own requests to `http://127.0.0.1` with a blocking `webRequest.onBeforeSendHeaders` listener (MV2 and MV3); after that generate returns normally. No setting on the user's side. Caveats: restrict the listener to requests made by the extension itself (the test also caught page requests); the match pattern must not contain the port (`http://127.0.0.1/*`); confirm with real Ollama; if Ollama later validates differently, fall back to documenting `OLLAMA_ORIGINS`.
 
 ## Next
 the audit during real browsing, the baseline measurements, the Ollama check.

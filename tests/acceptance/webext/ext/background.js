@@ -46,8 +46,17 @@ async function run(msg) {
     return { previousRuns: runs };
   });
   await test("indexedDB", () => idb((s, res) => { const g = s.get("x"); g.onsuccess = () => { s.put(Date.now(), "x"); res({ previous: g.result ?? null }); }; }));
-  await test("ollama.tags", async () => (await (await fetch("http://127.0.0.1:11434/api/tags")).json()));
-  await test("ollama.generate", async () => (await (await fetch("http://127.0.0.1:11434/api/generate", { method: "POST", body: JSON.stringify({ model: "mock:1b", prompt: "hi", stream: false }) })).json()));
+  const gen = async () => { const r = await fetch("http://127.0.0.1:11434/api/generate", { method: "POST", body: JSON.stringify({ model: "mock:1b", prompt: "hi", stream: false }) }); return r.ok ? await r.json() : "HTTP " + r.status; };
+  await test("ollama.generate (default, extension origin sent)", gen);
+  const call = async () => { const r = await fetch("http://127.0.0.1:11434/api/tags"); return r.ok ? await r.json() : "HTTP " + r.status; };
+  await test("ollama (default, extension origin sent)", call);
+  const seen = [];
+  const strip = (d) => { seen.push((d.requestHeaders.find((h) => h.name.toLowerCase() === "origin") || {}).value || "none");
+    return { requestHeaders: d.requestHeaders.map((h) => (h.name.toLowerCase() === "origin" ? { name: h.name, value: "http://127.0.0.1" } : h)) }; };
+  api.webRequest.onBeforeSendHeaders.addListener(strip, { urls: ["http://127.0.0.1/*"] }, ["blocking", "requestHeaders"]);
+  await test("ollama (Origin header rewritten by extension)", call);
+  await test("ollama.generate (Origin rewritten)", gen);
+  R.tests.originSeenByExtension = seen;
   await test("tabs.discard", async () => {
     const t = await api.tabs.create({ url: "http://news.test/?second", active: false });
     await sleep(3000);

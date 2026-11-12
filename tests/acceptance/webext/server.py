@@ -34,14 +34,26 @@ class Web(BaseHTTPRequestHandler):
             open(report, "ab").write(body + b"\n")
         self._send(b"ok", "text/plain")
 
+ALLOWED = ("http://127.0.0.1", "http://localhost", "http://0.0.0.0", "app://", "file://", "tauri://", "vscode-")
 class Ollama(BaseHTTPRequestHandler):
+    """Mimics real Ollama: a request carrying an Origin header that is not allowed gets 403
+    (browser-extension origins such as moz-extension:// are NOT allowed by default)."""
     def log_message(self, *a): pass
+    def _origin_ok(self):
+        o = self.headers.get("Origin")
+        if o is None: return True
+        if not o.startswith(ALLOWED):
+            open(reqlog, "a").write(f"OLLAMA-403 origin={o.split('//')[0]}//...\n")
+            body = b""; self.send_response(403); self.send_header("Content-Length", "0"); self.end_headers(); return False
+        return True
     def _j(self, o):
         b = json.dumps(o).encode(); self.send_response(200); self.send_header("Content-Type", "application/json")
         self.send_header("Content-Length", str(len(b))); self.end_headers(); self.wfile.write(b)
-    def do_GET(self): self._j({"models": [{"name": "mock:1b"}]})
+    def do_GET(self):
+        if self._origin_ok(): self._j({"models": [{"name": "mock:1b"}]})
     def do_POST(self):
-        self.rfile.read(int(self.headers.get("Content-Length", 0))); self._j({"response": "mock summary", "done": True})
+        self.rfile.read(int(self.headers.get("Content-Length", 0)))
+        if self._origin_ok(): self._j({"response": "mock summary", "done": True})
 
 threading.Thread(target=ThreadingHTTPServer(("127.0.0.1", 11434), Ollama).serve_forever, daemon=True).start()
 ThreadingHTTPServer(("127.0.0.1", port), Web).serve_forever()

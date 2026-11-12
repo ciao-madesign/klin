@@ -10,7 +10,7 @@ Goal: prototype and final decision on the technical base.
 | uBlock Origin test | Done | v1.76.0 works; see `tests/acceptance/ubo` and findings below |
 | WebExtensions test (storage, content scripts, network stats) | Done | MV2 and MV3 probe on Firefox 160.0, see findings and `tests/acceptance/webext` |
 | Traffic/CPU/RAM/energy baseline | To do | Method below |
-| Ollama integration check | Partly | Source code read and simulated; a run with the real Ollama and a small model is still to do (needs network access) |
+| Ollama integration check | Done | Real Ollama 0.40.16 + qwen2.5:0.5b (CPU only); see findings |
 | Mozilla connections audit | Done (idle) | See `CONNECTIONS.md`: 11 destinations down to 6 |
 | Decide privileged-code needs | Partly | Per-site CPU/RAM confirmed to need a patch; SQLite vs IndexedDB and workspaces UI still open |
 
@@ -34,8 +34,11 @@ Goal: prototype and final decision on the technical base.
 
 - **Ollama and extensions (read from Ollama's source + simulation).** By default Ollama refuses requests that carry a browser-extension origin (`moz-extension://`): the default allowed list is only localhost/127.0.0.1/0.0.0.0 plus a few app schemes; extensions must be added with `OLLAMA_ORIGINS`. In the simulation Firefox sends no Origin on a simple GET (listing models worked) but sends `moz-extension://...` on POST, so the real calls (`/api/generate`, `/api/chat`) get HTTP 403. **Fix verified in the simulation:** the extension rewrites the Origin header of its own requests to `http://127.0.0.1` with a blocking `webRequest.onBeforeSendHeaders` listener (MV2 and MV3); after that generate returns normally. No setting on the user's side. Caveats: restrict the listener to requests made by the extension itself (the test also caught page requests); the match pattern must not contain the port (`http://127.0.0.1/*`); confirm with real Ollama; if Ollama later validates differently, fall back to documenting `OLLAMA_ORIGINS`.
 
+- **Ollama verified for real (0.40.16, qwen2.5:0.5b, 4-core CPU, no GPU).** Confirmed on the real server: a request with an extension origin gets HTTP 403, one with origin `http://127.0.0.1` passes. The probe extension (MV3) listed models, got 403 on generate, then after rewriting its Origin header got a normal answer from the model. So the "no setting needed" workaround works with the real Ollama. The model answered a one-line summary in about 0.5 s; with `keep_alive: 0` the model is unloaded right after each answer (nothing stays in memory, server idle at about 42 MB), matching the "AI not always active" requirement. Ollama's server made no external connections during the test other than the one-time model download from `registry.ollama.ai`.
+- Not yet checked: larger models and real page-summary quality/latency, Windows and macOS behaviour, what Klin does when Ollama is not installed (should show a clear "not found" message, never block startup).
+
 ## Next
-the audit during real browsing, the baseline measurements, the Ollama check.
+the audit during real browsing, the baseline measurements, SQLite vs IndexedDB decision.
 
 ## Baseline method (tests/baseline)
 Same device, same network, stock Firefox release. Fixed scenarios: (1) 10 reference sites, cold cache; (2) same, warm cache; (3) 30 min idle with 10 tabs open; (4) video page.

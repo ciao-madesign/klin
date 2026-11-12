@@ -3,7 +3,7 @@ Usage: python3 -I server.py PROXY_PORT REPORT_FILE REQ_LOG [DELAY]
 - Proxy port: answers for any host (news.test page with ads/tracker/sponsored element, report.test POST sink).
 - 127.0.0.1:11434: mock Ollama (/api/tags, /api/generate), deliberately WITHOUT CORS headers.
 """
-import sys, json, threading, time
+import os, sys, json, threading, time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlsplit
 
@@ -55,5 +55,6 @@ class Ollama(BaseHTTPRequestHandler):
         self.rfile.read(int(self.headers.get("Content-Length", 0)))
         if self._origin_ok(): self._j({"response": "mock summary", "done": True})
 
-threading.Thread(target=ThreadingHTTPServer(("127.0.0.1", 11434), Ollama).serve_forever, daemon=True).start()
+if not os.environ.get("REAL_OLLAMA"):   # REAL_OLLAMA=1: a real Ollama already listens on 11434
+    threading.Thread(target=ThreadingHTTPServer(("127.0.0.1", 11434), Ollama).serve_forever, daemon=True).start()
 ThreadingHTTPServer(("127.0.0.1", port), Web).serve_forever()

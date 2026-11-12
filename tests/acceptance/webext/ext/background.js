@@ -46,7 +46,7 @@ async function run(msg) {
     return { previousRuns: runs };
   });
   await test("indexedDB", () => idb((s, res) => { const g = s.get("x"); g.onsuccess = () => { s.put(Date.now(), "x"); res({ previous: g.result ?? null }); }; }));
-  const gen = async () => { const r = await fetch("http://127.0.0.1:11434/api/generate", { method: "POST", body: JSON.stringify({ model: "mock:1b", prompt: "hi", stream: false }) }); return r.ok ? await r.json() : "HTTP " + r.status; };
+  const gen = async () => { const r = await fetch("http://127.0.0.1:11434/api/generate", { method: "POST", body: JSON.stringify({ model: "qwen2.5:0.5b", prompt: "Say hello in five words.", stream: false }) }); return r.ok ? await r.json() : "HTTP " + r.status; };
   await test("ollama.generate (default, extension origin sent)", gen);
   const call = async () => { const r = await fetch("http://127.0.0.1:11434/api/tags"); return r.ok ? await r.json() : "HTTP " + r.status; };
   await test("ollama (default, extension origin sent)", call);

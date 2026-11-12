@@ -33,7 +33,12 @@ Prefs were verified as in `PHASE0.md`: values read back from Firefox 160.0 with 
 | P19 | "Site card": one panel with every per-domain setting | Accepted | |
 | P20 | Shareable presets as local files, no marketplace | Accepted | |
 
-**P7 finding (Firefox 160.0, Linux, headless).** With Klin's current prefs the self-test differs from stock in two rows only: Global Privacy Control is sent, and fewer installed fonts are detectable (5 instead of 9 of 31 tested). The canvas drawing still reads back exactly and gives the same identifier across sessions: `privacy.fingerprintingProtection=true` did not add canvas noise in this test. With `privacy.resistFingerprinting=true` the canvas is random on every read and screen size, time zone, touch and media devices are replaced by generic values. Consequence: the spec item "advanced fingerprinting protection" is not met by the Standard level as configured; to investigate (which protections `fingerprintingProtection` enables in 160.0, and what the Advanced level should switch on).
+**P7 finding and fix (Firefox 160.0, Linux, headless).**
+- With `privacy.fingerprintingProtection=true` alone, the self-test differed from stock in two rows only: Global Privacy Control sent, fewer fonts detectable (5 instead of 9 of 31). The canvas read back exactly, with the same identifier across sessions and the same as stock.
+- Cause (read in the Firefox source, `dom/canvas/CanvasUtils.cpp`): two canvas targets are on by default, `CanvasRandomization` (noise in the pixels) and `EfficientCanvasRandomization`. The efficient one is checked first and wins. It does not touch pixels: it only writes the per-site session key into exported image files (a 16-byte `deBG` PNG chunk), so a hash of `toDataURL()` changes per session but `getImageData()`, or decoding the exported file, returns the exact image. Stock Firefox behaves the same through its baseline protection.
+- Fix, applied: `privacy.fingerprintingProtection.overrides = "-EfficientCanvasRandomization"`. Measured: 150–250 of 13,200 pixels changed by at most 2 levels out of 255 (not visible); the identifier differs in every session and is stable within one, so pages keep working; no other self-test row changes. Cost: reading a 1920×1080 canvas went from about 8 ms to about 11 ms.
+- Not covered: WebGL canvases (not available in the headless test), real sites, other platforms. A site that legitimately reads canvas pixels (image editors) gets the same tiny noise; Firefox's per-site canvas permission removes it.
+- `privacy.resistFingerprinting=true` goes further (canvas random on every read; generic screen size, time zone, touch and devices) and is the candidate for the Advanced level, at a known compatibility cost.
 
 ## Batch 3 – larger
 

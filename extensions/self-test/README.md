@@ -5,7 +5,7 @@
 Status: **first version.** 17 checks: privacy signal, WebRTC address, device details, language and time zone, canvas, audio and font fingerprints.
 
 - Fully local: no network requests (the WebRTC check uses no server), no storage, no permissions.
-- Test: `tests/acceptance/self-test/run.sh FIREFOX_DIR` runs the page as ordinary web content and prints one line per check. Compare stock Firefox with a Klin-configured one.
+- Test: `tests/acceptance/self-test/run.sh FIREFOX_DIR` runs the page as ordinary web content and prints one line per check. Compare stock Firefox with a Klin-configured one. The page is served as plain http under a test host name, so checks that need a secure context (cameras and microphones) report "not available" there.
 
 Limits:
 - It shows what is readable, not how rare the combination is (that needs data about other users, which Klin does not collect).

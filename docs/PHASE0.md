@@ -24,7 +24,7 @@ Goal: prototype and final decision on the technical base.
 - Test caveat: hosts on Firefox's HSTS preload list (e.g. google-analytics.com) are upgraded to https and cannot be tested with the plain-http mock; real-site tests need HTTPS and a different harness.
 - uBlock adds connections to filter-list hosts (see `CONNECTIONS.md`). Decision: keep updates enabled.
 - Manifest V2: uBlock Origin stays on MV2 in Firefox, which Mozilla still supports; this is a long-term risk to track.
-- **Fingerprinting protection is weaker than assumed.** The self-test (`extensions/self-test`, `tests/acceptance/self-test`) shows that `privacy.fingerprintingProtection=true` reduces detectable fonts but does not randomise canvas read-out; `privacy.resistFingerprinting=true` does, and also generalises screen, time zone and devices. Details in `PROPOSALS.md` (P7 finding).
+- **Canvas fingerprinting: upstream default is not enough; fixed by one pref.** `privacy.fingerprintingProtection=true` left canvas pixel read-out exact, because the default `EfficientCanvasRandomization` target overrides real noise. Klin now sets `privacy.fingerprintingProtection.overrides="-EfficientCanvasRandomization"`; verified with `tests/acceptance/self-test`. Details in `PROPOSALS.md` (P7 finding and fix). Test pages must be opened under a real-looking host name, not 127.0.0.1.
 
 ## Next
 WebExtensions tests, the audit during real browsing, the baseline measurements, the Ollama check.

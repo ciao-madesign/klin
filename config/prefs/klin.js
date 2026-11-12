@@ -35,6 +35,9 @@ pref("privacy.query_stripping.enabled.pbmode", true);
 pref("privacy.trackingprotection.enabled", true);
 pref("privacy.trackingprotection.socialtracking.enabled", true);
 pref("privacy.fingerprintingProtection", true);
+// Real canvas noise. Upstream's default "efficient" variant only tags exported image files and leaves
+// pixel read-out exact (a stable fingerprint); removing it lets CanvasRandomization apply. See docs/PROPOSALS.md.
+pref("privacy.fingerprintingProtection.overrides", "-EfficientCanvasRandomization");
 pref("network.cookie.cookieBehavior", 5); // total cookie protection (partitioned)
 pref("dom.security.https_only_mode", true);
 

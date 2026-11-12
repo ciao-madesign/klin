@@ -48,3 +48,11 @@ pref("media.gmp-gmpopenh264.enabled", false);          // Cisco OpenH264 downloa
 pref("media.gmp-gmpopenh264.visible", false);
 pref("identity.fxaccounts.enabled", false);            // no Firefox accounts (spec: no accounts)
 pref("network.connectivity-service.enabled", false);   // connectivity/portal check
+
+// --- Proposals batch 1 (docs/PROPOSALS.md), verified on Firefox 160.0 ---
+pref("privacy.globalprivacycontrol.enabled", true);            // P2: send Global Privacy Control (Sec-GPC: 1)
+pref("network.http.referer.XOriginTrimmingPolicy", 2);         // P2: cross-site referrer reduced to scheme+host
+pref("security.OCSP.enabled", 0);                              // P5: no OCSP lookups (they tell the CA which site is visited); CRLite stays enforced
+pref("pdfjs.enableScripting", false);                          // P16: no JavaScript inside PDFs
+pref("media.peerconnection.ice.default_address_only", true);   // WebRTC: do not expose extra local/VPN-bypassing addresses
+pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true); // WebRTC: never bypass a configured proxy

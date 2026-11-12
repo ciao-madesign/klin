@@ -5,16 +5,22 @@ Goal: prototype and final decision on the technical base.
 ## Status
 | Task | Status | Notes |
 |---|---|---|
-| Base config: policies and prefs | Draft done | `config/policies/policies.json`, `config/prefs/klin.js`; **not yet tested** on a real Firefox build |
-| Obtain upstream Firefox | Blocked | Mozilla hosts are not reachable from the current cloud environment (see below) |
+| Base config: policies and prefs | Verified on Firefox 160.0 (Linux) | Prefs load and take effect; policies load (uBlock install attempted). Details below |
+| Obtain upstream Firefox | Done | Firefox 160.0 tarball downloaded and SHA-512 verified; hosts now allowed in the environment |
 | uBlock Origin test | To do | Needs Firefox; policy installs it from AMO for now, bundling to be decided |
 | WebExtensions test (storage, content scripts, network stats) | To do | One minimal test extension per capability |
 | Traffic/CPU/RAM/energy baseline | To do | Method below |
 | Ollama integration check | To do | Local HTTP API only; verify CORS/native messaging path from an extension |
 | Decide privileged-code needs | To do | Per-site CPU/RAM, SQLite, workspaces UI |
 
-## Blocker
-`archive.mozilla.org` and `product-details.mozilla.org` are refused by the session proxy. To continue, either allow those hosts in the cloud environment (plus `download.mozilla.org` and `addons.mozilla.org`) or run the Phase 0 tests on a local machine.
+## Findings (Firefox 160.0, release 2026-11-10; ESR is 153.7)
+- **Prefs location matters.** `klin.js` must be installed in `browser/defaults/preferences/`. In `defaults/pref/` the browser's own defaults override it (telemetry studies, tab unloading and speculative connect stayed at upstream values). Verified: all 13 sampled prefs take the Klin value from the right folder.
+- **Policies** in `distribution/policies.json` are loaded; the uBlock Origin install was attempted. It failed only because the test run could not reach AMO through the sandbox proxy, so the install itself is still untested.
+- **Firefox still talks to Mozilla** even with telemetry off: Remote Settings (`firefox.settings.services.mozilla.com`) and push (`push.services.mozilla.com`) were contacted within 20 s of start. The Privacy and Traffic modules must decide what to do about these (policies/prefs, or an allow-list), and the "no proprietary connections" requirement needs a precise definition.
+- Marionette could not run scripts in headless mode here; prefs were checked with a temporary autoconfig file instead (test-only, not part of Klin).
+
+## Next
+uBlock Origin and WebExtensions tests, the Mozilla-connections audit, the baseline measurements, the Ollama check.
 
 ## Baseline method (tests/baseline)
 Same device, same network, stock Firefox release. Fixed scenarios: (1) 10 reference sites, cold cache; (2) same, warm cache; (3) 30 min idle with 10 tabs open; (4) video page.

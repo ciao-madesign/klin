@@ -8,11 +8,11 @@ Goal: prototype and final decision on the technical base.
 | Base config: policies and prefs | Verified on Firefox 160.0 (Linux) | Prefs load and take effect; policies load (uBlock install attempted). Details below |
 | Obtain upstream Firefox | Done | Firefox 160.0 tarball downloaded and SHA-512 verified; hosts now allowed in the environment |
 | uBlock Origin test | Done | v1.76.0 works; see `tests/acceptance/ubo` and findings below |
-| WebExtensions test (storage, content scripts, network stats) | To do | One minimal test extension per capability |
+| WebExtensions test (storage, content scripts, network stats) | Done | MV2 and MV3 probe on Firefox 160.0, see findings and `tests/acceptance/webext` |
 | Traffic/CPU/RAM/energy baseline | To do | Method below |
 | Ollama integration check | To do | Local HTTP API only; verify CORS/native messaging path from an extension |
 | Mozilla connections audit | Done (idle) | See `CONNECTIONS.md`: 11 destinations down to 6 |
-| Decide privileged-code needs | To do | Per-site CPU/RAM, SQLite, workspaces UI |
+| Decide privileged-code needs | Partly | Per-site CPU/RAM confirmed to need a patch; SQLite vs IndexedDB and workspaces UI still open |
 
 ## Findings (Firefox 160.0, release 2026-11-10; ESR is 153.7)
 - **Prefs location matters.** `klin.js` must be installed in `browser/defaults/preferences/`. In `defaults/pref/` the browser's own defaults override it (telemetry studies, tab unloading and speculative connect stayed at upstream values). Verified: all 13 sampled prefs take the Klin value from the right folder.
@@ -25,8 +25,15 @@ Goal: prototype and final decision on the technical base.
 - uBlock adds connections to filter-list hosts (see `CONNECTIONS.md`). Decision: keep updates enabled.
 - Manifest V2: uBlock Origin stays on MV2 in Firefox, which Mozilla still supports; this is a long-term risk to track.
 
+- **WebExtensions probe (MV2 and MV3, Firefox 160.0).** Working: content scripts modifying pages (Search Intelligence); `webRequest` with blocking, request count and `Content-Length` per request (traffic monitor, Automation rules); `filterResponseData` present for exact byte counts; `storage.local` and IndexedDB persisting across restarts; `tabs.discard` (tab suspension); `contextualIdentities` + `cookies` with a separate cookie store per container (workspace isolation); `bookmarks`, `history`, `search`, `sidebarAction`, `tabGroups`, `tabs.group`, `declarativeNetRequest`, `scripting`, `dns`, `privacy`, `downloads`, `alarms`, `sessions`; fetch from the background page to a local Ollama-style server.
+- **Missing: `browser.processes`.** Extensions cannot read per-site CPU/RAM. Confirmed: this needs privileged code (a patch) or the feature is dropped/approximated.
+- **Ollama must be called from the background page**, not from content scripts: the content-script fetch was blocked by CORS in MV3 (allowed in MV2). Real Ollama also restricts allowed origins (`OLLAMA_ORIGINS`); to verify in the Ollama check.
+- **MV3 caveat:** the default extension CSP includes `upload-insecure-requests`, which upgrades http to https. Not an issue for https sites; to re-check for `http://127.0.0.1` (Ollama) with the default CSP.
+- **Packaging:** temporary add-ons work on the release build; permanent unsigned add-ons do not (release ignores `xpinstall.signatures.required`). Klin's own extensions will need either Mozilla signing, or installation as built-in/system extensions inside our build.
+- Decision: write Klin extensions as **MV3** (event-page background); uBlock Origin remains MV2. Workspaces map to containers for cookie/storage isolation, with UI from a patch or sidebar.
+
 ## Next
-WebExtensions tests, the audit during real browsing, the baseline measurements, the Ollama check.
+the audit during real browsing, the baseline measurements, the Ollama check.
 
 ## Baseline method (tests/baseline)
 Same device, same network, stock Firefox release. Fixed scenarios: (1) 10 reference sites, cold cache; (2) same, warm cache; (3) 30 min idle with 10 tabs open; (4) video page.

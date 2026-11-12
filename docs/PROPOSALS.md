@@ -18,13 +18,13 @@ Status: **Done** (in the repo and verified) · **Next** · **Accepted** (valid, 
 
 Prefs were verified as in `PHASE0.md`: values read back from Firefox 160.0 with `klin.js` installed. Only GPC was also checked by behaviour; the others by value.
 
-**P5 trade-off.** OCSP tells the certificate authority (in clear HTTP) which site is being visited. CRLite checks revocation locally from data already downloaded through Remote Settings. Cost: a certificate that CRLite does not cover gets no revocation check. To revisit if upstream changes CRLite coverage.
+**P5 trade-off.** OCSP tells the certificate authority (in clear HTTP) which site is being visited. CRLite checks revocation locally from data already downloaded through Remote Settings. Cost: a certificate that CRLite does not cover gets no revocation check. Confirmed by the project owner. To revisit if upstream changes CRLite coverage.
 
 ## Batch 2 – small extensions (favourites first)
 
 | # | Proposal | Status | Notes |
 |---|---|---|---|
-| P8 | "Klin connections" page: every connection the browser itself makes, why, and a switch | **Next** | Favourite. Step 1: move the table in `CONNECTIONS.md` to a machine-readable file used by both the doc and the page. Step 2: read-only page. Step 3: switches — a WebExtension cannot change arbitrary prefs, so this step needs privileged code (ADR) |
+| P8 | "Klin connections" page: every connection the browser itself makes, why, and a switch | **Step 1–2 done** | Favourite. `extensions/connections`: read-only page fed by `data/connections.json`, which also generates the table in `CONNECTIONS.md`. Page rendered and checked in Firefox 160.0 as a web page; not yet loaded as an installed extension. Step 3 (live state and switches) needs privileged code and an ADR: a WebExtension cannot read or change arbitrary prefs |
 | P7 | Local self-test: what a site can see (fingerprint surface, address leaks, headers) | **Next** | Favourite. Fully local page, no external service. Shows Standard vs Advanced level side by side |
 | P6 | Strip metadata (EXIF, GPS) from files before upload | Accepted | |
 | P14 | Lookalike-domain warning, compared locally with bookmarks and history | Accepted | Candidate replacement or complement for Safe Browsing (see open decisions) |

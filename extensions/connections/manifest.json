@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Klin Connections",
+  "version": "0.1.0",
+  "description": "Shows every connection the browser itself makes, why it exists and how to turn it off. Read-only, fully local.",
+  "browser_specific_settings": { "gecko": { "id": "connections@klin", "strict_min_version": "128.0" } },
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "action": { "default_title": "Klin connections", "default_icon": "icon.svg" },
+  "background": { "scripts": ["background.js"] }
+}

@@ -28,5 +28,12 @@ All modules except per-site CPU/RAM can be WebExtensions (MV3). Workspaces can u
 - Tor client: C tor vs Arti.
 - Distinguishing visited site, third-party service and data controller in the Footprint registry.
 
+## Proposed modules (not accepted, not in V1)
+Tracked in [PROPOSALS.md](PROPOSALS.md). They are listed here only to show where they would sit.
+
+| Module | Implementation if accepted | Status |
+|---|---|---|
+| Geographic Traffic Controller | **Outside the browser stack**: system-level filter (Windows WFP driver + service, later nftables / Network Extension), local DNS proxy, local proxy, local GeoIP database; controlled from Klin's UI. Does not fit "config, extension, patch" and needs its own ADR. See [proposals/geographic-traffic-controller.md](proposals/geographic-traffic-controller.md) | Proposed, not scheduled |
+
 ## Principle
 Config first, then extension, then patch. Every patch needs an ADR and must be rebased on each upstream release.

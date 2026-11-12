@@ -9,7 +9,7 @@ Goal: prototype and final decision on the technical base.
 | Obtain upstream Firefox | Done | Firefox 160.0 tarball downloaded and SHA-512 verified; hosts now allowed in the environment |
 | uBlock Origin test | Done | v1.76.0 works; see `tests/acceptance/ubo` and findings below |
 | WebExtensions test (storage, content scripts, network stats) | Done | MV2 and MV3 probe on Firefox 160.0, see findings and `tests/acceptance/webext` |
-| Traffic/CPU/RAM/energy baseline | To do | Method below |
+| Traffic/CPU/RAM/energy baseline | Tools ready, measurement pending | `tests/baseline/tools/measure.py`; to be run on a real computer with internet (see `tests/baseline/README.md`) |
 | Ollama integration check | Done | Real Ollama 0.40.16 + qwen2.5:0.5b (CPU only); see findings |
 | Mozilla connections audit | Done (idle) | See `CONNECTIONS.md`: 11 destinations down to 6 |
 | Storage decision (SQLite vs IndexedDB) | Done | IndexedDB for V1, see ADR 0003 and benchmark |
@@ -40,6 +40,9 @@ Goal: prototype and final decision on the technical base.
 
 - **Storage benchmark (100k rows):** SQLite in WebAssembly is faster in bulk (0.5 s vs 9 s to insert; 16 ms vs 1.2 s for text search) but lives fully in memory and saves as one big file. IndexedDB saves every change safely. Decision in ADR 0003: IndexedDB for V1 behind a storage interface, SQLite later only where needed.
 - Test note: the Klin default HTTPS-only mode blocked the plain-http test server, which confirms that the setting is active; tests set an exception.
+
+- **Baseline tool built and self-tested** (Firefox 160.0, fake local sites): it launches Firefox with a fresh profile, counts data per site through a pass-through proxy, and records requests, hosts contacted, CPU time and memory for cold cache, warm cache and idle tabs; the `klin` variant adds the Klin preferences and uBlock Origin. In the self-test the ad host was loaded in stock Firefox and blocked in the Klin variant. Early signs to verify on real sites: first page after installing uBlock used much more CPU (filter compile), and memory was higher with uBlock (about +300 MB in a headless test with 2 tabs) - this needs the real measurement before drawing conclusions.
+- The same tool covers the "audit during real browsing": it records every host contacted per site, separating Mozilla's own background hosts.
 
 ## Next
 the audit during real browsing, the baseline measurements, 

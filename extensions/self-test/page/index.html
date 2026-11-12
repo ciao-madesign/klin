@@ -10,7 +10,8 @@
 <main>
   <header>
     <h1>What a site can see</h1>
-    <p class="lead">This page runs the same checks a tracking script would run, on your machine only. Nothing is sent, nothing is stored.</p>
+    <p class="lead">Klin runs, inside the site you were viewing, the same checks a tracking script would run. Everything stays on your machine: nothing is sent, nothing is stored.</p>
+    <p id="where" class="lead"></p>
     <div id="summary" class="summary" aria-live="polite"></div>
   </header>
 
@@ -21,6 +22,7 @@
     <p>The test shows what is technically readable, not how rare your combination is: that would need comparing you with other users, which Klin does not do.</p>
   </footer>
 </main>
-<script src="test.js"></script>
+<script src="checks.js"></script>
+<script src="page.js"></script>
 </body>
 </html>

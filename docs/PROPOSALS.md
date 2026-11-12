@@ -24,8 +24,8 @@ Prefs were verified as in `PHASE0.md`: values read back from Firefox 160.0 with 
 
 | # | Proposal | Status | Notes |
 |---|---|---|---|
-| P8 | "Klin connections" page: every connection the browser itself makes, why, and a switch | **Step 1–2 done** | Favourite. `extensions/connections`: read-only page fed by `data/connections.json`, which also generates the table in `CONNECTIONS.md`. Page rendered and checked in Firefox 160.0 as a web page; not yet loaded as an installed extension. Step 3 (live state and switches) needs privileged code and an ADR: a WebExtension cannot read or change arbitrary prefs |
-| P7 | Local self-test: what a site can see (fingerprint surface, address leaks, privacy signal) | **First version done** | Favourite. `extensions/self-test`, 17 checks, tested on stock vs Klin vs `resistFingerprinting` with `tests/acceptance/self-test`. Open: extension pages may be exempt from fingerprinting protection (see its README). Finding below |
+| P8 | "Klin connections" page: every connection the browser itself makes, why, and a switch | **Step 1–2 done** | Favourite. `extensions/connections`: read-only page fed by `data/connections.json`, which also generates the table in `CONNECTIONS.md`. Verified as an installed extension (`tests/acceptance/connections`). Step 3 (live state and switches) needs privileged code and an ADR: a WebExtension cannot read or change arbitrary prefs |
+| P7 | Self-test: what the site you are viewing can see (fingerprint surface, address leaks, privacy signal) | **Done (v0.2)** | Favourite. `extensions/self-test`: toolbar button runs 17 checks inside the current site. Verified as an installed extension on stock vs Klin (`tests/acceptance/self-test`). Redesigned after finding that extension pages, `file://` and 127.0.0.1 are exempt from the protections being tested |
 | P6 | Strip metadata (EXIF, GPS) from files before upload | Accepted | |
 | P14 | Lookalike-domain warning, compared locally with bookmarks and history | Accepted | Candidate replacement or complement for Safe Browsing (see open decisions) |
 | P15 | Extension audit: warn when an update changes permissions | Accepted | |

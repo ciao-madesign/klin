@@ -6,6 +6,7 @@ Status: **read-only first version.** Shows Klin's defaults, not the live state o
 
 - `data/connections.json` is the single source for this page and for the table in `docs/CONNECTIONS.md`. After editing it, run `python3 build/gen-connections-doc.py`.
 - No permissions, no network requests, no storage.
+- Test: `tests/acceptance/connections/run.py FIREFOX_DIR` installs the extension, clicks the toolbar button and checks the page against the data file.
 - Try it: `about:debugging` → This Firefox → Load Temporary Add-on → `manifest.json`, then click the toolbar button.
 
 Not done yet:

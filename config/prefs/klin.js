@@ -37,3 +37,14 @@ pref("privacy.trackingprotection.socialtracking.enabled", true);
 pref("privacy.fingerprintingProtection", true);
 pref("network.cookie.cookieBehavior", 5); // total cookie protection (partitioned)
 pref("dom.security.https_only_mode", true);
+
+// --- Connection audit (tests/baseline/connection-audit): unnecessary Mozilla services off ---
+pref("dom.push.enabled", false);                       // push.services.mozilla.com
+pref("dom.push.connection.enabled", false);
+pref("browser.region.update.enabled", false);          // location.services.mozilla.com
+pref("browser.region.network.url", "");
+pref("network.captive-portal-service.enabled", false); // portal detection pings
+pref("media.gmp-gmpopenh264.enabled", false);          // Cisco OpenH264 download
+pref("media.gmp-gmpopenh264.visible", false);
+pref("identity.fxaccounts.enabled", false);            // no Firefox accounts (spec: no accounts)
+pref("network.connectivity-service.enabled", false);   // connectivity/portal check

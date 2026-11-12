@@ -11,16 +11,17 @@ Goal: prototype and final decision on the technical base.
 | WebExtensions test (storage, content scripts, network stats) | To do | One minimal test extension per capability |
 | Traffic/CPU/RAM/energy baseline | To do | Method below |
 | Ollama integration check | To do | Local HTTP API only; verify CORS/native messaging path from an extension |
+| Mozilla connections audit | Done (idle) | See `CONNECTIONS.md`: 11 destinations down to 6 |
 | Decide privileged-code needs | To do | Per-site CPU/RAM, SQLite, workspaces UI |
 
 ## Findings (Firefox 160.0, release 2026-11-10; ESR is 153.7)
 - **Prefs location matters.** `klin.js` must be installed in `browser/defaults/preferences/`. In `defaults/pref/` the browser's own defaults override it (telemetry studies, tab unloading and speculative connect stayed at upstream values). Verified: all 13 sampled prefs take the Klin value from the right folder.
 - **Policies** in `distribution/policies.json` are loaded; the uBlock Origin install was attempted. It failed only because the test run could not reach AMO through the sandbox proxy, so the install itself is still untested.
-- **Firefox still talks to Mozilla** even with telemetry off: Remote Settings (`firefox.settings.services.mozilla.com`) and push (`push.services.mozilla.com`) were contacted within 20 s of start. The Privacy and Traffic modules must decide what to do about these (policies/prefs, or an allow-list), and the "no proprietary connections" requirement needs a precise definition.
+- **Firefox still talks to Mozilla** even with telemetry off. The audit in `CONNECTIONS.md` cut 11 idle destinations to 6 with prefs and one policy; what remains is security-related (updates, Remote Settings, Safe Browsing, add-on updates).
 - Marionette could not run scripts in headless mode here; prefs were checked with a temporary autoconfig file instead (test-only, not part of Klin).
 
 ## Next
-uBlock Origin and WebExtensions tests, the Mozilla-connections audit, the baseline measurements, the Ollama check.
+uBlock Origin and WebExtensions tests, the audit during real browsing, the baseline measurements, the Ollama check.
 
 ## Baseline method (tests/baseline)
 Same device, same network, stock Firefox release. Fixed scenarios: (1) 10 reference sites, cold cache; (2) same, warm cache; (3) 30 min idle with 10 tabs open; (4) video page.

@@ -23,7 +23,7 @@ Klin = stock Firefox (latest release channel) + `config/` + `branding/` + `patch
 All modules except per-site CPU/RAM can be WebExtensions (MV3). Workspaces can use containers for isolation. See PHASE0.md.
 
 ## Open points (to decide in Phase 0)
-- Storage: IndexedDB (extensions) vs SQLite (privileged code), per module.
+- Storage: decided, IndexedDB for V1 (ADR 0003).
 - Per-site CPU/RAM: which privileged API to use.
 - Tor client: C tor vs Arti.
 - Distinguishing visited site, third-party service and data controller in the Footprint registry.

@@ -48,7 +48,7 @@ Ollama, user-selected model. V1: page summary, translation, information extracti
 No commercial API, no automatic sending of pages, manual activation, fully disableable, no startup dependency, never running continuously in the background.
 
 ### 4.9 Data Manager
-All data local: bookmarks/history (local DB), workspaces/groups/automations (SQLite), settings (file), cache (Gecko), extensions (profile), AI (local models), statistics (local DB).
+All data local: bookmarks/history (Firefox, read through the browser API), workspaces/groups/automations (IndexedDB for V1, see ADR 0003; the original spec said SQLite), settings (file), cache (Gecko), extensions (profile), AI (local models), statistics (local DB).
 No sync in V1. Encrypted archive export/import. No central account.
 
 ## 5. Tor mode (additional, Phase 4)

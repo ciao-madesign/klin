@@ -16,5 +16,5 @@ Without DoH, DNS lookups travel in clear text: the internet provider or the Wi-F
 Choosing a resolver moves trust to a third party; that is the user's decision, and a preselected default would make it for almost everyone, because almost nobody changes a default. One short screen keeps the choice visible without making it hard.
 
 ## Consequences
-- The reviewed list needs criteria (no logging, jurisdiction, independent audit, oblivious DoH support) and its own entry in `extensions/connections/data/connections.json`.
+- The reviewed list needs criteria. **Decided strict (owner, 13 Nov 2026):** a written no-log statement, a known operator and country, an independent examination of that claim, no sale of data or advertising, and the more private forms of DoH where they exist. Candidates and what is still to verify: `proposals/dns-resolvers.md`. The criteria (no logging, jurisdiction, independent audit, oblivious DoH support) and its own entry in `extensions/connections/data/connections.json`.
 - There is no default resolver in the build. The chosen one is stored as the user's setting (`DNSOverHTTPS.ProviderURL` once the user picks a service).

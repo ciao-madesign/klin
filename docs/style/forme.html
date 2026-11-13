@@ -1,0 +1,40 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Klin – forme e icone</title>
+<style>
+body{margin:0;padding:20px;background:#444;font:14px/1.45 system-ui,sans-serif}
+.tag{color:#fff;font:600 15px system-ui;margin:0 0 8px}.tag span{font-weight:400}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+@media(max-width:760px){.row{grid-template-columns:1fr}}
+.p{background:var(--bg);color:var(--fg);padding:18px;border:var(--bw) solid var(--fg);border-radius:var(--r)}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.t{font:900 24px "Arial Black",Arial,sans-serif;letter-spacing:-1px;text-transform:var(--tt)}
+.s{font-size:12px;opacity:.8}
+.card{border:var(--bw) solid var(--fg);border-radius:var(--r);background:var(--card);padding:12px;margin:10px 0}
+.card h2{font:900 15px "Arial Black",Arial;text-transform:var(--tt);margin:0 0 6px}
+.card p{margin:4px 0;font-size:13px}
+.b{display:inline-block;padding:6px 12px;border:var(--bw) solid var(--fg);border-radius:var(--r);margin:6px 6px 0 0;font:700 13px system-ui,sans-serif}
+.b.pri{background:var(--ac);color:#0e0e10;border-color:var(--ac)}
+.li{display:flex;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--fg);font-size:13px}
+.li:first-of-type{border-top:0}
+svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:var(--sw);stroke-linecap:var(--cap);stroke-linejoin:var(--join);flex:none}
+.d{--bg:#0e0e10;--fg:#f1f1ec;--card:#18181b;--ac:#d4ff2a}.l{--bg:#f1f1ec;--fg:#0e0e10;--card:#fff;--ac:#d4ff2a}
+.a{--r:0;--bw:2px;--tt:uppercase;--sw:2.5;--cap:butt;--join:miter}
+.b2{--r:3px;--bw:2px;--tt:none;--sw:2;--cap:square;--join:miter}
+.c2{--r:12px;--bw:1px;--tt:none;--sw:1.6;--cap:round;--join:round}
+</style>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="0 0 100 100"><mask id="m"><rect width="100" height="100" fill="#fff"/><polygon points="14,38 50,52 86,38 86,56 50,68 14,56" fill="#000"/></mask><circle cx="50" cy="50" r="45" fill="currentColor" mask="url(#m)"/></symbol>
+<symbol id="eye" viewBox="0 0 24 24"><path d="M2 12 C6 5 18 5 22 12 C18 19 6 19 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="net" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+<symbol id="img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 17l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></symbol>
+</defs></svg>
+<script>
+const D=[["A · Netto totale","a","Angoli a 0, bordi spessi, titoli in maiuscolo, icone dal tratto spesso e dagli angoli vivi. Il più manifesto, il più duro."],
+["B · Netto con respiro","b2","Angoli quasi vivi (3 px), bordi spessi sui bottoni, titoli normali in grassetto, icone a tratto medio e angoli vivi. Duro ma si legge senza fatica."],
+["C · Morbido (com'è oggi)","c2","Angoli a 12 px, bordi sottili, icone arrotondate. Lo stile attuale: non è quello deciso, è per confronto."]];
+for(const[t,k,d]of D){document.write(`<div class="tag">${t} — <span>${d}</span></div><div class="row">`);
+for(const m of["d","l"])document.write(`<div class="p ${k} ${m}"><div class="hd"><svg width="34" height="34" style="color:#${m=='d'?'d4ff2a':'0e0e10'}"><use href="#logo"/></svg><div><div class="t">Klin</div><div class="s">Libero. Indipendente. Tuo.</div></div></div>
+<div class="card"><h2>Questa foto dice dove l'hai scattata</h2><p>Chiunque la riceva lo legge.</p><span class="b pri">Ripulisci e continua</span><span class="b">Lascia com'è</span></div>
+<div class="card"><div class="li"><svg class="i"><use href="#eye"/></svg>Cosa può vedere questo sito</div><div class="li"><svg class="i"><use href="#net"/></svg>Connessioni del browser</div><div class="li"><svg class="i"><use href="#img"/></svg>Protezione foto</div></div></div>`);
+document.write('</div>')}
+</script></html>

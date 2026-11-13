@@ -64,5 +64,11 @@ The owner found red-orange too close to Claude's identity. Chosen accent: **acid
 
 Contrast measured: accent on background 16.7:1 (dark), 5.8:1 (light); all pass WCAG AA (4.5:1). Rule: **red is reserved for real errors and dangers**, never decoration. Avoid orange and terracotta anywhere (identity clash).
 
-### 5.2 Logo: under review (13 Nov 2026)
-The first logo (torn square, red-orange) is withdrawn. The owner wants something more personal that says independence and rebellion, still minimal. New directions are being compared in `docs/style/logo2.html`.
+### 5.2 Logo (decided 13 Nov 2026; replaces three earlier attempts)
+History: the torn square (withdrawn: its accent was too close to Claude's identity), then the K, the open globe, the dissolving globe, the circle-and-bar and the mask variants were compared (`docs/style/logo2.html` to `logo5.html`). Chosen: **the disc with an eye slit**, a stylised ninja mask: idea of "not traceable".
+- **Shape:** a solid disc with a V-shaped slit cut out (transparent, so the background shows through). Geometry in a 100 x 100 box: circle centre (50,50), radius 45; slit polygon `14,38 50,52 86,38 86,56 50,68 14,56`. Master file to be drawn from `docs/style/logo5.html`, variant B.
+- **Colour:** acid lime `#d4ff2a` on dark. On light backgrounds: solid black `#0e0e10` (or olive `#4a6600`). One colour only, no gradients, no outline, no effects.
+- **Use:** browser icon, tab icon, favicon, avatar, stickers. Legible at 16 px. Clear space: at least a quarter of its width. No separate wordmark; the name stays in running text.
+- **Honesty:** the mask says "hard to trace", not "anonymous". The texts next to it must never claim anonymity (rule: Klin does not make you anonymous, it makes you harder to follow).
+- **Future, not for V1:** the slit may animate and become the right-hand part of the "k" in "klin" (a loading or welcome animation). Constraint for now: keep the slit made of two straight diagonals, so it can morph into the arms of a k. Any animation must respect "reduce motion" and never run in the background.
+- Not derived from any Firefox mark or colour (repository rule).

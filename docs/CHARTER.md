@@ -70,4 +70,4 @@ Until a wider governance exists, only the owner approves a change. Every change 
 1. Approve or edit this draft, and say what goes into public text beyond the line of section 2.
 2. Which lists, if any, are on by default (section 4.2).
 3. Whether the catalogue of lists is limited to the technical checks of section 4.3, as proposed.
-4. Candidate public lists to offer, with their licences: still to survey (legal bans, media-ownership and independence observatories).
+4. Candidate public lists to offer, with their licences: a first survey is in `proposals/third-party-lists.md`. Decided: the EU list of suspended media is offered. The rest is still to choose.

@@ -1,17 +1,36 @@
 # Proposal – Third-party lists: how the user imports them, and which to offer first
 
-Status: **proposed** (13 Nov 2026), follows the owner's decision that the ethics and source-quality lists are third-party public lists used as published, and that Klin does not curate them (`CHARTER.md` section 4, `PRINCIPLES.md` decision 3). Covers P33 (entity data), P34 (source quality) and P35 (ethics list).
+Status: **proposed** (13 Nov 2026); the owner has approved the EU list of suspended media for the catalogue (see 2 and 4). Follows the owner's decision that the ethics and source-quality lists are third-party public lists used as published, and that Klin does not curate them (`CHARTER.md` section 4, `PRINCIPLES.md` decision 3). Covers P33 (entity data), P34 (source quality) and P35 (ethics list).
 
 ## 1. How the user gets a list
-Five ways, from the simplest. Klin ships no list inside the browser; it only knows where lists are.
+Six ways, from the simplest. Klin ships no list inside the browser; it only knows where lists are.
 
 | # | Method | What happens |
 |---|---|---|
+| F | **Write or paste your own** | The simplest way to make a personal list. See "Your own list, in three steps" below. |
 | A | **Catalogue, one click** | Klin shows a short catalogue: name, who maintains it, its own criterion, its licence, a link. One click subscribes. Nothing is on by default (to confirm). The catalogue is a small file in the build, so showing it makes no connection. |
 | B | **Paste an address** | The user pastes the web address (HTTPS only) of any public list. Klin shows name, maintainer, size and a sample of entries, and downloads only after the user confirms. |
 | C | **Open a file** | Drag a list file into Klin, or pick it. Works offline. |
 | D | **Share a set** | Export or import a small "list set" file with the names and addresses of the chosen lists and which are on, never the contents. A group or a friend gets the same choice (reuses P20, shareable presets). |
 | E | **From the ad blocker** | Lists that block or hide (ads, trackers, hosts files, Pi-hole lists) are imported through uBlock Origin, which already does it. Klin does not duplicate that. |
+
+### Your own list, in three steps
+For someone who has no list and just wants to flag a few sites, with no file and nothing to install.
+1. **Open Lists, press "New list".** Klin opens a box with one example line and a short explanation. Give the list a name, for example "My sites".
+2. **Type or paste domains, one per line**, optionally followed by a reason after a space or a comma. Lines that start with `#` are notes and are ignored.
+   ```
+   # sites I want flagged
+   example-news.com
+   another-site.org   copies other people's articles
+   ```
+3. **Press "Save and turn on".** From then on, those sites carry the flag, with your name for the list as its origin ("My sites, made by you").
+
+From the same screen the user can:
+- **Export** the list as a file (to keep, or to give to a friend), and **import** one the same way: drag the file onto Klin, or press "Open file".
+- **Import a list someone else published:** paste its web address, press "Add".
+- **Turn it off or delete it** at any time. A personal list never leaves the device and is never uploaded.
+
+Klin does not check what the user writes. The flag says it is the user's own list.
 
 ### Accepted formats
 One domain per line; hosts file; CSV or JSON with the columns `domain`, `flag`, `reason`, `url` (the last three optional); ad-blocker rules, reading only the domain part. Anything else is refused with a plain message. No scripts, no executable content.
@@ -33,7 +52,7 @@ Found by a web search on 13 Nov 2026. **None is checked against its own download
 | [Wikipedia, Perennial sources](https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources/Perennial_sources) | Community list of sources rated reliable, marginal, unreliable or deprecated | Not confirmed. Wikipedia text is generally CC BY-SA; verify | No official machine-readable export found (a community script converts it to JSON). Needs a converter |
 | [EUvsDisinfo database](https://euvsdisinfo.eu/) | Documented cases of pro-Kremlin disinformation, updated weekly | No reuse terms found; no bulk download found | A research dataset copy exists on Zenodo and Mendeley. Verify before use |
 
-### Legal bans (a legal list, not an editorial one)
+### Legal bans (a legal list, not an editorial one). **Approved by the owner for the catalogue**
 | List | What it is | Licence, as found | Note |
 |---|---|---|---|
 | [EU Council Regulation 2022/350](https://eur-lex.europa.eu/eli/reg/2022/350/oj/eng) and its later amendments | Russian media outlets whose broadcasting is suspended in the EU, including online | Official EU legal text; reuse terms to verify | Later additions (June 2022, May 2024) were not verified; the consolidated annex on EUR-Lex is the source. It lists outlets, not domains: a converter and a statement of which sites belong to each outlet are needed |
@@ -69,5 +88,5 @@ Klin does not judge what the list says (`CHARTER.md` 4.3).
 ## 4. Decisions for the owner
 1. Which candidates go into the first catalogue. Suggestion: start with the ones that already have a clear licence and a readable format, and let the user add the rest by address or file.
 2. Whether any list is on by default. Suggestion: none.
-3. Whether the legal-ban list (EU) is offered, given that it lists outlets and needs a converter.
+3. ~~Whether the legal-ban list (EU) is offered~~ **Decided: yes** (owner, 13 Nov 2026). Still to do: the converter from outlets to domains, and a check of the current consolidated annex on EUR-Lex, which Klin follows as published.
 4. The size limit for a list, and whether weekly updates may be offered.

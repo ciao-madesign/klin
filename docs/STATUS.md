@@ -39,7 +39,7 @@ Standard is the default level; privacy comes first, then low impact, then securi
 ## 5. Open questions
 - **Style and tone of Klin: decided and applied on 13 Nov 2026**, see `docs/STYLE.md` and `docs/STYLE-CHANGES.md` (what was done, what remains). Existing screens use the shared style (`extensions/_shared`, copied by `build/sync-shared.py`) and have Italian and English strings. Still open: the owner's read-through of the Italian, English technical readouts, a language switch, logo PNG exports, level names (the name "Anonimo" conflicts with the honesty rule), and whether anything beyond the five values appears in public text (the charter, P36).
 - Charter (P36): **draft written** in `docs/CHARTER.md`, with the rule for the ethics and source lists: third-party lists, Klin does not curate. The owner approves it and decides the points marked "to confirm".
-- Geographic Traffic Controller (system level) versus P32 (browser level): answered in ADR 0006 (**proposed**: P32 first, the system level stays a proposal). The owner accepts or changes it.
+- Geographic Traffic Controller (system level) versus P32 (browser level): answered by ADR 0006 (**accepted**, owner, 13 Nov 2026): P32 first, the system level stays a proposal.
 - Privacy levels (P29): the Advanced level must be tried on real sites.
 - The resolver list for DoH.
 - Languages: Italian and English now, in `_locales` of each extension; more later with human-reviewed machine translation.

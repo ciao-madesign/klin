@@ -1,6 +1,6 @@
 # ADR 0006 – Routing and exclusion rules: browser level first, system level stays a proposal
 
-Status: **proposed** (recommendation for the owner to accept or change)
+Status: **accepted** (owner, 13 Nov 2026)
 
 ## Context
 Two answers exist to the same need: "let me exclude companies, countries and sources, and route my traffic as I choose" (`PRINCIPLES.md` point 3).
@@ -26,7 +26,7 @@ Both decide by destination country, both would show a notice with "allow once" a
 - A VPN, a proxy or encrypted DNS used by an application can hide the real destination. Klin must say when protection is partial.
 - Redirection to an "alternative" server is only safe if it is verified to be the same site (same name, same certificate). It cannot be promised in general.
 
-## Decision (proposed)
+## Decision
 1. **Build P32 first, in the browser.** Rules by domain and company (reliable) and by country (approximate, labelled). Actions: allow, route through the user's own proxy, or block and ask.
 2. **Adopt from the system proposal** the parts that do not need a driver: the order "look for a verified alternative, otherwise block and ask"; "allow once" with a short expiry and no permanent exception; non-intrusive grouped notices; the minimal local log (time, domain, country, action, count; no IP address, no full address) with export and manual deletion.
 3. **Keep the Geographic Traffic Controller as a proposal, not scheduled.** It is reconsidered only if all of these hold after P32 exists: users need coverage of other applications; a prototype shows the driver can be maintained and independently reviewed; the country database licence allows it; Linux and macOS have a plan.
@@ -43,4 +43,4 @@ Both decide by destination country, both would show a notice with "allow once" a
 - The open question "Geographic Traffic Controller versus P32" in `STATUS.md` is answered.
 - P32 stays in Phase 3 of the roadmap; this ADR adds no work to Phases 1 and 2.
 - `proposals/geographic-traffic-controller.md` stays as it is, marked deferred.
-- If the owner chooses differently (for example the system level as the main route), this ADR is replaced before any work starts.
+- Reopening the system-level module needs a new ADR that meets the conditions of point 3.

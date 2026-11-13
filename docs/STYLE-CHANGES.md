@@ -15,6 +15,7 @@ For an engineering session. Source of truth: `STYLE.md`. Nothing here has been a
 - "What we stand for": cut to "Freedom, independence, equality, brotherhood and ecology." plus "Klin lets you leave out the companies, countries and sources you do not want. It never decides for you in secret." Remove "Draft wording. It will be replaced by Klin's charter."
 - "Klin does not make you anonymous. It makes you harder to follow." becomes the one highlighted phrase of the page.
 - Apply the new palette, fonts, cut corners. Section titles in normal case, bold, in the title face.
+- New since the style session: `extensions/welcome/page/greenweb.html` (linked Klin and Greenweb page, with its test in `tests/acceptance/welcome/run.py`). Restyle it with the same tokens and move its strings to `_locales`; it loads fonts from the web today, which must go (no outside requests).
 - Keep: "What Klin does not do" section and the "loads nothing from the internet" note.
 
 ## 2. Browser and toolbar icons

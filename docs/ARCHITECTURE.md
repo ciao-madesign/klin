@@ -33,7 +33,7 @@ Tracked in [PROPOSALS.md](PROPOSALS.md). They are listed here only to show where
 
 | Module | Implementation if accepted | Status |
 |---|---|---|
-| Geographic Traffic Controller | **Outside the browser stack**: system-level filter (Windows WFP driver + service, later nftables / Network Extension), local DNS proxy, local proxy, local GeoIP database; controlled from Klin's UI. Does not fit "config, extension, patch" and needs its own ADR. See [proposals/geographic-traffic-controller.md](proposals/geographic-traffic-controller.md) | Proposed, not scheduled |
+| Geographic Traffic Controller | **Outside the browser stack**: system-level filter (Windows WFP driver + service, later nftables / Network Extension), local DNS proxy, local proxy, local GeoIP database; controlled from Klin's UI. Does not fit "config, extension, patch" and needs its own ADR. See [proposals/geographic-traffic-controller.md](proposals/geographic-traffic-controller.md) | Proposed, deferred (ADR 0006: P32 in the browser comes first) |
 
 ## Principle
 Config first, then extension, then patch. Every patch needs an ADR and must be rebased on each upstream release.

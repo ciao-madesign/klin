@@ -13,7 +13,7 @@ Verdict: "tracking made harder", not yet "anonymous by default". → P29 (defaul
 Blocking and partitioning make profiling harder. Missing: a visible record of every collection attempt ("always flag them") and any way to confuse profilers. → P30 (attempt log), P31 (identity rotation; decoys only as an opt-in).
 
 ## 3. Freedom of choice: route traffic, exclude countries, services and companies — **Gap**
-The specification excludes VPN from V1 and puts Tor in Phase 4; there are no per-entity or per-country rules. → P32 (routing and exclusion rules), P33 (entity data).
+The specification excludes VPN from V1 and puts Tor in Phase 4; there are no per-entity or per-country rules. → P32 (routing and exclusion rules, browser level first: ADR 0006), P33 (entity data).
 
 ## 4. Find your own fingerprints and erase them — **Partial (specified, not built)**
 Appendix B (registry, requests under GDPR art. 15/17/21, monitoring) and the "clear data at end of browsing" automation cover it on paper. → P25, P27, Phase 3.

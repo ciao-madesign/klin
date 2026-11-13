@@ -39,3 +39,10 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - **Reference taste from the owner:** the site thedarksalad.it (not yet analysed: unreachable from the session; to be described by the owner or allowed in the network settings).
 - **Font (provisional, to revisit later):** the owner liked the look of the "Klin and Greenweb" artifact: **Bricolage Grotesque** for headings, **Inter** for body text, **JetBrains Mono** for small labels. All three are open fonts (SIL OFL). They must be **bundled in the browser**, never loaded from Google Fonts (rule: no external requests).
 - Long texts stay in a plain, readable face (Inter); the heavy display face is only for titles and the wordmark.
+
+### 5.2 Logo (decided 13 Nov 2026)
+- **The logo is the symbol only: the "torn square"** (a solid accent-colour square cut by a diagonal gap: the censorship bar, broken). Mock-up: `docs/style/logo.html`, option 2.
+- Used as browser icon, tab icon, stickers, favicon, social avatar. Accent red-orange on dark; the same shape in solid black or white where one colour is required.
+- There is **no separate wordmark logo.** The name is written "Klin" in running text, or "klin" in lowercase in the display face where a title needs it. The symbol and the name are not locked together.
+- Must stay legible at 16 px. Clear space around it: at least a quarter of its width. Never rotated, outlined, recoloured out of palette, or given effects.
+- Not derived from any Firefox mark or colour (repository rule).

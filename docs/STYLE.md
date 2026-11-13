@@ -30,7 +30,7 @@ Proposed terms (defaults chosen by the guide; the owner can change them). The En
 | private window | finestra privata | always followed by what it does not hide |
 | connection (the browser makes) | connessione | |
 | What can this site see? | Cosa vede questo sito? | name of the self-test |
-| Standard level | livello Standard | levels: Standard, Avanzato, Anonimo (names to confirm when P29 is built) |
+| protection levels | livelli Standard, Avanzato, Massimo | decided 13 Nov 2026. Not "Anonymous": Klin never promises anonymity. Under the level name, always say what it hides and what it does not ("Livello Massimo. Non ti rende anonimo: i siti vedono ancora il tuo indirizzo.") |
 | lookalike site | sito che imita | |
 | IP address | indirizzo IP | |
 | strip / clean (a photo) | ripulire | "Ripulisci e continua" |
@@ -151,7 +151,7 @@ Two things together (`docs/style/firma.html`):
 
 ## 9. Still open
 - **Reference site** (`thedarksalad.it`, analysed 13 Nov 2026): its three useful ideas were accepted by the owner and are applied: a deeper black (`#0a0a0a`) with `#222` hairlines between rows, a serif for long reading, and keeping our lime accent instead of its blue. Nothing else is taken from it.
-- **Level names** (Standard, Avanzato, Anonimo) and the term "Anonimo": the third name conflicts with the honesty rule; rename when P29 is built (candidates: "Massimo").
+- **Level names:** decided (Standard, Avanzato, Massimo; English: Standard, Advanced, Maximum). The code and docs that still say "Anonymous" (`PRINCIPLES.md`, `PROPOSALS.md` P29, `ROADMAP.md`) are renamed when P29 is built.
 - **Italian terms** in section 2 are guide defaults awaiting the owner's confirmation.
 - **Charter** (P36): whether antifascism, freedom of expression and rejection of regimes appear anywhere in public text. The owner closed the stated list at five values (freedom, independence, equality, brotherhood, ecology); these stay as working principles only; they stay as working principles in `PRINCIPLES.md`.
 - **Master artwork:** clean SVG masters are in `branding/` (lime, black, white, lime on dark). Still to do: PNG exports and a real check of the 16 px and 32 px renderings in the toolbar.

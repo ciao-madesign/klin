@@ -41,7 +41,7 @@ The specification lists technical priorities, not values. → P36 (charter and g
 - **Country exclusion has technical limits.** A site's hosting country is known only from its IP address, i.e. after the connection; rules by domain and company are reliable, by country are approximate. To be stated in the feature.
 
 ## Decisions (13 Nov 2026, project owner)
-1. **Default level: Standard.** Advanced (`resistFingerprinting`) and Anonymous stay one click away. Consequence to state openly: Klin is not anonymous by default, it makes tracking harder; the dashboard must show the current level and what it does not hide (P29).
+1. **Default level: Standard.** Advanced (`resistFingerprinting`) and Maximum (formerly called Anonymous, renamed 13 Nov 2026: Klin never promises anonymity) stay one click away. Consequence to state openly: Klin is not anonymous by default, it makes tracking harder; the dashboard must show the current level and what it does not hide (P29).
 2. **Priority order: privacy first, then low impact, then security.** When they conflict privacy wins, and the cost (energy, speed) is declared. Specification section 1 updated.
 3. **Ethics and source-quality lists start from existing public third-party lists, adapted.** Every entry records where it came from, the published criterion and its source; licences are checked before use; entries are labelled and down-ranked, never hidden. The charter (P36) still has to define who reviews changes and how entries are challenged.
 4. **Decoy traffic: opt-in only, off by default**, with its energy cost shown. Rotation and separation come first (P31). No ad-click automation.

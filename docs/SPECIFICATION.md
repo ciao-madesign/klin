@@ -90,7 +90,9 @@ See ROADMAP.md.
 | T15 | Costs | No mandatory paid service |
 
 ## 11. Excluded from V1
-Own rendering engine, VPN, sync server, user accounts, password manager, antivirus, cloud AI, ad system, universal Chrome Web Store compatibility, full iOS version.
+Own rendering engine, a VPN service run by Klin (Klin never runs, sells or defaults to one), sync server, user accounts, a password manager written by Klin, a full antivirus, cloud AI, ad system, universal Chrome Web Store compatibility, full iOS version.
+
+Narrow, free and open-source forms of three of these are planned (see `PROPOSALS.md`, batch 6): Firefox's own password manager configured by Klin (P39), a one-command switch to the user's own VPN or proxy (P40), and an optional local scan of downloads (P41).
 
 ## 12. Risks
 Hard-to-maintain Firefox changes → minimise fork · security updates → continuous upstream alignment · incompatible extensions → test and document · optimisations breaking sites → configurable profiles · AI load → optional · fingerprinting → native protections and tests · Tor insufficiently safe → separate module, independent review · maintenance cost → no proprietary infrastructure.

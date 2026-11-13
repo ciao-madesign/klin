@@ -22,7 +22,7 @@ Klin is **not** a fork of the Firefox source tree. This repository only contains
 This keeps Klin aligned with upstream security releases, which is a hard requirement.
 
 ## Documentation
-See [`docs/`](docs/): [specification](docs/SPECIFICATION.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), [decisions](docs/adr/), [proposals and feature tracker](docs/PROPOSALS.md).
+See [`docs/`](docs/): [specification](docs/SPECIFICATION.md), [principles and audit](docs/PRINCIPLES.md), [proposals](docs/PROPOSALS.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), [decisions](docs/adr/), [project status and handoff](docs/STATUS.md), [style session handoff](docs/handoff/STYLE-SESSION.md).
 
 ## License
 See [LICENSING.md](LICENSING.md).

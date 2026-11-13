@@ -1,10 +1,11 @@
 # Klin – Specification (v1.0, condensed)
 
-Free, open-source, local-first browser. Priority: low impact, privacy, security. Tor is an optional extra.
+Free, open-source, local-first browser. Priority: privacy, low impact, security. Tor is an optional extra.
 
 ## 1. Principles (in priority order)
-Minimal environmental footprint · maximum privacy · maximum security · minimal ads · minimal tracking · free · customisable · automation · local AI · extensions · Tor mode (additional).
+Maximum privacy · minimal environmental footprint · maximum security · minimal ads · minimal tracking · free · customisable · automation · local AI · extensions · Tor mode (additional).
 Tor must never hurt performance, simplicity or compatibility of the standard browser.
+When principles conflict, privacy wins and the cost (energy, speed, compatibility) is declared to the user. The founding principles and their audit are in `PRINCIPLES.md`.
 
 ## 2. Platforms
 Windows 10/11, Linux, macOS (Gecko, V1) · Android (GeckoView, V1.5) · iOS (WebKit, V2).

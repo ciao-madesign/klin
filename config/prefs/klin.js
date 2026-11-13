@@ -35,6 +35,9 @@ pref("privacy.query_stripping.enabled.pbmode", true);
 pref("privacy.trackingprotection.enabled", true);
 pref("privacy.trackingprotection.socialtracking.enabled", true);
 pref("privacy.fingerprintingProtection", true);
+// Real canvas noise. Upstream's default "efficient" variant only tags exported image files and leaves
+// pixel read-out exact (a stable fingerprint); removing it lets CanvasRandomization apply. See docs/PROPOSALS.md.
+pref("privacy.fingerprintingProtection.overrides", "-EfficientCanvasRandomization");
 pref("network.cookie.cookieBehavior", 5); // total cookie protection (partitioned)
 pref("dom.security.https_only_mode", true);
 
@@ -48,3 +51,23 @@ pref("media.gmp-gmpopenh264.enabled", false);          // Cisco OpenH264 downloa
 pref("media.gmp-gmpopenh264.visible", false);
 pref("identity.fxaccounts.enabled", false);            // no Firefox accounts (spec: no accounts)
 pref("network.connectivity-service.enabled", false);   // connectivity/portal check
+
+// --- Proposals batch 1 (docs/PROPOSALS.md), verified on Firefox 160.0 ---
+pref("privacy.globalprivacycontrol.enabled", true);            // P2: send Global Privacy Control (Sec-GPC: 1)
+pref("network.http.referer.XOriginTrimmingPolicy", 2);         // P2: cross-site referrer reduced to scheme+host
+pref("security.OCSP.enabled", 0);                              // P5: no OCSP lookups (they tell the CA which site is visited); CRLite stays enforced
+pref("pdfjs.enableScripting", false);                          // P16: no JavaScript inside PDFs
+pref("media.peerconnection.ice.default_address_only", true);   // WebRTC: do not expose extra local/VPN-bypassing addresses
+pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true); // WebRTC: never bypass a configured proxy
+
+// --- Firefox's own advertising, promotion and built-in AI (proposal P21), verified on Firefox 160.0 ---
+pref("browser.topsites.contile.enabled", false);                      // sponsored tiles fetched from Mozilla
+pref("browser.urlbar.suggest.trending", false);                       // "trending searches": sends a request to the search engine
+pref("browser.urlbar.trending.featureGate", false);
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false); // recommended articles
+pref("browser.vpn_promo.enabled", false);                             // VPN advertising
+pref("extensions.htmlaboutaddons.recommendations.enabled", false);    // add-on recommendations (contact AMO)
+pref("browser.search.serpEventTelemetryCategorization.enabled", false); // classifies search result pages
+pref("browser.ml.enable", false);                                     // Firefox's own on-device AI: downloads models from Mozilla.
+pref("browser.ml.chat.enabled", false);                               // Klin's AI is opt-in and uses local Ollama (spec 4.8)
+pref("browser.tabs.groups.smart.enabled", false);

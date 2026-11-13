@@ -1,0 +1,379 @@
+{
+  "audit": {
+    "firefox": "160.0",
+    "platform": "Linux",
+    "method": "Idle fresh profile, every request logged and refused by a local proxy (tests/baseline/connection-audit).",
+    "limits": "Entries marked 'pref' were not seen in the idle audit: they are browsing-time connections, switched off by a preference whose value was verified, not their absence on the wire."
+  },
+  "connections": [
+    {
+      "id": "remote-settings",
+      "name": "Remote Settings",
+      "hosts": [
+        "firefox.settings.services.mozilla.com"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "on",
+      "evidence": "audit",
+      "purpose": "Downloads security data: blocklists of harmful add-ons, certificate revocation data (CRLite), intermediate certificates.",
+      "sees": "Your IP address and when the browser checks for new data. Not the sites you visit.",
+      "decision": "Keep. Security data; Klin relies on CRLite instead of OCSP.",
+      "ifOff": "Revoked certificates and harmful add-ons would no longer be detected.",
+      "control": {
+        "type": "none",
+        "items": [],
+        "note": "No safe switch. Turning it off also disables certificate revocation checks."
+      }
+    },
+    {
+      "id": "updates",
+      "name": "Browser updates",
+      "hosts": [
+        "aus5.mozilla.org"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "on",
+      "evidence": "audit",
+      "purpose": "Checks for and downloads new browser versions.",
+      "sees": "Your IP address, browser version, operating system and language.",
+      "decision": "Keep. Timely security updates are mandatory (specification 4.5).",
+      "ifOff": "Known security holes stay open until you update by hand.",
+      "control": {
+        "type": "policy",
+        "items": [
+          "DisableAppUpdate"
+        ],
+        "note": "Not recommended."
+      }
+    },
+    {
+      "id": "safe-browsing",
+      "name": "Safe Browsing lists",
+      "hosts": [
+        "safebrowsing.googleapis.com",
+        "update.googleapis.com"
+      ],
+      "operator": "Google",
+      "when": "idle",
+      "stock": true,
+      "klin": "on",
+      "evidence": "audit",
+      "purpose": "Downloads lists of known phishing and malware sites. Pages are checked against the local copy.",
+      "sees": "Your IP address and when the lists are refreshed. Not the sites you visit.",
+      "decision": "Keep, user-switchable (decided 13 Nov 2026). Google sees your IP address and when the lists refresh; checks against the lists happen on your machine.",
+      "ifOff": "No warning on known phishing and malware pages.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "browser.safebrowsing.malware.enabled",
+          "browser.safebrowsing.phishing.enabled",
+          "browser.safebrowsing.downloads.enabled"
+        ],
+        "note": "Set all three to false."
+      }
+    },
+    {
+      "id": "addon-updates",
+      "name": "Add-on metadata and updates",
+      "hosts": [
+        "services.addons.mozilla.org"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "on",
+      "evidence": "audit",
+      "purpose": "Checks installed extensions for updates and fetches their descriptions.",
+      "sees": "Your IP address and the list of installed extensions.",
+      "decision": "Keep while extensions are installed: extension updates are security updates.",
+      "ifOff": "Extensions, including the ad blocker, stop receiving fixes.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "extensions.update.enabled",
+          "extensions.getAddons.cache.enabled"
+        ],
+        "note": "Set both to false."
+      }
+    },
+    {
+      "id": "amo-install",
+      "name": "uBlock Origin download",
+      "hosts": [
+        "addons.mozilla.org"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": false,
+      "klin": "on",
+      "evidence": "audit",
+      "purpose": "First start only: downloads uBlock Origin, as required by the Klin policy.",
+      "sees": "Your IP address and that uBlock Origin is being installed.",
+      "decision": "Remove by bundling uBlock Origin in the build.",
+      "ifOff": "No ad and tracker blocking until uBlock Origin is installed another way.",
+      "control": {
+        "type": "policy",
+        "items": [
+          "ExtensionSettings"
+        ],
+        "note": "Goes away once uBlock Origin ships inside Klin."
+      }
+    },
+    {
+      "id": "ubo-lists",
+      "name": "uBlock Origin filter lists",
+      "hosts": [
+        "ublockorigin.github.io",
+        "ublockorigin.pages.dev",
+        "cdn.jsdelivr.net",
+        "raw.githubusercontent.com",
+        "curbengh.github.io",
+        "malware-filter.gitlab.io",
+        "pgl.yoyo.org",
+        "publicsuffix.org",
+        "secure.fanboy.co.nz (fallback for the cookie-notice list)"
+      ],
+      "operator": "uBlock Origin project and list maintainers (hosted on GitHub, Cloudflare, jsDelivr, GitLab)",
+      "when": "idle",
+      "stock": false,
+      "klin": "on",
+      "evidence": "audit",
+      "purpose": "Updates the lists of ads, trackers, malware domains and cookie banners to block or hide.",
+      "sees": "Your IP address and when the lists are refreshed. Not the sites you visit.",
+      "decision": "Keep. Blocking quality depends on fresh lists (specification 4.2).",
+      "ifOff": "Blocking slowly gets worse as lists age.",
+      "control": {
+        "type": "ublock",
+        "items": [
+          "Filter lists → Auto-update filter lists"
+        ],
+        "note": "In the uBlock Origin dashboard. The cookie-notice lists are switched on by Klin's policy and are not bundled: they are only downloaded."
+      }
+    },
+    {
+      "id": "push",
+      "name": "Web Push",
+      "hosts": [
+        "push.services.mozilla.com"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "off",
+      "evidence": "audit",
+      "purpose": "Keeps a permanent connection open so sites can send notifications while closed.",
+      "sees": "Your IP address, all the time the browser is running.",
+      "decision": "Disabled. A permanent background connection is against low impact.",
+      "ifOff": "Sites cannot send push notifications.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "dom.push.enabled",
+          "dom.push.connection.enabled"
+        ],
+        "note": "Set both to true to re-enable."
+      }
+    },
+    {
+      "id": "region",
+      "name": "Region detection",
+      "hosts": [
+        "location.services.mozilla.com"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "off",
+      "evidence": "audit",
+      "purpose": "Guesses your country to choose regional defaults such as the search engine.",
+      "sees": "Your IP address, from which the country is derived.",
+      "decision": "Disabled. Not needed.",
+      "ifOff": "Regional defaults are not adjusted automatically.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "browser.region.update.enabled",
+          "browser.region.network.url"
+        ],
+        "note": "Set the first to true and reset the second to re-enable."
+      }
+    },
+    {
+      "id": "captive-portal",
+      "name": "Captive portal and connectivity checks",
+      "hosts": [
+        "firefox-portal-detection.com"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "off",
+      "evidence": "audit",
+      "purpose": "Pings a test page to detect Wi-Fi login pages (hotels, trains) and whether the network works.",
+      "sees": "Your IP address, repeatedly, on every network you join.",
+      "decision": "Disabled. Recurring background pings.",
+      "ifOff": "Public Wi-Fi login pages are not opened automatically; open any http page to reach them.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "network.captive-portal-service.enabled",
+          "network.connectivity-service.enabled"
+        ],
+        "note": "Set both to true to re-enable."
+      }
+    },
+    {
+      "id": "openh264",
+      "name": "OpenH264 codec download",
+      "hosts": [
+        "ciscobinary.openh264.org"
+      ],
+      "operator": "Cisco",
+      "when": "idle",
+      "stock": true,
+      "klin": "off",
+      "evidence": "audit",
+      "purpose": "Downloads a video codec used for H.264 in video calls.",
+      "sees": "Your IP address.",
+      "decision": "Disabled. Third-party binary download.",
+      "ifOff": "Video calls that only offer H.264 may not work. Normal video playback is not affected.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "media.gmp-gmpopenh264.enabled"
+        ],
+        "note": "Set to true to re-enable."
+      }
+    },
+    {
+      "id": "accounts",
+      "name": "Firefox Accounts and Sync",
+      "hosts": [
+        "accounts.firefox.com"
+      ],
+      "operator": "Mozilla",
+      "when": "idle",
+      "stock": true,
+      "klin": "off",
+      "evidence": "audit",
+      "purpose": "Sign-in and synchronisation through a Mozilla account.",
+      "sees": "Your IP address and, when signed in, your account.",
+      "decision": "Disabled. Klin has no accounts (specification 2).",
+      "ifOff": "No Firefox Sync.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "identity.fxaccounts.enabled"
+        ],
+        "note": "Also locked by the DisableFirefoxAccounts policy."
+      }
+    },
+    {
+      "id": "ocsp",
+      "name": "Certificate status lookups (OCSP)",
+      "hosts": [
+        "the certificate authority of each site"
+      ],
+      "operator": "Certificate authorities",
+      "when": "browsing",
+      "stock": true,
+      "klin": "off",
+      "evidence": "pref",
+      "purpose": "Asks the authority that issued a site's certificate whether it has been revoked.",
+      "sees": "Your IP address and which site you are opening, usually over unencrypted HTTP.",
+      "decision": "Disabled. Revocation is checked locally with CRLite.",
+      "ifOff": "A certificate not covered by CRLite gets no revocation check.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "security.OCSP.enabled"
+        ],
+        "note": "Set to 1 to re-enable."
+      }
+    },
+    {
+      "id": "search-suggestions",
+      "name": "Search suggestions and trending searches",
+      "hosts": [
+        "your default search engine"
+      ],
+      "operator": "Search engine",
+      "when": "browsing",
+      "stock": true,
+      "klin": "off",
+      "evidence": "pref",
+      "purpose": "Sends what you type in the address bar to the search engine to show suggestions, and asks it for trending searches when you click the bar.",
+      "sees": "Your IP address and every character typed, before you press Enter.",
+      "decision": "Disabled. Nothing is sent until you search.",
+      "ifOff": "No suggestions from the search engine while typing.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "browser.search.suggest.enabled",
+          "browser.urlbar.suggest.trending"
+        ],
+        "note": "Set both to true to re-enable."
+      }
+    },
+    {
+      "id": "speculative",
+      "name": "Speculative connections",
+      "hosts": [
+        "sites linked from the page or guessed from typing"
+      ],
+      "operator": "Any site",
+      "when": "browsing",
+      "stock": true,
+      "klin": "off",
+      "evidence": "pref",
+      "purpose": "Connects in advance to sites you might open next, to save a moment if you do.",
+      "sees": "Your IP address, on sites you never chose to visit.",
+      "decision": "Disabled. Wasted traffic and energy (specification 4.3).",
+      "ifOff": "The first load of a new site can be slightly slower.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "network.prefetch-next",
+          "network.dns.disablePrefetch",
+          "network.predictor.enabled",
+          "network.http.speculative-parallel-limit",
+          "browser.urlbar.speculativeConnect.enabled"
+        ],
+        "note": "See config/prefs/klin.js for the Klin values."
+      }
+    },
+    {
+      "id": "promo-services",
+      "name": "Sponsored tiles, recommendations and built-in AI downloads",
+      "hosts": [
+        "contile.services.mozilla.com (sponsored tiles)",
+        "Mozilla content and model servers"
+      ],
+      "operator": "Mozilla",
+      "when": "browsing",
+      "stock": true,
+      "klin": "off",
+      "evidence": "pref",
+      "purpose": "Fetches sponsored shortcuts, recommended articles, add-on recommendations and VPN promotions, and downloads models for Firefox's own on-device AI features.",
+      "sees": "Your IP address and that you opened a new tab or the add-ons page.",
+      "decision": "Disabled. Klin shows no advertising or sponsored content (specification 6); its AI is opt-in and uses local Ollama (specification 4.8).",
+      "ifOff": "No sponsored or recommended content, no Firefox AI features such as smart tab groups.",
+      "control": {
+        "type": "pref",
+        "items": [
+          "browser.topsites.contile.enabled",
+          "browser.newtabpage.activity-stream.discoverystream.enabled",
+          "browser.vpn_promo.enabled",
+          "extensions.htmlaboutaddons.recommendations.enabled",
+          "browser.ml.enable",
+          "browser.tabs.groups.smart.enabled"
+        ],
+        "note": "Set to true to re-enable. Destinations beyond contile.services.mozilla.com not yet confirmed on the wire."
+      }
+    }
+  ]
+}

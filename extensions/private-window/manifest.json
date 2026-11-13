@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "Klin Private Window",
+  "version": "0.1.0",
+  "description": "Replaces the start page of private windows with an honest explanation of what a private window does and does not hide.",
+  "browser_specific_settings": { "gecko": { "id": "private-window@klin", "strict_min_version": "128.0" } },
+  "permissions": ["tabs", "search"],
+  "background": { "scripts": ["background.js"] }
+}

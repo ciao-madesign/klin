@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klin self-test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>What a site can see</h1>
+    <p class="lead">Klin runs, inside the site you were viewing, the same checks a tracking script would run. Everything stays on your machine: nothing is sent, nothing is stored.</p>
+    <p id="where" class="lead"></p>
+    <div id="summary" class="summary" aria-live="polite"></div>
+  </header>
+
+  <section id="results" aria-label="Results"><p id="running">Running the checks…</p></section>
+
+  <footer>
+    <p><strong>Protected</strong>: the site gets nothing useful, or a value that is blurred or shared with many other users. <strong>Exposed</strong>: the site gets a value that helps to recognise you and that could be hidden. <strong>Visible</strong>: normal for any browser, but each value adds to your fingerprint.</p>
+    <p>The test shows what is technically readable, not how rare your combination is: that would need comparing you with other users, which Klin does not do.</p>
+  </footer>
+</main>
+<script src="checks.js"></script>
+<script src="page.js"></script>
+</body>
+</html>

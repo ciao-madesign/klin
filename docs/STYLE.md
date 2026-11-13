@@ -31,3 +31,11 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - **Later (phase 2):** more languages, produced by machine translation and **approved by human translators** before shipping. No language ships unreviewed.
 - **Technical approach:** strings move out of HTML/JavaScript into one strings file per extension and per language (WebExtensions `_locales` with `messages.json` fits). Translators get this guide, the vocabulary list and a "do not translate" list (Klin, Firefox, technical terms kept as decided in section 2).
 - Language follows the browser's language; the user can switch it.
+
+## 5. Visual identity (in progress)
+### 5.1 Direction (decided 13 Nov 2026)
+- **Direction A, "Manifesto":** ink-and-paper contrast, one hot accent colour (red-orange), sharp corners, heavy short headings. Mock-up: `docs/style/direzioni.html`.
+- **Dark mode is the default.** Light mode exists and follows the same tokens; the user can switch, and "follow the system" is an option.
+- **Reference taste from the owner:** the site thedarksalad.it (not yet analysed: unreachable from the session; to be described by the owner or allowed in the network settings).
+- **Font (provisional, to revisit later):** the owner liked the look of the "Klin and Greenweb" artifact: **Bricolage Grotesque** for headings, **Inter** for body text, **JetBrains Mono** for small labels. All three are open fonts (SIL OFL). They must be **bundled in the browser**, never loaded from Google Fonts (rule: no external requests).
+- Long texts stay in a plain, readable face (Inter); the heavy display face is only for titles and the wordmark.

@@ -20,3 +20,8 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - Name what happens, not a metaphor: "3 tracker bloccati. Il sito ha provato a riconoscerti dalle caratteristiche del tuo dispositivo (fingerprinting)."
 - Avoid: slang, jokes at the user's expense, marketing words ("smart", "magic", "supercharged"), soft words that hide the fact ("potrebbe", "forse" when we know).
 - Terms list (Italian/English equivalents) to be completed in the final version.
+
+## 3. How values are stated (decided 13 Nov 2026)
+- **Where:** only on the welcome page and in the charter (option A). Everyday messages talk about functions, not ideals. No slogans in normal screens.
+- **Exact wording of the values, nothing added:** "Freedom, independence, equality and brotherhood." (No extra clauses such as antifascism, free expression or rejection of regimes in the stated line. The current welcome-page paragraph "What we stand for" must be cut down to this line. `PRINCIPLES.md` item 9 and the charter, P36, still hold the owner's fuller list as working principles; the owner decides separately whether they appear anywhere in public text.)
+- **Source flags (P34/P35):** no real labels. Instead a small **marker** next to a result or source, collapsed by default and **expandable** on click. Expanded it shows: what the flag is, the published criterion, the source of the fact, and how to challenge or switch it off. Never hides or blocks a source; the user can turn markers off. Markers are discreet, not banners, not red alarms.

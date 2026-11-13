@@ -29,7 +29,7 @@ Open reconciliation: bring this branch into the default branch (pull request, on
 | Photo privacy (upload and drop; not paste) | `extensions/photo-privacy` | P6, P6+ | `acceptance/photo-privacy` (+ `unit.js`) |
 | Honest private window | `extensions/private-window` | P22 | `acceptance/private-window` |
 | Collection log (badge and popup, memory only) | `extensions/attempts-log` | P30 | `acceptance/attempts-log` (+ `run-ubo.py`) |
-| Presentation page, first start and info button | `extensions/welcome` | P37 | `acceptance/welcome` |
+| Presentation page, first start and info button, with the linked Klin and Greenweb page | `extensions/welcome` | P37 | `acceptance/welcome` |
 
 Not built yet: workspaces/tabs UI, dashboard, Traffic Engine and monitors, Automation, AI, Search Intelligence, Data Footprint, Tor, mobile. Not shippable yet: see section 6.
 

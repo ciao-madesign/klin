@@ -60,7 +60,7 @@ Inspiration for Klin's foundations. Most of its advice is about phones (advertis
 | # | Proposal | Status | Notes |
 |---|---|---|---|
 | P21 | Switch off Firefox's own advertising, promotion and built-in AI | **Done** | Sponsored tiles, trending searches, recommended articles, VPN promo, add-on recommendations, SERP classification, `browser.ml.*`, smart tab groups. Values verified on 160.0; behaviour on the wire not yet observed (listed as such in the connections page). Decision to confirm: `browser.ml.*` is Firefox's local AI; Klin's own AI stays opt-in via Ollama |
-| P22 | Honest private window: say plainly what it does not hide (provider, visited site, account logins), with a link to the self-test | **Next** | Text in the private-window start page; needs a small UI patch or an `about:privatebrowsing` override. ADR needed |
+| P22 | Honest private window: say plainly what it does not hide (provider, visited site, account logins), with a link to the self-test | **Next, as an extension** | Decided 13 Nov: no Firefox patch. An extension shows the message when a private window opens |
 | P6+ | Warn before upload when a photo contains GPS location, and offer to remove it | **Done (v0.1)** | Same extension: question with "Remove and continue" as default, keep, or cancel. Verified in Firefox with a real file input (`tests/acceptance/photo-privacy`) |
 | P23 | Permissions that expire: location, camera, microphone and notifications "this time only" by default; automatic revoke for sites not visited in months; one page listing who can do what | Accepted | Mostly prefs/policies plus a small extension. Article, ingredient 3. Question for the user: "Allow" button wording ("Why should this site know where you are?") |
 | P24 | "New identity" in one click: clears site data and regenerates per-session values (canvas key, containers), so the advertising profile starts over | Accepted | Needs P1 (containers). Article, ingredient 1 |
@@ -75,13 +75,13 @@ Inspiration for Klin's foundations. Most of its advice is about phones (advertis
 
 | # | Proposal | Status | Notes |
 |---|---|---|---|
-| P29 | Privacy levels with a decided default: Standard, Advanced (`resistFingerprinting`, generic screen/time zone), Anonymous (Advanced + Tor + no persistent data) | Accepted | Decision needed on the default. Advanced to be tested on real sites for breakage |
+| P29 | Privacy levels: Standard, Advanced (`resistFingerprinting`, generic screen/time zone), Anonymous (Advanced + Tor + no persistent data) | **Decided: Standard is the default** | Advanced and Anonymous one click away; the dashboard shows the current level and what it does not hide. Advanced still to be tested on real sites for breakage |
 | P30 | Collection-attempt log: per site, who tried to collect what (trackers, fingerprint reads, cookies, referrers), always visible | Accepted | Reuses the uBlock Origin and Traffic monitor data; local only. Self-test already shows what is readable |
-| P31 | Identity rotation to defeat profiling (fresh containers, canvas key, fingerprint values per site/session); opt-in decoys with energy cost shown | Accepted | No ad-click automation. Related: P1, P24 |
+| P31 | Identity rotation to defeat profiling (fresh containers, canvas key, fingerprint values per site/session); decoy traffic as an opt-in | **Decided: rotation first; decoys opt-in, off by default** | Decoys show their energy cost. No ad-click automation. Related: P1, P24 |
 | P32 | Routing and exclusion rules: per domain, company or country, send traffic through a chosen proxy/relay/Tor, or refuse it | Accepted | WebExtension `proxy` API can route per request. Klin runs no relay. Country rules are approximate (see `PRINCIPLES.md`) |
 | P33 | Entity data: domain → owning company, local and public | Accepted | Dataset licences to verify (some well-known ones are non-commercial) |
-| P34 | Source-quality data for Search Intelligence: independence, ownership transparency, editorial standards, with published criteria and reasons shown per result | Accepted | Governance open. Never silent (specification A) |
-| P35 | Ethics list: label and down-rank sources tied to unacceptable spheres (e.g. neo-fascist organisations) | Accepted | Constraints in `PRINCIPLES.md` §7: published criteria and sources, appeal path, user-editable, never hidden or blocked |
+| P34 | Source-quality data for Search Intelligence: independence, ownership transparency, editorial standards, with published criteria and reasons shown per result | **Decided: start from existing public lists, adapted** | Record origin, criterion and source per entry; check licences first. Never silent (specification A). Governance in P36 |
+| P35 | Ethics list: label and down-rank sources tied to unacceptable spheres (e.g. neo-fascist organisations) | **Decided: start from existing public lists, adapted** | Constraints in `PRINCIPLES.md` §7: published criteria and sources, appeal path, user-editable, never hidden or blocked. Candidate sources to be surveyed (legal bans, media-ownership and independence observatories) |
 | P36 | Charter: Klin's values and governance (who maintains lists, how entries are challenged), plus branding that makes them recognisable | Accepted | Seed: `PRINCIPLES.md`. Needs the owner's approval before it goes into the specification |
 
 ## Evaluated and reshaped
@@ -92,5 +92,5 @@ Inspiration for Klin's foundations. Most of its advice is about phones (advertis
 | Variable MAC address | **Out of scope for a browser**: the MAC never leaves the local network, sites cannot see it, and changing it needs OS privileges. Covered by P0, P1 and a help page on enabling MAC randomisation in each OS |
 
 ## Open decisions
-- **Safe Browsing:** protects against phishing but contacts Google for list updates. Keep, make optional, or replace with P14. Needs an ADR.
+- ~~Safe Browsing~~ decided 13 Nov: kept on, explained and switchable (see `PRINCIPLES.md`).
 - **Customisation vs anti-fingerprinting:** themes, fonts and extensions make a browser more recognisable. The Advanced level should restrict some customisation and say so.

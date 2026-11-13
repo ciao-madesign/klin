@@ -40,8 +40,11 @@ The specification lists technical priorities, not values. → P36 (charter and g
 - **Routing freedom vs "no Klin infrastructure" (specification 8).** Klin routes through relays and proxies the user chooses; it does not run any.
 - **Country exclusion has technical limits.** A site's hosting country is known only from its IP address, i.e. after the connection; rules by domain and company are reliable, by country are approximate. To be stated in the feature.
 
-## Decisions needed
-1. Default privacy level: Standard (current) or Advanced (`resistFingerprinting`, accepting some site breakage).
-2. Reorder the specification's priorities so that privacy comes before low impact? Section 1 currently lists low impact first.
-3. Who maintains the entity, source-quality and ethics lists, and under which published criteria (P34, P35, P36).
-4. Whether to offer opt-in decoys at all (P31).
+## Decisions (13 Nov 2026, project owner)
+1. **Default level: Standard.** Advanced (`resistFingerprinting`) and Anonymous stay one click away. Consequence to state openly: Klin is not anonymous by default, it makes tracking harder; the dashboard must show the current level and what it does not hide (P29).
+2. **Priority order: privacy first, then low impact, then security.** When they conflict privacy wins, and the cost (energy, speed) is declared. Specification section 1 updated.
+3. **Ethics and source-quality lists start from existing public third-party lists, adapted.** Every entry records where it came from, the published criterion and its source; licences are checked before use; entries are labelled and down-ranked, never hidden. The charter (P36) still has to define who reviews changes and how entries are challenged.
+4. **Decoy traffic: opt-in only, off by default**, with its energy cost shown. Rotation and separation come first (P31). No ad-click automation.
+5. **Safe Browsing: kept on, explained and switchable.** The connections page says what Google can see; a real switch comes with its step 3.
+6. **Firefox's own AI features stay off.** Klin's AI is opt-in and uses local Ollama.
+7. **Honest private window: no Firefox patch.** An extension carries the message (P22). Keeps the number of patches at zero for now (ADR 0001).

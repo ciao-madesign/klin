@@ -64,7 +64,7 @@
       "evidence": "audit",
       "purpose": "Downloads lists of known phishing and malware sites. Pages are checked against the local copy.",
       "sees": "Your IP address and when the lists are refreshed. Not the sites you visit.",
-      "decision": "Keep, user-switchable. Privacy versus protection trade-off still open (see docs/PROPOSALS.md).",
+      "decision": "Keep, user-switchable (decided 13 Nov 2026). Google sees your IP address and when the lists refresh; checks against the lists happen on your machine.",
       "ifOff": "No warning on known phishing and malware pages.",
       "control": {
         "type": "pref",

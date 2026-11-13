@@ -37,7 +37,7 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - **Direction A, "Manifesto":** ink-and-paper contrast, one hot accent colour (red-orange), sharp corners, heavy short headings. Mock-up: `docs/style/direzioni.html`.
 - **Dark mode is the default.** Light mode exists and follows the same tokens; the user can switch, and "follow the system" is an option.
 - **Reference taste from the owner:** the site thedarksalad.it (not yet analysed: unreachable from the session; to be described by the owner or allowed in the network settings).
-- **Font (provisional, to revisit later):** the owner liked the look of the "Klin and Greenweb" artifact: **Bricolage Grotesque** for headings, **Inter** for body text, **JetBrains Mono** for small labels. All three are open fonts (SIL OFL). They must be **bundled in the browser**, never loaded from Google Fonts (rule: no external requests).
+- **Font:** see 5.6 (decided; replaces the provisional choice made here).
 - Long texts stay in a plain, readable face (Inter); the heavy display face is only for titles and the wordmark.
 
 ### 5.2 Logo (decided 13 Nov 2026)
@@ -72,3 +72,15 @@ History: the torn square (withdrawn: its accent was too close to Claude's identi
 - **Honesty:** the mask says "hard to trace", not "anonymous". The texts next to it must never claim anonymity (rule: Klin does not make you anonymous, it makes you harder to follow).
 - **Future, not for V1:** the slit may animate and become the right-hand part of the "k" in "klin" (a loading or welcome animation). Constraint for now: keep the slit made of two straight diagonals, so it can morph into the arms of a k. Any animation must respect "reduce motion" and never run in the background.
 - Not derived from any Firefox mark or colour (repository rule).
+
+### 5.5 Shapes and icons (decided 13 Nov 2026)
+Style "sharp with room to breathe" (`docs/style/forme.html`, option B): corner radius about 3 px; 2 px borders on buttons and on the focus ring; titles in normal case, bold (no all-caps titles); icons with a medium stroke (2 px on a 24 px grid), square caps and sharp joints. The soft 12 px style used in the first engineering drafts is dropped.
+**Still open:** one distinctive signature detail repeated on every screen (angle cut tied to the logo, highlighter on one key phrase per screen, or both): see `docs/style/firma.html`.
+
+### 5.6 Typography (decided 13 Nov 2026)
+The owner found the first choice (Bricolage Grotesque) too ordinary. Mock-up: `docs/style/caratteri.html`.
+- **Titles and the name "Klin": Chakra Petch**, bold (700). Its letters have cut corners, which echo the slit in the logo.
+- **Body text: Inter**, 400 and 600. Long texts always in Inter, never in the title face.
+- **Small labels and technical values: JetBrains Mono**, 500, small caps style (uppercase, letter-spaced), used sparingly.
+- All three are free under the SIL Open Font License and must be **bundled inside the browser** (no Google Fonts or any outside request). Check the licence texts are shipped with the fonts. Check Italian accented letters render in all three.
+- Fallback stack if a font fails: `system-ui, sans-serif` (titles and body), `ui-monospace, monospace` (labels).

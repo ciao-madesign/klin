@@ -39,6 +39,7 @@ Owner decisions of 13 Nov 2026 are recorded in `PRINCIPLES.md` and count as acce
 | Proposal | Received | Summary | Details | Status |
 |---|---|---|---|---|
 | Geographic Traffic Controller | 2026-11-12 | System-level filter for destinations in user-excluded countries: redirect to a verified alternative when one exists, otherwise block and ask the user. Minimal local log. | [`proposals/geographic-traffic-controller.md`](proposals/geographic-traffic-controller.md) | proposed, **deferred**: browser-level P32 comes first (ADR 0006, accepted) |
+| Third-party lists: catalogue and import (P33, P34, P35) | 2026-11-13 | How the user gets third-party public lists (catalogue, address, file, shared set) and which candidates to offer first, with licences as found. Klin does not curate them. | [`proposals/third-party-lists.md`](proposals/third-party-lists.md) | proposed, licences to verify |
 
 The Geographic Traffic Controller is the system-level answer to P32 below (routing and exclusion rules); P32 is the browser-level one (per-request proxy, domain and company rules). Reconciled in [ADR 0006](adr/0006-routing-and-country-rules.md) (accepted): P32 first, the system level stays a proposal.
 

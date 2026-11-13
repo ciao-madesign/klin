@@ -1,0 +1,338 @@
+{
+  "name": {
+    "message": "Klin Connections"
+  },
+  "description": {
+    "message": "Mostra ogni connessione che il browser fa da solo, perché esiste e come spegnerla. Solo lettura, tutto in locale."
+  },
+  "title": {
+    "message": "Connessioni di Klin"
+  },
+  "c_title": {
+    "message": "Connessioni di Klin"
+  },
+  "c_h1": {
+    "message": "Connessioni di Klin"
+  },
+  "c_lead": {
+    "message": "Ogni connessione che il browser fa da solo, senza che tu apra un sito: chi la riceve, perché, come spegnerla."
+  },
+  "c_filter": {
+    "message": "Filtra le connessioni"
+  },
+  "c_list": {
+    "message": "Connessioni"
+  },
+  "c_all": {
+    "message": "Tutte"
+  },
+  "c_on": {
+    "message": "Attive"
+  },
+  "c_off": {
+    "message": "Spente"
+  },
+  "c_foot": {
+    "message": "Questa pagina mostra le impostazioni predefinite di Klin. Se hai cambiato un'impostazione in `about:config`, la pagina non lo sa. Non fa nessuna richiesta di rete."
+  },
+  "c_audit": {
+    "message": "Controllato su Firefox {1} ({2}). {3} {4}"
+  },
+  "c_n_on": {
+    "message": "attive in Klin"
+  },
+  "c_n_off": {
+    "message": "spente da Klin"
+  },
+  "c_n_stock": {
+    "message": "attive in Firefox standard"
+  },
+  "c_when_idle": {
+    "message": "In background"
+  },
+  "c_when_browsing": {
+    "message": "Durante la navigazione"
+  },
+  "c_active": {
+    "message": "Attiva"
+  },
+  "c_offlabel": {
+    "message": "Spenta"
+  },
+  "c_absent": {
+    "message": "Assente"
+  },
+  "c_r_who": {
+    "message": "Chi la riceve"
+  },
+  "c_r_purpose": {
+    "message": "Scopo"
+  },
+  "c_r_sees": {
+    "message": "Cosa può vedere"
+  },
+  "c_r_decision": {
+    "message": "Scelta di Klin"
+  },
+  "c_r_ifoff": {
+    "message": "Se la spegni"
+  },
+  "c_r_lose": {
+    "message": "Cosa perdi"
+  },
+  "c_r_change": {
+    "message": "Come cambiarla"
+  },
+  "c_r_stock": {
+    "message": "In Firefox standard"
+  },
+  "c_r_checked": {
+    "message": "Verificato da"
+  },
+  "c_ctl_pref": {
+    "message": "Preferenza in about:config"
+  },
+  "c_ctl_policy": {
+    "message": "Criterio aziendale"
+  },
+  "c_ctl_ublock": {
+    "message": "Impostazione di uBlock Origin"
+  },
+  "c_ctl_none": {
+    "message": "Nessun interruttore"
+  },
+  "c_ev_audit": {
+    "message": "Verifica delle connessioni: vista (o confermata assente) sulla rete"
+  },
+  "c_ev_setting": {
+    "message": "Solo il valore dell'impostazione, non ancora osservata sulla rete"
+  },
+  "c_loaderr": {
+    "message": "Impossibile caricare l'elenco delle connessioni."
+  },
+  "e_remote_settings_purpose": {
+    "message": "Scarica dati di sicurezza: elenchi di estensioni dannose, dati sui certificati revocati (CRLite), certificati intermedi."
+  },
+  "e_remote_settings_sees": {
+    "message": "Il tuo indirizzo IP e quando il browser cerca dati nuovi. Non i siti che visiti."
+  },
+  "e_remote_settings_decision": {
+    "message": "Resta attiva. Sono dati di sicurezza; Klin usa CRLite al posto di OCSP."
+  },
+  "e_remote_settings_ifOff": {
+    "message": "I certificati revocati e le estensioni dannose non verrebbero più riconosciuti."
+  },
+  "e_remote_settings_note": {
+    "message": "Nessun interruttore sicuro. Spegnerla disattiva anche il controllo dei certificati revocati."
+  },
+  "e_updates_purpose": {
+    "message": "Cerca e scarica le nuove versioni del browser."
+  },
+  "e_updates_sees": {
+    "message": "Il tuo indirizzo IP, la versione del browser, il sistema operativo e la lingua."
+  },
+  "e_updates_decision": {
+    "message": "Resta attiva. Gli aggiornamenti di sicurezza tempestivi sono obbligatori (specifica 4.5)."
+  },
+  "e_updates_ifOff": {
+    "message": "Le falle di sicurezza restano aperte finché non aggiorni a mano."
+  },
+  "e_updates_note": {
+    "message": "Sconsigliato."
+  },
+  "e_safe_browsing_purpose": {
+    "message": "Scarica gli elenchi dei siti di phishing e malware noti. Le pagine vengono controllate con la copia locale."
+  },
+  "e_safe_browsing_sees": {
+    "message": "Il tuo indirizzo IP e quando gli elenchi si aggiornano. Non i siti che visiti."
+  },
+  "e_safe_browsing_decision": {
+    "message": "Resta attiva, l'utente può spegnerla (deciso il 13 nov 2026). Google vede il tuo indirizzo IP e quando gli elenchi si aggiornano; i controlli sugli elenchi avvengono sul tuo computer."
+  },
+  "e_safe_browsing_ifOff": {
+    "message": "Nessun avviso sulle pagine di phishing e malware note."
+  },
+  "e_safe_browsing_note": {
+    "message": "Imposta tutte e tre su false."
+  },
+  "e_addon_updates_purpose": {
+    "message": "Controlla gli aggiornamenti delle estensioni installate e scarica le loro descrizioni."
+  },
+  "e_addon_updates_sees": {
+    "message": "Il tuo indirizzo IP e l'elenco delle estensioni installate."
+  },
+  "e_addon_updates_decision": {
+    "message": "Resta attiva finché ci sono estensioni installate: gli aggiornamenti delle estensioni sono aggiornamenti di sicurezza."
+  },
+  "e_addon_updates_ifOff": {
+    "message": "Le estensioni, compreso il blocco delle pubblicità, smettono di ricevere correzioni."
+  },
+  "e_addon_updates_note": {
+    "message": "Imposta entrambe su false."
+  },
+  "e_amo_install_purpose": {
+    "message": "Solo al primo avvio: scarica uBlock Origin, come richiede il criterio di Klin."
+  },
+  "e_amo_install_sees": {
+    "message": "Il tuo indirizzo IP e il fatto che uBlock Origin viene installato."
+  },
+  "e_amo_install_decision": {
+    "message": "Da togliere includendo uBlock Origin nella versione di Klin."
+  },
+  "e_amo_install_ifOff": {
+    "message": "Nessun blocco di pubblicità e tracker finché uBlock Origin non viene installato in un altro modo."
+  },
+  "e_amo_install_note": {
+    "message": "Sparisce quando uBlock Origin è incluso in Klin."
+  },
+  "e_ubo_lists_purpose": {
+    "message": "Aggiorna gli elenchi di pubblicità, tracker, domini di malware e banner dei cookie da bloccare o nascondere."
+  },
+  "e_ubo_lists_sees": {
+    "message": "Il tuo indirizzo IP e quando gli elenchi si aggiornano. Non i siti che visiti."
+  },
+  "e_ubo_lists_decision": {
+    "message": "Resta attiva. La qualità del blocco dipende da elenchi aggiornati (specifica 4.2)."
+  },
+  "e_ubo_lists_ifOff": {
+    "message": "Il blocco peggiora piano piano man mano che gli elenchi invecchiano."
+  },
+  "e_ubo_lists_note": {
+    "message": "Nel pannello di uBlock Origin. Gli elenchi dei banner dei cookie sono attivati dal criterio di Klin e non sono inclusi: vengono solo scaricati."
+  },
+  "e_push_purpose": {
+    "message": "Tiene aperta una connessione permanente, così i siti possono inviare notifiche anche a browser chiuso."
+  },
+  "e_push_sees": {
+    "message": "Il tuo indirizzo IP, per tutto il tempo in cui il browser è in funzione."
+  },
+  "e_push_decision": {
+    "message": "Spenta. Una connessione permanente in background va contro il basso impatto."
+  },
+  "e_push_ifOff": {
+    "message": "I siti non possono inviare notifiche push."
+  },
+  "e_push_note": {
+    "message": "Imposta entrambe su true per riattivarla."
+  },
+  "e_region_purpose": {
+    "message": "Indovina il tuo paese per scegliere impostazioni regionali, come il motore di ricerca."
+  },
+  "e_region_sees": {
+    "message": "Il tuo indirizzo IP, da cui ricava il paese."
+  },
+  "e_region_decision": {
+    "message": "Spenta. Non serve."
+  },
+  "e_region_ifOff": {
+    "message": "Le impostazioni regionali non si adattano da sole."
+  },
+  "e_region_note": {
+    "message": "Imposta la prima su true e riporta la seconda al valore iniziale per riattivarla."
+  },
+  "e_captive_portal_purpose": {
+    "message": "Contatta una pagina di prova per riconoscere le pagine di accesso al Wi-Fi (hotel, treni) e capire se la rete funziona."
+  },
+  "e_captive_portal_sees": {
+    "message": "Il tuo indirizzo IP, a ripetizione, su ogni rete a cui ti colleghi."
+  },
+  "e_captive_portal_decision": {
+    "message": "Spenta. Sono contatti ripetuti in background."
+  },
+  "e_captive_portal_ifOff": {
+    "message": "Le pagine di accesso al Wi-Fi pubblico non si aprono da sole; apri una qualsiasi pagina http per raggiungerle."
+  },
+  "e_captive_portal_note": {
+    "message": "Imposta entrambe su true per riattivarla."
+  },
+  "e_openh264_purpose": {
+    "message": "Scarica un codec video usato per l'H.264 nelle videochiamate."
+  },
+  "e_openh264_sees": {
+    "message": "Il tuo indirizzo IP."
+  },
+  "e_openh264_decision": {
+    "message": "Spenta. È il download di un programma di terzi."
+  },
+  "e_openh264_ifOff": {
+    "message": "Le videochiamate che offrono solo H.264 possono non funzionare. La normale riproduzione video non cambia."
+  },
+  "e_openh264_note": {
+    "message": "Imposta su true per riattivarla."
+  },
+  "e_accounts_purpose": {
+    "message": "Accesso e sincronizzazione tramite un account Mozilla."
+  },
+  "e_accounts_sees": {
+    "message": "Il tuo indirizzo IP e, se hai fatto l'accesso, il tuo account."
+  },
+  "e_accounts_decision": {
+    "message": "Spenta. Klin non ha account (specifica 2)."
+  },
+  "e_accounts_ifOff": {
+    "message": "Niente Firefox Sync."
+  },
+  "e_accounts_note": {
+    "message": "Bloccata anche dal criterio DisableFirefoxAccounts."
+  },
+  "e_ocsp_purpose": {
+    "message": "Chiede all'autorità che ha emesso il certificato di un sito se è stato revocato."
+  },
+  "e_ocsp_sees": {
+    "message": "Il tuo indirizzo IP e quale sito stai aprendo, di solito su HTTP non cifrato."
+  },
+  "e_ocsp_decision": {
+    "message": "Spenta. La revoca si controlla in locale con CRLite."
+  },
+  "e_ocsp_ifOff": {
+    "message": "Un certificato non coperto da CRLite non ha nessun controllo di revoca."
+  },
+  "e_ocsp_note": {
+    "message": "Imposta su 1 per riattivarla."
+  },
+  "e_search_suggestions_purpose": {
+    "message": "Invia al motore di ricerca ciò che scrivi nella barra degli indirizzi per mostrare suggerimenti, e gli chiede le ricerche di tendenza quando clicchi la barra."
+  },
+  "e_search_suggestions_sees": {
+    "message": "Il tuo indirizzo IP e ogni carattere digitato, prima che tu prema Invio."
+  },
+  "e_search_suggestions_decision": {
+    "message": "Spenta. Non viene inviato nulla finché non cerchi."
+  },
+  "e_search_suggestions_ifOff": {
+    "message": "Nessun suggerimento dal motore di ricerca mentre scrivi."
+  },
+  "e_search_suggestions_note": {
+    "message": "Imposta entrambe su true per riattivarla."
+  },
+  "e_speculative_purpose": {
+    "message": "Si collega in anticipo ai siti che potresti aprire dopo, per risparmiare un attimo se lo fai."
+  },
+  "e_speculative_sees": {
+    "message": "Il tuo indirizzo IP, su siti che non hai mai scelto di visitare."
+  },
+  "e_speculative_decision": {
+    "message": "Spenta. È traffico ed energia sprecati (specifica 4.3)."
+  },
+  "e_speculative_ifOff": {
+    "message": "Il primo caricamento di un sito nuovo può essere un po' più lento."
+  },
+  "e_speculative_note": {
+    "message": "Vedi config/prefs/klin.js per i valori di Klin."
+  },
+  "e_promo_services_purpose": {
+    "message": "Scarica scorciatoie sponsorizzate, articoli consigliati, consigli sulle estensioni e promozioni di VPN, e scarica i modelli delle funzioni di intelligenza artificiale integrate di Firefox."
+  },
+  "e_promo_services_sees": {
+    "message": "Il tuo indirizzo IP e il fatto che hai aperto una nuova scheda o la pagina delle estensioni."
+  },
+  "e_promo_services_decision": {
+    "message": "Spenta. Klin non mostra pubblicità né contenuti sponsorizzati (specifica 6); la sua intelligenza artificiale è a scelta e usa Ollama in locale (specifica 4.8)."
+  },
+  "e_promo_services_ifOff": {
+    "message": "Nessun contenuto sponsorizzato o consigliato, nessuna funzione di intelligenza artificiale di Firefox come i gruppi di schede intelligenti."
+  },
+  "e_promo_services_note": {
+    "message": "Imposta su true per riattivarla. Le destinazioni oltre contile.services.mozilla.com non sono ancora confermate sulla rete."
+  }
+}

@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Klin Collection Log",
+  "name": "__MSG_name__",
   "version": "0.1.0",
-  "description": "Shows, for the page you are on, who tried to collect information about you and what happened. Fully local; kept in memory only.",
+  "description": "__MSG_description__",
+  "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "attempts-log@klin",
@@ -17,7 +18,7 @@
     "<all_urls>"
   ],
   "action": {
-    "default_title": "Collection attempts",
+    "default_title": "__MSG_title__",
     "default_popup": "popup/popup.html",
     "default_icon": "icon.svg"
   },

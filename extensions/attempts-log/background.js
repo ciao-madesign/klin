@@ -47,8 +47,8 @@ function badge(tabId) {
   const total = list.reduce((n, e) => n + e.count, 0);
   const worry = list.some((e) => e.kind !== "blocked");
   browser.action.setBadgeText({ tabId, text: total ? (total > 99 ? "99+" : String(total)) : "" }).catch(() => {});
-  browser.action.setBadgeBackgroundColor({ tabId, color: worry ? "#a35f00" : "#2f7d5b" }).catch(() => {});
-  browser.action.setBadgeTextColor && browser.action.setBadgeTextColor({ tabId, color: "#ffffff" }).catch(() => {});
+  browser.action.setBadgeBackgroundColor({ tabId, color: worry ? "#ffb020" : "#d4ff2a" }).catch(() => {});
+  browser.action.setBadgeTextColor && browser.action.setBadgeTextColor({ tabId, color: "#0a0a0a" }).catch(() => {});
 }
 
 function classOf(details) {

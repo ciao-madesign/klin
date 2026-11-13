@@ -187,8 +187,10 @@ const KlinPhotoMetadata = (() => {
   }
 
   const describe = (found) => LABELS.filter(([key]) => found[key]).map(([, label]) => label);
+  const keysOf = (found) => LABELS.filter(([key]) => found[key]).map(([key]) => key);
+  const labelFor = (key) => (LABELS.find(([k]) => k === key) || [])[1];
 
-  return { inspect, strip, describe };
+  return { inspect, strip, describe, keysOf, labelFor };
 })();
 
 if (typeof module !== "undefined") module.exports = KlinPhotoMetadata;

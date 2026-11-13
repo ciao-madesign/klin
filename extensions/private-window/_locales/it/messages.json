@@ -1,0 +1,53 @@
+{
+  "name": {
+    "message": "Klin Private Window"
+  },
+  "description": {
+    "message": "Sostituisce la pagina iniziale delle finestre private con la verità semplice su cosa una finestra privata nasconde e cosa no."
+  },
+  "p_title": {
+    "message": "Finestra privata"
+  },
+  "p_h1": {
+    "message": "Finestra privata"
+  },
+  "p_lead": {
+    "message": "Questo computer non ricorda cosa fai qui. ==Non ti rende invisibile.=="
+  },
+  "p_placeholder": {
+    "message": "Cerca o scrivi un indirizzo"
+  },
+  "p_search": {
+    "message": "Cerca"
+  },
+  "p_yes_h": {
+    "message": "Cosa fa"
+  },
+  "p_y1": {
+    "message": "Dimentica cronologia, cookie, dati dei moduli e file in cache quando chiudi la finestra."
+  },
+  "p_y2": {
+    "message": "Tiene separato ciò che fai qui dalle finestre normali."
+  },
+  "p_y3": {
+    "message": "Le protezioni di Klin restano attive: tracker bloccati, impronte ridotte."
+  },
+  "p_no_h": {
+    "message": "Cosa non nasconde"
+  },
+  "p_n1": {
+    "message": "**Il tuo provider**, e chi gestisce la rete Wi-Fi (casa, lavoro, scuola, bar): vedono ancora quali siti contatti."
+  },
+  "p_n2": {
+    "message": "**I siti che visiti**: vedono il tuo indirizzo IP e cosa fai al loro interno."
+  },
+  "p_n3": {
+    "message": "**I tuoi account**: quando accedi, il sito sa chi sei."
+  },
+  "p_n4": {
+    "message": "**Ciò che scarichi o salvi tra i preferiti**: resta su questo computer."
+  },
+  "p_next": {
+    "message": "Per vedere cosa può leggere di te un sito, aprilo e clicca **Cosa vede questo sito?** nella barra degli strumenti."
+  }
+}

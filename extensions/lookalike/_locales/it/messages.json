@@ -1,0 +1,41 @@
+{
+  "name": {
+    "message": "Klin Lookalike Warning"
+  },
+  "description": {
+    "message": "Ti avvisa prima di aprire un sito il cui nome imita uno che conosci già (preferiti e siti visitati spesso). Tutto in locale."
+  },
+  "l_title": {
+    "message": "Questo indirizzo imita un sito che conosci"
+  },
+  "l_h1": {
+    "message": "Questo indirizzo imita un sito che conosci."
+  },
+  "l_lead": {
+    "message": "Il nome è quasi uguale a uno che conosci. È un trucco comune per rubare password."
+  },
+  "l_opening": {
+    "message": "Stai aprendo"
+  },
+  "l_known": {
+    "message": "Conosci"
+  },
+  "l_reason_same_look": {
+    "message": "I due nomi sembrano uguali a colpo d'occhio, ma usano caratteri diversi (per esempio “rn” al posto di “m”, “0” al posto di “o”, o lettere di un altro alfabeto)."
+  },
+  "l_reason_one_letter": {
+    "message": "I due nomi differiscono per una sola lettera."
+  },
+  "l_go": {
+    "message": "Vai a {1}"
+  },
+  "l_back": {
+    "message": "Torna indietro"
+  },
+  "l_continue": {
+    "message": "Continua su {1}"
+  },
+  "l_note": {
+    "message": "Klin ha confrontato il nome con i tuoi preferiti e i siti che visiti spesso, solo su questo computer. Se continui, Klin non lo chiederà più per questo sito."
+  }
+}

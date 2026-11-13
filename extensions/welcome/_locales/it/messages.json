@@ -1,0 +1,125 @@
+{
+  "name": {
+    "message": "Klin Welcome"
+  },
+  "description": {
+    "message": "La pagina di presentazione di Klin: si apre una volta al primo avvio, e di nuovo dal pulsante info."
+  },
+  "title": {
+    "message": "Informazioni su Klin"
+  },
+  "w_title": {
+    "message": "Benvenuto in Klin"
+  },
+  "w_tagline": {
+    "message": "Libero. Indipendente. Tuo."
+  },
+  "w_lead": {
+    "message": "Un browser che lavora per te, non per gli inserzionisti. Libero, open source, locale. Nessun account, nessun cloud, nessuna telemetria. Costruito su Firefox, così riceve le sue correzioni di sicurezza."
+  },
+  "w_does_h": {
+    "message": "Cosa fa Klin per te"
+  },
+  "w_f1": {
+    "message": "**Rende il tracciamento più difficile.** Blocca pubblicità e tracker, tiene separati i cookie di ogni sito, disturba i segnali con cui i siti riconoscono il tuo dispositivo."
+  },
+  "w_f2": {
+    "message": "**Ti dice cosa succede.** Il registro mostra chi ha provato a raccogliere dati nella pagina in cui sei. Il test mostra cosa può leggere di te un sito. La pagina delle connessioni elenca ogni connessione che il browser fa da solo, e perché."
+  },
+  "w_f3": {
+    "message": "**Protegge ciò che condividi.** Ti avvisa prima di caricare una foto con la tua posizione e la ripulisce, se vuoi. Ti avvisa dei siti che imitano quelli che conosci."
+  },
+  "w_f4": {
+    "message": "**Toglie il rumore.** Niente scorciatoie sponsorizzate, niente consigli, niente promozioni, niente banner dei cookie di mezzo."
+  },
+  "w_f5": {
+    "message": "**Resta leggero.** Niente connessioni anticipate, niente riproduzione automatica, niente in background che tu non abbia chiesto."
+  },
+  "w_more": {
+    "message": "Klin e Greenweb: come si stima l'impronta della tua navigazione"
+  },
+  "w_not_h": {
+    "message": "Cosa Klin non fa"
+  },
+  "w_not1": {
+    "message": "==Klin non ti rende anonimo. Ti rende più difficile da seguire.== I siti vedono ancora il tuo indirizzo internet, e il tuo provider vede ancora quali siti contatti. Klin non può vedere cosa un sito registra sui propri server, e non può proteggere ciò che scegli di dare via."
+  },
+  "w_not2": {
+    "message": "Parte dal livello **Standard**, così i siti continuano a funzionare. Un livello più forte è a un clic, con qualche sito che può dare problemi."
+  },
+  "w_stand_h": {
+    "message": "Cosa difendiamo"
+  },
+  "w_values": {
+    "message": "Libertà, indipendenza, uguaglianza, fratellanza ed ecologia."
+  },
+  "w_values2": {
+    "message": "Klin ti lascia escludere le aziende, i paesi e le fonti che non vuoi. Non decide mai al posto tuo in segreto."
+  },
+  "w_foot1": {
+    "message": "Per rileggere questa pagina, clicca il pulsante **info** ⓘ nella barra degli strumenti."
+  },
+  "w_foot2": {
+    "message": "Questa pagina fa parte del browser. Non carica nulla da internet."
+  },
+  "g_title": {
+    "message": "Klin e Greenweb"
+  },
+  "g_mark": {
+    "message": "Klin e Greenweb"
+  },
+  "g_h1": {
+    "message": "Klin riduce. Greenweb misura."
+  },
+  "g_lead": {
+    "message": "Greenweb è una piccola estensione che stima l'energia, la CO₂, l'acqua e il costo elettrico dietro la tua navigazione. È il monitor di energia e carbonio di Klin, e un progetto separato che funziona anche in altri browser."
+  },
+  "g_each_h": {
+    "message": "Cosa fa ciascuno"
+  },
+  "g_each1": {
+    "message": "**Klin carica meno.** Blocca pubblicità e tracker, ferma la riproduzione automatica ed evita le connessioni che non hai chiesto. Meno dati spostati vuol dire meno energia usata."
+  },
+  "g_each2": {
+    "message": "**Greenweb conta ciò che arriva.** Per ogni sito annota il nome, la quantità di dati e il tempo che ci passi. Ne ricava una stima, mostrata come una foglia verde, gialla o rossa nella barra degli strumenti."
+  },
+  "g_fit_h": {
+    "message": "Come stanno insieme"
+  },
+  "g_fit1": {
+    "message": "Greenweb si aggiunge a Klin senza modifiche, come il blocco delle pubblicità. Tiene le proprie impostazioni e i propri dati, sul tuo dispositivo. Puoi rimuoverlo come qualsiasi estensione, e Klin continua a funzionare senza."
+  },
+  "g_fit2": {
+    "message": "Neanche Greenweb ha bisogno di Klin. Si può installare in Chrome, Edge, Brave e Firefox."
+  },
+  "g_fit3": {
+    "message": "Greenweb non è ancora incluso in questa versione di Klin. Finché non lo è, puoi aggiungerlo tu dalla sua pagina del progetto."
+  },
+  "g_not_h": {
+    "message": "Cosa Greenweb non fa"
+  },
+  "g_not1": {
+    "message": "==Greenweb non misura. Stima.== Un browser non può vedere cosa consumano i server di un sito, quindi ogni cifra è un intervallo con un livello di affidabilità, e la sua pagina Metodologia elenca ogni formula e fonte."
+  },
+  "g_not2": {
+    "message": "Non salva indirizzi web completi, contenuto delle pagine, cookie o password. Non fa connessioni proprie e non conta mai le finestre private."
+  },
+  "g_find_h": {
+    "message": "Dove trovare Greenweb"
+  },
+  "g_find1": {
+    "message": "Una volta installato, clicca la **foglia** nella barra degli strumenti per aprire la pagina di Greenweb, con le cifre di oggi. Questa pagina non può rimandarci direttamente, perché un'estensione non può aprire le pagine di un'altra."
+  },
+  "g_find2": {
+    "message": "La pagina del progetto Greenweb, con il codice sorgente e i passi di installazione:"
+  },
+  "g_opens": {
+    "message": "(apre un sito web)"
+  },
+  "g_back": {
+    "message": "Torna alla pagina di benvenuto"
+  },
+  "g_foot": {
+    "message": "Questa pagina fa parte del browser. Non carica nulla da internet. Il link a Greenweb contatta un sito solo se lo clicchi."
+  }
+}

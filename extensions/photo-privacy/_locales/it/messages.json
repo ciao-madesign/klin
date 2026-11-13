@@ -1,0 +1,65 @@
+{
+  "name": {
+    "message": "Klin Photo Privacy"
+  },
+  "description": {
+    "message": "Ti avvisa quando una foto che stai per caricare contiene la tua posizione o altri dati nascosti, e la ripulisce se vuoi. Tutto in locale."
+  },
+  "p_label": {
+    "message": "Privacy delle foto"
+  },
+  "p_title": {
+    "message": "Questa foto dice dove l'hai scattata."
+  },
+  "p_body_one": {
+    "message": "Dati nascosti in {1}. Chi la riceve può leggerli:"
+  },
+  "p_body_many": {
+    "message": "Dati nascosti in {1} foto. Chi le riceve può leggerli:"
+  },
+  "p_clean": {
+    "message": "Ripulisci e continua"
+  },
+  "p_keep": {
+    "message": "Lascia com'è"
+  },
+  "p_cancel": {
+    "message": "Annulla"
+  },
+  "p_note1": {
+    "message": "Ripulire non cambia l'immagine. Klin controlla le foto che scegli o trascini sulla pagina. Non quelle incollate. "
+  },
+  "p_note2": {
+    "message": "Non può sapere cosa fa un sito con una foto che tieni."
+  },
+  "p_removed": {
+    "message": "Klin ha tolto i dettagli nascosti ({1}) da {2}."
+  },
+  "p_n_photos": {
+    "message": "{1} foto"
+  },
+  "p_failed": {
+    "message": "Klin non ha potuto controllare questa foto, quindi è stata inviata così com'è."
+  },
+  "p_kind_location": {
+    "message": "posizione (GPS)"
+  },
+  "p_kind_device": {
+    "message": "modello della fotocamera o del telefono"
+  },
+  "p_kind_date": {
+    "message": "data e ora"
+  },
+  "p_kind_author": {
+    "message": "nome dell'autore o del proprietario"
+  },
+  "p_kind_serial": {
+    "message": "numero di serie del dispositivo"
+  },
+  "p_kind_software": {
+    "message": "software di modifica"
+  },
+  "p_kind_other": {
+    "message": "altri dati nascosti"
+  }
+}

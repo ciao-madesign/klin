@@ -1,0 +1,338 @@
+{
+  "name": {
+    "message": "Klin Connections"
+  },
+  "description": {
+    "message": "Shows every connection the browser makes by itself, why it exists and how to turn it off. Read-only, fully local."
+  },
+  "title": {
+    "message": "Klin connections"
+  },
+  "c_title": {
+    "message": "Klin connections"
+  },
+  "c_h1": {
+    "message": "Klin connections"
+  },
+  "c_lead": {
+    "message": "Every connection the browser makes on its own, without you opening a site: who receives it, why, and how to turn it off."
+  },
+  "c_filter": {
+    "message": "Filter connections"
+  },
+  "c_list": {
+    "message": "Connections"
+  },
+  "c_all": {
+    "message": "All"
+  },
+  "c_on": {
+    "message": "Active"
+  },
+  "c_off": {
+    "message": "Off"
+  },
+  "c_foot": {
+    "message": "This page shows Klin's default settings. If you changed a setting yourself in `about:config`, this page does not know. It makes no network requests."
+  },
+  "c_audit": {
+    "message": "Checked on Firefox {1} ({2}). {3} {4}"
+  },
+  "c_n_on": {
+    "message": "active in Klin"
+  },
+  "c_n_off": {
+    "message": "turned off by Klin"
+  },
+  "c_n_stock": {
+    "message": "active in stock Firefox"
+  },
+  "c_when_idle": {
+    "message": "In the background"
+  },
+  "c_when_browsing": {
+    "message": "While browsing"
+  },
+  "c_active": {
+    "message": "Active"
+  },
+  "c_offlabel": {
+    "message": "Off"
+  },
+  "c_absent": {
+    "message": "Not present"
+  },
+  "c_r_who": {
+    "message": "Who receives it"
+  },
+  "c_r_purpose": {
+    "message": "Purpose"
+  },
+  "c_r_sees": {
+    "message": "What it can see"
+  },
+  "c_r_decision": {
+    "message": "Klin's choice"
+  },
+  "c_r_ifoff": {
+    "message": "If you turn it off"
+  },
+  "c_r_lose": {
+    "message": "What you lose"
+  },
+  "c_r_change": {
+    "message": "How to change it"
+  },
+  "c_r_stock": {
+    "message": "In stock Firefox"
+  },
+  "c_r_checked": {
+    "message": "Checked by"
+  },
+  "c_ctl_pref": {
+    "message": "Preference in about:config"
+  },
+  "c_ctl_policy": {
+    "message": "Enterprise policy"
+  },
+  "c_ctl_ublock": {
+    "message": "uBlock Origin setting"
+  },
+  "c_ctl_none": {
+    "message": "No switch"
+  },
+  "c_ev_audit": {
+    "message": "Connection audit: seen (or confirmed absent) on the wire"
+  },
+  "c_ev_setting": {
+    "message": "Setting value only, not yet observed on the wire"
+  },
+  "c_loaderr": {
+    "message": "The connection list could not be loaded."
+  },
+  "e_remote_settings_purpose": {
+    "message": "Downloads security data: blocklists of harmful add-ons, certificate revocation data (CRLite), intermediate certificates."
+  },
+  "e_remote_settings_sees": {
+    "message": "Your IP address and when the browser checks for new data. Not the sites you visit."
+  },
+  "e_remote_settings_decision": {
+    "message": "Keep. Security data; Klin relies on CRLite instead of OCSP."
+  },
+  "e_remote_settings_ifOff": {
+    "message": "Revoked certificates and harmful add-ons would no longer be detected."
+  },
+  "e_remote_settings_note": {
+    "message": "No safe switch. Turning it off also disables certificate revocation checks."
+  },
+  "e_updates_purpose": {
+    "message": "Checks for and downloads new browser versions."
+  },
+  "e_updates_sees": {
+    "message": "Your IP address, browser version, operating system and language."
+  },
+  "e_updates_decision": {
+    "message": "Keep. Timely security updates are mandatory (specification 4.5)."
+  },
+  "e_updates_ifOff": {
+    "message": "Known security holes stay open until you update by hand."
+  },
+  "e_updates_note": {
+    "message": "Not recommended."
+  },
+  "e_safe_browsing_purpose": {
+    "message": "Downloads lists of known phishing and malware sites. Pages are checked against the local copy."
+  },
+  "e_safe_browsing_sees": {
+    "message": "Your IP address and when the lists are refreshed. Not the sites you visit."
+  },
+  "e_safe_browsing_decision": {
+    "message": "Keep, user-switchable (decided 13 Nov 2026). Google sees your IP address and when the lists refresh; checks against the lists happen on your machine."
+  },
+  "e_safe_browsing_ifOff": {
+    "message": "No warning on known phishing and malware pages."
+  },
+  "e_safe_browsing_note": {
+    "message": "Set all three to false."
+  },
+  "e_addon_updates_purpose": {
+    "message": "Checks installed extensions for updates and fetches their descriptions."
+  },
+  "e_addon_updates_sees": {
+    "message": "Your IP address and the list of installed extensions."
+  },
+  "e_addon_updates_decision": {
+    "message": "Keep while extensions are installed: extension updates are security updates."
+  },
+  "e_addon_updates_ifOff": {
+    "message": "Extensions, including the ad blocker, stop receiving fixes."
+  },
+  "e_addon_updates_note": {
+    "message": "Set both to false."
+  },
+  "e_amo_install_purpose": {
+    "message": "First start only: downloads uBlock Origin, as required by the Klin policy."
+  },
+  "e_amo_install_sees": {
+    "message": "Your IP address and that uBlock Origin is being installed."
+  },
+  "e_amo_install_decision": {
+    "message": "Remove by bundling uBlock Origin in the build."
+  },
+  "e_amo_install_ifOff": {
+    "message": "No ad and tracker blocking until uBlock Origin is installed another way."
+  },
+  "e_amo_install_note": {
+    "message": "Goes away once uBlock Origin ships inside Klin."
+  },
+  "e_ubo_lists_purpose": {
+    "message": "Updates the lists of ads, trackers, malware domains and cookie banners to block or hide."
+  },
+  "e_ubo_lists_sees": {
+    "message": "Your IP address and when the lists are refreshed. Not the sites you visit."
+  },
+  "e_ubo_lists_decision": {
+    "message": "Keep. Blocking quality depends on fresh lists (specification 4.2)."
+  },
+  "e_ubo_lists_ifOff": {
+    "message": "Blocking slowly gets worse as lists age."
+  },
+  "e_ubo_lists_note": {
+    "message": "In the uBlock Origin dashboard. The cookie-notice lists are switched on by Klin's policy and are not bundled: they are only downloaded."
+  },
+  "e_push_purpose": {
+    "message": "Keeps a permanent connection open so sites can send notifications while closed."
+  },
+  "e_push_sees": {
+    "message": "Your IP address, all the time the browser is running."
+  },
+  "e_push_decision": {
+    "message": "Disabled. A permanent background connection is against low impact."
+  },
+  "e_push_ifOff": {
+    "message": "Sites cannot send push notifications."
+  },
+  "e_push_note": {
+    "message": "Set both to true to re-enable."
+  },
+  "e_region_purpose": {
+    "message": "Guesses your country to choose regional defaults such as the search engine."
+  },
+  "e_region_sees": {
+    "message": "Your IP address, from which the country is derived."
+  },
+  "e_region_decision": {
+    "message": "Disabled. Not needed."
+  },
+  "e_region_ifOff": {
+    "message": "Regional defaults are not adjusted automatically."
+  },
+  "e_region_note": {
+    "message": "Set the first to true and reset the second to re-enable."
+  },
+  "e_captive_portal_purpose": {
+    "message": "Pings a test page to detect Wi-Fi login pages (hotels, trains) and whether the network works."
+  },
+  "e_captive_portal_sees": {
+    "message": "Your IP address, repeatedly, on every network you join."
+  },
+  "e_captive_portal_decision": {
+    "message": "Disabled. Recurring background pings."
+  },
+  "e_captive_portal_ifOff": {
+    "message": "Public Wi-Fi login pages are not opened automatically; open any http page to reach them."
+  },
+  "e_captive_portal_note": {
+    "message": "Set both to true to re-enable."
+  },
+  "e_openh264_purpose": {
+    "message": "Downloads a video codec used for H.264 in video calls."
+  },
+  "e_openh264_sees": {
+    "message": "Your IP address."
+  },
+  "e_openh264_decision": {
+    "message": "Disabled. Third-party binary download."
+  },
+  "e_openh264_ifOff": {
+    "message": "Video calls that only offer H.264 may not work. Normal video playback is not affected."
+  },
+  "e_openh264_note": {
+    "message": "Set to true to re-enable."
+  },
+  "e_accounts_purpose": {
+    "message": "Sign-in and synchronisation through a Mozilla account."
+  },
+  "e_accounts_sees": {
+    "message": "Your IP address and, when signed in, your account."
+  },
+  "e_accounts_decision": {
+    "message": "Disabled. Klin has no accounts (specification 2)."
+  },
+  "e_accounts_ifOff": {
+    "message": "No Firefox Sync."
+  },
+  "e_accounts_note": {
+    "message": "Also locked by the DisableFirefoxAccounts policy."
+  },
+  "e_ocsp_purpose": {
+    "message": "Asks the authority that issued a site's certificate whether it has been revoked."
+  },
+  "e_ocsp_sees": {
+    "message": "Your IP address and which site you are opening, usually over unencrypted HTTP."
+  },
+  "e_ocsp_decision": {
+    "message": "Disabled. Revocation is checked locally with CRLite."
+  },
+  "e_ocsp_ifOff": {
+    "message": "A certificate not covered by CRLite gets no revocation check."
+  },
+  "e_ocsp_note": {
+    "message": "Set to 1 to re-enable."
+  },
+  "e_search_suggestions_purpose": {
+    "message": "Sends what you type in the address bar to the search engine to show suggestions, and asks it for trending searches when you click the bar."
+  },
+  "e_search_suggestions_sees": {
+    "message": "Your IP address and every character typed, before you press Enter."
+  },
+  "e_search_suggestions_decision": {
+    "message": "Disabled. Nothing is sent until you search."
+  },
+  "e_search_suggestions_ifOff": {
+    "message": "No suggestions from the search engine while typing."
+  },
+  "e_search_suggestions_note": {
+    "message": "Set both to true to re-enable."
+  },
+  "e_speculative_purpose": {
+    "message": "Connects in advance to sites you might open next, to save a moment if you do."
+  },
+  "e_speculative_sees": {
+    "message": "Your IP address, on sites you never chose to visit."
+  },
+  "e_speculative_decision": {
+    "message": "Disabled. Wasted traffic and energy (specification 4.3)."
+  },
+  "e_speculative_ifOff": {
+    "message": "The first load of a new site can be slightly slower."
+  },
+  "e_speculative_note": {
+    "message": "See config/prefs/klin.js for the Klin values."
+  },
+  "e_promo_services_purpose": {
+    "message": "Fetches sponsored shortcuts, recommended articles, add-on recommendations and VPN promotions, and downloads models for Firefox's own on-device AI features."
+  },
+  "e_promo_services_sees": {
+    "message": "Your IP address and that you opened a new tab or the add-ons page."
+  },
+  "e_promo_services_decision": {
+    "message": "Disabled. Klin shows no advertising or sponsored content (specification 6); its AI is opt-in and uses local Ollama (specification 4.8)."
+  },
+  "e_promo_services_ifOff": {
+    "message": "No sponsored or recommended content, no Firefox AI features such as smart tab groups."
+  },
+  "e_promo_services_note": {
+    "message": "Set to true to re-enable. Destinations beyond contile.services.mozilla.com not yet confirmed on the wire."
+  }
+}

@@ -3,28 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Klin connections</title>
+<title data-i18n="c_title">Klin connections</title>
+<link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <main>
   <header>
-    <h1>Klin connections</h1>
-    <p class="lead">Every connection the browser makes on its own, without you opening a site: who receives it, why, and how to turn it off.</p>
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1 data-i18n="c_h1">Klin connections</h1>
+    <p class="lead" data-i18n="c_lead">Every connection the browser makes on its own, without you opening a site: who receives it, why, and how to turn it off.</p>
     <div id="summary" class="summary" aria-live="polite"></div>
   </header>
 
-  <div class="filters" role="group" aria-label="Filter connections">
-    <button type="button" data-filter="all" aria-pressed="true">All</button>
-    <button type="button" data-filter="on" aria-pressed="false">Active</button>
-    <button type="button" data-filter="off" aria-pressed="false">Off</button>
+  <div class="filters" role="group" aria-label="Filter connections" data-i18n-attr="aria-label:c_filter">
+    <button class="btn" type="button" data-filter="all" aria-pressed="true" data-i18n="c_all">All</button>
+    <button class="btn" type="button" data-filter="on" aria-pressed="false" data-i18n="c_on">Active</button>
+    <button class="btn" type="button" data-filter="off" aria-pressed="false" data-i18n="c_off">Off</button>
   </div>
 
-  <section id="list" aria-label="Connections"></section>
+  <section id="list" aria-label="Connections" data-i18n-attr="aria-label:c_list"></section>
 
   <footer>
     <p id="audit"></p>
-    <p>This page shows Klin's default settings. If you changed a setting yourself in <code>about:config</code>, this page does not know. It makes no network requests.</p>
+    <p data-i18n="c_foot">This page shows Klin's default settings. If you changed a setting yourself in <code>about:config</code>, this page does not know. It makes no network requests.</p>
   </footer>
 </main>
 <script src="page.js"></script>

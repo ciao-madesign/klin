@@ -35,40 +35,31 @@ These are already in force in the project; the charter makes them binding.
 - **The user decides.** Klin states, the user chooses. Defaults are explained and can be changed. The default level is Standard.
 - **Order of priority.** Privacy first, then low impact, then security. When they conflict, privacy wins and the cost (energy, speed) is declared.
 - **Open source.** Code and documentation are public, with licences checked before any component is included.
-- **Free expression.** Klin may label and down-rank a source, with a reason the user can read. It never silently hides or blocks one.
+- **Free expression.** Klin may label or down-rank a source only through a third-party list the user turned on, with the reason shown. It never silently hides or blocks one, and it is not the author of the lists.
 
 ## 4. Lists and flags (P33, P34, P35)
 Applies to every list that labels or ranks sources: source quality, the ethics list, entity data.
 
-### 4.1 What an entry must have
-- **What it is:** the site, company or organisation, named exactly.
-- **The criterion** it meets, taken from a published criterion, not from opinion.
-- **The source** of each fact, with a date, so anyone can check it.
-- **Where it came from:** the public list it was adapted from, and that list's licence.
-- **Who proposed it, who reviewed it, and when.**
+### 4.1 Klin is not the censor
+Klin does not write these lists, review their entries or decide what is true or acceptable. It uses **public lists made by third parties, as published and unchanged**. What a list says is that list's judgement, not Klin's.
 
-### 4.2 What an entry may not be
-- A judgement that cannot be checked. Entries are limited to documented, verifiable facts. A wrong label can be defamation, so unverifiable claims stay out.
-- About a private person. **[to confirm]**: entries cover organisations, companies and sites, not individuals.
-- A silent block. A flagged source is labelled and, if ranked lower, the user sees that and why.
+### 4.2 What the user sees and controls
+- **The user chooses** which lists are on, can add any other public list, and can turn all of them off.
+- **Every flag says where it comes from:** the name of the list, who maintains it, its own published criterion and a link. It is collapsed by default and one click away (`STYLE.md`, section 3).
+- **A flag labels. It never hides or blocks.** If a result is ranked lower because of a list the user turned on, the user sees that and why.
+- **Nothing is on without the user knowing what it is.** Which lists, if any, are on by default is the owner's decision. **[to confirm]**
 
-### 4.3 Who maintains the lists **[to confirm]**
-Proposal: the maintainers named in the repository review changes in public, in the open issue tracker. A new entry or a removal needs **two reviewers** who did not propose it. Until a wider group exists, the owner is the final reviewer. The names of reviewers are public.
+### 4.3 What Klin checks, and what it does not
+Klin offers a catalogue of lists and checks only technical things: the list is public, its licence allows use, the format can be read, a maintainer is named. It does not judge the content. **[to confirm]** Anyone can ask for a list to be added by opening a public issue.
+- Klin records the origin, licence, version and date of every list it offers.
+- Lists are downloaded only from the maintainers' own published location, and only if the user has turned the update on. Klin does not copy them to a server of its own: it runs none. Any new download is a network connection and needs its own written decision (ADR).
 
-### 4.4 How an entry is challenged **[to confirm]**
-- Anyone can challenge an entry by opening a public issue that names the entry. No account on any Klin service is needed, because there is none.
-- The challenge is answered in public, with the criterion and the source, **within 30 days**.
-- If the criterion or the source cannot be shown, the entry is removed. A removed entry is recorded in the change log with the reason.
-- An entry is rechecked **every 12 months**, or sooner if challenged.
-
-### 4.5 What the user can always do
-- See the flag, its criterion and its source, collapsed by default and one click away (`STYLE.md`, section 3).
-- Switch a list off, or edit it locally.
-- Export the lists. Every change is versioned and public.
+### 4.4 Mistakes and objections
+A wrong or unfair entry is the list maintainer's to fix. The flag shows who that is and where to write. Klin does not arbitrate between a list and the people it names. The user can switch the list off at any time.
 
 ## 5. What the charter does not do
-- It does not promise that every list is complete or that every source is judged correctly.
-- It does not make Klin a censor. It never blocks reading, it labels.
+- It does not promise that any list is complete or that any source is judged correctly: the lists are third-party and Klin does not vouch for them.
+- It does not make Klin a censor and it does not decide what is acceptable. It never blocks reading; at most it shows what a list the user chose says.
 - It does not claim that open source means safe: security depends on configuration and maintenance.
 - It does not cover Greenweb, which is a separate project with its own principles, even though the two share the same ideas about local data and honest numbers.
 
@@ -77,7 +68,6 @@ Until a wider governance exists, only the owner approves a change. Every change 
 
 ## 7. Open decisions for the owner
 1. Approve or edit this draft, and say what goes into public text beyond the line of section 2.
-2. Reviewers and the final say on lists (section 4.3).
-3. Time limits for answering challenges and rechecking entries (section 4.4): 30 days and 12 months are proposals.
-4. Whether entries about individuals are allowed (section 4.2): the draft says no.
-5. Candidate public lists to start from, with their licences: still to survey (legal bans, media-ownership and independence observatories).
+2. Which lists, if any, are on by default (section 4.2).
+3. Whether the catalogue of lists is limited to the technical checks of section 4.3, as proposed.
+4. Candidate public lists to offer, with their licences: still to survey (legal bans, media-ownership and independence observatories).

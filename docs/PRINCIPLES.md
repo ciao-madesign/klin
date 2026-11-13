@@ -25,7 +25,7 @@ Appendix B (registry, requests under GDPR art. 15/17/21, monitoring) and the "cl
 Search Intelligence (Appendix A) specifies sponsored-result filtering, objective ranking and source diversification; Klin's own suggestions and sponsored content are now off (P21). Nothing of Search Intelligence is built. Open: who decides what counts as honest and independent. → P34 (source-quality data, open criteria).
 
 ## 7. Penalise sources tied to unacceptable spheres (e.g. neo-fascist organisations) — **Gap**
-→ P35. Design constraints, to keep this consistent with free expression: labelled and down-ranked, never silently hidden or blocked; every entry has a published criterion, sources and an appeal path; lists are public, versioned and user-editable; entries are limited to documented, verifiable facts (a wrong label is a defamation risk).
+→ P35. Design constraints, to keep this consistent with free expression: Klin writes no list and judges no source. It uses public lists made by third parties, as published and unchanged; the user chooses which are on; a flag is labelled with the list that made it and its criterion, never silently hidden or blocked, and can be switched off; objections go to the list's maintainer, not to Klin (updated 13 Nov 2026, owner).
 
 ## 8. Ethical approach, low ecological impact — **Partial**
 Speculative traffic, autoplay and Firefox's own promotion are off. The traffic/energy monitor and the baseline against stock Firefox are not done (Phase 0 "to do", Phase 2). → P9–P13.
@@ -43,7 +43,7 @@ The specification lists technical priorities, not values. → P36 (charter and g
 ## Decisions (13 Nov 2026, project owner)
 1. **Default level: Standard.** Advanced (`resistFingerprinting`) and Anonymous stay one click away. Consequence to state openly: Klin is not anonymous by default, it makes tracking harder; the dashboard must show the current level and what it does not hide (P29).
 2. **Priority order: privacy first, then low impact, then security.** When they conflict privacy wins, and the cost (energy, speed) is declared. Specification section 1 updated.
-3. **Ethics and source-quality lists start from existing public third-party lists, adapted.** Every entry records where it came from, the published criterion and its source; licences are checked before use; entries are labelled and down-ranked, never hidden. The charter (P36) still has to define who reviews changes and how entries are challenged.
+3. **Ethics and source-quality lists are third-party public lists, used as published. Klin does not curate them and is not the censor** (revised by the owner, 13 Nov 2026; replaces "adapted"). The user chooses which lists are on and can add others. Every flag shows the list that made it, its criterion and where to object. Licences are checked before use. Flags are labels, never a block or a hidden result.
 4. **Decoy traffic: opt-in only, off by default**, with its energy cost shown. Rotation and separation come first (P31). No ad-click automation.
 5. **Safe Browsing: kept on, explained and switchable.** The connections page says what Google can see; a real switch comes with its step 3.
 6. **Firefox's own AI features stay off.** Klin's AI is opt-in and uses local Ollama.

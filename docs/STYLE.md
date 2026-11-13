@@ -51,5 +51,18 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - **"Free. Independent. Yours."** / Italian: **"Libero. Indipendente. Tuo."**
 - The old line "Privacy first. Low impact. Local intelligence." stays only as a small technical description where Klin must be explained.
 
-### 5.2 and colours: under review (13 Nov 2026)
-The owner asked to revisit the logo (more personal: independence and rebellion, still minimal) and the colours (the red-orange accent is too close to Claude's identity). Sections 5.2 and the accent colour above are **provisional until the review ends**.
+### 5.4 Colour (decided 13 Nov 2026; replaces the red-orange of 5.1)
+The owner found red-orange too close to Claude's identity. Chosen accent: **acid lime**. Mock-up: `docs/style/colori.html`, option B.
+
+| Token | Dark (default) | Light |
+|---|---|---|
+| Background | `#0e0e10` | `#f1f1ec` |
+| Surface (cards) | `#18181b` | `#ffffff` |
+| Text | `#f1f1ec` | `#0e0e10` |
+| Accent | `#d4ff2a` | `#4a6600` (olive, for text, lines, markers) |
+| Text on accent fill | `#0e0e10` | `#ffffff` on olive fill; `#0e0e10` on lime fill |
+
+Contrast measured: accent on background 16.7:1 (dark), 5.8:1 (light); all pass WCAG AA (4.5:1). Rule: **red is reserved for real errors and dangers**, never decoration. Avoid orange and terracotta anywhere (identity clash).
+
+### 5.2 Logo: under review (13 Nov 2026)
+The first logo (torn square, red-orange) is withdrawn. The owner wants something more personal that says independence and rebellion, still minimal. New directions are being compared in `docs/style/logo2.html`.

@@ -25,6 +25,7 @@ Goal: prototype and final decision on the technical base.
 - uBlock adds connections to filter-list hosts (see `CONNECTIONS.md`). Decision: keep updates enabled.
 - Manifest V2: uBlock Origin stays on MV2 in Firefox, which Mozilla still supports; this is a long-term risk to track.
 - **Canvas fingerprinting: upstream default is not enough; fixed by one pref.** `privacy.fingerprintingProtection=true` left canvas pixel read-out exact, because the default `EfficientCanvasRandomization` target overrides real noise. Klin now sets `privacy.fingerprintingProtection.overrides="-EfficientCanvasRandomization"`; verified with `tests/acceptance/self-test`. Details in `PROPOSALS.md` (P7 finding and fix). Test pages must be opened under a real-looking host name, not 127.0.0.1.
+- **Firefox's own advertising and AI features** (sponsored tiles, trending searches, recommendations, VPN promo, `browser.ml.*`) were still on with Klin's earlier prefs; switched off (P21), values verified, wire behaviour to be confirmed in a browsing-time audit.
 
 ## Next
 WebExtensions tests, the audit during real browsing, the baseline measurements, the Ollama check.

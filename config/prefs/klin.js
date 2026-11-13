@@ -59,3 +59,15 @@ pref("security.OCSP.enabled", 0);                              // P5: no OCSP lo
 pref("pdfjs.enableScripting", false);                          // P16: no JavaScript inside PDFs
 pref("media.peerconnection.ice.default_address_only", true);   // WebRTC: do not expose extra local/VPN-bypassing addresses
 pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true); // WebRTC: never bypass a configured proxy
+
+// --- Firefox's own advertising, promotion and built-in AI (proposal P21), verified on Firefox 160.0 ---
+pref("browser.topsites.contile.enabled", false);                      // sponsored tiles fetched from Mozilla
+pref("browser.urlbar.suggest.trending", false);                       // "trending searches": sends a request to the search engine
+pref("browser.urlbar.trending.featureGate", false);
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false); // recommended articles
+pref("browser.vpn_promo.enabled", false);                             // VPN advertising
+pref("extensions.htmlaboutaddons.recommendations.enabled", false);    // add-on recommendations (contact AMO)
+pref("browser.search.serpEventTelemetryCategorization.enabled", false); // classifies search result pages
+pref("browser.ml.enable", false);                                     // Firefox's own on-device AI: downloads models from Mozilla.
+pref("browser.ml.chat.enabled", false);                               // Klin's AI is opt-in and uses local Ollama (spec 4.8)
+pref("browser.tabs.groups.smart.enabled", false);

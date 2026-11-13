@@ -21,8 +21,9 @@ The table is generated from `extensions/connections/data/connections.json`, the 
 | OpenH264 codec download | ciscobinary.openh264.org | idle | yes | **no** | Downloads a video codec used for H.264 in video calls. | Disabled. Third-party binary download. |
 | Firefox Accounts and Sync | accounts.firefox.com | idle | yes | **no** | Sign-in and synchronisation through a Mozilla account. | Disabled. Klin has no accounts (specification 2). |
 | Certificate status lookups (OCSP) | the certificate authority of each site | browsing | yes | **no** | Asks the authority that issued a site's certificate whether it has been revoked. | Disabled. Revocation is checked locally with CRLite. |
-| Search suggestions | your default search engine | browsing | yes | **no** | Sends what you type in the address bar to the search engine to show suggestions. | Disabled. Nothing is sent until you search. |
+| Search suggestions and trending searches | your default search engine | browsing | yes | **no** | Sends what you type in the address bar to the search engine to show suggestions, and asks it for trending searches when you click the bar. | Disabled. Nothing is sent until you search. |
 | Speculative connections | sites linked from the page or guessed from typing | browsing | yes | **no** | Connects in advance to sites you might open next, to save a moment if you do. | Disabled. Wasted traffic and energy (specification 4.3). |
+| Sponsored tiles, recommendations and built-in AI downloads | contile.services.mozilla.com (sponsored tiles), Mozilla content and model servers | browsing | yes | **no** | Fetches sponsored shortcuts, recommended articles, add-on recommendations and VPN promotions, and downloads models for Firefox's own on-device AI features. | Disabled. Klin shows no advertising or sponsored content (specification 6); its AI is opt-in and uses local Ollama (specification 4.8). |
 <!-- connections:end -->
 
 Remote Settings also has a backup host (firefox-settings.mozilla-backup.org), contacted by stock Firefox in the audit but not by Klin.

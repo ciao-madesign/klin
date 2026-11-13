@@ -104,6 +104,21 @@ class Firefox:
     def handles(self):
         return self.cmd("WebDriver:GetWindowHandles")
 
+    def find(self, css):
+        return self.cmd("WebDriver:FindElement", {"using": "css selector", "value": css})
+
+    def send_keys(self, element, text):
+        """Types into an element; for a file input, `text` is the path(s) to attach (newline-separated)."""
+        self.cmd("WebDriver:ElementSendKeys", {"id": next(iter(element.values())), "text": text})
+
+    ENTER, TAB, ESCAPE = "\ue007", "\ue004", "\ue00c"
+
+    def press(self, *keys):
+        actions = []
+        for key in keys:
+            actions += [{"type": "keyDown", "value": key}, {"type": "keyUp", "value": key}]
+        self.cmd("WebDriver:PerformActions", {"actions": [{"type": "key", "id": "keyboard", "actions": actions}]})
+
     def navigate(self, url):
         self.cmd("WebDriver:Navigate", {"url": url})
 

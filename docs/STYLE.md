@@ -53,7 +53,7 @@ Feature names stay in English as product names ("Klin Self-test") and get a plai
 ## 5. Visual identity
 
 ### 5.1 Direction
-**"Manifesto"**: strong contrast, one acid accent colour, sharp shapes, short heavy titles. **Dark mode is the default**; light mode follows the same tokens; "follow the system" is an option. Mock-up: `docs/style/direzioni.html` (option A, with its original red-orange accent replaced, see 5.3).
+**"Manifesto"**: strong contrast, one acid accent colour, sharp shapes, short heavy titles. **Dark mode is the default** for everyone. Decided 13 Nov 2026: the user can choose **Dark, Light or Same as the system** in a settings page (Italian: Scuro, Chiaro, Come il sistema). Until that page exists, every screen stays dark. Light mode follows the same tokens (`data-theme="light"` or `"system"` in `klin.css`). Mock-up: `docs/style/direzioni.html` (option A, with its original red-orange accent replaced, see 5.3).
 
 ### 5.2 Logo
 History: a torn square, a K, an open globe, a dissolving globe, a circle with a bar and a mask were compared (`docs/style/logo.html` to `logo5.html`). Chosen: **a disc with an eye slit**, a stylised ninja mask: the idea of "not traceable".

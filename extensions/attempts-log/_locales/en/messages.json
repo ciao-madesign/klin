@@ -43,5 +43,98 @@
   },
   "a_own": {
     "message": "this site"
+  },
+  "al_sent_bg": {
+    "message": "sent data in the background ({1})"
+  },
+  "al_tracker_nb": {
+    "message": "{1}, not blocked"
+  },
+  "al_cookie": {
+    "message": "tried to set a cookie (kept apart for this site only)"
+  },
+  "al_blocked": {
+    "message": "blocked {1} ({2})"
+  },
+  "al_api_canvas_read": {
+    "message": "read pixels from a hidden drawing (canvas fingerprint)"
+  },
+  "al_api_graphics_card": {
+    "message": "asked which graphics card you have"
+  },
+  "al_api_audio_probe": {
+    "message": "ran an audio test that identifies the device"
+  },
+  "al_type_image": {
+    "message": "image"
+  },
+  "al_type_imageset": {
+    "message": "imageset"
+  },
+  "al_type_script": {
+    "message": "script"
+  },
+  "al_type_stylesheet": {
+    "message": "stylesheet"
+  },
+  "al_type_sub_frame": {
+    "message": "sub_frame"
+  },
+  "al_type_xmlhttprequest": {
+    "message": "xmlhttprequest"
+  },
+  "al_type_font": {
+    "message": "font"
+  },
+  "al_type_media": {
+    "message": "media"
+  },
+  "al_type_object": {
+    "message": "object"
+  },
+  "al_type_websocket": {
+    "message": "websocket"
+  },
+  "al_type_ping": {
+    "message": "ping"
+  },
+  "al_type_beacon": {
+    "message": "beacon"
+  },
+  "al_type_csp_report": {
+    "message": "csp_report"
+  },
+  "al_type_speculative": {
+    "message": "speculative"
+  },
+  "al_type_other": {
+    "message": "other"
+  },
+  "al_lbl_content_blocker": {
+    "message": "content blocker"
+  },
+  "al_lbl_tracker": {
+    "message": "tracker"
+  },
+  "al_lbl_social_tracker": {
+    "message": "social tracker"
+  },
+  "al_lbl_email_tracker": {
+    "message": "email tracker"
+  },
+  "al_lbl_fingerprinting": {
+    "message": "fingerprinting"
+  },
+  "al_lbl_cryptominer": {
+    "message": "cryptominer"
+  },
+  "al_lbl_advertising_tracker": {
+    "message": "advertising tracker"
+  },
+  "al_lbl_analytics_tracker": {
+    "message": "analytics tracker"
+  },
+  "al_lbl_tracking_content": {
+    "message": "tracking content"
   }
 }

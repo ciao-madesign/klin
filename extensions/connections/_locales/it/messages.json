@@ -110,6 +110,12 @@
   "c_loaderr": {
     "message": "Impossibile caricare l'elenco delle connessioni."
   },
+  "c_audit_method": {
+    "message": "Profilo nuovo e inattivo, ogni richiesta registrata e rifiutata da un proxy locale (tests/baseline/connection-audit)."
+  },
+  "c_audit_limits": {
+    "message": "Le voci segnate 'pref' non sono state viste nella verifica a riposo: sono connessioni che avvengono mentre navighi, spente da una preferenza il cui valore è stato verificato, non dalla loro assenza sulla rete."
+  },
   "e_remote_settings_purpose": {
     "message": "Scarica dati di sicurezza: elenchi di estensioni dannose, dati sui certificati revocati (CRLite), certificati intermedi."
   },
@@ -124,6 +130,9 @@
   },
   "e_remote_settings_note": {
     "message": "Nessun interruttore sicuro. Spegnerla disattiva anche il controllo dei certificati revocati."
+  },
+  "e_remote_settings_name": {
+    "message": "Remote Settings (dati di sicurezza)"
   },
   "e_updates_purpose": {
     "message": "Cerca e scarica le nuove versioni del browser."
@@ -140,6 +149,9 @@
   "e_updates_note": {
     "message": "Sconsigliato."
   },
+  "e_updates_name": {
+    "message": "Aggiornamenti del browser"
+  },
   "e_safe_browsing_purpose": {
     "message": "Scarica gli elenchi dei siti di phishing e malware noti. Le pagine vengono controllate con la copia locale."
   },
@@ -154,6 +166,9 @@
   },
   "e_safe_browsing_note": {
     "message": "Imposta tutte e tre su false."
+  },
+  "e_safe_browsing_name": {
+    "message": "Elenchi Safe Browsing"
   },
   "e_addon_updates_purpose": {
     "message": "Controlla gli aggiornamenti delle estensioni installate e scarica le loro descrizioni."
@@ -170,6 +185,9 @@
   "e_addon_updates_note": {
     "message": "Imposta entrambe su false."
   },
+  "e_addon_updates_name": {
+    "message": "Dati e aggiornamenti delle estensioni"
+  },
   "e_amo_install_purpose": {
     "message": "Solo al primo avvio: scarica uBlock Origin, come richiede il criterio di Klin."
   },
@@ -184,6 +202,9 @@
   },
   "e_amo_install_note": {
     "message": "Sparisce quando uBlock Origin è incluso in Klin."
+  },
+  "e_amo_install_name": {
+    "message": "Download di uBlock Origin"
   },
   "e_ubo_lists_purpose": {
     "message": "Aggiorna gli elenchi di pubblicità, tracker, domini di malware e banner dei cookie da bloccare o nascondere."
@@ -200,6 +221,12 @@
   "e_ubo_lists_note": {
     "message": "Nel pannello di uBlock Origin. Gli elenchi dei banner dei cookie sono attivati dal criterio di Klin e non sono inclusi: vengono solo scaricati."
   },
+  "e_ubo_lists_name": {
+    "message": "Elenchi di filtri di uBlock Origin"
+  },
+  "e_ubo_lists_operator": {
+    "message": "Il progetto uBlock Origin e chi cura gli elenchi (ospitati su GitHub, Cloudflare, jsDelivr, GitLab)"
+  },
   "e_push_purpose": {
     "message": "Tiene aperta una connessione permanente, così i siti possono inviare notifiche anche a browser chiuso."
   },
@@ -214,6 +241,9 @@
   },
   "e_push_note": {
     "message": "Imposta entrambe su true per riattivarla."
+  },
+  "e_push_name": {
+    "message": "Web Push"
   },
   "e_region_purpose": {
     "message": "Indovina il tuo paese per scegliere impostazioni regionali, come il motore di ricerca."
@@ -230,6 +260,9 @@
   "e_region_note": {
     "message": "Imposta la prima su true e riporta la seconda al valore iniziale per riattivarla."
   },
+  "e_region_name": {
+    "message": "Rilevamento del paese"
+  },
   "e_captive_portal_purpose": {
     "message": "Contatta una pagina di prova per riconoscere le pagine di accesso al Wi-Fi (hotel, treni) e capire se la rete funziona."
   },
@@ -244,6 +277,9 @@
   },
   "e_captive_portal_note": {
     "message": "Imposta entrambe su true per riattivarla."
+  },
+  "e_captive_portal_name": {
+    "message": "Pagine di accesso Wi-Fi e controlli di connessione"
   },
   "e_openh264_purpose": {
     "message": "Scarica un codec video usato per l'H.264 nelle videochiamate."
@@ -260,6 +296,9 @@
   "e_openh264_note": {
     "message": "Imposta su true per riattivarla."
   },
+  "e_openh264_name": {
+    "message": "Download del codec OpenH264"
+  },
   "e_accounts_purpose": {
     "message": "Accesso e sincronizzazione tramite un account Mozilla."
   },
@@ -274,6 +313,9 @@
   },
   "e_accounts_note": {
     "message": "Bloccata anche dal criterio DisableFirefoxAccounts."
+  },
+  "e_accounts_name": {
+    "message": "Account Firefox e Sync"
   },
   "e_ocsp_purpose": {
     "message": "Chiede all'autorità che ha emesso il certificato di un sito se è stato revocato."
@@ -290,6 +332,12 @@
   "e_ocsp_note": {
     "message": "Imposta su 1 per riattivarla."
   },
+  "e_ocsp_name": {
+    "message": "Controlli dello stato dei certificati (OCSP)"
+  },
+  "e_ocsp_operator": {
+    "message": "Le autorità di certificazione"
+  },
   "e_search_suggestions_purpose": {
     "message": "Invia al motore di ricerca ciò che scrivi nella barra degli indirizzi per mostrare suggerimenti, e gli chiede le ricerche di tendenza quando clicchi la barra."
   },
@@ -304,6 +352,12 @@
   },
   "e_search_suggestions_note": {
     "message": "Imposta entrambe su true per riattivarla."
+  },
+  "e_search_suggestions_name": {
+    "message": "Suggerimenti di ricerca e ricerche di tendenza"
+  },
+  "e_search_suggestions_operator": {
+    "message": "Il motore di ricerca"
   },
   "e_speculative_purpose": {
     "message": "Si collega in anticipo ai siti che potresti aprire dopo, per risparmiare un attimo se lo fai."
@@ -320,6 +374,12 @@
   "e_speculative_note": {
     "message": "Vedi config/prefs/klin.js per i valori di Klin."
   },
+  "e_speculative_name": {
+    "message": "Connessioni anticipate"
+  },
+  "e_speculative_operator": {
+    "message": "Un sito qualsiasi"
+  },
   "e_promo_services_purpose": {
     "message": "Scarica scorciatoie sponsorizzate, articoli consigliati, consigli sulle estensioni e promozioni di VPN, e scarica i modelli delle funzioni di intelligenza artificiale integrate di Firefox."
   },
@@ -334,5 +394,8 @@
   },
   "e_promo_services_note": {
     "message": "Imposta su true per riattivarla. Le destinazioni oltre contile.services.mozilla.com non sono ancora confermate sulla rete."
+  },
+  "e_promo_services_name": {
+    "message": "Contenuti sponsorizzati, consigli e download di IA integrata"
   }
 }

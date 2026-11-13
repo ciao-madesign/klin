@@ -5,6 +5,15 @@ const GROUPS = [
   { kinds: ["blocked"], key: "a_g_blocked", title: "Blocked" },
   { kinds: ["limited", "tracker", "sent", "fingerprint"], key: "a_g_other", title: "Not blocked: limited or only observed" },
 ];
+const slug = (text) => String(text).toLowerCase().replace(/[^a-z]+/g, "_");
+// The log keeps an English line (what) and, when it has one, a message code with arguments: show it in the user's language.
+function describe(e) {
+  if (!e.code) return e.what;
+  const args = e.args || [];
+  if (e.code === "blocked") return t("al_blocked", e.what, t("al_type_" + slug(args[0]), args[0]), t("al_lbl_" + slug(args[1]), args[1]));
+  if (e.code === "tracker_nb") return t("al_tracker_nb", e.what, t("al_lbl_" + slug(args[0]), args[0]));
+  return t("al_" + e.code, e.what, ...args);
+}
 const el = (tag, props = {}, kids = []) => { const n = Object.assign(document.createElement(tag), props); n.append(...[].concat(kids)); return n; };
 let tabId = null;
 
@@ -27,7 +36,7 @@ function render(data) {
       el("div", { className: "row" }, [
         el("span", { className: "who" }, [e.who, ...(e.own ? [el("span", { className: "tag own", textContent: t("a_own", "this site") })] : [])]),
         el("span", { className: "count", textContent: "×" + e.count }),
-        el("span", { className: "what", textContent: e.what }),
+        el("span", { className: "what", textContent: describe(e) }),
       ]))));
   }
   list.replaceChildren(...sections);

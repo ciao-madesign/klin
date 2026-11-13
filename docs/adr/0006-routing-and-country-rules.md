@@ -37,7 +37,7 @@ Both decide by destination country, both would show a notice with "allow once" a
 - Whether the country can be checked **before** the request leaves the browser (looking the name up first and cancelling the request), and how often that lookup differs from the one the browser makes afterwards. The alternative, reading the address from the answer, only knows the country after the connection was made.
 - Whether the extension APIs allow choosing another address of the same site at all. Until shown, no redirection to an alternative server is promised at browser level.
 - Where the country data comes from, its licence, and whether it can ship inside the build, so that no new connection at run time is needed (anything that talks to the network needs its own ADR).
-- Interaction with Tor mode (Phase 4) and with the "Anonymous" level (P29).
+- Interaction with Tor mode (Phase 4) and with the "Maximum" level (P29, formerly "Anonymous").
 
 ## Consequences
 - The open question "Geographic Traffic Controller versus P32" in `STATUS.md` is answered.

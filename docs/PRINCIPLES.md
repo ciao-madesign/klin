@@ -34,14 +34,14 @@ Speculative traffic, autoplay and Firefox's own promotion are off. The traffic/e
 The specification lists technical priorities, not values. → P36 (charter and governance).
 
 ## Tensions to resolve
-- **Anonymity by default vs compatibility and energy.** Strong fingerprint protection breaks some sites; Tor is slow. Proposal: an "Anonymous" level one click away, and an explicit decision on the default level.
+- **Anonymity by default vs compatibility and energy.** Strong fingerprint protection breaks some sites; Tor is slow. Proposal: a "Maximum" level (formerly "Anonymous") one click away, and an explicit decision on the default level.
 - **Confusing profilers vs energy saving.** Fake traffic costs energy and bandwidth. Prefer rotation and separation (P31, P24, P1, P26). Decoys only as an opt-in with the energy cost shown. Ad-click automation is excluded: it harms third parties and is not ethical.
 - **Values-based ranking vs freedom of expression.** Resolved by labelling and down-ranking with full transparency, never censorship.
 - **Routing freedom vs "no Klin infrastructure" (specification 8).** Klin routes through relays and proxies the user chooses; it does not run any.
 - **Country exclusion has technical limits.** A site's hosting country is known only from its IP address, i.e. after the connection; rules by domain and company are reliable, by country are approximate. To be stated in the feature.
 
 ## Decisions (13 Nov 2026, project owner)
-1. **Default level: Standard.** Advanced (`resistFingerprinting`) and Anonymous stay one click away. Consequence to state openly: Klin is not anonymous by default, it makes tracking harder; the dashboard must show the current level and what it does not hide (P29).
+1. **Default level: Standard.** Advanced (`resistFingerprinting`) and Maximum (formerly called Anonymous, renamed 13 Nov 2026: Klin never promises anonymity) stay one click away. Consequence to state openly: Klin is not anonymous by default, it makes tracking harder; the dashboard must show the current level and what it does not hide (P29).
 2. **Priority order: privacy first, then low impact, then security.** When they conflict privacy wins, and the cost (energy, speed) is declared. Specification section 1 updated.
 3. **Ethics and source-quality lists are third-party public lists, used as published. Klin does not curate them and is not the censor** (revised by the owner, 13 Nov 2026; replaces "adapted"). The user chooses which lists are on and can add others. Every flag shows the list that made it, its criterion and where to object. Licences are checked before use. Flags are labels, never a block or a hidden result.
 4. **Decoy traffic: opt-in only, off by default**, with its energy cost shown. Rotation and separation come first (P31). No ad-click automation.

@@ -43,5 +43,98 @@
   },
   "a_own": {
     "message": "questo sito"
+  },
+  "al_sent_bg": {
+    "message": "ha inviato dati in background ({1})"
+  },
+  "al_tracker_nb": {
+    "message": "{1}, non bloccato"
+  },
+  "al_cookie": {
+    "message": "ha provato a salvare un cookie (tenuto separato solo per questo sito)"
+  },
+  "al_blocked": {
+    "message": "bloccato: {1} ({2})"
+  },
+  "al_api_canvas_read": {
+    "message": "ha letto i pixel di un disegno nascosto (fingerprinting canvas)"
+  },
+  "al_api_graphics_card": {
+    "message": "ha chiesto che scheda grafica hai"
+  },
+  "al_api_audio_probe": {
+    "message": "ha eseguito un test audio che identifica il dispositivo"
+  },
+  "al_type_image": {
+    "message": "immagine"
+  },
+  "al_type_imageset": {
+    "message": "immagine"
+  },
+  "al_type_script": {
+    "message": "script"
+  },
+  "al_type_stylesheet": {
+    "message": "foglio di stile"
+  },
+  "al_type_sub_frame": {
+    "message": "riquadro incorporato"
+  },
+  "al_type_xmlhttprequest": {
+    "message": "richiesta dati (XHR)"
+  },
+  "al_type_font": {
+    "message": "carattere"
+  },
+  "al_type_media": {
+    "message": "audio o video"
+  },
+  "al_type_object": {
+    "message": "oggetto"
+  },
+  "al_type_websocket": {
+    "message": "connessione WebSocket"
+  },
+  "al_type_ping": {
+    "message": "ping"
+  },
+  "al_type_beacon": {
+    "message": "segnale (beacon)"
+  },
+  "al_type_csp_report": {
+    "message": "rapporto CSP"
+  },
+  "al_type_speculative": {
+    "message": "connessione anticipata"
+  },
+  "al_type_other": {
+    "message": "altro"
+  },
+  "al_lbl_content_blocker": {
+    "message": "blocco contenuti"
+  },
+  "al_lbl_tracker": {
+    "message": "tracker"
+  },
+  "al_lbl_social_tracker": {
+    "message": "tracker dei social"
+  },
+  "al_lbl_email_tracker": {
+    "message": "tracker delle email"
+  },
+  "al_lbl_fingerprinting": {
+    "message": "fingerprinting"
+  },
+  "al_lbl_cryptominer": {
+    "message": "criptominatore"
+  },
+  "al_lbl_advertising_tracker": {
+    "message": "tracker pubblicitario"
+  },
+  "al_lbl_analytics_tracker": {
+    "message": "tracker di analisi"
+  },
+  "al_lbl_tracking_content": {
+    "message": "contenuto di tracciamento"
   }
 }

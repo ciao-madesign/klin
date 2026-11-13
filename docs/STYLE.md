@@ -30,7 +30,7 @@ Proposed terms (defaults chosen by the guide; the owner can change them). The En
 | private window | finestra privata | always followed by what it does not hide |
 | connection (the browser makes) | connessione | |
 | What can this site see? | Cosa vede questo sito? | name of the self-test |
-| Standard level | livello Standard | levels: Standard, Avanzato, Anonimo (names to confirm when P29 is built) |
+| protection levels | livelli Standard, Avanzato, Massimo | decided 13 Nov 2026. Not "Anonymous": Klin never promises anonymity. Under the level name, always say what it hides and what it does not ("Livello Massimo. Non ti rende anonimo: i siti vedono ancora il tuo indirizzo.") |
 | lookalike site | sito che imita | |
 | IP address | indirizzo IP | |
 | strip / clean (a photo) | ripulire | "Ripulisci e continua" |
@@ -41,19 +41,20 @@ Feature names stay in English as product names ("Klin Self-test") and get a plai
 
 ## 3. How values are stated
 - **Where:** only on the welcome page and in the charter. Everyday messages talk about functions, not ideals. No slogans in normal screens.
-- **Exact wording, nothing added:** "Freedom, independence, equality, brotherhood and ecology." Italian: "Libertà, indipendenza, uguaglianza, fratellanza ed ecologia." (Ecology was added by the owner on 13 Nov 2026; the owner closed the list there.) The current welcome paragraph "What we stand for" is cut down to this line plus one sentence about function (see `STYLE-CHANGES.md`). `PRINCIPLES.md` item 9 and the charter (P36) keep the owner's fuller list as working principles. Whether anything beyond the line appears in public text is a separate decision of the owner.
+- **Exact wording, nothing added:** "Freedom, independence, equality, brotherhood and ecology." Italian: "Libertà, indipendenza, uguaglianza, fratellanza ed ecologia." (Ecology was added by the owner on 13 Nov 2026; the owner closed the list there.) The current welcome paragraph "What we stand for" is cut down to this line plus one sentence about function (see `STYLE-CHANGES.md`). **Decided 13 Nov 2026:** the welcome page and everyday screens state only these five values. The **charter** (P36) is the one public place for the fuller list (including antifascism, freedom of expression and rejection of regimes) and for the rules behind source markers (which list made a flag, its criterion, who maintains it, where to object). It is a separate document, read only by whoever looks for it, and is linked from the welcome page in one line. Draft: `CHARTER.md`.
 - **Source flags (P34, P35):** no real labels. A small **marker** next to a result or source, collapsed by default and **expandable** on click. Expanded, it shows: what the flag is, the published criterion, which list made it and who maintains it (where to object), and how to switch it off. Never hides or blocks a source; the user can turn markers off. Markers are discreet: not banners, not red alarms.
 
 ## 4. Languages and translation
 - **Now:** Italian and English. The Italian was written by the guide session from the owner's decisions and still needs the owner's read-through. Neither is a machine translation of the other: each is written in the voice above.
 - **Later (phase 2):** more languages by machine translation, **approved by human translators** before shipping. No language ships unreviewed.
 - **Technical approach:** strings move out of HTML and JavaScript into one strings file per extension and language (WebExtensions `_locales/<lang>/messages.json`). Translators get this guide, the vocabulary table and a do-not-translate list (Klin, Firefox, technical terms as decided in section 2).
-- The language follows the browser's language. A switch inside Klin will come with a settings page (extensions cannot share a setting today); until then `?lang=it` or `?lang=en` on a Klin page forces a language, for previews and tests.
+- **Technical readouts are translated too** (decided 13 Nov 2026): the values in the self-test, the lines of the collection log and the connection entries. Whoever adds a new technical line adds its English and Italian message in the same change. The code keeps the English line next to a message code, so tests and logs stay stable.
+- **Decided 13 Nov 2026: the language is the browser's language, and nothing else.** No switch inside Klin for now. To change Klin's language, the user changes the browser's. `?lang=it` or `?lang=en` on a Klin page only forces a language for previews and tests. Revisit when more languages ship.
 
 ## 5. Visual identity
 
 ### 5.1 Direction
-**"Manifesto"**: strong contrast, one acid accent colour, sharp shapes, short heavy titles. **Dark mode is the default**; light mode follows the same tokens; "follow the system" is an option. Mock-up: `docs/style/direzioni.html` (option A, with its original red-orange accent replaced, see 5.3).
+**"Manifesto"**: strong contrast, one acid accent colour, sharp shapes, short heavy titles. **Dark mode is the default** for everyone. Decided 13 Nov 2026: the user can choose **Dark, Light or Same as the system** in a settings page (Italian: Scuro, Chiaro, Come il sistema). Until that page exists, every screen stays dark. Light mode follows the same tokens (`data-theme="light"` or `"system"` in `klin.css`). Mock-up: `docs/style/direzioni.html` (option A, with its original red-orange accent replaced, see 5.3).
 
 ### 5.2 Logo
 History: a torn square, a K, an open globe, a dissolving globe, a circle with a bar and a mask were compared (`docs/style/logo.html` to `logo5.html`). Chosen: **a disc with an eye slit**, a stylised ninja mask: the idea of "not traceable".
@@ -151,7 +152,7 @@ Two things together (`docs/style/firma.html`):
 
 ## 9. Still open
 - **Reference site** (`thedarksalad.it`, analysed 13 Nov 2026): its three useful ideas were accepted by the owner and are applied: a deeper black (`#0a0a0a`) with `#222` hairlines between rows, a serif for long reading, and keeping our lime accent instead of its blue. Nothing else is taken from it.
-- **Level names** (Standard, Avanzato, Anonimo) and the term "Anonimo": the third name conflicts with the honesty rule; rename when P29 is built (candidates: "Massimo").
+- **Level names:** decided (Standard, Avanzato, Massimo; English: Standard, Advanced, Maximum). The code and docs that still say "Anonymous" (`PRINCIPLES.md`, `PROPOSALS.md` P29, `ROADMAP.md`) are renamed when P29 is built.
 - **Italian terms** in section 2 are guide defaults awaiting the owner's confirmation.
-- **Charter** (P36): whether antifascism, freedom of expression and rejection of regimes appear anywhere in public text. The owner closed the stated list at five values (freedom, independence, equality, brotherhood, ecology); these stay as working principles only; they stay as working principles in `PRINCIPLES.md`.
+- **Charter** (P36): draft in `CHARTER.md`, awaiting the owner's approval. Where it goes is decided (section 3). Open: how lists are governed, see the note on lists in `STATUS.md`.
 - **Master artwork:** clean SVG masters are in `branding/` (lime, black, white, lime on dark). Still to do: PNG exports and a real check of the 16 px and 32 px renderings in the toolbar.

@@ -71,6 +71,19 @@ Inspiration for Klin's foundations. Most of its advice is about phones (advertis
 
 **Project rule from the article: every feature states what it does not do.** "Do not expect anonymity" and "not magic wands" are the honest framing. The pages built so far already follow it (limits listed in each README and on the self-test page); new features must too. Acceptance criterion for every user-facing page: a visible "what this does not protect you from" line.
 
+## Batch 5 – from the principles audit (`PRINCIPLES.md`)
+
+| # | Proposal | Status | Notes |
+|---|---|---|---|
+| P29 | Privacy levels with a decided default: Standard, Advanced (`resistFingerprinting`, generic screen/time zone), Anonymous (Advanced + Tor + no persistent data) | Accepted | Decision needed on the default. Advanced to be tested on real sites for breakage |
+| P30 | Collection-attempt log: per site, who tried to collect what (trackers, fingerprint reads, cookies, referrers), always visible | Accepted | Reuses the uBlock Origin and Traffic monitor data; local only. Self-test already shows what is readable |
+| P31 | Identity rotation to defeat profiling (fresh containers, canvas key, fingerprint values per site/session); opt-in decoys with energy cost shown | Accepted | No ad-click automation. Related: P1, P24 |
+| P32 | Routing and exclusion rules: per domain, company or country, send traffic through a chosen proxy/relay/Tor, or refuse it | Accepted | WebExtension `proxy` API can route per request. Klin runs no relay. Country rules are approximate (see `PRINCIPLES.md`) |
+| P33 | Entity data: domain → owning company, local and public | Accepted | Dataset licences to verify (some well-known ones are non-commercial) |
+| P34 | Source-quality data for Search Intelligence: independence, ownership transparency, editorial standards, with published criteria and reasons shown per result | Accepted | Governance open. Never silent (specification A) |
+| P35 | Ethics list: label and down-rank sources tied to unacceptable spheres (e.g. neo-fascist organisations) | Accepted | Constraints in `PRINCIPLES.md` §7: published criteria and sources, appeal path, user-editable, never hidden or blocked |
+| P36 | Charter: Klin's values and governance (who maintains lists, how entries are challenged), plus branding that makes them recognisable | Accepted | Seed: `PRINCIPLES.md`. Needs the owner's approval before it goes into the specification |
+
 ## Evaluated and reshaped
 
 | Idea | Outcome |

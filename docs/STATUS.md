@@ -38,7 +38,7 @@ Standard is the default level; privacy comes first, then low impact, then securi
 
 ## 5. Open questions
 - **Style and tone of Klin: decided and applied on 13 Nov 2026**, see `docs/STYLE.md` and `docs/STYLE-CHANGES.md` (what was done, what remains). Existing screens use the shared style (`extensions/_shared`, copied by `build/sync-shared.py`) and have Italian and English strings. Still open: the owner's read-through of the Italian, logo PNG exports, level names are decided (Standard, Avanzato, Massimo), and writing the charter (P36): decided that it is the one public place for the fuller list of values and the criteria of source markers; its governance is still open.
-- Governance of the ethics and source lists (who reviews, how entries are challenged): the charter (P36).
+- Governance of the ethics and source lists: **decided 13 Nov 2026**: for now, existing public lists adapted (no own review body); later, open review (anyone proposes, a group approves, everything public and contestable). Still to write: the rules of that future review and the charter (P36).
 - Geographic Traffic Controller (system level) versus P32 (browser level): one ADR.
 - Privacy levels (P29): the Advanced level must be tried on real sites.
 - The resolver list for DoH.

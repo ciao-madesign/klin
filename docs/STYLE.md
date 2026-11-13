@@ -25,3 +25,9 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - **Where:** only on the welcome page and in the charter (option A). Everyday messages talk about functions, not ideals. No slogans in normal screens.
 - **Exact wording of the values, nothing added:** "Freedom, independence, equality and brotherhood." (No extra clauses such as antifascism, free expression or rejection of regimes in the stated line. The current welcome-page paragraph "What we stand for" must be cut down to this line. `PRINCIPLES.md` item 9 and the charter, P36, still hold the owner's fuller list as working principles; the owner decides separately whether they appear anywhere in public text.)
 - **Source flags (P34/P35):** no real labels. Instead a small **marker** next to a result or source, collapsed by default and **expandable** on click. Expanded it shows: what the flag is, the published criterion, the source of the fact, and how to challenge or switch it off. Never hides or blocks a source; the user can turn markers off. Markers are discreet, not banners, not red alarms.
+
+## 4. Languages and translation (decided 13 Nov 2026)
+- **Now:** Italian and English, both written and checked by the owner. Neither is a translation of the other by machine: each is written in the voice above.
+- **Later (phase 2):** more languages, produced by machine translation and **approved by human translators** before shipping. No language ships unreviewed.
+- **Technical approach:** strings move out of HTML/JavaScript into one strings file per extension and per language (WebExtensions `_locales` with `messages.json` fits). Translators get this guide, the vocabulary list and a "do not translate" list (Klin, Firefox, technical terms kept as decided in section 2).
+- Language follows the browser's language; the user can switch it.

@@ -1,7 +1,50 @@
-# Feature proposals
+# Proposals and feature tracker
 
-Additions to the specification, evaluated against the founding values: privacy, untraceability, energy saving, security, ethics, customisation.
-Order of work: simplest first (config → extension → patch). Nothing here changes the V1 scope until it is moved into `SPECIFICATION.md`.
+Internal list of what Klin plans to build and what has only been proposed.
+The specification (`SPECIFICATION.md`) and the roadmap (`ROADMAP.md`) stay the source of truth: a proposal changes nothing until it is accepted and moved there.
+
+## How to use this file
+- **Planned features** come from the specification. Update the status when work starts or ends.
+- **Proposals** are ideas under evaluation. Each one gets a row here and, if it is large, its own file in `docs/proposals/`.
+- A proposal is accepted only with an ADR in `docs/adr/`. Then it is added to the specification and the roadmap, and its row moves to "Planned features".
+- Rejected proposals stay listed, with the reason.
+
+Status values: `not started` · `in progress` · `done` · `proposed` · `accepted` · `rejected`.
+
+## Planned features (from the specification)
+| Feature | Spec | Phase | Where | Status |
+|---|---|---|---|---|
+| Base configuration (prefs, policies) | 4.2, 4.3 | 0–1 | `config/` | in progress (verified in Phase 0) |
+| Privacy Engine | 4.2 | 1 | `config/` + bundled uBlock Origin | in progress (uBlock tested; fingerprint, cookie-banner and advertising settings verified; collection log P30 built) |
+| UI: tabs, workspaces, sidebar, dashboard | 4.1, 6 | 1 | `patches/` | not started |
+| Security Manager | 4.5 | 1 | upstream + `config/policies` | in progress (lookalike warning P14, honest private window P22; both extensions) |
+| Extension Manager | 4.6 | 1 | native WebExtensions | not started |
+| Data Manager (local storage, export) | 4.9 | 1 | extensions, IndexedDB (ADR 0003) | not started |
+| Search Intelligence V1 | App. A | 1–2 | `extensions/search-intelligence` | not started |
+| Traffic Engine | 4.3 | 2 | `config/` + extension | not started |
+| Traffic / CPU / RAM monitor | 4.3 | 2 | `extensions/traffic-monitor` (+ patch for CPU/RAM) | not started |
+| Energy & Carbon Monitor | 4.4 | 2 | extension | not started |
+| Automation Engine | 4.7 | 3 | `extensions/automation` | not started |
+| AI Engine (local, Ollama) | 4.8 | 3 | `extensions/ai-local` | not started (Ollama verified in Phase 0) |
+| Search Intelligence V2 | App. A | 3 | `extensions/search-intelligence` | not started |
+| Data Footprint & Removal Manager | App. B | 3 | `extensions/data-footprint` | not started |
+| Tor mode | 5 | 4 | separate module | not started |
+| Android | 2 | 5 | GeckoView | not started |
+
+Status values: `not started` · `in progress` · `done` · `proposed` · `accepted` · `rejected`.
+The numbered list further down (P0–P37) uses richer values: **Done** (in the repo and verified) · **Next** · **Decided** · **Accepted** (valid, not scheduled) · **Blocked** · **Rejected**.
+Owner decisions of 13 Nov 2026 are recorded in `PRINCIPLES.md` and count as acceptance; those that change the architecture (P29 levels, P32 routing) still need an ADR.
+
+## Proposals under evaluation (one file each)
+| Proposal | Received | Summary | Details | Status |
+|---|---|---|---|---|
+| Geographic Traffic Controller | 2026-11-12 | System-level filter for destinations in user-excluded countries: redirect to a verified alternative when one exists, otherwise block and ask the user. Minimal local log. | [`proposals/geographic-traffic-controller.md`](proposals/geographic-traffic-controller.md) | proposed, not scheduled |
+
+The Geographic Traffic Controller is the system-level answer to P32 below (routing and exclusion rules); P32 is the browser-level one (per-request proxy, domain and company rules). They have to be reconciled in one ADR before either is built.
+
+## Numbered proposals (from the owner's ideas, the principles audit and the article)
+
+Additions to the specification, evaluated against the founding values (`PRINCIPLES.md`). Order of work: simplest first (config → extension → patch). Nothing here changes the V1 scope until it is moved into `SPECIFICATION.md`.
 
 Status: **Done** (in the repo and verified) · **Next** · **Accepted** (valid, not scheduled) · **Blocked** · **Rejected**.
 
@@ -14,7 +57,7 @@ Status: **Done** (in the repo and verified) · **Next** · **Accepted** (valid, 
 | P16a | No JavaScript inside PDFs | **Done** | `pdfjs.enableScripting=false` |
 | P0 | WebRTC address-leak protection | **Done** | `media.peerconnection.ice.default_address_only`, `…proxy_only_if_behind_proxy`. Browser-side answer to the "variable MAC" idea |
 | P3 | Cookie banners | **Done, in a weaker form** | Firefox's own banner rejection no longer exists in 160.0, so Klin switches on uBlock Origin's cookie-notice lists (`3rdparty` policy in `config/policies/policies.json`). They **hide** banners; they do not click "Reject". A site then sees no choice made, which for GDPR-compliant sites means no optional cookies, but it is not guaranteed. Klin's tracker blocking and cookie partitioning apply regardless. Tested with the real lists on a mock page (`tests/acceptance/cookie-banners`); real sites not tested, so breakage (e.g. pages whose scrolling is locked by a banner) is unknown |
-| P4 | DoH with provider choice, oblivious variant, ECH | **Decided** | ADR 0003: user chooses at first start; the build may set a preselected default. Needs the first-start screen (Phase 1) and a reviewed resolver list |
+| P4 | DoH with provider choice, oblivious variant, ECH | **Decided** | ADR 0005: user chooses at first start; the build may set a preselected default. Needs the first-start screen (Phase 1) and a reviewed resolver list |
 
 Prefs were verified as in `PHASE0.md`: values read back from Firefox 160.0 with `klin.js` installed. Only GPC was also checked by behaviour; the others by value.
 

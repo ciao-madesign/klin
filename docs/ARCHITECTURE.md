@@ -19,11 +19,21 @@ Klin = stock Firefox (latest release channel) + `config/` + `branding/` + `patch
 | Workspaces, vertical tabs, sidebar | Patch to browser UI (privileged) |
 | Tor mode (Phase 4) | Separate module, isolated profile, own test cycle |
 
+## Verified in Phase 0 (Firefox 160.0)
+All modules except per-site CPU/RAM can be WebExtensions (MV3). Workspaces can use containers for isolation. See PHASE0.md.
+
 ## Open points (to decide in Phase 0)
-- Storage: IndexedDB (extensions) vs SQLite (privileged code), per module.
+- Storage: decided, IndexedDB for V1 (ADR 0003).
 - Per-site CPU/RAM: which privileged API to use.
 - Tor client: C tor vs Arti.
 - Distinguishing visited site, third-party service and data controller in the Footprint registry.
+
+## Proposed modules (not accepted, not in V1)
+Tracked in [PROPOSALS.md](PROPOSALS.md). They are listed here only to show where they would sit.
+
+| Module | Implementation if accepted | Status |
+|---|---|---|
+| Geographic Traffic Controller | **Outside the browser stack**: system-level filter (Windows WFP driver + service, later nftables / Network Extension), local DNS proxy, local proxy, local GeoIP database; controlled from Klin's UI. Does not fit "config, extension, patch" and needs its own ADR. See [proposals/geographic-traffic-controller.md](proposals/geographic-traffic-controller.md) | Proposed, not scheduled |
 
 ## Principle
 Config first, then extension, then patch. Every patch needs an ADR and must be rebased on each upstream release.

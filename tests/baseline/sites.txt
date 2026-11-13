@@ -1,0 +1,11 @@
+# One address per line. Public pages, no login. Edit freely; keep the same list for every measurement.
+https://en.wikipedia.org/wiki/Firefox
+https://www.bbc.com/news
+https://www.theguardian.com/international
+https://edition.cnn.com/
+https://arstechnica.com/
+https://www.nasa.gov/
+https://stackoverflow.com/questions
+https://news.ycombinator.com/
+https://www.espn.com/
+https://www.weather.com/

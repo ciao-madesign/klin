@@ -1,4 +1,4 @@
-# ADR 0003 – DNS over HTTPS: user choice, optional default
+# ADR 0005 – DNS over HTTPS: user choice, optional default
 
 Status: accepted
 

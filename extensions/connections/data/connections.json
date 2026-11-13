@@ -134,14 +134,15 @@
         "curbengh.github.io",
         "malware-filter.gitlab.io",
         "pgl.yoyo.org",
-        "publicsuffix.org"
+        "publicsuffix.org",
+        "secure.fanboy.co.nz (fallback for the cookie-notice list)"
       ],
       "operator": "uBlock Origin project and list maintainers (hosted on GitHub, Cloudflare, jsDelivr, GitLab)",
       "when": "idle",
       "stock": false,
       "klin": "on",
       "evidence": "audit",
-      "purpose": "Updates the lists of ads, trackers and malware domains to block.",
+      "purpose": "Updates the lists of ads, trackers, malware domains and cookie banners to block or hide.",
       "sees": "Your IP address and when the lists are refreshed. Not the sites you visit.",
       "decision": "Keep. Blocking quality depends on fresh lists (specification 4.2).",
       "ifOff": "Blocking slowly gets worse as lists age.",
@@ -150,7 +151,7 @@
         "items": [
           "Filter lists → Auto-update filter lists"
         ],
-        "note": "In the uBlock Origin dashboard."
+        "note": "In the uBlock Origin dashboard. The cookie-notice lists are switched on by Klin's policy and are not bundled: they are only downloaded."
       }
     },
     {

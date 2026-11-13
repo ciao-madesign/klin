@@ -41,7 +41,7 @@ Standard is the default level; privacy comes first, then low impact, then securi
 - Charter (P36): **draft written** in `docs/CHARTER.md`, with the rule for the ethics and source lists: third-party lists, Klin does not curate. The owner approves it and decides the points marked "to confirm". Lists: confirmed again by the owner on 13 Nov 2026 (style session): third-party public lists as published, Klin does not curate or adapt them; any idea of an open review by Klin is only a proposal, not a commitment.
 - Geographic Traffic Controller (system level) versus P32 (browser level): answered by ADR 0006 (**accepted**, owner, 13 Nov 2026): P32 first, the system level stays a proposal.
 - Privacy levels (P29): the Advanced level must be tried on real sites.
-- The resolver list for DoH.
+- The resolver list for DoH: no default and nothing preselected (decided 13 Nov 2026, ADR 0005). Still to decide: which services go on the short reviewed list and by which criteria.
 - Languages: Italian and English now, in `_locales` of each extension; more later with human-reviewed machine translation.
 
 ## 6. Pitfalls found (read before changing things)

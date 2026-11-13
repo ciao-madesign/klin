@@ -48,6 +48,7 @@ Feature names stay in English as product names ("Klin Self-test") and get a plai
 - **Now:** Italian and English. The Italian was written by the guide session from the owner's decisions and still needs the owner's read-through. Neither is a machine translation of the other: each is written in the voice above.
 - **Later (phase 2):** more languages by machine translation, **approved by human translators** before shipping. No language ships unreviewed.
 - **Technical approach:** strings move out of HTML and JavaScript into one strings file per extension and language (WebExtensions `_locales/<lang>/messages.json`). Translators get this guide, the vocabulary table and a do-not-translate list (Klin, Firefox, technical terms as decided in section 2).
+- **Technical readouts are translated too** (decided 13 Nov 2026): the values in the self-test, the lines of the collection log and the connection entries. Whoever adds a new technical line adds its English and Italian message in the same change. The code keeps the English line next to a message code, so tests and logs stay stable.
 - **Decided 13 Nov 2026: the language is the browser's language, and nothing else.** No switch inside Klin for now. To change Klin's language, the user changes the browser's. `?lang=it` or `?lang=en` on a Klin page only forces a language for previews and tests. Revisit when more languages ship.
 
 ## 5. Visual identity

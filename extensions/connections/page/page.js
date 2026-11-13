@@ -27,7 +27,7 @@ function card(c) {
   const isOn = c.klin === "on";
   const summary = el("summary", {}, [
     el("span", { className: "title" }, [
-      el("strong", { textContent: c.name }),
+      el("strong", { textContent: entry(c, "name", c.name) }),
       el("small", { textContent: c.hosts.join(", ") }),
     ]),
     el("span", { className: "tag", textContent: t(...WHEN_LABEL[c.when]) }),
@@ -35,7 +35,7 @@ function card(c) {
   ]);
 
   const dl = el("dl");
-  row(dl, t("c_r_who", "Who receives it"), c.operator);
+  row(dl, t("c_r_who", "Who receives it"), entry(c, "operator", c.operator));
   row(dl, t("c_r_purpose", "Purpose"), entry(c, "purpose", c.purpose));
   row(dl, t("c_r_sees", "What it can see"), entry(c, "sees", c.sees));
   row(dl, t("c_r_decision", "Klin's choice"), entry(c, "decision", c.decision));
@@ -84,7 +84,7 @@ async function main() {
   for (const c of [...on, ...off]) list.append(card(c));
 
   document.getElementById("audit").textContent =
-    t("c_audit", "Checked on Firefox {1} ({2}). {3} {4}", data.audit.firefox, data.audit.platform, data.audit.method, data.audit.limits);
+    t("c_audit", "Checked on Firefox {1} ({2}). {3} {4}", data.audit.firefox, data.audit.platform, t("c_audit_method", data.audit.method), t("c_audit_limits", data.audit.limits));
 
   const buttons = document.querySelectorAll(".filters button");
   for (const button of buttons) {

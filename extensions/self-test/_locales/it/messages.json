@@ -74,6 +74,93 @@
   "stg_hidden_fingerprints": {
     "message": "Impronte nascoste"
   },
+  "sv_canvas_random": {
+    "message": "diverso a ogni lettura: nessun identificatore utilizzabile"
+  },
+  "sv_canvas_altered": {
+    "message": "lettura alterata dal browser"
+  },
+  "sv_canvas_exact": {
+    "message": "si rilegge identico; identificatore stabile: {1}"
+  },
+  "sv_na": {
+    "message": "non disponibile"
+  },
+  "sv_audio_id": {
+    "message": "identificatore: {1}"
+  },
+  "sv_fonts_n": {
+    "message": "{1} font rilevati su {2} testati"
+  },
+  "sv_fonts_list": {
+    "message": "{1} font rilevati su {2} testati: {3}"
+  },
+  "sv_webrtc_na": {
+    "message": "WebRTC non disponibile"
+  },
+  "sv_webrtc_addr": {
+    "message": "indirizzo locale leggibile: {1}"
+  },
+  "sv_webrtc_placeholder": {
+    "message": "solo un nome casuale al posto dell'indirizzo, nessun indirizzo reale"
+  },
+  "sv_webrtc_none": {
+    "message": "nessun indirizzo consegnato alla pagina"
+  },
+  "sv_webrtc_blocked": {
+    "message": "WebRTC bloccato"
+  },
+  "sv_media_notsecure": {
+    "message": "non leggibile qui: la pagina non è https"
+  },
+  "sv_media_named": {
+    "message": "{1} microfoni, {2} fotocamere, {3} altoparlanti, con i nomi dei dispositivi"
+  },
+  "sv_media_hidden": {
+    "message": "{1} microfoni, {2} fotocamere, {3} altoparlanti, nomi nascosti"
+  },
+  "sv_absent": {
+    "message": "non disponibile per i siti"
+  },
+  "sv_readable_connection": {
+    "message": "tipo di connessione leggibile"
+  },
+  "sv_readable_memory": {
+    "message": "memoria ({1} GB) leggibile"
+  },
+  "sv_readable_battery": {
+    "message": "stato della batteria leggibile"
+  },
+  "sv_gpc_sent": {
+    "message": "inviato"
+  },
+  "sv_gpc_not_sent": {
+    "message": "non inviato"
+  },
+  "sv_cookies_yes": {
+    "message": "accettati"
+  },
+  "sv_cookies_no": {
+    "message": "rifiutati"
+  },
+  "sv_hidden": {
+    "message": "nascosto"
+  },
+  "sv_screen": {
+    "message": "schermo {1}, finestra {2}, densità di pixel {3}, colore a {4} bit"
+  },
+  "sv_touch_yes": {
+    "message": "sì ({1} punti)"
+  },
+  "sv_touch_no": {
+    "message": "no"
+  },
+  "sv_tz": {
+    "message": "{1} (scarto da UTC {2} h)"
+  },
+  "sv_failed": {
+    "message": "controllo non riuscito: {1}"
+  },
   "st_global_privacy_control_name": {
     "message": "Global Privacy Control"
   },

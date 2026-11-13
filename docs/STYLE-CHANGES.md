@@ -13,7 +13,7 @@ Status 13 Nov 2026: **applied** by the style session at the owner's request. All
 
 ## What remains (for an engineering session or the owner)
 1. **Owner's read-through of the Italian** (all `_locales/it/messages.json`). It was written by the guide session.
-2. **Technical readouts are still English**: the values shown by the self-test (`checks.js`, for example "not sent", "reads back exactly"), the lines of the collection log (`attempts-log/background.js`, for example "blocked image (tracker)") and the audit text in `connections/data/connections.json` (`audit.method`, `audit.limits`). Move them to the messages when the owner wants them in Italian.
+2. **Technical readouts: done** (self-test values, collection-log lines, connection entries and audit text are translated; the English line stays in the code next to a message code). A new technical line needs its English and Italian message in the same change.
 3. **Language switch:** decided not to build one for now (the browser's language decides). Revisit when more languages ship.
 4. **PNG exports** of the logo (16, 32, 48, 128, 256) and a check of the toolbar rendering in a real Firefox window, light and dark toolbars.
 5. **Theme switch** (decided: Dark, Light, Same as the system; dark by default). The themes exist in `klin.css`, but no screen lets the user choose: it needs the settings page (needs a settings page, which does not exist yet).

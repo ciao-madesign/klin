@@ -110,6 +110,12 @@
   "c_loaderr": {
     "message": "The connection list could not be loaded."
   },
+  "c_audit_method": {
+    "message": "Idle fresh profile, every request logged and refused by a local proxy (tests/baseline/connection-audit)."
+  },
+  "c_audit_limits": {
+    "message": "Entries marked 'pref' were not seen in the idle audit: they are browsing-time connections, switched off by a preference whose value was verified, not their absence on the wire."
+  },
   "e_remote_settings_purpose": {
     "message": "Downloads security data: blocklists of harmful add-ons, certificate revocation data (CRLite), intermediate certificates."
   },
@@ -124,6 +130,9 @@
   },
   "e_remote_settings_note": {
     "message": "No safe switch. Turning it off also disables certificate revocation checks."
+  },
+  "e_remote_settings_name": {
+    "message": "Remote Settings"
   },
   "e_updates_purpose": {
     "message": "Checks for and downloads new browser versions."
@@ -140,6 +149,9 @@
   "e_updates_note": {
     "message": "Not recommended."
   },
+  "e_updates_name": {
+    "message": "Browser updates"
+  },
   "e_safe_browsing_purpose": {
     "message": "Downloads lists of known phishing and malware sites. Pages are checked against the local copy."
   },
@@ -154,6 +166,9 @@
   },
   "e_safe_browsing_note": {
     "message": "Set all three to false."
+  },
+  "e_safe_browsing_name": {
+    "message": "Safe Browsing lists"
   },
   "e_addon_updates_purpose": {
     "message": "Checks installed extensions for updates and fetches their descriptions."
@@ -170,6 +185,9 @@
   "e_addon_updates_note": {
     "message": "Set both to false."
   },
+  "e_addon_updates_name": {
+    "message": "Add-on metadata and updates"
+  },
   "e_amo_install_purpose": {
     "message": "First start only: downloads uBlock Origin, as required by the Klin policy."
   },
@@ -184,6 +202,9 @@
   },
   "e_amo_install_note": {
     "message": "Goes away once uBlock Origin ships inside Klin."
+  },
+  "e_amo_install_name": {
+    "message": "uBlock Origin download"
   },
   "e_ubo_lists_purpose": {
     "message": "Updates the lists of ads, trackers, malware domains and cookie banners to block or hide."
@@ -200,6 +221,12 @@
   "e_ubo_lists_note": {
     "message": "In the uBlock Origin dashboard. The cookie-notice lists are switched on by Klin's policy and are not bundled: they are only downloaded."
   },
+  "e_ubo_lists_name": {
+    "message": "uBlock Origin filter lists"
+  },
+  "e_ubo_lists_operator": {
+    "message": "uBlock Origin project and list maintainers (hosted on GitHub, Cloudflare, jsDelivr, GitLab)"
+  },
   "e_push_purpose": {
     "message": "Keeps a permanent connection open so sites can send notifications while closed."
   },
@@ -214,6 +241,9 @@
   },
   "e_push_note": {
     "message": "Set both to true to re-enable."
+  },
+  "e_push_name": {
+    "message": "Web Push"
   },
   "e_region_purpose": {
     "message": "Guesses your country to choose regional defaults such as the search engine."
@@ -230,6 +260,9 @@
   "e_region_note": {
     "message": "Set the first to true and reset the second to re-enable."
   },
+  "e_region_name": {
+    "message": "Region detection"
+  },
   "e_captive_portal_purpose": {
     "message": "Pings a test page to detect Wi-Fi login pages (hotels, trains) and whether the network works."
   },
@@ -244,6 +277,9 @@
   },
   "e_captive_portal_note": {
     "message": "Set both to true to re-enable."
+  },
+  "e_captive_portal_name": {
+    "message": "Captive portal and connectivity checks"
   },
   "e_openh264_purpose": {
     "message": "Downloads a video codec used for H.264 in video calls."
@@ -260,6 +296,9 @@
   "e_openh264_note": {
     "message": "Set to true to re-enable."
   },
+  "e_openh264_name": {
+    "message": "OpenH264 codec download"
+  },
   "e_accounts_purpose": {
     "message": "Sign-in and synchronisation through a Mozilla account."
   },
@@ -274,6 +313,9 @@
   },
   "e_accounts_note": {
     "message": "Also locked by the DisableFirefoxAccounts policy."
+  },
+  "e_accounts_name": {
+    "message": "Firefox Accounts and Sync"
   },
   "e_ocsp_purpose": {
     "message": "Asks the authority that issued a site's certificate whether it has been revoked."
@@ -290,6 +332,12 @@
   "e_ocsp_note": {
     "message": "Set to 1 to re-enable."
   },
+  "e_ocsp_name": {
+    "message": "Certificate status lookups (OCSP)"
+  },
+  "e_ocsp_operator": {
+    "message": "Certificate authorities"
+  },
   "e_search_suggestions_purpose": {
     "message": "Sends what you type in the address bar to the search engine to show suggestions, and asks it for trending searches when you click the bar."
   },
@@ -304,6 +352,12 @@
   },
   "e_search_suggestions_note": {
     "message": "Set both to true to re-enable."
+  },
+  "e_search_suggestions_name": {
+    "message": "Search suggestions and trending searches"
+  },
+  "e_search_suggestions_operator": {
+    "message": "Search engine"
   },
   "e_speculative_purpose": {
     "message": "Connects in advance to sites you might open next, to save a moment if you do."
@@ -320,6 +374,12 @@
   "e_speculative_note": {
     "message": "See config/prefs/klin.js for the Klin values."
   },
+  "e_speculative_name": {
+    "message": "Speculative connections"
+  },
+  "e_speculative_operator": {
+    "message": "Any site"
+  },
   "e_promo_services_purpose": {
     "message": "Fetches sponsored shortcuts, recommended articles, add-on recommendations and VPN promotions, and downloads models for Firefox's own on-device AI features."
   },
@@ -334,5 +394,8 @@
   },
   "e_promo_services_note": {
     "message": "Set to true to re-enable. Destinations beyond contile.services.mozilla.com not yet confirmed on the wire."
+  },
+  "e_promo_services_name": {
+    "message": "Sponsored tiles, recommendations and built-in AI downloads"
   }
 }

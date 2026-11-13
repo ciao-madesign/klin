@@ -142,7 +142,7 @@ function render(results, where) {
       const row = el("div", { className: "item" }, [
         el("strong", { textContent: t("st_" + key(item.id) + "_name", item.name) }),
         el("span", { className: "badge " + r.status, textContent: t(LABEL[r.status][0], LABEL[r.status][1]) }),
-        el("div", { className: "value", textContent: r.value }),
+        el("div", { className: "value", textContent: r.k && r.k !== "raw" ? t("sv_" + r.k, r.value, ...(r.a || [])) : r.value }),
         el("div", { className: "why", textContent: t("st_" + key(item.id) + "_why", item.why) }),
       ]);
       row.dataset.id = item.id; row.dataset.name = item.name; row.dataset.status = r.status; row.dataset.value = r.value;

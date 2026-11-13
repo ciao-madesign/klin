@@ -66,7 +66,7 @@ python3 tests/acceptance/self-test/run.py klin-ff        # example
 Some tests rewrite `distribution/policies.json`: use a copy. Network in the cloud environment: `raw.githubusercontent.com` and `addons.mozilla.org` are reachable, `ublockorigin.github.io` is not.
 
 ## 9. Next steps (suggested order)
-1. Style and tone session (separate), then apply it to the pages and write `docs/STYLE.md`.
+1. Apply the style (`docs/STYLE.md`, `docs/STYLE-CHANGES.md`) to the pages: shared stylesheet, fonts, strings files, then screen by screen. The style itself is decided.
 2. Privacy levels (P29): try Advanced on real sites, write the ADR.
 3. Signing and distribution of the extensions (ADR), test `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).

@@ -12,7 +12,7 @@ For an engineering session. Source of truth: `STYLE.md`. Nothing here has been a
 `extensions/welcome/page/index.html`, `style.css`
 - Add the logo (disc with slit) and the tagline "Free. Independent. Yours." under the name.
 - Replace the line "A browser that works for you, not for advertisers." by the tagline; move that sentence into the first paragraph.
-- "What we stand for": cut to "Freedom, independence, equality and brotherhood." plus "Klin lets you leave out the companies, countries and sources you do not want. It never decides for you in secret." Remove "Draft wording. It will be replaced by Klin's charter."
+- "What we stand for": cut to "Freedom, independence, equality, brotherhood and ecology." plus "Klin lets you leave out the companies, countries and sources you do not want. It never decides for you in secret." Remove "Draft wording. It will be replaced by Klin's charter."
 - "Klin does not make you anonymous. It makes you harder to follow." becomes the one highlighted phrase of the page.
 - Apply the new palette, fonts, cut corners. Section titles in normal case, bold, in the title face.
 - Keep: "What Klin does not do" section and the "loads nothing from the internet" note.

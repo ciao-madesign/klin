@@ -1,0 +1,179 @@
+{
+  "name": {
+    "message": "Klin Self-test"
+  },
+  "description": {
+    "message": "Mostra cosa può leggere di questo browser il sito che stai guardando. Non viene inviato né salvato nulla."
+  },
+  "title": {
+    "message": "Cosa vede questo sito?"
+  },
+  "s_title": {
+    "message": "Test di Klin su di te"
+  },
+  "s_h1": {
+    "message": "Cosa vede un sito"
+  },
+  "s_lead": {
+    "message": "Klin esegue, dentro il sito che stavi guardando, gli stessi controlli di uno script di tracciamento. Tutto resta sul tuo computer: non viene inviato né salvato nulla."
+  },
+  "s_results": {
+    "message": "Risultati"
+  },
+  "s_running": {
+    "message": "Controllo in corso…"
+  },
+  "s_legend": {
+    "message": "**Protetto**: il sito non ottiene nulla di utile, o un valore sfocato o condiviso con molti altri utenti. **Esposto**: il sito ottiene un valore che aiuta a riconoscerti e che si potrebbe nascondere. **Visibile**: normale per qualsiasi browser, ma ogni valore si aggiunge alla tua impronta (fingerprint)."
+  },
+  "s_foot": {
+    "message": "Il test mostra cosa è tecnicamente leggibile, non quanto sia rara la tua combinazione: servirebbe confrontarti con altri utenti, e Klin non lo fa."
+  },
+  "s_protected": {
+    "message": "Protetto"
+  },
+  "s_exposed": {
+    "message": "Esposto"
+  },
+  "s_visible": {
+    "message": "Visibile"
+  },
+  "s_n_protected": {
+    "message": "protetti"
+  },
+  "s_n_exposed": {
+    "message": "esposti"
+  },
+  "s_n_visible": {
+    "message": "visibili a qualsiasi sito"
+  },
+  "s_where_page": {
+    "message": "Testato come lo vede questa pagina."
+  },
+  "s_where_tab": {
+    "message": "Testato come lo vede {1}, nella scheda che stavi guardando."
+  },
+  "s_open": {
+    "message": "Apri un sito web, poi clicca il pulsante del test di Klin nella barra degli strumenti."
+  },
+  "s_cannot": {
+    "message": "Questa pagina non si può testare (le pagine del browser e alcuni siti protetti non lo permettono). Apri un sito normale e clicca di nuovo il pulsante."
+  },
+  "stg_signals_you_send": {
+    "message": "Segnali che invii"
+  },
+  "stg_network": {
+    "message": "Rete"
+  },
+  "stg_device": {
+    "message": "Dispositivo"
+  },
+  "stg_language_and_place": {
+    "message": "Lingua e luogo"
+  },
+  "stg_hidden_fingerprints": {
+    "message": "Impronte nascoste"
+  },
+  "st_global_privacy_control_name": {
+    "message": "Global Privacy Control"
+  },
+  "st_global_privacy_control_why": {
+    "message": "Dice a ogni sito che rifiuti la vendita e la condivisione dei tuoi dati. In alcuni paesi è vincolante per legge."
+  },
+  "st_cookies_name": {
+    "message": "Cookie"
+  },
+  "st_cookies_why": {
+    "message": "I siti che visiti possono salvare cookie; Klin tiene separati i cookie di ogni sito, così non ti seguono altrove. Questo test non può verificare la separazione."
+  },
+  "st_local_network_address_webrtc_name": {
+    "message": "Indirizzo di rete locale (WebRTC)"
+  },
+  "st_local_network_address_webrtc_why": {
+    "message": "La tecnologia delle videochiamate può rivelare il tuo indirizzo nella rete di casa o dell'ufficio, anche dietro una VPN."
+  },
+  "st_connection_type_name": {
+    "message": "Tipo di connessione"
+  },
+  "st_connection_type_why": {
+    "message": "Wi-Fi, mobile o cavo, e la sua velocità."
+  },
+  "st_browser_and_system_name": {
+    "message": "Browser e sistema"
+  },
+  "st_browser_and_system_why": {
+    "message": "Comunicati a ogni sito a ogni richiesta."
+  },
+  "st_processor_cores_name": {
+    "message": "Core del processore"
+  },
+  "st_processor_cores_why": {
+    "message": "Un numero piccolo che cambia da macchina a macchina."
+  },
+  "st_memory_size_name": {
+    "message": "Quantità di memoria"
+  },
+  "st_memory_size_why": {
+    "message": "Un altro dettaglio hardware che restringe il campo sul tuo dispositivo."
+  },
+  "st_battery_level_name": {
+    "message": "Livello della batteria"
+  },
+  "st_battery_level_why": {
+    "message": "Livello di carica e tempo di ricarica sono stati usati per seguire gli utenti da un sito all'altro."
+  },
+  "st_screen_and_window_name": {
+    "message": "Schermo e finestra"
+  },
+  "st_screen_and_window_why": {
+    "message": "La dimensione dello schermo è comune; quella esatta della finestra è spesso unica."
+  },
+  "st_touch_screen_name": {
+    "message": "Schermo touch"
+  },
+  "st_touch_screen_why": {
+    "message": "Se il dispositivo ha uno schermo touch."
+  },
+  "st_graphics_card_name": {
+    "message": "Scheda grafica"
+  },
+  "st_graphics_card_why": {
+    "message": "Il modello della tua scheda grafica."
+  },
+  "st_cameras_and_microphones_name": {
+    "message": "Fotocamere e microfoni"
+  },
+  "st_cameras_and_microphones_why": {
+    "message": "Quanti dispositivi sono collegati; i nomi restano nascosti finché non dai il permesso."
+  },
+  "st_languages_name": {
+    "message": "Lingue"
+  },
+  "st_languages_why": {
+    "message": "Le tue lingue preferite, in ordine."
+  },
+  "st_time_zone_name": {
+    "message": "Fuso orario"
+  },
+  "st_time_zone_why": {
+    "message": "Più o meno dove sei, anche quando il tuo indirizzo IP è nascosto."
+  },
+  "st_canvas_drawing_name": {
+    "message": "Disegno canvas"
+  },
+  "st_canvas_drawing_why": {
+    "message": "Un sito disegna un'immagine invisibile e la rilegge: piccole differenze tra macchine creano un identificatore stabile."
+  },
+  "st_audio_processing_name": {
+    "message": "Elaborazione audio"
+  },
+  "st_audio_processing_why": {
+    "message": "Stessa idea, con un suono impercettibile."
+  },
+  "st_installed_fonts_name": {
+    "message": "Font installati"
+  },
+  "st_installed_fonts_why": {
+    "message": "L'elenco dei font sul tuo computer è raramente uguale a quello di qualcun altro."
+  }
+}

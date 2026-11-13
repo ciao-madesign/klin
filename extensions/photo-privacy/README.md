@@ -5,7 +5,7 @@ Photo privacy (proposals P6 and P6+): when you choose a photo with a site's uplo
 Status: **working as an installed extension (v0.2): upload button and drag-and-drop.**
 
 - Looks for: GPS location, camera/phone model, date and time, author or owner name, device serial numbers, editing software, comments, XMP/IPTC data, data appended after the picture.
-- **Location found** → a question, with "Remove and continue" as the default answer. **Other hidden data only** → removed, with a short notice. **Nothing found** → the file passes through byte for byte.
+- **Location found** → a question, with "Clean and continue" as the default answer. **Other hidden data only** → removed, with a short notice. **Nothing found** → the file passes through byte for byte.
 - Removal never re-encodes the picture: image data is copied unchanged, so there is no quality loss. The rotation is kept, so photos do not turn sideways.
 - The site hears about the selection only after the decision. The question lives in a closed shadow root and answers only to real user input, so scripts in the page cannot read or answer it.
 - Fully local: files are read in memory; nothing is sent or stored. No permissions other than running in pages.

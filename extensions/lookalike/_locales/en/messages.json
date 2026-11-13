@@ -1,0 +1,41 @@
+{
+  "name": {
+    "message": "Klin Lookalike Warning"
+  },
+  "description": {
+    "message": "Warns before opening a site whose name imitates one you already know (bookmarks and often-visited sites). Fully local."
+  },
+  "l_title": {
+    "message": "This address imitates a site you know"
+  },
+  "l_h1": {
+    "message": "This address imitates a site you know."
+  },
+  "l_lead": {
+    "message": "The name is almost the same as one you know. It is a common trick to steal passwords."
+  },
+  "l_opening": {
+    "message": "You are opening"
+  },
+  "l_known": {
+    "message": "You know"
+  },
+  "l_reason_same_look": {
+    "message": "The two names look the same at a glance, but use different characters (for example “rn” for “m”, “0” for “o”, or letters from another alphabet)."
+  },
+  "l_reason_one_letter": {
+    "message": "The two names differ by a single letter."
+  },
+  "l_go": {
+    "message": "Go to {1}"
+  },
+  "l_back": {
+    "message": "Go back"
+  },
+  "l_continue": {
+    "message": "Continue to {1}"
+  },
+  "l_note": {
+    "message": "Klin compared the name with your bookmarks and often-visited sites, on this machine only. If you continue, Klin will not ask again for this site."
+  }
+}

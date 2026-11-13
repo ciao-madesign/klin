@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Klin Photo Privacy",
+  "name": "__MSG_name__",
   "version": "0.1.0",
-  "description": "Warns when a photo you are about to upload carries your location or other hidden data, and removes it on request. Fully local.",
+  "description": "__MSG_description__",
+  "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "photo-privacy@klin",

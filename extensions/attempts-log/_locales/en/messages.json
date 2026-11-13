@@ -1,0 +1,47 @@
+{
+  "name": {
+    "message": "Klin Collection Log"
+  },
+  "description": {
+    "message": "Shows who tried to collect information about you on the page you are on, and what happened. Fully local, kept in memory only."
+  },
+  "title": {
+    "message": "Collection attempts"
+  },
+  "a_title": {
+    "message": "Collection attempts"
+  },
+  "a_h1": {
+    "message": "Collection attempts"
+  },
+  "a_foot": {
+    "message": "**Not shown:** what the site records on its own servers, details Klin does not watch (screen size, fonts, time zone), and anything that happened before this page loaded. Kept in memory only: it disappears when you close Klin."
+  },
+  "a_clear": {
+    "message": "Clear this page"
+  },
+  "a_on": {
+    "message": "On {1}"
+  },
+  "a_nopage": {
+    "message": "No page yet"
+  },
+  "a_blocked": {
+    "message": "blocked"
+  },
+  "a_notblocked": {
+    "message": "not blocked"
+  },
+  "a_empty": {
+    "message": "Nothing detected on this page. That does not prove nothing was collected: see what is not shown below."
+  },
+  "a_g_blocked": {
+    "message": "Blocked"
+  },
+  "a_g_other": {
+    "message": "Not blocked: limited or only observed"
+  },
+  "a_own": {
+    "message": "this site"
+  }
+}

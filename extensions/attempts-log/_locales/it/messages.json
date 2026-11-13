@@ -1,0 +1,47 @@
+{
+  "name": {
+    "message": "Klin Collection Log"
+  },
+  "description": {
+    "message": "Mostra chi ha provato a raccogliere informazioni su di te nella pagina in cui sei, e cosa è successo. Tutto in locale, solo in memoria."
+  },
+  "title": {
+    "message": "Tentativi di raccolta"
+  },
+  "a_title": {
+    "message": "Tentativi di raccolta"
+  },
+  "a_h1": {
+    "message": "Tentativi di raccolta"
+  },
+  "a_foot": {
+    "message": "**Non mostrato:** ciò che il sito registra sui propri server, i dettagli che Klin non osserva (dimensione dello schermo, font, fuso orario) e tutto ciò che è successo prima del caricamento della pagina. Resta solo in memoria: sparisce quando chiudi Klin."
+  },
+  "a_clear": {
+    "message": "Cancella per questa pagina"
+  },
+  "a_on": {
+    "message": "Su {1}"
+  },
+  "a_nopage": {
+    "message": "Nessuna pagina"
+  },
+  "a_blocked": {
+    "message": "bloccati"
+  },
+  "a_notblocked": {
+    "message": "non bloccati"
+  },
+  "a_empty": {
+    "message": "Nessun tentativo rilevato in questa pagina. Non prova che non sia stato raccolto nulla: guarda sotto cosa non viene mostrato."
+  },
+  "a_g_blocked": {
+    "message": "Bloccati"
+  },
+  "a_g_other": {
+    "message": "Non bloccati: limitati o solo osservati"
+  },
+  "a_own": {
+    "message": "questo sito"
+  }
+}

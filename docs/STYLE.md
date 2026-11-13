@@ -2,7 +2,7 @@
 
 Decided with the project owner on 13 Nov 2026. This is the single reference for the voice, wording and look of every Klin screen. Mock-ups of each decision are in `docs/style/`. The list of changes to apply to existing screens is in `STYLE-CHANGES.md`.
 
-Status: **decided**, except the items in section 9 (open). Nothing in `extensions/` has been changed yet.
+Status: **decided and applied** to the existing screens on 13 Nov 2026 (see `STYLE-CHANGES.md` for what was done and what remains), except the items in section 9 (open).
 
 ## 1. Voice
 Direct, raw, a little punk, a little militant. Objective truth, said plainly, "like compressed air". No false or soothing phrases, no padding, no cheerfulness for its own sake.
@@ -45,10 +45,10 @@ Feature names stay in English as product names ("Klin Self-test") and get a plai
 - **Source flags (P34, P35):** no real labels. A small **marker** next to a result or source, collapsed by default and **expandable** on click. Expanded, it shows: what the flag is, the published criterion, the source of the fact, and how to challenge or switch it off. Never hides or blocks a source; the user can turn markers off. Markers are discreet: not banners, not red alarms.
 
 ## 4. Languages and translation
-- **Now:** Italian and English, both written and checked by the owner. Neither is a machine translation of the other: each is written in the voice above.
+- **Now:** Italian and English. The Italian was written by the guide session from the owner's decisions and still needs the owner's read-through. Neither is a machine translation of the other: each is written in the voice above.
 - **Later (phase 2):** more languages by machine translation, **approved by human translators** before shipping. No language ships unreviewed.
 - **Technical approach:** strings move out of HTML and JavaScript into one strings file per extension and language (WebExtensions `_locales/<lang>/messages.json`). Translators get this guide, the vocabulary table and a do-not-translate list (Klin, Firefox, technical terms as decided in section 2).
-- The language follows the browser's language; the user can switch it.
+- The language follows the browser's language. A switch inside Klin will come with a settings page (extensions cannot share a setting today); until then `?lang=it` or `?lang=en` on a Klin page forces a language, for previews and tests.
 
 ## 5. Visual identity
 
@@ -69,8 +69,10 @@ The first accent (red-orange) was dropped: too close to Claude's identity. Chose
 
 | Token | Dark (default) | Light |
 |---|---|---|
-| Background | `#0e0e10` | `#f1f1ec` |
-| Surface (cards) | `#18181b` | `#ffffff` |
+| Background | `#0a0a0a` | `#f1f1ec` |
+| Surface (cards) | `#141414` | `#ffffff` |
+| Hairline (between rows) | `#222222` | `#dcdcd4` |
+| Card border | `#3a3a3a` | `#bdbdb4` |
 | Text | `#f1f1ec` | `#0e0e10` |
 | Muted text | `#a8a8a2` | `#55554f` |
 | Accent | `#d4ff2a` | `#4a6600` (olive: for text, lines, markers) |
@@ -85,9 +87,10 @@ Rules: **red is for real errors and dangers only**, never decoration. No orange 
 
 ### 5.5 Typography
 - **Titles and the name "Klin": Chakra Petch**, bold (700). Cut corners that echo the logo's slit.
-- **Body text: Inter**, 400 and 600. Long texts are always in Inter.
+- **Interface and short text: Inter**, 400 and 600.
+- **Long reading: Source Serif 4** (400/600): the welcome pages, the explanations at the bottom of a page, and later the charter. Never in buttons, labels or dialogs.
 - **Small labels and technical values: JetBrains Mono**, 500, uppercase and letter-spaced, sparingly.
-- All free under the SIL Open Font License and **bundled inside the browser**: no Google Fonts, no outside request. Ship the licence texts with the fonts. Check Italian accents render in all three.
+- All four are free under the SIL Open Font License and **bundled inside the browser**: no Google Fonts, no outside request. Ship the licence texts with the fonts. Check Italian accents render in all three.
 - Fallback: `system-ui, sans-serif`; `ui-monospace, monospace` for labels.
 - Mock-up: `docs/style/caratteri.html`.
 
@@ -96,7 +99,7 @@ Style "sharp with room to breathe" (`docs/style/forme.html`, option B): corner r
 
 ### 5.7 Signature detail
 Two things together (`docs/style/firma.html`):
-- **The cut:** one corner (top right) of every card, button and dialog is cut at 45 degrees, with the angle of the logo's slit. About 14 px on cards, 7 px on buttons. Inputs and small chips keep the plain 3 px corner. Never cut a box so that text near the corner is clipped. The focus ring follows the cut.
+- **The cut:** one corner (top right) of every card, button and dialog is cut at 45 degrees, with the angle of the logo's slit. About 14 px on cards, 7 px on buttons. Inputs and small chips keep the plain 3 px corner. Never cut a box so that text near the corner is clipped. While an element has keyboard focus the cut is removed and a plain 2 px accent rectangle is drawn, so the ring is never clipped.
 - **The highlighter:** at most **one** phrase per screen is highlighted (lime background, black text). It is for the plain truth the user must not miss, such as "Klin non ti rende anonimo." Never decoration, never in warnings, never more than one per screen.
 
 ## 6. Before and after (taken from the existing screens)
@@ -135,7 +138,7 @@ Two things together (`docs/style/firma.html`):
 | Mark a source with a small expandable marker. | Put a red banner or hide a source. |
 
 ## 8. Accessibility
-- **Contrast** (measured, WCAG 2.1 AA needs 4.5:1 for text, 3:1 for large text and interface parts): text on background 17.0 (dark), 19.3 (light on card); muted text 7.4 to 8.1 (dark), 6.6 to 7.5 (light); accent on background 16.7 (dark), 5.8 (light, olive); error 5.8 to 6.4 (dark), 5.2 to 5.9 (light); warning 10.5 (dark), 5.2 to 5.9 (light). Re-check every new colour pair.
+- **Contrast** (WCAG 2.1 AA needs 4.5:1 for text, 3:1 for large text and interface parts). Checked automatically for every token pair by `tests/acceptance/style/run.py`; all pairs pass. Re-run it when a colour changes.
 - **Keyboard:** everything reachable and usable by keyboard, logical order, visible focus ring (2 px accent, follows the cut corner), no keyboard trap. Esc closes dialogs; the dialog traps focus while open and returns it on close.
 - **Screen readers:** headings in order, real buttons and links (never clickable divs), labels on icon-only buttons, status messages in `role="status"`, dialogs with `role="dialog"` and a label. The expandable source marker is a button with `aria-expanded`.
 - **Not by colour alone:** every state (protected, exposed, warning, error) has a word or an icon as well as a colour.
@@ -147,8 +150,8 @@ Two things together (`docs/style/firma.html`):
 - No fonts, images or scripts from the internet in any page: everything is bundled.
 
 ## 9. Still open
-- **Reference site (analysed 13 Nov 2026, owner authorised the host).** `thedarksalad.it` is an independent counter-information site. What it does: near-black background `#0a0a0a`, surface `#141414`, hairlines `#222`, warm off-white text `#eeeae3` / `#c8c6c0`, muted `#6a6a68`; ultra-bold display face for titles, Inter for text, Courier-style mono for small labels, a serif (Source Serif 4) for long reading; one electric accent (`#0000ff`) plus a pastel per section; radius 4 px at most; "press any key" intro. Our decisions already match most of it (dark default, heavy titles, Inter, mono labels, sharp shapes, one accent). **Proposals, not applied, owner to accept or refuse:** (1) deepen the dark background from `#0e0e10` toward `#0a0a0a` and use `#222` hairlines between list rows; (2) use a serif (Source Serif 4, OFL, bundled) for long texts only, such as the charter and long explanations; (3) keep our lime accent, not the blue. The site also loads Google Analytics: Klin never does.
+- **Reference site** (`thedarksalad.it`, analysed 13 Nov 2026): its three useful ideas were accepted by the owner and are applied: a deeper black (`#0a0a0a`) with `#222` hairlines between rows, a serif for long reading, and keeping our lime accent instead of its blue. Nothing else is taken from it.
 - **Level names** (Standard, Avanzato, Anonimo) and the term "Anonimo": the third name conflicts with the honesty rule; rename when P29 is built (candidates: "Massimo").
 - **Italian terms** in section 2 are guide defaults awaiting the owner's confirmation.
 - **Charter** (P36): whether antifascism, freedom of expression and rejection of regimes appear anywhere in public text. The owner closed the stated list at five values (freedom, independence, equality, brotherhood, ecology); these stay as working principles only; they stay as working principles in `PRINCIPLES.md`.
-- **Master artwork:** the logo exists as a mock-up; a clean SVG, a 16 px and 32 px check and a monochrome version must be drawn when the branding folder is filled.
+- **Master artwork:** clean SVG masters are in `branding/` (lime, black, white, lime on dark). Still to do: PNG exports and a real check of the 16 px and 32 px renderings in the toolbar.

@@ -1,11 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "Klin Welcome",
+  "name": "__MSG_name__",
   "version": "0.1.0",
-  "description": "The presentation page of Klin: opens once, the first time the browser starts, and can be opened again from the info button.",
-  "browser_specific_settings": { "gecko": { "id": "welcome@klin", "strict_min_version": "128.0" } },
-  "permissions": ["storage"],
-  "action": { "default_title": "About Klin", "default_icon": "icon.svg" },
-  "icons": { "48": "icon.svg", "96": "icon.svg" },
-  "background": { "scripts": ["background.js"] }
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "welcome@klin",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "__MSG_title__",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  }
 }

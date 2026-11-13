@@ -1,4 +1,4 @@
-// Intercepts photos chosen with a site's upload button, before the site sees them.
+// Intercepts photos chosen with a site's upload button, or dropped into the page, before the site sees them.
 // If a photo carries hidden data, the user decides; the site then receives the cleaned or the original file.
 // Everything happens in this tab: files are read in memory, nothing is sent or stored.
 "use strict";
@@ -6,6 +6,7 @@
 (() => {
   const MAX_BYTES = 40 * 1024 * 1024;            // larger files are passed through unchecked
   const isCandidate = (f) => /^image\/(jpeg|png)$/.test(f.type) || /\.(jpe?g|png)$/i.test(f.name);
+  const SYNC_LIMIT = 16 * 1024 * 1024;           // dropped files up to this size are checked at once
   const pending = new WeakMap();                  // input -> token of the selection being checked
   let redispatching = false;
 
@@ -78,7 +79,7 @@
         el("p", { textContent: (names.length > 2 ? `${names.length} photos contain` : `${names.join(", ")} contains`) + " hidden data the site can read:" }),
         el("ul", {}, kinds.map((k) => el("li", { textContent: k }))),
         el("div", { className: "row" }, [remove, keep, cancel]),
-        el("p", { className: "muted", textContent: "Removing does not change the picture itself. Klin only checks files chosen with the upload button, not photos dragged in or pasted, and cannot tell what a site does with a photo you keep." }),
+        el("p", { className: "muted", textContent: "Removing does not change the picture itself. Klin checks photos chosen with the upload button or dropped into the page, not pasted ones, and cannot tell what a site does with a photo you keep." }),
       ]);
       box.addEventListener("keydown", (e) => { if (e.isTrusted && e.key === "Escape") done("cancel"); });
       root.append(box);
@@ -105,29 +106,31 @@
     } finally { redispatching = false; }
   }
 
+  // Decides what the site will receive: the files to deliver, or null if the user cancelled.
+  async function resolve(original) {
+    const items = await examine(original);
+    const withData = items.filter((i) => i.info && i.info.any);
+    if (!withData.length) return original;
+    const location = withData.some((i) => i.info.found.location);
+    const answer = location ? await ask(items) : "remove";
+    if (answer === "cancel") return null;
+    if (answer === "keep") return original;
+    if (!location) {
+      const kinds = [...new Set(withData.flatMap((i) => KlinPhotoMetadata.describe(i.info.found)))];
+      notice(`Klin removed hidden details (${kinds.join(", ")}) from ${withData.length === 1 ? withData[0].file.name : withData.length + " photos"}.`);
+    }
+    return items.map((i) => (i.info && i.info.any ? cleaned(i) : i.file));
+  }
+
   async function handle(input) {
     const token = Symbol();
     pending.set(input, token);
     const original = [...input.files];
     try {
-      const items = await examine(original);
+      const files = await resolve(original);
       if (pending.get(input) !== token) return;
-      const withData = items.filter((i) => i.info && i.info.any);
-      let files = original;
-      if (withData.length) {
-        const location = withData.some((i) => i.info.found.location);
-        const answer = location ? await ask(items) : "remove";
-        if (pending.get(input) !== token) return;
-        if (answer === "cancel") { pending.delete(input); input.value = ""; return; }
-        if (answer === "remove") {
-          files = items.map((i) => (i.info && i.info.any ? cleaned(i) : i.file));
-          if (!location) {
-            const kinds = [...new Set(withData.flatMap((i) => KlinPhotoMetadata.describe(i.info.found)))];
-            notice(`Klin removed hidden details (${kinds.join(", ")}) from ${withData.length === 1 ? withData[0].file.name : withData.length + " photos"}.`);
-          }
-        }
-      }
       pending.delete(input);
+      if (files === null) { input.value = ""; return; }
       deliver(input, files);
     } catch (e) {
       // Never leave the user's upload dead: say so, and let the original selection through.
@@ -138,6 +141,78 @@
         deliver(input, original);
       }
     }
+  }
+
+  // ---- photos dropped into the page ---------------------------------------------------------------
+  // A drop hands the files to the site at once, so the file is read synchronously first:
+  // clean photos (the common case) are left completely alone; only photos with hidden data are held back.
+  function peek(file) {
+    if (file.size > SYNC_LIMIT) return undefined;           // unknown: check it the slow way
+    let url;
+    try {
+      url = URL.createObjectURL(file);
+      const request = new XMLHttpRequest();
+      request.open("GET", url, false);
+      request.overrideMimeType("text/plain; charset=x-user-defined");
+      request.send();
+      const text = request.responseText, bytes = new Uint8Array(text.length);
+      for (let i = 0; i < text.length; i++) bytes[i] = text.charCodeAt(i) & 255;
+      return KlinPhotoMetadata.inspect(bytes);
+    } catch (e) { return undefined; } finally { if (url) URL.revokeObjectURL(url); }
+  }
+
+  // The browser empties a DataTransfer once its event has finished, so everything is copied beforehand.
+  function snapshot(source) {
+    const data = {};
+    for (const type of source.types) {
+      if (type === "Files") continue;
+      try { data[type] = source.getData(type); } catch (e) { /* not readable: skipped */ }
+    }
+    return data;
+  }
+
+  // Copies files into buffers owned by this script, so they can be handed to the page's own context.
+  async function exportFiles(files) {
+    const out = [];
+    for (const file of files) {
+      const view = new Uint8Array(await file.arrayBuffer()), bytes = new Uint8Array(view.length);
+      bytes.set(view);
+      out.push({ name: file.name, type: file.type, lastModified: file.lastModified, bytes });
+    }
+    return out;
+  }
+
+  async function handleTransfer(event, source) {
+    const target = event.target;
+    const original = [...source.files], data = snapshot(source);
+    const coords = { clientX: event.clientX, clientY: event.clientY, screenX: event.screenX, screenY: event.screenY };
+    let files = original;
+    try {
+      files = await resolve(original);
+    } catch (e) {
+      console.error("Klin Photo Privacy:", e);
+      notice("Klin could not check this photo, so it was sent as it is.");
+    }
+    if (files === null) return;
+    const detail = cloneInto({ data, coords, files: await exportFiles(files) }, window);
+    redispatching = true;
+    try {
+      // main.js (page context) turns this into the real drop event for the site.
+      target.dispatchEvent(new CustomEvent("klin-photo-redispatch", { bubbles: true, composed: true, detail }));
+    } finally { redispatching = false; }
+  }
+
+  function onTransfer(event) {
+    if (redispatching || !event.isTrusted) return;
+    const source = event.dataTransfer;
+    if (!source || !source.files || ![...source.files].some(isCandidate)) return;
+    const target = event.target;
+    if (target instanceof HTMLInputElement && target.type === "file") return;   // handled as a selection
+    const verdicts = [...source.files].filter(isCandidate).map(peek);
+    if (verdicts.every((v) => v === null || (v && !v.any))) return;   // nothing to report: do not interfere
+    event.preventDefault();                       // otherwise the browser would open the dropped file
+    event.stopImmediatePropagation();
+    handleTransfer(event, source);
   }
 
   function onSelect(event) {
@@ -151,4 +226,7 @@
 
   window.addEventListener("input", onSelect, true);
   window.addEventListener("change", onSelect, true);
+  window.addEventListener("drop", onTransfer, true);
+  // Paste is deliberately not handled: Firefox lets a script build a paste event only without files,
+  // so once held back a pasted photo could not be handed to the site again.
 })();

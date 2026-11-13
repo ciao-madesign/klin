@@ -104,6 +104,20 @@ class Firefox:
     def handles(self):
         return self.cmd("WebDriver:GetWindowHandles")
 
+    def copy_file_to_clipboard(self, path):
+        """Puts a file on the clipboard the way a file manager's Copy does."""
+        return self.chrome_script("""
+            const [path, done] = arguments;
+            const file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsIFile);
+            file.initWithPath(path);
+            const trans = Cc["@mozilla.org/widget/transferable;1"].createInstance(Ci.nsITransferable);
+            trans.init(null);
+            trans.addDataFlavor("application/x-moz-file");
+            trans.setTransferData("application/x-moz-file", file);
+            Services.clipboard.setData(trans, null, Services.clipboard.kGlobalClipboard);
+            done(true);
+        """, [str(path)])
+
     def find(self, css):
         return self.cmd("WebDriver:FindElement", {"using": "css selector", "value": css})
 

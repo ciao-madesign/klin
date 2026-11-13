@@ -1,4 +1,4 @@
-# ADR 0003 – greenweb as a pre-installed extension
+# ADR 0004 – greenweb as a pre-installed extension
 
 Status: accepted
 

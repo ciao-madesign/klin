@@ -3,14 +3,18 @@
 Read this first, in any new session. It is the single place that says where the project stands, who did what and what is open. Keep it current: update it in the same commit as the work it describes. Last update: 13 Nov 2026.
 
 ## 1. Sessions and branches
+State on 13 Nov 2026. **Everything from every branch is now merged in `claude/brave-ride-g0o4ze`** (the style session's branch). The other branches were not touched.
 | Branch | What it holds | State |
 |---|---|---|
-| `claude/inspiring-mccarthy-prcv1e` | **Default branch.** Phase 0 base plus the merged work of `amazing-ritchie`: storage benchmark and ADR 0003 (IndexedDB for V1), Ollama check, WebExtensions probe, baseline tools (`tests/baseline/tools`), the Geographic Traffic Controller proposal | reference line |
-| `claude/amazing-ritchie-9835ab` | Source of the above | merged (PR 1) |
-| `claude/zealous-maxwell-vxmbwg` | greenweb as the pre-installed Energy & Carbon Monitor (an ADR numbered 0003, to renumber to 0004), `extensions/carbon-monitor`, a second copy of the WebExtensions probe (`tests/acceptance/webext`) | **not merged**; its ADR number clashes, its `webext` files differ slightly from the default branch's |
-| `claude/pensive-archimedes-ahv43z` | Principles and audit, proposals P0–P37, config changes, ten extensions with tests (below), decisions of the owner. **Merged the default branch on 13 Nov** so it contains everything above except `zealous-maxwell` | current work, pushed |
+| `claude/inspiring-mccarthy-prcv1e` | Default branch (Phase 0 base + `amazing-ritchie`, PR 1) | contained in this branch |
+| `claude/amazing-ritchie-9835ab` | Storage benchmark, Ollama check, probe, baseline tools, GTC proposal | merged (PR 1) |
+| `claude/pensive-archimedes-ahv43z` | Principles, proposals P0-P37, config, ten extensions with tests | contained in this branch |
+| `claude/zealous-maxwell-vxmbwg` | greenweb ADR (renumbered 0004), `extensions/carbon-monitor` | merged here; ADR renumbered |
+| `claude/brave-ride-g0o4ze` | Union of all the above, style session | **most complete line** |
 
-Open reconciliations: (1) merge `zealous-maxwell` and renumber its ADR; (2) decide with the owner which `webext` probe to keep; (3) merge or rebase this branch into the default branch (pull request, only when the owner asks).
+Choices made while merging: the `webext` probe of the default branch was kept (it supports a real Ollama through `REAL_OLLAMA`; the other copy only differs in the mock model name). Python cache files were removed from git and ignored.
+
+Open reconciliation: bring this branch into the default branch (pull request, only when the owner asks).
 
 ## 2. Where things live
 `docs/` specification, architecture, roadmap, principles and audit (`PRINCIPLES.md`), proposals (`PROPOSALS.md`), connections audit (`CONNECTIONS.md`, generated), Phase 0 findings (`PHASE0.md`), decisions (`adr/`), this file. `config/` prefs and policies. `extensions/` one folder per module, each with a README that lists its **limits**. `tests/` acceptance tests and the shared Firefox driver. `build/` pinned third-party components, doc generator. `branding/` empty.
@@ -30,7 +34,7 @@ Open reconciliations: (1) merge `zealous-maxwell` and renumber its ADR; (2) deci
 Not built yet: workspaces/tabs UI, dashboard, Traffic Engine and monitors, Automation, AI, Search Intelligence, Data Footprint, Tor, mobile. Not shippable yet: see section 6.
 
 ## 4. Decisions taken (owner, 13 Nov 2026; full text in `PRINCIPLES.md`)
-Standard is the default level; privacy comes first, then low impact, then security; ethics and source lists start from existing public lists, adapted, labelled and never hidden; decoy traffic is opt-in and off by default; Safe Browsing stays on, explained and switchable; Firefox's own AI stays off; the honest private window is an extension (no patch). Earlier: OCSP off, DoH chosen by the user at first start with an optional preselected default (ADR 0005), a Mozilla-signed pre-installed extension model (ADR 0004 on the other branch).
+Standard is the default level; privacy comes first, then low impact, then security; ethics and source lists start from existing public lists, adapted, labelled and never hidden; decoy traffic is opt-in and off by default; Safe Browsing stays on, explained and switchable; Firefox's own AI stays off; the honest private window is an extension (no patch). Earlier: OCSP off, DoH chosen by the user at first start with an optional preselected default (ADR 0005), a Mozilla-signed pre-installed extension model (ADR 0004).
 
 ## 5. Open questions
 - **Style and tone of Klin** (voice, language, visual identity, name and tagline, logo): not defined. Being worked in a separate session: see `docs/handoff/STYLE-SESSION.md`. Until then all wording is a plain English draft and the look is provisional.

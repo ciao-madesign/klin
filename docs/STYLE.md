@@ -46,3 +46,10 @@ Plain and direct, **closer to the technical terms** than to everyday paraphrase.
 - There is **no separate wordmark logo.** The name is written "Klin" in running text, or "klin" in lowercase in the display face where a title needs it. The symbol and the name are not locked together.
 - Must stay legible at 16 px. Clear space around it: at least a quarter of its width. Never rotated, outlined, recoloured out of palette, or given effects.
 - Not derived from any Firefox mark or colour (repository rule).
+
+### 5.3 Tagline (decided 13 Nov 2026)
+- **"Free. Independent. Yours."** / Italian: **"Libero. Indipendente. Tuo."**
+- The old line "Privacy first. Low impact. Local intelligence." stays only as a small technical description where Klin must be explained.
+
+### 5.2 and colours: under review (13 Nov 2026)
+The owner asked to revisit the logo (more personal: independence and rebellion, still minimal) and the colours (the red-orange accent is too close to Claude's identity). Sections 5.2 and the accent colour above are **provisional until the review ends**.

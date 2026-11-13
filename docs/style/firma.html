@@ -1,0 +1,36 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Klin – il segno distintivo</title>
+<style>
+:root{--bg:#0e0e10;--fg:#f1f1ec;--card:#18181b;--ac:#d4ff2a}
+body{margin:0;padding:20px;background:#555;font:14px/1.45 system-ui,sans-serif}
+.tag{color:#fff;font:600 15px system-ui;margin:0 0 8px}.tag span{font-weight:400}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
+.p{background:var(--bg);color:var(--fg);padding:18px}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.t{font:900 24px "Arial Black",Arial,sans-serif;letter-spacing:-1px}.s{font-size:12px;opacity:.8}
+h2{font:800 16px "Arial Black",Arial;margin:0 0 6px}p{margin:4px 0;font-size:13px}
+.card{background:var(--card);border:2px solid var(--fg);padding:12px;margin:10px 0}
+.b{display:inline-block;padding:6px 12px;border:2px solid var(--fg);margin:8px 8px 0 0;font:700 13px system-ui,sans-serif}
+.b.pri{background:var(--ac);color:#0e0e10;border-color:var(--ac)}
+.lab{font:500 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;opacity:.75;display:block;margin-bottom:8px}
+/* A taglio */
+.A .card,.A .b{border:0;position:relative;background:var(--fg);padding:2px;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+.A .card>.in{background:var(--card);padding:12px;clip-path:polygon(0 0,calc(100% - 12.8px) 0,100% 12.8px,100% 100%,0 100%)}
+.A .b{padding:0;background:var(--fg)}.A .b>.in{display:block;background:var(--bg);padding:6px 12px;clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,0 100%)}
+.A .b.pri{background:var(--ac)}.A .b.pri>.in{background:var(--ac);color:#0e0e10}
+/* B ombra */
+.B .card{box-shadow:6px 6px 0 var(--ac)}.B .b{box-shadow:3px 3px 0 var(--fg)}.B .b.pri{box-shadow:3px 3px 0 var(--fg)}
+/* C evidenziatore */
+.C mark{background:var(--ac);color:#0e0e10;padding:0 5px;font-weight:700}
+.C .lab{display:inline-block;background:var(--fg);color:#0e0e10;padding:4px 6px;opacity:1;transform:rotate(-2deg)}
+</style>
+<svg width="0" height="0" style="position:absolute"><symbol id="logo" viewBox="0 0 100 100"><mask id="m"><rect width="100" height="100" fill="#fff"/><polygon points="14,38 50,52 86,38 86,56 50,68 14,56" fill="#000"/></mask><circle cx="50" cy="50" r="45" fill="currentColor" mask="url(#m)"/></symbol></svg>
+<script>
+const D=[["A · Il taglio","A","Un angolo tagliato in diagonale su schede e bottoni, con lo stesso taglio della fessura del logo. Si vede in ogni schermata, senza costare leggibilità."],
+["B · L'ombra dura","B","Ombra piena e netta, in lime sulle schede. Da manifesto e da fanzine, molto riconoscibile. Rischia di sembrare una moda."],
+["C · L'evidenziatore","C","Parole chiave evidenziate in lime come una frase sottolineata col pennarello, più etichette piccole inclinate. Mette in primo piano la verità."]];
+const inn=(h,A)=>A?`<div class="in">${h}</div>`:h;
+for(const[t,k,d]of D){const A=k=="A";document.write(`<div style="margin-bottom:26px"><div class="tag">${t} — <span>${d}</span></div><div class="p ${k}" style="max-width:420px"><div class="hd"><svg width="34" height="34" style="color:#d4ff2a"><use href="#logo"/></svg><div><div class="t">Klin</div><div class="s">Libero. Indipendente. Tuo.</div></div></div>
+<div class="card">${inn(`<span class="lab">Foto</span><h2>Questa foto dice ${k=="C"?'<mark>dove l\'hai scattata</mark>':"dove l'hai scattata"}</h2><p>Chiunque la riceva lo legge.</p><span class="b pri">${inn("Ripulisci e continua",A)}</span><span class="b">${inn("Lascia com'è",A)}</span>`,A)}</div>
+<div class="card">${inn(`<span class="lab">Registro</span><p><b>3 tracker bloccati.</b> ${k=="C"?'<mark>Klin non ti rende anonimo.</mark>':"Klin non ti rende anonimo."} Ti rende più difficile da seguire.</p>`,A)}</div></div></div>`)}
+</script></html>

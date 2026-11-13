@@ -1,0 +1,45 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Klin – 3 direzioni visive</title>
+<style>
+body{margin:0;padding:20px;background:#888;font:14px/1.45 system-ui,sans-serif;color:#222}
+h1{font:600 18px system-ui;color:#fff;margin:0 0 4px}p.i{color:#eee;margin:0 0 18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+@media(max-width:760px){.row{grid-template-columns:1fr}}
+.tag{grid-column:1/-1;color:#fff;font:600 15px system-ui;margin-bottom:-6px}
+.p{background:var(--bg);color:var(--fg);padding:18px;border:var(--bw) solid var(--fg);border-radius:var(--r);font-family:var(--font)}
+.logo{font:var(--lw) 30px var(--font);letter-spacing:var(--ls);text-transform:var(--tt);margin:0 0 2px}
+.logo b{color:var(--ac)}
+.sub{font-size:12px;opacity:.8;margin:0 0 14px}
+.card{border:var(--bw) solid var(--fg);border-radius:var(--r);background:var(--card);padding:12px;margin:10px 0}
+.card h2{font:var(--hw) 16px var(--font);text-transform:var(--tt);margin:0 0 6px;letter-spacing:var(--ls)}
+.card p{margin:4px 0;font-size:13px}
+.btn{display:inline-block;padding:6px 12px;border:var(--bw) solid var(--fg);border-radius:var(--r);margin:6px 6px 0 0;font:600 13px var(--font)}
+.btn.pri{background:var(--ac);color:var(--onac);border-color:var(--ac)}
+.mk{display:flex;gap:8px;align-items:center;font-size:12px;margin-top:8px;border-top:1px dashed var(--fg);padding-top:8px}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--ac);flex:none}
+.vals{font-size:12px;opacity:.85;margin-top:8px}
+/* 1 manifesto */
+.a{--font:"Arial Black","Helvetica Neue",Arial,sans-serif;--r:0;--bw:2px;--lw:900;--hw:900;--ls:-.5px;--tt:uppercase}
+.a.l{--bg:#f2efe8;--fg:#111;--card:#fff;--ac:#e8381f;--onac:#fff}
+.a.d{--bg:#121212;--fg:#f2efe8;--card:#1c1c1c;--ac:#ff5a3d;--onac:#111}
+/* 2 terminale */
+.b{--font:ui-monospace,"Courier New",monospace;--r:2px;--bw:1px;--lw:700;--hw:700;--ls:0;--tt:none}
+.b.l{--bg:#f4f5f0;--fg:#14201a;--card:#fff;--ac:#0a7a3d;--onac:#fff}
+.b.d{--bg:#0b100d;--fg:#d6f5df;--card:#111a14;--ac:#3dff8a;--onac:#06130b}
+/* 3 sobrio duro */
+.c{--font:system-ui,"Segoe UI",sans-serif;--r:5px;--bw:1px;--lw:700;--hw:650;--ls:-.3px;--tt:none}
+.c.l{--bg:#f6f6f4;--fg:#1d2228;--card:#fff;--ac:#f2b200;--onac:#1d2228}
+.c.d{--bg:#14181d;--fg:#e8eaec;--card:#1c2127;--ac:#ffc933;--onac:#14181d}
+</style>
+<h1>Klin – 3 direzioni visive</h1><p class="i">Stessa schermata vera (foto con posizione) in chiaro e scuro. I caratteri qui sono quelli del tuo computer: quelli veri saranno inclusi nel browser.</p>
+<script>
+const D=[["A · Manifesto","a","Carta e inchiostro, un solo rosso, angoli netti, titoli pesanti in maiuscolo. Da volantino, da fanzine."],
+["B · Terminale","b","Monospazio, verde acido sul quasi-nero. Tecnico e crudo. Da strumento, da hacker."],
+["C · Sobrio duro","c","Neutro, angoli appena smussati, un giallo segnale. Serio, meno rumoroso, adatto a tutti i giorni."]];
+for(const[t,k,d]of D){document.write(`<div class="row"><div class="tag">${t} — <span style="font-weight:400">${d}</span></div>`);
+for(const m of["l","d"])document.write(`<div class="p ${k} ${m}"><div class="logo">kl<b>i</b>n</div><div class="sub">Il browser per chi vuole essere libero.</div>
+<div class="card"><h2>Questa foto dice dove l'hai scattata</h2><p>Chiunque la riceva lo legge. Togliere questi dati non cambia l'immagine.</p><span class="btn pri">Ripulisci e continua</span><span class="btn">Lascia com'è</span><span class="btn">Annulla</span></div>
+<div class="card"><p><b>3 tracker bloccati.</b> Il sito ha provato a riconoscerti dal tuo dispositivo (fingerprinting).</p><div class="mk"><span class="dot"></span><span>Fonte segnalata ▸ <u>perché?</u></span></div></div>
+<div class="vals">Freedom, independence, equality and brotherhood.</div></div>`);
+document.write('</div>')}
+</script></html>

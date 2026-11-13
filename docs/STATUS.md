@@ -1,6 +1,6 @@
 # Project status and handoff
 
-Read this first, in any new session. It is the single place that says where the project stands, who did what and what is open. Keep it current: update it in the same commit as the work it describes. Last update: 13 Nov 2026.
+Read this first, in any new session. It is the single place that says where the project stands, who did what and what is open. Keep it current: update it in the same commit as the work it describes. Last update: 13 Nov 2026 (style decisions).
 
 ## 1. Sessions and branches
 State on 13 Nov 2026. **Everything from every branch is now merged in `claude/brave-ride-g0o4ze`** (the style session's branch). The other branches were not touched.
@@ -37,12 +37,12 @@ Not built yet: workspaces/tabs UI, dashboard, Traffic Engine and monitors, Autom
 Standard is the default level; privacy comes first, then low impact, then security; ethics and source lists start from existing public lists, adapted, labelled and never hidden; decoy traffic is opt-in and off by default; Safe Browsing stays on, explained and switchable; Firefox's own AI stays off; the honest private window is an extension (no patch). Earlier: OCSP off, DoH chosen by the user at first start with an optional preselected default (ADR 0005), a Mozilla-signed pre-installed extension model (ADR 0004).
 
 ## 5. Open questions
-- **Style and tone of Klin** (voice, language, visual identity, name and tagline, logo): not defined. Being worked in a separate session: see `docs/handoff/STYLE-SESSION.md`. Until then all wording is a plain English draft and the look is provisional.
+- **Style and tone of Klin: decided on 13 Nov 2026**, see `docs/STYLE.md` (voice, vocabulary, values, languages, logo, colour, fonts, shapes, accessibility) and `docs/STYLE-CHANGES.md` (what to change in each screen, by visibility). **Not applied yet**: no extension was touched. Next step for an engineering session: shared stylesheet, bundled fonts, strings files, then the screens in the order of `STYLE-CHANGES.md`. Still open inside the style: the reference site `thedarksalad.it` (could not be opened), level names (the name "Anonimo" conflicts with the honesty rule), owner's confirmation of the Italian terms, the clean logo artwork, and whether anything beyond "Freedom, independence, equality, brotherhood and ecology." appears in public text (the charter, P36).
 - Governance of the ethics and source lists (who reviews, how entries are challenged): the charter (P36).
 - Geographic Traffic Controller (system level) versus P32 (browser level): one ADR.
 - Privacy levels (P29): the Advanced level must be tried on real sites.
 - The resolver list for DoH.
-- Which languages Klin ships in (all text is English today).
+- Languages: decided (Italian and English now; more later with human-reviewed machine translation). All text is still English in the code until the strings are moved.
 
 ## 6. Pitfalls found (read before changing things)
 - **Unsigned extensions cannot be installed permanently in Firefox release.** Every Klin extension must be signed (unlisted, free) or the build must use another route; see ADR 0004. Until then they only run as temporary installs in tests. Consequences not yet tested: whether `runtime.onInstalled` fires at the first start for built-in extensions (the presentation page depends on it); the `private_browsing` policy grant (the honest private window depends on it).
@@ -66,7 +66,7 @@ python3 tests/acceptance/self-test/run.py klin-ff        # example
 Some tests rewrite `distribution/policies.json`: use a copy. Network in the cloud environment: `raw.githubusercontent.com` and `addons.mozilla.org` are reachable, `ublockorigin.github.io` is not.
 
 ## 9. Next steps (suggested order)
-1. Style and tone session (separate), then apply it to the pages and write `docs/STYLE.md`.
+1. Apply the style (`docs/STYLE.md`, `docs/STYLE-CHANGES.md`) to the pages: shared stylesheet, fonts, strings files, then screen by screen. The style itself is decided.
 2. Privacy levels (P29): try Advanced on real sites, write the ADR.
 3. Signing and distribution of the extensions (ADR), test `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).

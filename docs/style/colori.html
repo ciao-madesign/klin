@@ -1,0 +1,34 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Klin – 3 palette</title>
+<style>
+body{margin:0;padding:20px;background:#777;font:14px/1.45 system-ui,sans-serif}
+.tag{color:#fff;font:600 15px system-ui;margin:0 0 8px}.tag span{font-weight:400}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+@media(max-width:760px){.row{grid-template-columns:1fr}}
+.p{background:var(--bg);color:var(--fg);padding:18px;border:2px solid var(--fg);font-family:"Arial Black","Helvetica Neue",Arial,sans-serif}
+.p *{font-family:inherit}
+.t{font:900 26px "Arial Black",Arial,sans-serif;letter-spacing:-1px;text-transform:uppercase;margin:0 0 2px}
+.s{font:13px system-ui,sans-serif;opacity:.8;margin:0 0 12px}
+.card{border:2px solid var(--fg);background:var(--card);padding:12px;margin:10px 0}
+.card h2{font:900 15px "Arial Black",Arial;text-transform:uppercase;margin:0 0 6px}
+.card p{font:13px system-ui,sans-serif;margin:4px 0}
+.b{display:inline-block;padding:6px 12px;border:2px solid var(--fg);margin:6px 6px 0 0;font:700 13px system-ui,sans-serif}
+.b.pri{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--ac);margin-right:8px;vertical-align:middle}
+.sw{display:flex;gap:6px;margin-top:10px}.sw i{flex:1;height:26px;border:1px solid var(--fg)}
+.l{--bg:#f1f1ec;--fg:#0e0e10;--card:#fff}.d{--bg:#0e0e10;--fg:#f1f1ec;--card:#18181b}
+.m.d{--ac:#ff2e88;--on:#0e0e10}.m.l{--ac:#c4005a;--on:#fff}
+.n.d{--ac:#d4ff2a;--on:#0e0e10}.n.l{--ac:#4a6600;--on:#fff}
+.r.d{--ac:#ff2d4a;--on:#0e0e10}.r.l{--ac:#c8102e;--on:#fff}
+</style>
+<script>
+const D=[["A · Magenta","m","Rosa elettrico. Punk, diretto, lontano da tutti i colori dei grandi browser."],
+["B · Lime acido","n","Giallo-verde fluo su nero. Industriale, da cartello di pericolo. È il più leggibile in scuro."],
+["C · Rosso freddo","r","Rosso cremisi, non arancione. Militante, con la storia del rosso e nero. Il più carico di significato."]];
+for(const[t,k,d]of D){document.write(`<div class="tag">${t} — <span>${d}</span></div><div class="row">`);
+for(const m of["d","l"])document.write(`<div class="p ${k} ${m}"><div class="t">Klin</div><div class="s">Libero. Indipendente. Tuo.</div>
+<div class="card"><h2>Questa foto dice dove l'hai scattata</h2><p>Chiunque la riceva lo legge.</p><span class="b pri">Ripulisci e continua</span><span class="b">Lascia com'è</span></div>
+<div class="card"><p><span class="dot"></span><b>3 tracker bloccati.</b> Segnalino ▸ <u>perché?</u></p></div>
+<div class="sw"><i style="background:var(--bg)"></i><i style="background:var(--card)"></i><i style="background:var(--fg)"></i><i style="background:var(--ac)"></i></div></div>`);
+document.write('</div>')}
+</script></html>

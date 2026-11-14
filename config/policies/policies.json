@@ -9,6 +9,11 @@
     "OverrideFirstRunPage": "",
     "OverridePostUpdatePage": "",
     "NoDefaultBookmarks": true,
+    "Homepage": {
+      "URL": "about:newtab",
+      "StartPage": "homepage",
+      "Locked": false
+    },
     "HttpsOnlyMode": "enabled",
     "EnableTrackingProtection": {
       "Value": true,

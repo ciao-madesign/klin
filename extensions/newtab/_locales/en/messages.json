@@ -1,0 +1,8 @@
+{
+  "name": { "message": "Klin Start Page" },
+  "description": { "message": "Klin's start page and new tab: the logo and a search box. Shows nothing from the internet and keeps no history." },
+  "n_title": { "message": "New tab" },
+  "n_search": { "message": "Search" },
+  "n_go": { "message": "Search" },
+  "n_line": { "message": "No account, no cloud, no telemetry." }
+}

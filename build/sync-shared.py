@@ -8,7 +8,7 @@ import filecmp, pathlib, shutil, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "extensions/_shared"
-TARGETS = ["welcome", "connections", "self-test", "lookalike", "private-window", "attempts-log"]
+TARGETS = ["welcome", "connections", "self-test", "lookalike", "private-window", "attempts-log", "username-check", "alias-registry", "privacy-level"]
 
 def files():
     return [p.relative_to(SOURCE) for p in sorted(SOURCE.rglob("*")) if p.is_file()]

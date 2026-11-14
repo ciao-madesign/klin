@@ -30,6 +30,9 @@ Open reconciliation: bring this branch into the default branch (pull request, on
 | Honest private window | `extensions/private-window` | P22 | `acceptance/private-window` |
 | Collection log (badge and popup, memory only) | `extensions/attempts-log` | P30 | `acceptance/attempts-log` (+ `run-ubo.py`) |
 | Presentation page, first start and info button, with the linked Klin and Greenweb page | `extensions/welcome` | P37 | `acceptance/welcome` |
+| Privacy level (Standard / Advanced; Anonymous waits for Tor) | `extensions/privacy-level` | P29 | `acceptance/privacy-level` |
+| Alias registry (which alias went to which site, who leaked it) | `extensions/alias-registry` | P26 | `acceptance/alias-registry` (+ `unit.js`, `run-disposable.py`) |
+| Username check: where a username exists (Sherlock site list, pinned) | `extensions/username-check` | P38 | `acceptance/username-check` (+ `unit.js`) |
 
 Not built yet: workspaces/tabs UI, dashboard, Traffic Engine and monitors, Automation, AI, Search Intelligence, Data Footprint, Tor, mobile. Not shippable yet: see section 6.
 
@@ -65,9 +68,11 @@ python3 tests/acceptance/self-test/run.py klin-ff        # example
 ```
 Some tests rewrite `distribution/policies.json`: use a copy. Network in the cloud environment: `raw.githubusercontent.com` and `addons.mozilla.org` are reachable, `ublockorigin.github.io` is not.
 
+Not yet in the Klin voice or translated (English only, no `_locales`, wording from before the style guide, but already on the shared style and logo): `username-check`, `alias-registry`, `privacy-level`. Their pages are not yet covered by the style check's text/locale rules.
+
 ## 9. Next steps (suggested order)
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
-2. Privacy levels (P29): write the ADR (Advanced is defined; no site test before release).
+2. Privacy levels (P29): done in a first form (`extensions/privacy-level`, ADR 0007); next, apply Firefox's own fixed-time-zone protection instead of the in-page approximation (needs a privileged helper), and Maximum with Tor.
 3. Signing and distribution of the extensions (ADR), test `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).
 5. Dashboard and workspaces (Phase 1), then Phase 2 monitors.

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Klin Privacy Level",
+  "version": "0.1.0",
+  "description": "Chooses the privacy level: Standard or Advanced (hides your time zone). Shows what each level does not hide.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "privacy-level@klin",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Privacy level",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "background": {
+    "scripts": [
+      "levels.js",
+      "background.js"
+    ]
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

@@ -1,11 +1,29 @@
 {
   "manifest_version": 3,
-  "name": "Klin Username Check",
+  "name": "__MSG_name__",
   "version": "0.1.0",
-  "description": "Checks, by hand and only for names you say are yours, on which websites a username exists. Finds accounts; it does not delete them.",
-  "browser_specific_settings": { "gecko": { "id": "username-check@klin", "strict_min_version": "128.0" } },
-  "optional_host_permissions": ["<all_urls>"],
-  "action": { "default_title": "Where am I registered?", "default_icon": "icon.svg" },
-  "icons": { "48": "icon.svg", "96": "icon.svg" },
-  "background": { "scripts": ["background.js"] }
+  "description": "__MSG_description__",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "username-check@klin",
+      "strict_min_version": "128.0"
+    }
+  },
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "__MSG_title__",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "default_locale": "en"
 }

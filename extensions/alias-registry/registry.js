@@ -15,10 +15,10 @@ const KlinRegistry = (() => {
 
   const make = (fields, now = Date.now()) => {
     const e = { kind: clean(fields.kind), value: clean(fields.value), site: clean(fields.site), note: clean(fields.note) };
-    if (!KINDS.includes(e.kind)) return { error: "Choose email or username." };
-    if (!e.value) return { error: "Write the alias." };
-    if (e.kind === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e.value)) return { error: "That does not look like an email address." };
-    if (!e.site) return { error: "Write the site it was given to." };
+    if (!KINDS.includes(e.kind)) return { error: "Choose email or username.", code: "kind" };
+    if (!e.value) return { error: "Write the alias.", code: "value" };
+    if (e.kind === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e.value)) return { error: "That does not look like an email address.", code: "email" };
+    if (!e.site) return { error: "Write the site it was given to.", code: "site" };
     if (PROVIDERS.includes(fields.provider)) e.provider = fields.provider;   // a disposable address made through that service
     return { entry: Object.assign(e, { id: fields.id || now.toString(36) + Math.random().toString(36).slice(2, 7), created: fields.created || now }) };
   };
@@ -41,8 +41,8 @@ const KlinRegistry = (() => {
   // Reads a backup; keeps only well-formed entries and never duplicates one already present.
   const importText = (text, existing) => {
     let data;
-    try { data = JSON.parse(text); } catch (e) { return { error: "That file is not a Klin alias backup." }; }
-    if (!data || data.klinAliasRegistry !== 1 || !Array.isArray(data.entries)) return { error: "That file is not a Klin alias backup." };
+    try { data = JSON.parse(text); } catch (e) { return { error: "That file is not a Klin alias backup.", code: "backup" }; }
+    if (!data || data.klinAliasRegistry !== 1 || !Array.isArray(data.entries)) return { error: "That file is not a Klin alias backup.", code: "backup" };
     const have = new Set(existing.map((e) => e.kind + "|" + e.value.toLowerCase() + "|" + e.site.toLowerCase()));
     const added = [];
     for (const raw of data.entries) {

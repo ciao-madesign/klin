@@ -1,0 +1,89 @@
+{
+  "name": {
+    "message": "Klin Privacy Level"
+  },
+  "description": {
+    "message": "Sceglie il livello di privacy: Standard o Avanzato (nasconde il tuo fuso orario). Mostra cosa non nasconde ogni livello."
+  },
+  "title": {
+    "message": "Livello di privacy"
+  },
+  "pl_title": {
+    "message": "Livello di privacy"
+  },
+  "pl_lead": {
+    "message": "Quanto di ciò che i siti usano per riconoscere il tuo dispositivo Klin nasconde. Ogni livello dice cosa non nasconde e quanto costa."
+  },
+  "pl_does_l": {
+    "message": "Cosa fa."
+  },
+  "pl_hides_l": {
+    "message": "Cosa non nasconde."
+  },
+  "pl_cost_l": {
+    "message": "Quanto costa."
+  },
+  "pl_current": {
+    "message": "(attuale)"
+  },
+  "pl_unavailable": {
+    "message": "(non ancora disponibile)"
+  },
+  "pl_standard_name": {
+    "message": "Standard"
+  },
+  "pl_advanced_name": {
+    "message": "Avanzato"
+  },
+  "pl_maximum_name": {
+    "message": "Massimo"
+  },
+  "pl_standard_line": {
+    "message": "Standard: blocca i tracker e rende il tuo dispositivo più difficile da riconoscere. I siti continuano a funzionare."
+  },
+  "pl_standard_does": {
+    "message": "Blocca pubblicità e tracker, tiene separati i cookie di ogni sito, disturba la lettura del canvas, nasconde l'indirizzo della rete locale, accorcia i referrer."
+  },
+  "pl_standard_hides": {
+    "message": "Non nasconde fuso orario, dimensione dello schermo, lingue, numero di processori, caratteri o impronta audio. I siti vedono il tuo indirizzo IP."
+  },
+  "pl_standard_cost": {
+    "message": "Nessuno. È il livello per la maggior parte delle persone."
+  },
+  "pl_advanced_line": {
+    "message": "Avanzato: nasconde il tuo fuso orario. Non nasconde la dimensione dello schermo."
+  },
+  "pl_advanced_does": {
+    "message": "Tutto quello che fa Standard, e le pagine vedono UTC come tuo fuso orario."
+  },
+  "pl_advanced_hides": {
+    "message": "Non nasconde dimensione di schermo e finestra, touch, lingue, numero di processori, caratteri o impronta audio. I siti vedono il tuo indirizzo IP. È un'approssimazione fatta dentro la pagina: una pagina che guarda con attenzione se ne accorge, e i worker in background non sono coperti."
+  },
+  "pl_advanced_cost": {
+    "message": "Gli orari su siti di prenotazioni e calendari possono comparire spostati di una o due ore. Un clic per tornare a Standard."
+  },
+  "pl_maximum_line": {
+    "message": "Massimo: Avanzato più Tor e niente salvato su disco. Non ancora disponibile."
+  },
+  "pl_maximum_does": {
+    "message": "Tutte le protezioni di Firefox contro il fingerprinting, traffico attraverso Tor, nessun dato persistente."
+  },
+  "pl_maximum_hides": {
+    "message": "Non disponibile: Tor non fa ancora parte di Klin. Anche allora i siti non vedranno il tuo indirizzo IP, ma Klin non lo chiamerà anonimo."
+  },
+  "pl_maximum_cost": {
+    "message": "Più lento. Alcuni siti rifiutano Tor o non funzionano."
+  },
+  "pl_no_h": {
+    "message": "Cosa non fa nessun livello"
+  },
+  "pl_no1": {
+    "message": "==Nessun livello ti rende anonimo.== I siti vedono il tuo indirizzo IP e il tuo provider vede quali siti contatti. Solo uno strumento come Tor cambia questo, e Tor non fa ancora parte di Klin."
+  },
+  "pl_no2": {
+    "message": "Nessuno nasconde ciò che dai tu: accessi, moduli, file caricati."
+  },
+  "pl_no3": {
+    "message": "Un cambio vale per le pagine che carichi o ricarichi dopo. Non cancella ciò che un sito ha già imparato."
+  }
+}

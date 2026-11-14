@@ -31,8 +31,12 @@ with Firefox(sys.argv[1]) as ff:
     uc = ff.install_addon(ROOT / "extensions/username-check")
     ff.navigate(ff.addon_url(reg, "page/index.html"))
     check("page opens, empty list", ff.script("return document.title") == "My aliases" and rows(ff) == [])
+    ff.navigate(ff.addon_url(reg, "page/index.html") + "?lang=it"); time.sleep(1)
+    it = ff.script("return document.body.textContent")
+    check("the page speaks Italian when asked", ff.script("return document.querySelector('h1').textContent") == "I miei alias" and "Cosa non fa" in it and "non cifrato" in it)
+    ff.navigate(ff.addon_url(reg, "page/index.html")); time.sleep(1)
     text = ff.script("return document.body.innerText")
-    check("it says what it does not do", "does not create aliases" in text and "not encrypted" in text and "cannot prove" in text)
+    check("it says what it does not do", "does not create permanent aliases" in text and "not encrypted" in text and "cannot prove" in text)
     external = ff.script("return [...document.querySelectorAll('[src],[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")
     check("the page loads nothing from the internet", external == [], external)
 

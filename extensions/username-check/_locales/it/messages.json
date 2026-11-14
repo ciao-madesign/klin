@@ -1,0 +1,83 @@
+{
+  "name": {
+    "message": "Klin Username Check"
+  },
+  "description": {
+    "message": "Controlla, a mano e solo per nomi che dici tuoi, su quali siti esiste uno username. Trova gli account; non li cancella."
+  },
+  "title": {
+    "message": "Dove sono registrato?"
+  },
+  "uc_title": {
+    "message": "Dove sono registrato?"
+  },
+  "uc_lead": {
+    "message": "Scrivi uno username che usi. Klin chiede a centinaia di siti se quel nome esiste. Solo quando premi il pulsante."
+  },
+  "uc_from": {
+    "message": "Dai miei alias"
+  },
+  "uc_choose": {
+    "message": "Scegli…"
+  },
+  "uc_name": {
+    "message": "Il tuo username"
+  },
+  "uc_own": {
+    "message": "È il mio username. Non cerco qualcun altro."
+  },
+  "uc_check": {
+    "message": "Controlla"
+  },
+  "uc_stop": {
+    "message": "Ferma"
+  },
+  "uc_found_h": {
+    "message": "Account che sembrano esistere"
+  },
+  "uc_found_note": {
+    "message": "Per togliere un account, aprilo e cerca l'opzione di cancellazione nelle impostazioni. Klin non cancella nulla per te."
+  },
+  "uc_unknown_h": {
+    "message": "Siti senza risposta chiara"
+  },
+  "uc_unknown_note": {
+    "message": "Bloccati, lenti, limitati o spenti. Aprili tu per esserne sicuro."
+  },
+  "uc_not_h": {
+    "message": "Cosa non fa"
+  },
+  "uc_not1": {
+    "message": "**Non cancella gli account.** Li trova e basta."
+  },
+  "uc_not2": {
+    "message": "**Può sbagliare.** Un sito può avere lo stesso nome per un'altra persona, o rispondere in un modo che Klin legge male."
+  },
+  "uc_not3": {
+    "message": "**Cerca solo username.** Non la tua email, il tuo telefono o quello che hanno i data broker."
+  },
+  "uc_not4": {
+    "message": "==Ogni sito che controlli vede la richiesta==, con il tuo indirizzo IP e il nome che hai scritto. Niente va a Klin o ad altri, e niente resta salvato quando chiudi la pagina."
+  },
+  "uc_not5": {
+    "message": "I siti non ricevono i tuoi cookie: non sei loggato e nessuna sessione viene toccata."
+  },
+  "uc_not6": {
+    "message": "Klin ti chiede il permesso di contattare i siti quando premi Controlla. Puoi rifiutare."
+  },
+  "uc_source": {
+    "message": "La lista dei siti viene dal progetto open source Sherlock (licenza MIT), bloccata a una versione e tenuta dentro Klin."
+  },
+  "uc_noperm": {
+    "message": "Senza il permesso di contattare i siti il controllo non parte. Non è stato inviato nulla."
+  },
+  "uc_progress": {
+    "message": "Controllati {1} siti su {2}…"
+  },
+  "uc_done": {
+    "message": "Finito. {1} trovati, {2} non trovati, {3} incerti, {4} saltati (il nome lì non può esistere)."
+  },
+  "uc_stopped": {
+    "message": "Fermato. {1} trovati, {2} non trovati, {3} incerti, {4} saltati (il nome lì non può esistere)."
+  }
+}

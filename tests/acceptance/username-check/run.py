@@ -84,6 +84,9 @@ with Firefox(sys.argv[1], prefs={"dom.security.https_only_mode": False}) as ff:
     ff.navigate(BASE + "/setcookie")   # the browser now holds a cookie for the stand-in sites
     ff.navigate(ff.addon_url(addon, "page/index.html"))
     check("page opens", ff.script("return document.title") == "Where am I registered?")
+    ff.navigate(ff.addon_url(addon, "page/index.html") + "?lang=it"); time.sleep(1)
+    check("the page speaks Italian when asked", ff.script("return document.querySelector('h1').textContent") == "Dove sono registrato?" and "Cosa non fa" in ff.script("return document.body.textContent"))
+    ff.navigate(ff.addon_url(addon, "page/index.html")); time.sleep(1)
     text = ff.script("return document.body.innerText")
     check("it says what it does not do", "does not delete accounts" in text and "can be wrong" in text and "sees the request" in text)
     external = ff.script("return [...document.querySelectorAll('[src],[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")

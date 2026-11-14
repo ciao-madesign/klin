@@ -1,0 +1,194 @@
+{
+  "name": {
+    "message": "Klin Alias Registry"
+  },
+  "description": {
+    "message": "Your own list of which email address or username you gave to which website. Kept on this device only."
+  },
+  "title": {
+    "message": "My aliases"
+  },
+  "ar_title": {
+    "message": "My aliases"
+  },
+  "ar_lead": {
+    "message": "Which email address or username you gave to which website. If spam arrives on one address, you know who passed it on."
+  },
+  "ar_add_h": {
+    "message": "Add one"
+  },
+  "ar_type": {
+    "message": "Type"
+  },
+  "ar_opt_email": {
+    "message": "Email address"
+  },
+  "ar_opt_username": {
+    "message": "Username"
+  },
+  "ar_alias": {
+    "message": "Alias"
+  },
+  "ar_site": {
+    "message": "Given to (site)"
+  },
+  "ar_note": {
+    "message": "Note"
+  },
+  "ar_save": {
+    "message": "Save"
+  },
+  "ar_disp_summary": {
+    "message": "Make a disposable address (free, no sign-up)"
+  },
+  "ar_disp_intro": {
+    "message": "Klin asks the free service **mail.tm** for a new random address. Write the site in the form above first, then press the button. You read what arrives right here."
+  },
+  "ar_disp1": {
+    "message": "Good for sign-ups, trials and anything you can afford to lose."
+  },
+  "ar_disp2": {
+    "message": "**mail.tm can read every message sent to it** and may delete the address at any time. Never use it for your bank, your main accounts or password recovery."
+  },
+  "ar_disp3": {
+    "message": "Pressing the button contacts api.mail.tm with your IP address. Klin asks your permission first."
+  },
+  "ar_disp_btn": {
+    "message": "Create a disposable address"
+  },
+  "ar_plus_summary": {
+    "message": "Make a plus address from my own email"
+  },
+  "ar_plus_base": {
+    "message": "My address"
+  },
+  "ar_plus_btn": {
+    "message": "Fill the form above"
+  },
+  "ar_plus_note": {
+    "message": "Gives **me+site@example.org**. It works only with some providers, and it still shows your real address: anyone can strip the “+site” part. A real alias from a service you choose is better: paste it above. Klin runs no alias service."
+  },
+  "ar_spam_h": {
+    "message": "Spam on an address?"
+  },
+  "ar_spam_label": {
+    "message": "The address it arrived on"
+  },
+  "ar_spam_btn": {
+    "message": "Who got it?"
+  },
+  "ar_list_h": {
+    "message": "Your list"
+  },
+  "ar_search": {
+    "message": "Search"
+  },
+  "ar_th_alias": {
+    "message": "Alias"
+  },
+  "ar_th_site": {
+    "message": "Site"
+  },
+  "ar_th_note": {
+    "message": "Note"
+  },
+  "ar_empty": {
+    "message": "Nothing here yet."
+  },
+  "ar_export": {
+    "message": "Save a backup"
+  },
+  "ar_import": {
+    "message": "Load a backup"
+  },
+  "ar_inbox_h": {
+    "message": "Inbox of"
+  },
+  "ar_not_h": {
+    "message": "What this does not do"
+  },
+  "ar_not1": {
+    "message": "**It does not create permanent aliases.** It remembers the ones you made with a service you choose. Disposable addresses come from mail.tm."
+  },
+  "ar_not2": {
+    "message": "==It is kept on this device only==, in your Klin profile, not encrypted. Anyone who can open your profile can read it. Nothing is sent anywhere, and there is no sync."
+  },
+  "ar_not3": {
+    "message": "**It cannot prove who leaked an address.** It tells you who you gave it to. A site can also be breached."
+  },
+  "ar_not4": {
+    "message": "The password of a disposable address stays in this browser only and is not in a backup file: after loading a backup its inbox cannot be opened."
+  },
+  "ar_not5": {
+    "message": "A backup is a plain file. Keep it where you keep your private files."
+  },
+  "ar_err_kind": {
+    "message": "Choose email or username."
+  },
+  "ar_err_value": {
+    "message": "Write the alias."
+  },
+  "ar_err_email": {
+    "message": "That does not look like an email address."
+  },
+  "ar_err_site": {
+    "message": "Write the site it was given to."
+  },
+  "ar_err_backup": {
+    "message": "That file is not a Klin alias backup."
+  },
+  "ar_plus_err": {
+    "message": "Write your address above, and the site in the form."
+  },
+  "ar_who_hit": {
+    "message": "You gave this address to: {1}."
+  },
+  "ar_who_none": {
+    "message": "That address is not in your list."
+  },
+  "ar_backup_saved": {
+    "message": "Backup saved as klin-aliases.json. It is a plain file."
+  },
+  "ar_backup_loaded": {
+    "message": "Added {1}, skipped {2} (already there or not valid)."
+  },
+  "ar_delete": {
+    "message": "Delete"
+  },
+  "ar_delete_aria": {
+    "message": "Delete {1} for {2}"
+  },
+  "ar_inbox": {
+    "message": "Inbox"
+  },
+  "ar_inbox_aria": {
+    "message": "Open the inbox of {1}"
+  },
+  "ar_read": {
+    "message": "Read"
+  },
+  "ar_d_needsite": {
+    "message": "Write the site this address is for, in the form above, first."
+  },
+  "ar_d_noperm": {
+    "message": "Without your permission to contact the service nothing was sent."
+  },
+  "ar_d_asking": {
+    "message": "Asking the service…"
+  },
+  "ar_d_created": {
+    "message": "Created {1} and saved it in your list."
+  },
+  "ar_d_fail": {
+    "message": "Could not create an address: {1}"
+  },
+  "ar_d_empty": {
+    "message": "Nothing has arrived yet."
+  },
+  "ar_d_inbox_fail": {
+    "message": "Could not open the inbox: {1}"
+  },
+  "ar_d_msg_fail": {
+    "message": "Could not open the message: {1}"
+  }
+}

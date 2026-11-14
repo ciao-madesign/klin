@@ -1,0 +1,89 @@
+{
+  "name": {
+    "message": "Klin Privacy Level"
+  },
+  "description": {
+    "message": "Chooses the privacy level: Standard or Advanced (hides your time zone). Shows what each level does not hide."
+  },
+  "title": {
+    "message": "Privacy level"
+  },
+  "pl_title": {
+    "message": "Privacy level"
+  },
+  "pl_lead": {
+    "message": "How much of what sites use to recognise your device Klin hides. Each level says what it does not hide and what it costs."
+  },
+  "pl_does_l": {
+    "message": "What it does."
+  },
+  "pl_hides_l": {
+    "message": "What it does not hide."
+  },
+  "pl_cost_l": {
+    "message": "What it costs."
+  },
+  "pl_current": {
+    "message": "(current)"
+  },
+  "pl_unavailable": {
+    "message": "(not available yet)"
+  },
+  "pl_standard_name": {
+    "message": "Standard"
+  },
+  "pl_advanced_name": {
+    "message": "Advanced"
+  },
+  "pl_maximum_name": {
+    "message": "Maximum"
+  },
+  "pl_standard_line": {
+    "message": "Standard: blocks trackers and makes your device harder to recognise. Sites keep working."
+  },
+  "pl_standard_does": {
+    "message": "Blocks advertising and trackers, keeps cookies apart per site, adds noise to the canvas read-out, hides the local network address, trims referrers."
+  },
+  "pl_standard_hides": {
+    "message": "Does not hide your time zone, screen size, languages, processor count, fonts or audio fingerprint. Sites see your IP address."
+  },
+  "pl_standard_cost": {
+    "message": "None. This is the level for most people."
+  },
+  "pl_advanced_line": {
+    "message": "Advanced: hides your time zone. Does not hide your screen size."
+  },
+  "pl_advanced_does": {
+    "message": "Everything in Standard, and pages see UTC as your time zone."
+  },
+  "pl_advanced_hides": {
+    "message": "Does not hide screen and window size, touch, languages, processor count, fonts or audio fingerprint. Sites see your IP address. It is an approximation done inside the page: a page that looks hard can notice it, and background workers are not covered."
+  },
+  "pl_advanced_cost": {
+    "message": "Times on booking and calendar sites can appear shifted by one or two hours. One click back to Standard."
+  },
+  "pl_maximum_line": {
+    "message": "Maximum: Advanced plus Tor and nothing kept on disk. Not available yet."
+  },
+  "pl_maximum_does": {
+    "message": "The full set of Firefox's fingerprint protections, traffic through Tor, no persistent data."
+  },
+  "pl_maximum_hides": {
+    "message": "Not available: Tor is not part of Klin yet. Even then sites will not see your IP address, but Klin will not call this anonymous."
+  },
+  "pl_maximum_cost": {
+    "message": "Slower. Some sites refuse Tor or break."
+  },
+  "pl_no_h": {
+    "message": "What no level does"
+  },
+  "pl_no1": {
+    "message": "==None of them makes you anonymous.== Sites see your IP address and your provider sees which sites you contact. Only a tool such as Tor changes that, and Tor is not part of Klin yet."
+  },
+  "pl_no2": {
+    "message": "None of them hides what you give away: logging in, filling forms, uploading files."
+  },
+  "pl_no3": {
+    "message": "A change applies to pages you load or reload afterwards. It does not undo what a site already learned."
+  }
+}

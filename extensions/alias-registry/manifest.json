@@ -1,12 +1,33 @@
 {
   "manifest_version": 3,
-  "name": "Klin Alias Registry",
+  "name": "__MSG_name__",
   "version": "0.1.0",
-  "description": "Your own list of which email address or username you gave to which website. Kept on this device only.",
-  "browser_specific_settings": { "gecko": { "id": "alias-registry@klin", "strict_min_version": "128.0" } },
-  "permissions": ["storage"],
-  "optional_host_permissions": ["https://api.mail.tm/*"],
-  "action": { "default_title": "My aliases", "default_icon": "icon.svg" },
-  "icons": { "48": "icon.svg", "96": "icon.svg" },
-  "background": { "scripts": ["registry.js", "background.js"] }
+  "description": "__MSG_description__",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "alias-registry@klin",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "optional_host_permissions": [
+    "https://api.mail.tm/*"
+  ],
+  "action": {
+    "default_title": "__MSG_title__",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "background": {
+    "scripts": [
+      "registry.js",
+      "background.js"
+    ]
+  },
+  "default_locale": "en"
 }

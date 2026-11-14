@@ -36,4 +36,4 @@ So the full package changes more than the owner wants and still leaves the audio
 
 ## Consequences
 - The dashboard (Phase 1) shows the current level and the line under its name, from `levels.js`.
-- The strings are English only for now; they follow the style guide (`STYLE.md`) and still need `_locales` messages and the Italian text.
+- The strings are in `_locales` (English and Italian), following the style guide (`STYLE.md`); the Italian still needs the owner's read-through.

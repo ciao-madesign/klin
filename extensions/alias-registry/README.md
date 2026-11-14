@@ -17,6 +17,9 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 - It cannot prove who leaked an address: it tells you who you gave it to, and a site can also be breached.
 - A backup is a plain file; keep it where you keep private files.
 
+## Languages
+English and Italian (`_locales`), in the browser's language; `?lang=it` or `?lang=en` forces one. The Italian still needs the owner's read-through. Errors from the mail.tm service stay in English.
+
 ## Not done yet
 - Optional encryption with a passphrase.
 - **The mail.tm code is written from its published API and has not been tried against the real service** (not reachable from the build environment). It is tested against a stand-in that follows the same API. Before relying on it, run it once against the real service; if the service changed or limits automated use, the page shows the error. More providers can be added in `providers.js`.
@@ -27,5 +30,5 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 
 ## Tests
 - `node tests/acceptance/alias-registry/unit.js`: 24 checks (15 on the list, 9 on the disposable provider with a fake service).
-- `python3 tests/acceptance/alias-registry/run.py FIREFOX_DIR`: 16 checks in a real Firefox (add, refuse a bad address, who got it, plus helper, search, persistence across reload, the username check being offered only usernames, delete, loading a backup, refusing a bad file).
+- `python3 tests/acceptance/alias-registry/run.py FIREFOX_DIR`: 17 checks in a real Firefox (add, refuse a bad address, who got it, plus helper, search, persistence across reload, the username check being offered only usernames, delete, loading a backup, refusing a bad file).
 - `python3 tests/acceptance/alias-registry/run-disposable.py FIREFOX_DIR`: 14 checks in a real Firefox against a stand-in service: asks for the site first, permission, address created and saved, no cookie or referrer, password kept apart and not in the entry, inbox and message shown as plain text with no remote image, delete removes the address on the service and the password locally.

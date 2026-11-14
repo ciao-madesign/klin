@@ -1,0 +1,83 @@
+{
+  "name": {
+    "message": "Klin Username Check"
+  },
+  "description": {
+    "message": "Checks, by hand and only for names you say are yours, on which websites a username exists. Finds accounts; it does not delete them."
+  },
+  "title": {
+    "message": "Where am I registered?"
+  },
+  "uc_title": {
+    "message": "Where am I registered?"
+  },
+  "uc_lead": {
+    "message": "Type a username you use. Klin asks hundreds of websites if that name exists there. Only when you press the button."
+  },
+  "uc_from": {
+    "message": "From my aliases"
+  },
+  "uc_choose": {
+    "message": "Choose…"
+  },
+  "uc_name": {
+    "message": "Your username"
+  },
+  "uc_own": {
+    "message": "This is my own username. I am not looking for someone else."
+  },
+  "uc_check": {
+    "message": "Check"
+  },
+  "uc_stop": {
+    "message": "Stop"
+  },
+  "uc_found_h": {
+    "message": "Accounts that seem to exist"
+  },
+  "uc_found_note": {
+    "message": "To remove an account, open it and look for the deletion option in its settings. Klin deletes nothing for you."
+  },
+  "uc_unknown_h": {
+    "message": "Sites with no clear answer"
+  },
+  "uc_unknown_note": {
+    "message": "Blocked, slow, rate limited or down. Open them yourself to be sure."
+  },
+  "uc_not_h": {
+    "message": "What this does not do"
+  },
+  "uc_not1": {
+    "message": "**It does not delete accounts.** It only finds them."
+  },
+  "uc_not2": {
+    "message": "**It can be wrong.** A site may use the same name for someone else, or answer in a way Klin reads badly."
+  },
+  "uc_not3": {
+    "message": "**It searches usernames only.** Not your email, your phone number or what data brokers hold."
+  },
+  "uc_not4": {
+    "message": "==Every site you check sees the request==, with your IP address and the name you typed. Nothing goes to Klin or anyone else, and nothing is saved when you close the page."
+  },
+  "uc_not5": {
+    "message": "Sites get no cookies from you: you are not logged in and no session is touched."
+  },
+  "uc_not6": {
+    "message": "Klin asks your permission to contact websites when you press Check. You can refuse."
+  },
+  "uc_source": {
+    "message": "The list of sites comes from the open-source Sherlock project (MIT licence), fixed at one version and kept inside Klin."
+  },
+  "uc_noperm": {
+    "message": "Without permission to contact websites the check cannot run. Nothing was sent."
+  },
+  "uc_progress": {
+    "message": "Checked {1} of {2} sites…"
+  },
+  "uc_done": {
+    "message": "Done. {1} found, {2} not found, {3} unclear, {4} skipped (the name cannot exist there)."
+  },
+  "uc_stopped": {
+    "message": "Stopped. {1} found, {2} not found, {3} unclear, {4} skipped (the name cannot exist there)."
+  }
+}

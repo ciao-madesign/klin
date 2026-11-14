@@ -19,7 +19,7 @@ Status: **v0.1, working and verified in Firefox 160.0** (system time zone New Yo
 ## Not verified
 - Behaviour on real sites (no access from the build environment; the owner decided no site test is needed before release; the cost is stated on the page).
 - That the level survives a browser restart (registration is persistent and re-applied at start-up; only install, switch and removal were run).
-- Strings are English only, no `_locales` yet.
+- The Italian text is written by the session and still needs the owner's read-through.
 
 ## Test
-`python3 tests/acceptance/privacy-level/run.py FIREFOX_DIR`: 21 checks. It starts Firefox with the system time zone America/New_York and checks, in the page's own context and in a frame, what a page sees at each level.
+`python3 tests/acceptance/privacy-level/run.py FIREFOX_DIR`: 22 checks. It starts Firefox with the system time zone America/New_York and checks, in the page's own context and in a frame, what a page sees at each level.

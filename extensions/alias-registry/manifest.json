@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Klin Alias Registry",
+  "version": "0.1.0",
+  "description": "Your own list of which email address or username you gave to which website. Kept on this device only.",
+  "browser_specific_settings": { "gecko": { "id": "alias-registry@klin", "strict_min_version": "128.0" } },
+  "permissions": ["storage"],
+  "action": { "default_title": "My aliases", "default_icon": "icon.svg" },
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "background": { "scripts": ["registry.js", "background.js"] }
+}

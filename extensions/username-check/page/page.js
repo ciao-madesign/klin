@@ -55,3 +55,15 @@ form.addEventListener("submit", async (event) => {
 });
 
 stop.addEventListener("click", () => { if (controller) controller.abort(); });
+
+// If the alias registry is installed, offer the usernames kept there (the user's own: choosing one ticks the box).
+browser.runtime.sendMessage("alias-registry@klin", { type: "usernames" }).then((reply) => {
+  const names = reply && reply.usernames;
+  if (!names || !names.length) return;
+  $("aliasPick").append(...names.map((n) => Object.assign(document.createElement("option"), { value: n, textContent: n })));
+  $("fromAliases").classList.remove("hidden");
+}).catch(() => {});
+$("aliasPick").addEventListener("change", () => {
+  if (!$("aliasPick").value) return;
+  nameBox.value = $("aliasPick").value; own.checked = true; sync();
+});

@@ -4,6 +4,7 @@
 
 Status: **v0.1, working and verified in Firefox 160.0.**
 
+- **Names from your alias registry.** If the alias registry extension is installed, a drop-down offers the usernames kept there (choosing one ticks "my own"). Only usernames are passed, never emails or sites.
 - **By hand only.** Nothing runs until you press Check. You must tick "this is my own username" first.
 - **Permission asked each time.** The extension holds no access to websites by default; pressing Check asks for it, and refusing sends nothing.
 - **Gentle.** Six requests at a time, 15 seconds at most per site, a Stop button. Sites judged by status code are asked with `HEAD`, so no page is downloaded.
@@ -19,7 +20,7 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 - A site that answers with a generic page for any name can show up as "exists". Treat the result as a lead.
 
 ## Not done yet
-- Use the names from the alias registry (P26) instead of typing; keep your own list of confirmed accounts and of deletions done.
+- Keep your own list of confirmed accounts and of deletions done.
 - Deletion links per site.
 - Routing through a chosen proxy or Tor (P32).
 - Sherlock's list changes: update the pin on purpose, re-run the generator and the tests.
@@ -27,4 +28,4 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 
 ## Tests
 - `node tests/acceptance/username-check/unit.js`: 27 checks (requests, classification, name rules, the list, concurrency, stop, timeout).
-- `python3 tests/acceptance/username-check/run.py FIREFOX_DIR`: 23 checks in a real Firefox with stand-in sites (status code, own error code, message, redirect, POST probe, rate limit, slow, skipped name), including that no cookie or referrer is sent, that nothing can be read without permission, and the page end to end.
+- `python3 tests/acceptance/username-check/run.py FIREFOX_DIR`: 22 checks in a real Firefox with stand-in sites (status code, own error code, message, redirect, POST probe, rate limit, slow, skipped name), including that no cookie or referrer is sent, that nothing can be read without permission, and the page end to end.

@@ -7,3 +7,13 @@
 #f button { height: 52px; padding: 0 20px; }
 .about { position: fixed; left: 0; right: 0; bottom: 0; padding: 0 24px 20px; text-align: center; color: var(--muted); font-size: .9rem; display: flex; flex-direction: column; gap: 4px; align-items: center; }
 .about p { margin: 0; max-width: 62ch; }
+.choose { max-width: 860px; margin: 0 auto; padding: 40px 24px 64px; }
+.choose h1 { font-family: var(--font-title); }
+.engine { display: flex; gap: 14px; align-items: flex-start; margin: 12px 0; cursor: pointer; }
+.engine h2 { margin: 0 0 4px; font-size: 1.15rem; }
+.engine input { margin-top: 6px; accent-color: var(--accent); }
+.engine dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 14px; margin: 8px 0 0; font-size: .92rem; }
+.engine dt { color: var(--muted); }
+.engine dd { margin: 0; }
+.tag { margin: 0; color: var(--accent-text); font-size: .9rem; }
+fieldset { border: 0; padding: 0; margin: 0; }

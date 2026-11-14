@@ -28,5 +28,5 @@ Klin's own start page, separate from the welcome page (`extensions/newtab`; `ext
 
 ## To do
 1. Check every cell above against the operator's own policy and terms; record the date.
-2. Build the screen, in one flow with the DNS first-start screen (the style session owns screens and wording; it is stopped for now, so the first version is made here from `klin.css`).
+2. ~~Build the screen~~ **Built** (14 Nov 2026, `extensions/newtab/page/choose.html`, made here from `klin.css` because the style session is stopped; to be one flow with the DNS screen later). Limit: it changes the start page's search bar, not the address bar (see `extensions/newtab/README.md`).
 3. Technical: set the chosen engine as the default through the search API of the extension that shows the screen; test that the choice survives a restart and a change in settings.

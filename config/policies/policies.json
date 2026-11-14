@@ -73,6 +73,43 @@
           }
         }
       }
+    },
+    "SearchEngines": {
+      "Default": "Ecosia",
+      "PreventInstalls": false,
+      "Remove": [
+        "Bing",
+        "Perplexity",
+        "Wikipedia (en)",
+        "Amazon.com",
+        "eBay"
+      ],
+      "Add": [
+        {
+          "Name": "Ecosia",
+          "URLTemplate": "https://www.ecosia.org/search?q={searchTerms}",
+          "Method": "GET",
+          "Description": "Ecosia"
+        },
+        {
+          "Name": "Mojeek",
+          "URLTemplate": "https://www.mojeek.com/search?q={searchTerms}",
+          "Method": "GET",
+          "Description": "Mojeek"
+        },
+        {
+          "Name": "Qwant",
+          "URLTemplate": "https://www.qwant.com/?q={searchTerms}",
+          "Method": "GET",
+          "Description": "Qwant"
+        },
+        {
+          "Name": "Brave Search",
+          "URLTemplate": "https://search.brave.com/search?q={searchTerms}",
+          "Method": "GET",
+          "Description": "Brave Search"
+        }
+      ]
     }
   }
 }

@@ -4,8 +4,30 @@
   "version": "0.1.0",
   "description": "__MSG_description__",
   "default_locale": "en",
-  "browser_specific_settings": { "gecko": { "id": "newtab@klin", "strict_min_version": "128.0" } },
-  "permissions": ["search"],
-  "icons": { "48": "icon.svg", "96": "icon.svg" },
-  "chrome_url_overrides": { "newtab": "page/index.html" }
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "newtab@klin",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "search",
+    "storage"
+  ],
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
+  "chrome_url_overrides": {
+    "newtab": "page/index.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "action": {
+    "default_title": "__MSG_c_action__",
+    "default_icon": "icon.svg"
+  }
 }

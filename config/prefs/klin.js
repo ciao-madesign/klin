@@ -71,3 +71,7 @@ pref("browser.search.serpEventTelemetryCategorization.enabled", false); // class
 pref("browser.ml.enable", false);                                     // Firefox's own on-device AI: downloads models from Mozilla.
 pref("browser.ml.chat.enabled", false);                               // Klin's AI is opt-in and uses local Ollama (spec 4.8)
 pref("browser.tabs.groups.smart.enabled", false);
+
+// Klin has its own first start (extensions/welcome): no "Welcome to Firefox" screen, which also talks about data sent to Mozilla.
+pref("browser.aboutwelcome.enabled", false);
+pref("browser.startup.homepage_override.mstone", "ignore");

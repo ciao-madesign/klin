@@ -1,0 +1,8 @@
+{
+  "name": { "message": "Pagina iniziale di Klin" },
+  "description": { "message": "La pagina iniziale e la nuova scheda di Klin: il logo e un campo di ricerca. Non mostra nulla da internet e non conserva cronologia." },
+  "n_title": { "message": "Nuova scheda" },
+  "n_search": { "message": "Cerca" },
+  "n_go": { "message": "Cerca" },
+  "n_line": { "message": "Nessun account, nessun cloud, nessuna telemetria." }
+}

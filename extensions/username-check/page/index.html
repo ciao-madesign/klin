@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where am I registered?</title>
+<link rel="stylesheet" href="../shared/klin.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1>Where am I registered?</h1>
+    <p class="lead">Type a username you use, and Klin checks on which websites that name exists. Started by you, only when you press the button.</p>
+  </header>
+
+  <section>
+    <form class="check" id="form" autocomplete="off">
+      <label id="fromAliases" class="hidden">From my aliases
+        <select id="aliasPick"><option value="">Choose…</option></select>
+      </label>
+      <label for="username">Your username</label>
+      <input type="text" id="username" name="username" maxlength="64" spellcheck="false" autocapitalize="off" required>
+      <label class="own"><input type="checkbox" id="own"> <span>This is my own username. I am not looking for someone else.</span></label>
+      <div class="row">
+        <button type="submit" id="start" disabled>Check</button>
+        <button type="button" id="stop" class="hidden">Stop</button>
+      </div>
+    </form>
+    <p id="notice" class="note hidden" role="status"></p>
+    <progress id="progress" class="hidden" value="0" max="1"></progress>
+    <p id="count" class="note" role="status"></p>
+  </section>
+
+  <section id="foundBox" class="hidden">
+    <h2>Accounts that appear to exist</h2>
+    <ul id="found"></ul>
+    <p class="note">To remove an account, open it and look for the deletion option in its settings. Klin does not delete anything for you.</p>
+  </section>
+
+  <section id="unknownBox" class="hidden">
+    <h2>Sites that gave no clear answer</h2>
+    <p class="note">Blocked, slow, rate limited or down. Open them yourself if you want to be sure.</p>
+    <ul id="unknown"></ul>
+  </section>
+
+  <section class="honest">
+    <h2>What this does not do</h2>
+    <ul>
+      <li><b>It does not delete accounts.</b> It only finds them.</li>
+      <li><b>It can be wrong.</b> A site may use the same name for someone else, or answer in a way Klin reads badly.</li>
+      <li><b>It searches only by username.</b> Not your email, phone number or what data brokers hold about you.</li>
+      <li><b>Every site you check sees the request,</b> with your internet address and the name you typed. That is the cost of asking. Nothing goes to Klin or anyone else, and nothing is saved when you close this page.</li>
+      <li>Sites are not given your cookies, so you are not logged in and no session is touched.</li>
+      <li>Klin asks your permission to contact websites when you press Check, and you can refuse.</li>
+    </ul>
+    <p class="note">The list of sites comes from the open-source Sherlock project (MIT licence), fixed at one version and kept inside Klin.</p>
+  </section>
+</main>
+<script src="../check.js"></script>
+<script src="page.js"></script>
+</body>
+</html>

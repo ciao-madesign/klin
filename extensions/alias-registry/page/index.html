@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My aliases</title>
+<link rel="stylesheet" href="../shared/klin.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1>My aliases</h1>
+    <p class="lead">Which email address or username you gave to which website. If spam arrives on one address, you know who passed it on.</p>
+  </header>
+
+  <section>
+    <h2>Add one</h2>
+    <form class="entry" id="form" autocomplete="off">
+      <label>Type
+        <select id="kind"><option value="email">Email address</option><option value="username">Username</option></select>
+      </label>
+      <label>Alias <input type="text" id="value" spellcheck="false" autocapitalize="off" required></label>
+      <label>Given to (site) <input type="text" id="site" placeholder="shop.example" spellcheck="false" autocapitalize="off" required></label>
+      <label>Note <input type="text" id="note" maxlength="200"></label>
+      <button type="submit">Save</button>
+    </form>
+    <p id="error" class="note hidden" role="alert"></p>
+    <details id="disposable">
+      <summary>Make a disposable address (free, no sign-up)</summary>
+      <p class="note">Klin asks the free service <b>mail.tm</b> for a new random address. Fill in the site above first, then press the button. You can read what arrives right here.</p>
+      <ul class="note">
+        <li>Good for sign-ups, trials and anything you can afford to lose.</li>
+        <li><b>mail.tm can read every message sent to it</b> and may delete the address at any time. Never use it for your bank, your main accounts or password recovery.</li>
+        <li>Pressing the button contacts api.mail.tm with your internet address. Klin asks your permission first.</li>
+      </ul>
+      <div class="row"><button type="button" id="makeDisposable">Create a disposable address</button></div>
+      <p id="disposableNote" class="note" role="status"></p>
+    </details>
+    <details>
+      <summary>Make a plus address from my own email</summary>
+      <form class="entry" id="plus" autocomplete="off">
+        <label>My address <input type="text" id="base" placeholder="me@example.org" spellcheck="false" autocapitalize="off"></label>
+        <button type="submit">Fill the form above</button>
+      </form>
+      <p class="note">Gives <b>me+site@example.org</b>. It works only with providers that allow it, and it still shows your real address: anyone can remove the “+site” part. A real alias from a service you choose is better; paste it above. Klin runs no alias service.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>Spam on an address?</h2>
+    <form class="entry" id="who" autocomplete="off">
+      <label>The address it arrived on <input type="text" id="leak" spellcheck="false" autocapitalize="off"></label>
+      <button type="submit">Who got it?</button>
+    </form>
+    <p id="leakResult" class="note" role="status"></p>
+  </section>
+
+  <section>
+    <h2>Your list <span id="count" class="note"></span></h2>
+    <input class="search" type="search" id="search" placeholder="Search" aria-label="Search the list">
+    <table>
+      <thead><tr><th>Alias</th><th>Site</th><th>Note</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" class="note">Nothing here yet.</p>
+    <div class="row">
+      <button type="button" id="export">Save a backup</button>
+      <button type="button" id="importBtn">Load a backup</button>
+      <input type="file" id="importFile" accept="application/json,.json" class="hidden">
+    </div>
+    <p id="backupNote" class="note" role="status"></p>
+  </section>
+
+  <section id="inboxBox" class="hidden">
+    <h2>Inbox of <span id="inboxOf"></span></h2>
+    <p id="inboxNote" class="note" role="status"></p>
+    <ul id="messages"></ul>
+    <pre id="messageText" class="hidden"></pre>
+  </section>
+
+  <section class="honest">
+    <h2>What this does not do</h2>
+    <ul>
+      <li><b>It does not create aliases.</b> It remembers the ones you made, with a service you choose.</li>
+      <li><b>It is kept on this device only,</b> inside your Klin profile, not encrypted. Anyone who can open your profile can read it. Nothing is sent anywhere, and there is no sync.</li>
+      <li><b>It cannot prove who leaked an address.</b> It tells you who you gave it to. A site can also be breached.</li>
+      <li>The password of a disposable address stays in this browser only and is not in a backup file: after loading a backup its inbox cannot be opened.</li>
+      <li>A backup is a plain file. Keep it where you keep your private files.</li>
+    </ul>
+  </section>
+</main>
+<script src="../registry.js"></script>
+<script src="../providers.js"></script>
+<script src="page.js"></script>
+</body>
+</html>

@@ -16,5 +16,13 @@
     "license": "MIT",
     "note": "Mozilla-signed on addons.mozilla.org as unlisted (ADR 0004), unmodified. The .xpi is an asset of the v0.1.0 release of the greenweb repository; its sha256 was checked against the downloaded asset on 14 Nov 2026. The signature only removed the trailing newline of manifest.json; every other file is identical to the package built from greenweb main (73891056). Fetched at build time only; the browser makes no connection for it. Bundled by build/bundle-third-party.py.",
     "bundle": true
+  },
+  "sherlock-sites": {
+    "source": "https://github.com/sherlock-project/sherlock",
+    "commit": "c588d7c8b476df9f9c84912a05d1430fb8cdcdae",
+    "path": "sherlock_project/resources/data.json",
+    "sha256": "3fdfc6694c5cd99798881215554b09e617c6d5284a6219fae309882566a9fb30",
+    "license": "MIT",
+    "note": "Site list only (URL patterns and how to tell a profile exists), converted by build/gen-sherlock-sites.py into extensions/username-check/data/sites.json; Sherlock code is not used. Licence file kept next to the data. NSFW sites left out. Update by changing the pin deliberately."
   }
 }

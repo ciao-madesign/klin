@@ -5,3 +5,5 @@
 #f { display: flex; gap: 0; width: min(584px, 100%); }
 #q { flex: 1; min-width: 0; height: 52px; font-size: 1.1rem; padding: 0 16px; }
 #f button { height: 52px; padding: 0 20px; }
+.about { position: fixed; left: 0; right: 0; bottom: 0; padding: 0 24px 20px; text-align: center; color: var(--muted); font-size: .9rem; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.about p { margin: 0; max-width: 62ch; }

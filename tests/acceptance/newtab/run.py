@@ -17,6 +17,7 @@ def check(label, ok, detail=""):
 with Firefox(sys.argv[1]) as ff:
     ff.install_addon(ROOT / "extensions/newtab")
     ff.install_addon(ROOT / "extensions/theme")
+    ff.install_addon(ROOT / "extensions/welcome")
     time.sleep(3)
     ff.cmd("Marionette:SetContext", {"value": "chrome"})
     info = ff.async_script("""const done = arguments[arguments.length - 1];
@@ -39,5 +40,12 @@ with Firefox(sys.argv[1]) as ff:
     check("the page says Klin and shows a search box", "Klin" in text and bool(ff.script("return document.getElementById('q')")), text[:80])
     external = ff.script("return [...document.querySelectorAll('[src],[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")
     check("it loads nothing from the internet", external == [], external)
+
+    check("the start page has a short text about Klin and a link", "Klin is" in text and bool(ff.script("return document.getElementById('more')")))
+    before = len(ff.handles())
+    ff.script("document.getElementById('more').click()"); time.sleep(3)
+    ff.cmd("Marionette:SetContext", {"value": "chrome"})
+    tabs = ff.async_script("const done = arguments[arguments.length - 1]; const w = Services.wm.getMostRecentWindow('navigator:browser'); done(w.gBrowser.selectedTab.linkedBrowser.currentURI.spec);")
+    check("the link brings Klin's presentation page to the front (a different page from the start page)", tabs.endswith("/page/index.html") and tabs != info["url"], tabs)
 
 sys.exit("%d check(s) failed" % len(failures) if failures else 0)

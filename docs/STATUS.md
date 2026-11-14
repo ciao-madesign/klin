@@ -1,6 +1,6 @@
 # Project status and handoff
 
-Read this first, in any new session. It is the single place that says where the project stands, who did what and what is open. Keep it current: update it in the same commit as the work it describes. Last update: 13 Nov 2026 (style decisions).
+Read this first, in any new session. It is the single place that says where the project stands, who did what and what is open. Keep it current: update it in the same commit as the work it describes. Last update: 14 Nov 2026 (Greenweb bundled by the build).
 
 ## 1. Sessions and branches
 State on 13 Nov 2026. **Everything from every branch is now merged in `claude/brave-ride-g0o4ze`** (the style session's branch). The other branches were not touched.
@@ -30,6 +30,7 @@ Open reconciliation: bring this branch into the default branch (pull request, on
 | Honest private window | `extensions/private-window` | P22 | `acceptance/private-window` |
 | Collection log (badge and popup, memory only) | `extensions/attempts-log` | P30 | `acceptance/attempts-log` (+ `run-ubo.py`) |
 | Presentation page, first start and info button, with the linked Klin and Greenweb page | `extensions/welcome` | P37 | `acceptance/welcome` |
+| Build step that bundles Greenweb (signed `.xpi`, sha256 checked, installed by policy, removable) | `build/bundle-third-party.py` | ADR 0004 | `acceptance/bundle` |
 | Privacy level (Standard / Advanced; Anonymous waits for Tor) | `extensions/privacy-level` | P29 | `acceptance/privacy-level` |
 | Alias registry (which alias went to which site, who leaked it) | `extensions/alias-registry` | P26 | `acceptance/alias-registry` (+ `unit.js`, `run-disposable.py`) |
 | Username check: where a username exists (Sherlock site list, pinned) | `extensions/username-check` | P38 | `acceptance/username-check` (+ `unit.js`) |
@@ -37,7 +38,7 @@ Open reconciliation: bring this branch into the default branch (pull request, on
 Not built yet: workspaces/tabs UI, dashboard, Traffic Engine and monitors, Automation, AI, Search Intelligence, Data Footprint, Tor, mobile. Not shippable yet: see section 6.
 
 ## 4. Decisions taken (owner, 13 Nov 2026; full text in `PRINCIPLES.md`)
-Standard is the default level; privacy comes first, then low impact, then security; ethics and source lists are third-party public lists used as published, chosen by the user, labelled and never hidden (Klin does not curate them); decoy traffic is opt-in and off by default; Safe Browsing stays on, explained and switchable; Firefox's own AI stays off; the honest private window is an extension (no patch). Earlier: OCSP off, DoH chosen by the user at first start with an optional preselected default (ADR 0005), a Mozilla-signed pre-installed extension model (ADR 0004).
+Standard is the default level; privacy comes first, then low impact, then security; ethics and source lists are third-party public lists used as published, chosen by the user, labelled and never hidden (Klin does not curate them); decoy traffic is opt-in and off by default; Safe Browsing stays on, explained and switchable; Firefox's own AI stays off; the honest private window is an extension (no patch). Earlier: OCSP off, DoH chosen by the user at first start with an optional preselected default (ADR 0005), a Mozilla-signed pre-installed extension model (ADR 0004). Greenweb 0.1.0 was signed (unlisted) and released on 14 Nov 2026; pinned in `build/third-party.json` with its sha256 checked against the release asset. Bundled by `build/bundle-third-party.py` (14 Nov 2026): the script checks the hash, copies the `.xpi` to `distribution/extensions/` and adds it to the policies of the built distribution; checked on Firefox 160.0 (installed at start, signature accepted, can be switched off and removed). Not tested: a restart after the user removed it (whether the policy installs it again), and a full Klin package (there is none yet).
 
 ## 5. Open questions
 - **Style and tone of Klin: decided and applied on 13 Nov 2026**, see `docs/STYLE.md` and `docs/STYLE-CHANGES.md` (what was done, what remains). Existing screens use the shared style (`extensions/_shared`, copied by `build/sync-shared.py`) and have Italian and English strings. Still open: the owner's read-through of the Italian and the logo PNG exports. Decided in the style session: level names (Standard, Avanzato, Massimo), a light/dark switch and a language switch are not built yet (dark and the browser's language for now), technical readouts are translated.
@@ -68,6 +69,7 @@ python3 tests/acceptance/self-test/run.py klin-ff        # example
 ```
 Some tests rewrite `distribution/policies.json`: use a copy. Network in the cloud environment: `raw.githubusercontent.com` and `addons.mozilla.org` are reachable, `ublockorigin.github.io` is not.
 
+ADR 0009 (support program for P40 level 2 and P41) is written as **proposed**; waiting for the owner.
 Not yet in the Klin voice or translated (English only, no `_locales`, wording from before the style guide, but already on the shared style and logo): `username-check`, `alias-registry`, `privacy-level`. Their pages are not yet covered by the style check's text/locale rules.
 
 ## 9. Next steps (suggested order)

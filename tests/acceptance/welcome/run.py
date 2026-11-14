@@ -46,6 +46,7 @@ with Firefox(sys.argv[1]) as ff:
     if link:
         ff.script("location.href = arguments[0]", [link]); time.sleep(1)
         check("the linked page is the Klin and Greenweb page", ff.script("return document.title") == "Klin and Greenweb")
+        check("it no longer says Greenweb is missing from the build", "not yet included" not in ff.script("return document.body.innerText"))
         check("it says what Greenweb does not do", "does not measure" in ff.script("return document.body.innerText"))
         loaded = ff.script("return [...document.querySelectorAll('[src],link[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")
         check("the linked page loads nothing from the internet", loaded == [], loaded)

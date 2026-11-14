@@ -16,6 +16,6 @@ Test: `tests/acceptance/welcome/run.py FIREFOX_DIR` (16 checks).
 Limits:
 - A built-in extension is installed by the build; whether `onInstalled` fires with reason `install` at the first start of a fresh profile in that setup is **not tested** (tested with a temporary install only).
 - The other Klin pages (collection log, self-test, connections) cannot be linked from here: an extension page cannot link to another extension's page. The text points to their toolbar buttons.
-- The Klin and Greenweb page cannot open Greenweb's own page (same limit as above); it points to the leaf button and to the project page on the web. It says that Greenweb is not yet included in the build (ADR 0004 is accepted, the pin in `build/third-party.json` is missing): remove that sentence when it is.
+- The Klin and Greenweb page cannot open Greenweb's own page (same limit as above); it points to the leaf button and to the project page on the web. It says Greenweb is part of the build; that holds only for a build made with `build/bundle-third-party.py` (see `tests/acceptance/bundle`).
 - If the tab is on the Klin and Greenweb page, the info button opens the welcome page in a new tab instead of reusing that one.
 - English only, no illustrations, no logo yet (`branding/` is empty).

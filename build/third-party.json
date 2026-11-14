@@ -7,5 +7,13 @@
     "license": "GPL-3.0-only",
     "note": "Bundle unmodified (Mozilla-signed). Build must pin version and verify sha256; update on each release.",
     "managed-lists": "Klin's policy switches on fanboy-cookiemonster and ublock-cookies-easylist (downloaded, not bundled) and repeats the 1.76.0 default selection. Re-check config/policies/policies.json and tests/acceptance/cookie-banners on each uBlock Origin update."
+  },
+  "greenweb": {
+    "version": "0.1.0",
+    "id": "digital-footprint-counter@greenweb.local",
+    "source": "https://github.com/ciao-madesign/greenweb/releases/download/v0.1.0/greenweb-0.1.0.xpi",
+    "sha256": "11f00a7b9f21363333fd1b731772651760fb3b08b6edeca723ddfe35259d7fa8",
+    "license": "MIT",
+    "note": "Mozilla-signed on addons.mozilla.org as unlisted (ADR 0004), unmodified. The .xpi is attached to the v0.1.0 release of the greenweb repository (asset not yet uploaded). The signature only removed the trailing newline of manifest.json; every other file is identical to the package built from greenweb main (73891056). Fetched at build time only; the browser makes no connection for it."
   }
 }

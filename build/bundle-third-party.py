@@ -7,10 +7,11 @@ For every entry of build/third-party.json that has "bundle": true:
   1. fetch the .xpi from "source" (build time only; the browser never makes this connection),
   2. check its sha256 against the pin; on mismatch stop and write nothing,
   3. copy it to FIREFOX_DIR/distribution/extensions/<id>.xpi,
-  4. add it to FIREFOX_DIR/distribution/policies.json (ExtensionSettings, normal_installed:
-     present by default, the user can remove it). The policies file is config/policies/policies.json
-     plus these entries; the install path is only known here, so it is written here.
-The .xpi is never unpacked or changed (ADR 0004).
+  4. write FIREFOX_DIR/distribution/policies.json = config/policies/policies.json, unchanged.
+The .xpi is never unpacked or changed (ADR 0004). It is deliberately NOT listed in the policy
+ExtensionSettings: tested on Firefox 160.0, a policy entry (normal_installed) installs the extension
+again at every start, so the user's removal does not last. With the file in distribution/extensions
+alone it is installed in a new profile and a removal lasts across restarts.
 """
 import hashlib, json, pathlib, shutil, sys, urllib.request
 
@@ -38,7 +39,6 @@ def main(argv):
     dist = pathlib.Path(args[0]) / "distribution"
     pins = json.loads((ROOT / "build/third-party.json").read_text())
     policies = json.loads(SOURCE_POLICIES.read_text())
-    settings = policies["policies"].setdefault("ExtensionSettings", {})
 
     staged = []
     for name, pin in pins.items():
@@ -55,7 +55,6 @@ def main(argv):
     for name, pin, data in staged:
         target = (out / (pin["id"] + ".xpi")).resolve()
         target.write_bytes(data)
-        settings[pin["id"]] = {"installation_mode": "normal_installed", "install_url": target.as_uri()}
         print("ok   %s %s (sha256 verified) -> %s" % (name, pin["version"], target))
     (dist / "policies.json").write_text(json.dumps(policies, indent=2) + "\n")
     print("ok   policies written to %s" % (dist / "policies.json"))

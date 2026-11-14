@@ -86,7 +86,7 @@ Klin does not ship these lists. The user downloads them from the maintainer, so 
 Klin does not judge what the list says (`CHARTER.md` 4.3).
 
 ## 4. Decisions for the owner
-1. Which candidates go into the first catalogue. Suggestion: start with the ones that already have a clear licence and a readable format, and let the user add the rest by address or file.
-2. Whether any list is on by default. Suggestion: none.
+1. ~~Which candidates go into the first catalogue~~ **Decided** (owner, 14 Nov 2026): the EU suspended-media list, Iffy.news and IPFire DBL "Violence". Still to do before each enters: verify its licence on the maintainer's site (Iffy.news: MIT as reported by secondary pages; IPFire: CC BY-SA 4.0 as listed) and its format.
+2. ~~Whether any list is on by default~~ **Decided** (owner, 14 Nov 2026): only the EU list is on by default; the others are off. It is a label, never a block.
 3. ~~Whether the legal-ban list (EU) is offered~~ **Decided: yes** (owner, 13 Nov 2026). Still to do: the converter from outlets to domains, and a check of the current consolidated annex on EUR-Lex, which Klin follows as published.
-4. The size limit for a list, and whether weekly updates may be offered.
+4. ~~The size limit and updates~~ **Decided** (owner, 14 Nov 2026): at most 1 MB per list (a larger list is refused; very large lists stay with uBlock Origin); updates are manual, weekly only if the user turns it on.

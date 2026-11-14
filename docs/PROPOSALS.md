@@ -58,7 +58,7 @@ Status: **Done** (in the repo and verified) · **Next** · **Accepted** (valid, 
 | P16a | No JavaScript inside PDFs | **Done** | `pdfjs.enableScripting=false` |
 | P0 | WebRTC address-leak protection | **Done** | `media.peerconnection.ice.default_address_only`, `…proxy_only_if_behind_proxy`. Browser-side answer to the "variable MAC" idea |
 | P3 | Cookie banners | **Done, in a weaker form** | Firefox's own banner rejection no longer exists in 160.0, so Klin switches on uBlock Origin's cookie-notice lists (`3rdparty` policy in `config/policies/policies.json`). They **hide** banners; they do not click "Reject". A site then sees no choice made, which for GDPR-compliant sites means no optional cookies, but it is not guaranteed. Klin's tracker blocking and cookie partitioning apply regardless. Tested with the real lists on a mock page (`tests/acceptance/cookie-banners`); real sites not tested, so breakage (e.g. pages whose scrolling is locked by a banner) is unknown |
-| P4 | DoH with provider choice, oblivious variant, ECH | **Decided** | ADR 0005: user chooses at first start, nothing preselected (owner, 13 Nov 2026). Needs the first-start screen (Phase 1) and a reviewed resolver list |
+| P4 | DoH with provider choice, oblivious variant, ECH | **Decided** | ADR 0005: user chooses at first start, nothing preselected (owner, 13 Nov 2026). Needs the first-start screen (Phase 1); four options decided 14 Nov 2026 (Quad9, Mullvad DNS, Cloudflare, keep the current one), wording to be checked against primary documents (`proposals/dns-resolvers.md`) |
 
 Prefs were verified as in `PHASE0.md`: values read back from Firefox 160.0 with `klin.js` installed. Only GPC was also checked by behaviour; the others by value.
 

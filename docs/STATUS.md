@@ -41,7 +41,7 @@ Standard is the default level; privacy comes first, then low impact, then securi
 - Charter (P36): **draft written** in `docs/CHARTER.md`, with the rule for the ethics and source lists: third-party lists, Klin does not curate. The owner approves it and decides the points marked "to confirm". Lists: confirmed again by the owner on 13 Nov 2026 (style session): third-party public lists as published, Klin does not curate or adapt them; any idea of an open review by Klin is only a proposal, not a commitment.
 - Geographic Traffic Controller (system level) versus P32 (browser level): answered by ADR 0006 (**accepted**, owner, 13 Nov 2026): P32 first, the system level stays a proposal.
 - Privacy levels (P29): the Advanced level must be tried on real sites.
-- The resolver list for DoH: no default and nothing preselected (decided 13 Nov 2026, ADR 0005). Criteria decided (strict). Candidates are in `docs/proposals/dns-resolvers.md`: under the strict criteria none passes fully yet (Quad9 and Mullvad DNS need their primary documents checked); the list stays empty until someone has read them.
+- The resolver list for DoH: no default and nothing preselected (decided 13 Nov 2026, ADR 0005). Decided 14 Nov 2026: four options (Quad9, Mullvad DNS, Cloudflare 1.1.1.1, keep the current one), each with an explanation of what it implies; draft in `docs/proposals/dns-resolvers.md`. Still to do before the screen ships: check every sentence about a service against its primary documents (so far only secondary pages and the operators' own blogs were read).
 - Languages: Italian and English now, in `_locales` of each extension; more later with human-reviewed machine translation.
 
 ## 6. Pitfalls found (read before changing things)

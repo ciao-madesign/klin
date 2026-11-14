@@ -19,6 +19,9 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 - Every site you check receives a request with your internet address and the name you typed. Klin and nobody else receives anything. Over Tor or a proxy of your choice (P32) the address would be different; not available yet.
 - A site that answers with a generic page for any name can show up as "exists". Treat the result as a lead.
 
+## Languages
+English and Italian (`_locales`), in the browser's language; `?lang=it` or `?lang=en` forces one. The Italian still needs the owner's read-through.
+
 ## Not done yet
 - Keep your own list of confirmed accounts and of deletions done.
 - Deletion links per site.
@@ -28,4 +31,4 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 
 ## Tests
 - `node tests/acceptance/username-check/unit.js`: 27 checks (requests, classification, name rules, the list, concurrency, stop, timeout).
-- `python3 tests/acceptance/username-check/run.py FIREFOX_DIR`: 22 checks in a real Firefox with stand-in sites (status code, own error code, message, redirect, POST probe, rate limit, slow, skipped name), including that no cookie or referrer is sent, that nothing can be read without permission, and the page end to end.
+- `python3 tests/acceptance/username-check/run.py FIREFOX_DIR`: 23 checks in a real Firefox with stand-in sites (status code, own error code, message, redirect, POST probe, rate limit, slow, skipped name), including that no cookie or referrer is sent, that nothing can be read without permission, and the page end to end.

@@ -55,6 +55,11 @@ with Firefox(sys.argv[1], prefs={"dom.security.https_only_mode": False}) as ff:
     time.sleep(1.5)
     ff.navigate(ff.addon_url(addon, "page/index.html")); time.sleep(1)
     check("page opens", ff.script("return document.title") == "Privacy level")
+    ff.navigate(ff.addon_url(addon, "page/index.html") + "?lang=it"); time.sleep(1)
+    it = ff.script("return document.body.textContent")
+    check("the page speaks Italian when asked, with the owner's names and line",
+          all(w in it for w in ("Avanzato", "Massimo", "Nessun livello ti rende anonimo")) and ff.script("return document.getElementById('status').textContent").startswith("Standard:"))
+    ff.navigate(ff.addon_url(addon, "page/index.html")); time.sleep(1)
     text = ff.script("return document.body.textContent")
     check("every level says what it does not hide and what it costs", text.count("What it does not hide.") == 3 and text.count("What it costs.") == 3)
     check("it says no level makes you anonymous", "None of them makes you anonymous" in text)

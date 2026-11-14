@@ -1,0 +1,194 @@
+{
+  "name": {
+    "message": "Klin Alias Registry"
+  },
+  "description": {
+    "message": "La tua lista di quale indirizzo email o username hai dato a quale sito. Resta solo su questo dispositivo."
+  },
+  "title": {
+    "message": "I miei alias"
+  },
+  "ar_title": {
+    "message": "I miei alias"
+  },
+  "ar_lead": {
+    "message": "Quale indirizzo email o username hai dato a quale sito. Se arriva spam su un indirizzo, sai chi l'ha passato."
+  },
+  "ar_add_h": {
+    "message": "Aggiungine uno"
+  },
+  "ar_type": {
+    "message": "Tipo"
+  },
+  "ar_opt_email": {
+    "message": "Indirizzo email"
+  },
+  "ar_opt_username": {
+    "message": "Username"
+  },
+  "ar_alias": {
+    "message": "Alias"
+  },
+  "ar_site": {
+    "message": "Dato a (sito)"
+  },
+  "ar_note": {
+    "message": "Nota"
+  },
+  "ar_save": {
+    "message": "Salva"
+  },
+  "ar_disp_summary": {
+    "message": "Crea un indirizzo usa e getta (gratis, senza registrazione)"
+  },
+  "ar_disp_intro": {
+    "message": "Klin chiede al servizio gratuito **mail.tm** un nuovo indirizzo casuale. Scrivi prima il sito nel modulo qui sopra, poi premi il pulsante. Quello che arriva lo leggi qui."
+  },
+  "ar_disp1": {
+    "message": "Va bene per iscrizioni, prove e tutto ciò che puoi permetterti di perdere."
+  },
+  "ar_disp2": {
+    "message": "**mail.tm può leggere ogni messaggio che riceve** e può cancellare l'indirizzo quando vuole. Non usarlo per la banca, per gli account principali o per recuperare password."
+  },
+  "ar_disp3": {
+    "message": "Il pulsante contatta api.mail.tm con il tuo indirizzo IP. Klin chiede prima il permesso."
+  },
+  "ar_disp_btn": {
+    "message": "Crea un indirizzo usa e getta"
+  },
+  "ar_plus_summary": {
+    "message": "Crea un indirizzo con il + dalla mia email"
+  },
+  "ar_plus_base": {
+    "message": "Il mio indirizzo"
+  },
+  "ar_plus_btn": {
+    "message": "Compila il modulo qui sopra"
+  },
+  "ar_plus_note": {
+    "message": "Ottieni **me+sito@esempio.org**. Funziona solo con alcuni provider e mostra comunque il tuo vero indirizzo: chiunque può togliere la parte “+sito”. Un vero alias di un servizio che scegli tu è meglio: incollalo qui sopra. Klin non gestisce nessun servizio di alias."
+  },
+  "ar_spam_h": {
+    "message": "Spam su un indirizzo?"
+  },
+  "ar_spam_label": {
+    "message": "L'indirizzo su cui è arrivato"
+  },
+  "ar_spam_btn": {
+    "message": "A chi l'avevo dato?"
+  },
+  "ar_list_h": {
+    "message": "La tua lista"
+  },
+  "ar_search": {
+    "message": "Cerca"
+  },
+  "ar_th_alias": {
+    "message": "Alias"
+  },
+  "ar_th_site": {
+    "message": "Sito"
+  },
+  "ar_th_note": {
+    "message": "Nota"
+  },
+  "ar_empty": {
+    "message": "Ancora niente."
+  },
+  "ar_export": {
+    "message": "Salva un backup"
+  },
+  "ar_import": {
+    "message": "Carica un backup"
+  },
+  "ar_inbox_h": {
+    "message": "Posta di"
+  },
+  "ar_not_h": {
+    "message": "Cosa non fa"
+  },
+  "ar_not1": {
+    "message": "**Non crea alias permanenti.** Ricorda quelli che hai fatto con un servizio che scegli tu. Gli indirizzi usa e getta vengono da mail.tm."
+  },
+  "ar_not2": {
+    "message": "==Resta solo su questo dispositivo==, nel tuo profilo Klin, non cifrato. Chi può aprire il tuo profilo lo può leggere. Non viene inviato nulla e non c'è sincronizzazione."
+  },
+  "ar_not3": {
+    "message": "**Non può provare chi ha ceduto un indirizzo.** Ti dice a chi l'avevi dato. Anche un sito può subire una violazione."
+  },
+  "ar_not4": {
+    "message": "La password di un indirizzo usa e getta resta solo in questo browser e non è nel file di backup: dopo aver caricato un backup non puoi aprirne la posta."
+  },
+  "ar_not5": {
+    "message": "Un backup è un file in chiaro. Tienilo dove tieni i tuoi file privati."
+  },
+  "ar_err_kind": {
+    "message": "Scegli email o username."
+  },
+  "ar_err_value": {
+    "message": "Scrivi l'alias."
+  },
+  "ar_err_email": {
+    "message": "Non sembra un indirizzo email."
+  },
+  "ar_err_site": {
+    "message": "Scrivi il sito a cui l'hai dato."
+  },
+  "ar_err_backup": {
+    "message": "Quel file non è un backup degli alias di Klin."
+  },
+  "ar_plus_err": {
+    "message": "Scrivi il tuo indirizzo qui sopra, e il sito nel modulo."
+  },
+  "ar_who_hit": {
+    "message": "Hai dato questo indirizzo a: {1}."
+  },
+  "ar_who_none": {
+    "message": "Quell'indirizzo non è nella tua lista."
+  },
+  "ar_backup_saved": {
+    "message": "Backup salvato come klin-aliases.json. È un file in chiaro."
+  },
+  "ar_backup_loaded": {
+    "message": "Aggiunti {1}, saltati {2} (già presenti o non validi)."
+  },
+  "ar_delete": {
+    "message": "Cancella"
+  },
+  "ar_delete_aria": {
+    "message": "Cancella {1} per {2}"
+  },
+  "ar_inbox": {
+    "message": "Posta"
+  },
+  "ar_inbox_aria": {
+    "message": "Apri la posta di {1}"
+  },
+  "ar_read": {
+    "message": "Leggi"
+  },
+  "ar_d_needsite": {
+    "message": "Scrivi prima il sito per cui serve questo indirizzo, nel modulo qui sopra."
+  },
+  "ar_d_noperm": {
+    "message": "Senza il tuo permesso di contattare il servizio non è stato inviato nulla."
+  },
+  "ar_d_asking": {
+    "message": "Chiedo al servizio…"
+  },
+  "ar_d_created": {
+    "message": "Creato {1} e salvato nella tua lista."
+  },
+  "ar_d_fail": {
+    "message": "Non sono riuscito a creare un indirizzo: {1}"
+  },
+  "ar_d_empty": {
+    "message": "Non è ancora arrivato nulla."
+  },
+  "ar_d_inbox_fail": {
+    "message": "Non sono riuscito ad aprire la posta: {1}"
+  },
+  "ar_d_msg_fail": {
+    "message": "Non sono riuscito ad aprire il messaggio: {1}"
+  }
+}

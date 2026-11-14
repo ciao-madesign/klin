@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Klin Privacy Level",
+  "name": "__MSG_name__",
   "version": "0.1.0",
-  "description": "Chooses the privacy level: Standard or Advanced (hides your time zone). Shows what each level does not hide.",
+  "description": "__MSG_description__",
   "browser_specific_settings": {
     "gecko": {
       "id": "privacy-level@klin",
@@ -14,7 +14,7 @@
     "storage"
   ],
   "action": {
-    "default_title": "Privacy level",
+    "default_title": "__MSG_title__",
     "default_icon": "icon.svg"
   },
   "icons": {
@@ -29,5 +29,6 @@
   },
   "host_permissions": [
     "<all_urls>"
-  ]
+  ],
+  "default_locale": "en"
 }

@@ -3,29 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where am I registered?</title>
+<title data-i18n="uc_title">Where am I registered?</title>
 <link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <main>
   <header class="hero">
     <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
-    <h1>Where am I registered?</h1>
-    <p class="lead">Type a username you use, and Klin checks on which websites that name exists. Started by you, only when you press the button.</p>
+    <h1 data-i18n="uc_title">Where am I registered?</h1>
+    <p class="lead" data-i18n="uc_lead">Type a username you use. Klin asks hundreds of websites if that name exists there. Only when you press the button.</p>
   </header>
 
   <section>
     <form class="check" id="form" autocomplete="off">
-      <label id="fromAliases" class="hidden">From my aliases
-        <select id="aliasPick"><option value="">Choose…</option></select>
+      <label id="fromAliases" class="hidden"><span data-i18n="uc_from">From my aliases</span>
+        <select id="aliasPick"><option value="" data-i18n="uc_choose">Choose…</option></select>
       </label>
-      <label for="username">Your username</label>
+      <label for="username" data-i18n="uc_name">Your username</label>
       <input type="text" id="username" name="username" maxlength="64" spellcheck="false" autocapitalize="off" required>
-      <label class="own"><input type="checkbox" id="own"> <span>This is my own username. I am not looking for someone else.</span></label>
+      <label class="own"><input type="checkbox" id="own"> <span data-i18n="uc_own">This is my own username. I am not looking for someone else.</span></label>
       <div class="row">
-        <button type="submit" id="start" disabled>Check</button>
-        <button type="button" id="stop" class="hidden">Stop</button>
+        <button type="submit" id="start" disabled data-i18n="uc_check">Check</button>
+        <button type="button" id="stop" class="hidden" data-i18n="uc_stop">Stop</button>
       </div>
     </form>
     <p id="notice" class="note hidden" role="status"></p>
@@ -34,28 +35,28 @@
   </section>
 
   <section id="foundBox" class="hidden">
-    <h2>Accounts that appear to exist</h2>
+    <h2 data-i18n="uc_found_h">Accounts that seem to exist</h2>
     <ul id="found"></ul>
-    <p class="note">To remove an account, open it and look for the deletion option in its settings. Klin does not delete anything for you.</p>
+    <p class="note" data-i18n="uc_found_note">To remove an account, open it and look for the deletion option in its settings. Klin deletes nothing for you.</p>
   </section>
 
   <section id="unknownBox" class="hidden">
-    <h2>Sites that gave no clear answer</h2>
-    <p class="note">Blocked, slow, rate limited or down. Open them yourself if you want to be sure.</p>
+    <h2 data-i18n="uc_unknown_h">Sites with no clear answer</h2>
+    <p class="note" data-i18n="uc_unknown_note">Blocked, slow, rate limited or down. Open them yourself to be sure.</p>
     <ul id="unknown"></ul>
   </section>
 
   <section class="honest">
-    <h2>What this does not do</h2>
+    <h2 data-i18n="uc_not_h">What this does not do</h2>
     <ul>
-      <li><b>It does not delete accounts.</b> It only finds them.</li>
-      <li><b>It can be wrong.</b> A site may use the same name for someone else, or answer in a way Klin reads badly.</li>
-      <li><b>It searches only by username.</b> Not your email, phone number or what data brokers hold about you.</li>
-      <li><b>Every site you check sees the request,</b> with your internet address and the name you typed. That is the cost of asking. Nothing goes to Klin or anyone else, and nothing is saved when you close this page.</li>
-      <li>Sites are not given your cookies, so you are not logged in and no session is touched.</li>
-      <li>Klin asks your permission to contact websites when you press Check, and you can refuse.</li>
+      <li data-i18n="uc_not1"><b>It does not delete accounts.</b> It only finds them.</li>
+      <li data-i18n="uc_not2"><b>It can be wrong.</b> A site may use the same name for someone else, or answer in a way Klin reads badly.</li>
+      <li data-i18n="uc_not3"><b>It searches usernames only.</b> Not your email, your phone number or what data brokers hold.</li>
+      <li data-i18n="uc_not4"><mark>Every site you check sees the request</mark>, with your IP address and the name you typed. Nothing goes to Klin or anyone else, and nothing is saved when you close the page.</li>
+      <li data-i18n="uc_not5">Sites get no cookies from you: you are not logged in and no session is touched.</li>
+      <li data-i18n="uc_not6">Klin asks your permission to contact websites when you press Check. You can refuse.</li>
     </ul>
-    <p class="note">The list of sites comes from the open-source Sherlock project (MIT licence), fixed at one version and kept inside Klin.</p>
+    <p class="note" data-i18n="uc_source">The list of sites comes from the open-source Sherlock project (MIT licence), fixed at one version and kept inside Klin.</p>
   </section>
 </main>
 <script src="../check.js"></script>

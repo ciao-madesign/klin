@@ -26,7 +26,7 @@ form.addEventListener("submit", async (event) => {
   say("");
   let granted = false;
   try { granted = await browser.permissions.request({ origins: ["<all_urls>"] }); } catch (e) { granted = false; }
-  if (!granted) { say("Without permission to contact websites the check cannot run. Nothing was sent."); return; }
+  if (!granted) { say(klin.t("uc_noperm", "Without permission to contact websites the check cannot run. Nothing was sent.")); return; }
 
   const sites = await window.klinSites;
   controller = new AbortController();
@@ -41,7 +41,7 @@ form.addEventListener("submit", async (event) => {
     onResult: (r, done, total) => {
       tally[r.state]++;
       bar.value = done;
-      $("count").textContent = "Checked " + done + " of " + total + " sites…";
+      $("count").textContent = klin.t("uc_progress", "Checked {1} of {2} sites…", done, total);
       if (r.state === "found") { $("found").append(link(r.site, username)); $("foundBox").classList.remove("hidden"); }
       if (r.state === "unknown") { $("unknown").append(link(r.site, username)); $("unknownBox").classList.remove("hidden"); }
     },
@@ -49,8 +49,9 @@ form.addEventListener("submit", async (event) => {
   const stopped = controller.signal.aborted;
   controller = null;
   stop.classList.add("hidden"); bar.classList.add("hidden");
-  $("count").textContent = (stopped ? "Stopped. " : "Done. ") + tally.found + " found, " + tally.notfound + " not found, " +
-    tally.unknown + " unclear, " + tally.skipped + " skipped (the name cannot exist there).";
+  $("count").textContent = stopped
+    ? klin.t("uc_stopped", "Stopped. {1} found, {2} not found, {3} unclear, {4} skipped (the name cannot exist there).", tally.found, tally.notfound, tally.unknown, tally.skipped)
+    : klin.t("uc_done", "Done. {1} found, {2} not found, {3} unclear, {4} skipped (the name cannot exist there).", tally.found, tally.notfound, tally.unknown, tally.skipped);
   sync();
 });
 

@@ -1,6 +1,6 @@
 # ADR 0009 – A small support program for the VPN command (level 2) and the download scan
 
-Status: **proposed** (to be accepted by the owner before any work starts)
+Status: **accepted** (owner, 14 Nov 2026)
 
 ## Context
 Two decided features cannot be done by a WebExtension alone (`PROPOSALS.md`, P40 and P41):

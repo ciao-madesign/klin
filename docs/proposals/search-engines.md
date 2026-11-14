@@ -22,18 +22,16 @@ Status: **candidates for the owner to prune** (owner, 14 Nov 2026: "ask the user
 | **Qwant** | Qwant, France (EU) | Bing plus a growing share of its own index | Ads | Says it does not track or profile | Mostly Microsoft's results so far; smaller user base |
 | **SearXNG instance** (advanced) | Open-source software run by volunteers; many public instances | Mixes many engines at once | Donations, usually no ads | Depends entirely on whoever runs the instance you pick | You must choose and trust an instance; instances come and go; slower; not offered by default |
 
-### Classic
+### Classic (Bing and Yahoo removed by the owner, 14 Nov 2026)
 | Engine | Who and where | Results come from | How it earns | What it says about your data | Honest drawback |
 |---|---|---|---|---|---|
 | **Google** | Google, USA | Its own index, the largest | Ads, built on knowing a lot about users | Stores searches, tied to a Google account if you are signed in; has controls to limit or delete | Most data collected of all; the results are very good, which is why people use it |
-| **Bing** | Microsoft, USA | Its own index | Ads | Stores searches; tied to a Microsoft account if you use one; controls exist | Same trade as Google, at smaller scale; Microsoft's results feed many other engines anyway |
-| **Yahoo Search** | Yahoo, USA | Bing results | Ads | Stores searches; ties them to a Yahoo account if you have one | Little of its own; adds nothing Bing does not already give |
 
-## What each choice means for the home page
-The home page opens the engine's start page, which is a **visible connection at every start** to that company (it learns the time and your address even if you search nothing). The alternative, Klin's own start page with a search box (already built, `extensions/newtab`), makes no connection until you search. The first-start screen should say so, and offer: "Open the engine's page at start" or "Open Klin's page with my engine in the search box". **To confirm with the owner** (he asked for the engine page as the home page).
+## Home page (decided, owner, 14 Nov 2026)
+Klin's own start page, separate from the welcome page (`extensions/newtab`; the welcome page `extensions/welcome` only opens at the first start and from the info button): the logo, the name and one wide search bar, like a search engine's home page, and nothing else. It makes **no connection until the user searches**, and the search goes to the engine chosen at the first start. The engine's own page is not the home page, so no company learns that the browser was opened.
 
 ## To do
-1. The owner prunes the list (which candidates appear).
+1. The owner prunes the list further (Bing and Yahoo are already out).
 2. Check every sentence above against each operator's own policy and terms.
 3. Build the screen with the style session (it owns screens and wording; it also owns the DNS first-start screen, which should be one flow with this one).
 4. Technical: set the chosen engine as default through the search API of the extension that shows the screen, and the home page through the same choice; test that the choice survives a restart and a change in settings.

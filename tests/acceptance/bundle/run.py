@@ -36,7 +36,7 @@ xpi = ff_dir / "distribution/extensions" / (gw["id"] + ".xpi")
 check("the .xpi is in distribution/extensions", xpi.exists())
 policy = json.loads((ff_dir / "distribution/policies.json").read_text())["policies"]
 entry = policy["ExtensionSettings"].get(gw["id"], {})
-check("the policy installs it as normal_installed (removable)", entry.get("installation_mode") == "normal_installed", entry)
+check("the policy does not list it (a policy entry would bring it back at every start)", entry == {}, entry)
 check("uBlock Origin's entry is still there", "uBlock0@raymondhill.net" in policy["ExtensionSettings"])
 
 with Firefox(str(ff_dir)) as ff:
@@ -64,5 +64,29 @@ with Firefox(str(ff_dir)) as ff:
               done({ off, gone: !(await AddonManager.getAddonByID(arguments[0])) }); });""", [gw["id"]])
         check("the user can switch it off", gone["off"] is True, gone)
         check("the user can remove it", gone["gone"] is True, gone)
+
+# a removal must last across a restart (same profile)
+import marionette
+marionette.tempfile.mkdtemp = lambda prefix="": str(work / "profile")
+(work / "profile").mkdir()
+QUERY = """const done = arguments[arguments.length - 1];
+    const { AddonManager } = ChromeUtils.importESModule("resource://gre/modules/AddonManager.sys.mjs");
+    AddonManager.getAddonByID(arguments[0]).then(async (a) => { if (a && arguments[1]) await a.uninstall(); done(a ? "present" : "absent"); });"""
+def start(remove):
+    f = Firefox(str(ff_dir)); f.cmd("Marionette:SetContext", {"value": "chrome"})
+    state = "absent"
+    for _ in range(25):
+        state = f.async_script(QUERY, [gw["id"], False])
+        if state == "present": break
+        time.sleep(1)
+    if remove and state == "present": f.async_script(QUERY, [gw["id"], True])
+    time.sleep(2)
+    try: f.cmd("Marionette:Quit", {"flags": ["eAttemptQuit"]})
+    except Exception: pass
+    f.proc.wait(timeout=60); time.sleep(1)
+    return state
+check("new profile: Greenweb is installed, then the user removes it", start(True) == "present")
+time.sleep(1)
+check("after a restart it stays removed", start(False) == "absent")
 
 sys.exit("%d check(s) failed" % len(failures) if failures else 0)

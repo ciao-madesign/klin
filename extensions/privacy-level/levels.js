@@ -1,27 +1,32 @@
 // The privacy levels. Plain data, so the page, the background and the tests agree on one definition.
+// Decided by the project owner (13-14 Nov 2026): Standard by default; Advanced hides the time zone only; the third
+// level is called Maximum (never "Anonymous": Klin does not promise anonymity).
 const KlinLevels = {
   default: "standard",
   levels: {
     standard: {
       name: "Standard",
       available: true,
-      does: "Blocks advertising and trackers, keeps cookies apart per site, adds noise to the canvas read-out, hides the local network address, trims referrers. Sites keep working.",
-      hides: "It does not hide your time zone, screen size, languages, processor count, installed fonts or audio fingerprint, and sites still see your internet address.",
-      cost: "No cost: this is the level most people should use.",
+      line: "Standard: blocks trackers and makes your device harder to recognise. Sites keep working.",
+      does: "Blocks advertising and trackers, keeps cookies apart per site, adds noise to the canvas read-out, hides the local network address, trims referrers.",
+      hides: "Does not hide your time zone, screen size, languages, processor count, fonts or audio fingerprint. Sites see your IP address.",
+      cost: "None. This is the level for most people.",
     },
     advanced: {
       name: "Advanced",
       available: true,
-      does: "Everything in Standard, plus Firefox's strong fingerprint protection: it reports a generic screen size and time zone, makes the canvas read-out random on every read, blurs the clock's precision and answers with generic values for more details.",
-      hides: "Measured on Firefox 160: it still does not hide the audio fingerprint, processor count or installed fonts, and sites still see your internet address and your provider still sees which sites you visit.",
-      cost: "Some sites misbehave: dates and times show in a generic time zone, pages may look as if the window had a fixed size, games and video tools that read the canvas or the clock closely can break, and sites that ask for the local time may be wrong. Switch back to Standard for those sites.",
+      line: "Advanced: hides your time zone. Does not hide your screen size.",
+      does: "Everything in Standard, and pages see UTC as your time zone.",
+      hides: "Does not hide screen and window size, touch, languages, processor count, fonts or audio fingerprint. Sites see your IP address. It is an approximation done inside the page: a page that looks hard can notice it, and background workers are not covered.",
+      cost: "Times on booking and calendar sites can appear shifted by one or two hours. One click back to Standard.",
     },
-    anonymous: {
-      name: "Anonymous",
+    maximum: {
+      name: "Maximum",
       available: false,
-      does: "Advanced plus traffic through Tor and nothing kept on disk.",
-      hides: "Not available: Tor is not part of Klin yet.",
-      cost: "Slower; some sites refuse Tor.",
+      line: "Maximum: Advanced plus Tor and nothing kept on disk. Not available yet.",
+      does: "The full set of Firefox's fingerprint protections, traffic through Tor, no persistent data.",
+      hides: "Not available: Tor is not part of Klin yet. Even then sites will not see your IP address, but Klin will not call this anonymous.",
+      cost: "Slower. Some sites refuse Tor or break.",
     },
   },
 };

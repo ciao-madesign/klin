@@ -1,10 +1,18 @@
-// Applies the chosen level through the browser's privacy settings, which belong to this extension while it is
-// installed: removing it hands them back. Standard means "touch nothing": Klin's own preferences apply.
-const setting = browser.privacy.websites.resistFingerprinting;
+// Applies the chosen level. Standard changes nothing. Advanced registers a small script that runs in every page
+// before the page's own scripts and makes the time zone UTC. The registration is the level: removing the
+// extension removes it.
+const SCRIPT_ID = "klin-timezone";
 
 async function apply(level) {
-  if (level === "advanced") await setting.set({ value: true });
-  else await setting.clear({});
+  const registered = (await browser.scripting.getRegisteredContentScripts({ ids: [SCRIPT_ID] })).length > 0;
+  if (level === "advanced" && !registered) {
+    await browser.scripting.registerContentScripts([{
+      id: SCRIPT_ID, js: ["timezone.js"], matches: ["<all_urls>"], allFrames: true, matchOriginAsFallback: true,
+      runAt: "document_start", world: "MAIN", persistAcrossSessions: true,
+    }]);
+  } else if (level !== "advanced" && registered) {
+    await browser.scripting.unregisterContentScripts({ ids: [SCRIPT_ID] });
+  }
 }
 
 async function current() {
@@ -24,8 +32,7 @@ browser.runtime.onMessage.addListener(async (message, sender) => {
     await browser.storage.local.set({ level });
     await apply(level);
   }
-  const state = await setting.get({});
-  return { level: await current(), control: state.levelOfControl, active: state.value };
+  return { level: await current() };
 });
 
 const PAGE = browser.runtime.getURL("page/index.html");

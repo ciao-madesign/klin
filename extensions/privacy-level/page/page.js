@@ -1,9 +1,7 @@
 const $ = (id) => document.getElementById(id);
 
 const render = (state) => {
-  $("status").textContent = state.control === "controlled_by_other_extensions"
-    ? "Another extension is controlling this setting, so a change here may have no effect."
-    : state.control === "not_controllable" ? "This setting cannot be changed here." : "";
+  $("status").textContent = KlinLevels.levels[state.level].line;
   $("levels").replaceChildren($("levels").firstChild, ...Object.entries(KlinLevels.levels).map(([id, lv]) => {
     const box = document.createElement("div");
     box.className = "level" + (id === state.level ? " current" : "");

@@ -26,6 +26,7 @@ Open reconciliations: (1) merge `zealous-maxwell` and renumber its ADR; (2) deci
 | Honest private window | `extensions/private-window` | P22 | `acceptance/private-window` |
 | Collection log (badge and popup, memory only) | `extensions/attempts-log` | P30 | `acceptance/attempts-log` (+ `run-ubo.py`) |
 | Presentation page, first start and info button | `extensions/welcome` | P37 | `acceptance/welcome` |
+| Privacy level (Standard / Advanced; Anonymous waits for Tor) | `extensions/privacy-level` | P29 | `acceptance/privacy-level` |
 | Alias registry (which alias went to which site, who leaked it) | `extensions/alias-registry` | P26 | `acceptance/alias-registry` (+ `unit.js`, `run-disposable.py`) |
 | Username check: where a username exists (Sherlock site list, pinned) | `extensions/username-check` | P38 | `acceptance/username-check` (+ `unit.js`) |
 
@@ -65,7 +66,7 @@ Some tests rewrite `distribution/policies.json`: use a copy. Network in the clou
 
 ## 9. Next steps (suggested order)
 1. Style and tone session (separate), then apply it to the pages and write `docs/STYLE.md`.
-2. Privacy levels (P29): try Advanced on real sites, write the ADR.
+2. Privacy levels (P29): Advanced still to be tried on real sites (needs network access to them); close the audio, processor and font gaps.
 3. Signing and distribution of the extensions (ADR), test `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).
 5. Dashboard and workspaces (Phase 1), then Phase 2 monitors.

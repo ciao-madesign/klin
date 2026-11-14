@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Klin Privacy Level",
+  "version": "0.1.0",
+  "description": "Chooses how strongly Klin hides the details sites use to recognise your device: Standard or Advanced. Shows what each level does not hide.",
+  "browser_specific_settings": { "gecko": { "id": "privacy-level@klin", "strict_min_version": "128.0" } },
+  "permissions": ["privacy", "storage"],
+  "action": { "default_title": "Privacy level", "default_icon": "icon.svg" },
+  "icons": { "48": "icon.svg", "96": "icon.svg" },
+  "background": { "scripts": ["levels.js", "background.js"] }
+}

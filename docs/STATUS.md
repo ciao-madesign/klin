@@ -75,6 +75,6 @@ The pages of `username-check`, `alias-registry` and `privacy-level` are on the s
 ## 9. Next steps (suggested order)
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
 2. Privacy levels (P29): done in a first form (`extensions/privacy-level`, ADR 0007); next, apply Firefox's own fixed-time-zone protection instead of the in-page approximation (needs a privileged helper), and Maximum with Tor.
-3. Signing and distribution of the extensions (ADR), test `onInstalled` and the private-window grant in the signed build.
+3. Signing of the extensions: ADR 0010 accepted and `build/sign-extensions.py` written (dry run only); the owner signs with their own AMO keys, then publish a release and pin the files. Then test `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).
 5. Dashboard and workspaces (Phase 1), then Phase 2 monitors.

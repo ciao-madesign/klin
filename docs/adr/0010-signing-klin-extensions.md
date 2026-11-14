@@ -14,5 +14,6 @@ Firefox release refuses extensions that Mozilla has not signed (ADR 0004; checke
 ## Consequences
 - Contacts addons.mozilla.org at signing time only; the browser makes no connection for it.
 - Ten extensions mean ten signatures per release; the script does them in one run.
-- Still to test with signed files: whether `runtime.onInstalled` fires at the first start for built-in extensions (the welcome page depends on it) and whether the private-window permission can be granted (the honest private window depends on it). Nothing was signed in the cloud session: `sign-extensions.py` was only run with `--dry-run`.
-- Still to do: make `bundle-third-party.py` bundle the pinned Klin extensions too, once the first signed release exists.
+- Done 14 Nov 2026: the owner signed all ten (version 0.1.0; self-test 0.2.0) and published them as the `extensions-0.1` pre-release; they are pinned in `build/third-party.json` and `bundle-third-party.py` installs them with Greenweb. Checked on Firefox 160.0 (`tests/acceptance/bundle`): all eleven are installed, active and signed at the first start, the welcome page opens (`runtime.onInstalled` fires for them), and `private-window@klin` is allowed in private windows through the policy (`ExtensionSettings`, `private_browsing`, no `installation_mode`, so nothing is reinstalled).
+- The API keys appeared in chat twice during signing and were revoked; they never entered the repository. Next time keys go only in the owner's terminal.
+- A new version of any extension means a new signature and a new release (the script skips versions already signed).

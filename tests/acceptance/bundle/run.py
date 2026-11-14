@@ -52,6 +52,16 @@ with Firefox(str(ff_dir)) as ff:
         time.sleep(1)
     print("     ", info)
     check("Greenweb is installed at the first start", bool(info))
+    allowed = ff.async_script("""const done = arguments[arguments.length - 1];
+        const f = (id) => { const p = WebExtensionPolicy.getByID(id); return p ? p.privateBrowsingAllowed : null; };
+        done({ privateWindow: f("private-window@klin"), greenweb: f(arguments[0]) });""", [gw["id"]])
+    check("every pinned Klin extension is installed, signed and active", all(
+        ff.async_script("""const done = arguments[arguments.length - 1];
+            const { AddonManager } = ChromeUtils.importESModule("resource://gre/modules/AddonManager.sys.mjs");
+            AddonManager.getAddonByID(arguments[0]).then((a) => done(!!a && a.isActive && a.signedState === 2));""", [v["id"]])
+        for k, v in pins.items() if k.startswith("klin-")))
+    check("the honest private window is allowed in private windows (policy)", allowed["privateWindow"] is True, allowed)
+    check("Greenweb is not (it never counts private windows)", allowed["greenweb"] is False, allowed)
     if info:
         check("it is the pinned version", info["version"] == gw["version"], info)
         check("it is active", info["active"] is True, info)

@@ -49,7 +49,7 @@ Standard is the default level; privacy comes first, then low impact, then securi
 - Languages: Italian and English now, in `_locales` of each extension; more later with human-reviewed machine translation.
 
 ## 6. Pitfalls found (read before changing things)
-- **Unsigned extensions cannot be installed permanently in Firefox release.** Every Klin extension must be signed (unlisted, free) or the build must use another route; see ADR 0004. Until then they only run as temporary installs in tests. Consequences not yet tested: whether `runtime.onInstalled` fires at the first start for built-in extensions (the presentation page depends on it); the `private_browsing` policy grant (the honest private window depends on it).
+- **Unsigned extensions cannot be installed permanently in Firefox release.** Every Klin extension must be signed (unlisted, free) or the build must use another route; see ADR 0004. Until then they only run as temporary installs in tests. Update 14 Nov 2026: all Klin extensions are now signed (ADR 0010) and bundled by `build/bundle-third-party.py`; tested on Firefox 160.0 that `onInstalled` fires at the first start (the welcome page opens) and that the `private_browsing` policy grant works for the honest private window.
 - Prefs go in `browser/defaults/preferences/`, not `defaults/pref/`.
 - Extension pages, `file://` and bare IP addresses are exempt from fingerprinting protection and from uBlock Origin's cosmetic filters: test under a real-looking host name (the tests use a local server as proxy).
 - Content scripts: a view over a page's buffer cannot be sliced; arrays made in the extension cannot be passed to a page's function; DataTransfer data set by the extension is unreadable by the page (build the event in `world: "MAIN"`); a script cannot build a paste event with files; a tab's badge is cleared on page commit; record a request synchronously, before its answer can arrive.
@@ -75,6 +75,6 @@ The pages of `username-check`, `alias-registry` and `privacy-level` are on the s
 ## 9. Next steps (suggested order)
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
 2. Privacy levels (P29): done in a first form (`extensions/privacy-level`, ADR 0007); next, apply Firefox's own fixed-time-zone protection instead of the in-page approximation (needs a privileged helper), and Maximum with Tor.
-3. Signing of the extensions: ADR 0010 accepted and `build/sign-extensions.py` written (dry run only); the owner signs with their own AMO keys, then publish a release and pin the files. Then test `onInstalled` and the private-window grant in the signed build.
+3. ~~Signing of the extensions~~ done 14 Nov 2026 (ADR 0010; pre-release `extensions-0.1`, pinned, bundled). Tested in the signed bundle: `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).
 5. Dashboard and workspaces (Phase 1), then Phase 2 monitors.

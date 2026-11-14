@@ -24,5 +24,95 @@
     "sha256": "3fdfc6694c5cd99798881215554b09e617c6d5284a6219fae309882566a9fb30",
     "license": "MIT",
     "note": "Site list only (URL patterns and how to tell a profile exists), converted by build/gen-sherlock-sites.py into extensions/username-check/data/sites.json; Sherlock code is not used. Licence file kept next to the data. NSFW sites left out. Update by changing the pin deliberately."
+  },
+  "klin-alias-registry": {
+    "version": "0.1.0",
+    "id": "alias-registry@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/alias-registry%40klin-0.1.0.xpi",
+    "sha256": "ba85b24ac29803c52b0c01389e945ad219b0f0b3341e3bfcda067acd5ff53fb1",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-attempts-log": {
+    "version": "0.1.0",
+    "id": "attempts-log@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/attempts-log%40klin-0.1.0.xpi",
+    "sha256": "170e0bfbd287625a1c1ee7413f7147c0420d8727cf66ce0aac531d6e9ec26f4c",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-connections": {
+    "version": "0.1.0",
+    "id": "connections@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/connections%40klin-0.1.0.xpi",
+    "sha256": "b37249e90bf8bc2400fa4ad85ae9d90c6880a922c481d54f81d569647355e143",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-lookalike": {
+    "version": "0.1.0",
+    "id": "lookalike@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/lookalike%40klin-0.1.0.xpi",
+    "sha256": "414aba1c03d3e73b5119b0cfb469d41f7812dc9bc554086251544a9a0e785525",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-photo-privacy": {
+    "version": "0.1.0",
+    "id": "photo-privacy@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/photo-privacy%40klin-0.1.0.xpi",
+    "sha256": "df64bd8d8d5932a53bb60034c163404df15a8c4a45e41cf0c4aaff2b0b1aac52",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-privacy-level": {
+    "version": "0.1.0",
+    "id": "privacy-level@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/privacy-level%40klin-0.1.0.xpi",
+    "sha256": "e4e7447e71be2c596c8e4afe03add43f4cf1d050c409a59009fb6059cb86b7ce",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-private-window": {
+    "version": "0.1.0",
+    "id": "private-window@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/private-window%40klin-0.1.0.xpi",
+    "sha256": "377b9c7d134b956b96f35356a49a59986796be84f60e3c9ecbe3b3f3c763619d",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-self-test": {
+    "version": "0.2.0",
+    "id": "self-test@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/self-test%40klin-0.2.0.xpi",
+    "sha256": "128a38abd2a87e4086f4e1cdcc4fc1c1441e05d1238f28fd9e7e903e2ea3e331",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-username-check": {
+    "version": "0.1.0",
+    "id": "username-check@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/username-check%40klin-0.1.0.xpi",
+    "sha256": "7b4f6c16a43b2c42c587e514876140b12049555db719b47db171db47bdbc5afc",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
+  },
+  "klin-welcome": {
+    "version": "0.1.0",
+    "id": "welcome@klin",
+    "source": "https://github.com/ciao-madesign/klin/releases/download/extensions-0.1/welcome%40klin-0.1.0.xpi",
+    "sha256": "59ed3ece3430dd2fb5347f3eb2da39b59b5bfff4fa9dd761f312663b1d2178d4",
+    "license": "MIT",
+    "bundle": true,
+    "note": "Klin's own extension, Mozilla-signed (unlisted, ADR 0010), unmodified; asset of the extensions-0.1 release of the klin repository. Fetched at build time only."
   }
 }

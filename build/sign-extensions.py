@@ -17,6 +17,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / "build/signed"
 # test pages and helpers that are not extensions of the product
 SKIP = {"_shared"}
+# on Windows npx is npx.cmd, which subprocess only finds through shutil.which
+NPX = shutil.which("npx") or "npx"
 
 def main(argv):
     dry = "--dry-run" in argv
@@ -40,7 +42,7 @@ def main(argv):
     OUT.mkdir(parents=True, exist_ok=True)
     for d, target in todo:
         with tempfile.TemporaryDirectory() as tmp:
-            subprocess.run(["npx", "--yes", "web-ext", "sign", "--channel=unlisted", "--source-dir", str(d),
+            subprocess.run([NPX, "--yes", "web-ext", "sign", "--channel=unlisted", "--source-dir", str(d),
                             "--artifacts-dir", tmp, "--api-key", os.environ["AMO_JWT_ISSUER"],
                             "--api-secret", os.environ["AMO_JWT_SECRET"]], check=True)
             made = list(pathlib.Path(tmp).glob("*.xpi"))

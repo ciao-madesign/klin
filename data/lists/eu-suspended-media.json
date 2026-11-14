@@ -1,0 +1,271 @@
+{
+  "source": "Council Regulation (EU) No 833/2014, Annex XV (Article 2f), consolidated text",
+  "celex": "02014R0833-20260724",
+  "document": "https://publications.europa.eu/resource/cellar/0492ea31-a0ce-11f1-b25c-01aa75ed71a1.0004.02/DOC_1",
+  "annex_sha256": "2e7e631fdbba8770d525e478d2f39c1d2b058e1b673700a923466ae6388929cb",
+  "generated": "2026-11-14",
+  "domains_status": "UNVERIFIED: see build/data/eu-suspended-media-domains.json",
+  "outlets": [
+    {
+      "name": "RT- Russia Today English",
+      "inserted_by": null,
+      "domains": [
+        "rt.com"
+      ]
+    },
+    {
+      "name": "RT- Russia Today UK",
+      "inserted_by": null,
+      "domains": [
+        "rt.com"
+      ]
+    },
+    {
+      "name": "RT - Russia Today Germany",
+      "inserted_by": null,
+      "domains": [
+        "de.rt.com"
+      ]
+    },
+    {
+      "name": "RT - Russia Today France",
+      "inserted_by": null,
+      "domains": [
+        "francais.rt.com"
+      ]
+    },
+    {
+      "name": "RT- Russia Today Spanish",
+      "inserted_by": null,
+      "domains": [
+        "actualidad.rt.com"
+      ]
+    },
+    {
+      "name": "Sputnik",
+      "inserted_by": null,
+      "domains": [
+        "sputnikglobe.com",
+        "sputniknews.com"
+      ]
+    },
+    {
+      "name": "Rossiya RTR / RTR Planeta",
+      "inserted_by": "32022R0879",
+      "domains": [
+        "rtr-planeta.com"
+      ]
+    },
+    {
+      "name": "Rossiya 24 / Russia 24",
+      "inserted_by": "32022R0879",
+      "domains": [
+        "vesti.ru"
+      ]
+    },
+    {
+      "name": "TV Centre International",
+      "inserted_by": "32022R0879",
+      "domains": [
+        "tvc.ru"
+      ]
+    },
+    {
+      "name": "NTV/NTV Mir",
+      "inserted_by": "32022R2474",
+      "domains": [
+        "ntv.ru"
+      ]
+    },
+    {
+      "name": "Rossiya 1",
+      "inserted_by": "32022R2474",
+      "domains": [
+        "russia.tv"
+      ]
+    },
+    {
+      "name": "REN TV",
+      "inserted_by": "32022R2474",
+      "domains": [
+        "ren.tv"
+      ]
+    },
+    {
+      "name": "Pervyi Kanal",
+      "inserted_by": "32022R2474",
+      "domains": [
+        "1tv.ru"
+      ]
+    },
+    {
+      "name": "RT Arabic",
+      "inserted_by": "32023R0427",
+      "domains": [
+        "arabic.rt.com"
+      ]
+    },
+    {
+      "name": "Sputnik Arabic",
+      "inserted_by": "32023R0427",
+      "domains": [
+        "arabic.sputniknews.com"
+      ]
+    },
+    {
+      "name": "RT Balkan",
+      "inserted_by": "32023R1214",
+      "domains": [
+        "rt.rs"
+      ]
+    },
+    {
+      "name": "Oriental Review",
+      "inserted_by": "32023R1214",
+      "domains": [
+        "orientalreview.org"
+      ]
+    },
+    {
+      "name": "Tsargrad",
+      "inserted_by": "32023R1214",
+      "domains": [
+        "tsargrad.tv"
+      ]
+    },
+    {
+      "name": "New Eastern Outlook",
+      "inserted_by": "32023R1214",
+      "domains": [
+        "journal-neo.su"
+      ]
+    },
+    {
+      "name": "Katehon",
+      "inserted_by": "32023R1214",
+      "domains": [
+        "katehon.com"
+      ]
+    },
+    {
+      "name": "Voice of Europe",
+      "inserted_by": "32024R1428",
+      "domains": [
+        "voiceofeurope.com"
+      ]
+    },
+    {
+      "name": "RIA Novosti",
+      "inserted_by": "32024R1428",
+      "domains": [
+        "ria.ru"
+      ]
+    },
+    {
+      "name": "Izvestija",
+      "inserted_by": "32024R1428",
+      "domains": [
+        "iz.ru"
+      ]
+    },
+    {
+      "name": "Rossiiskaja Gazeta",
+      "inserted_by": "32024R1428",
+      "domains": [
+        "rg.ru"
+      ]
+    },
+    {
+      "name": "EADaily / Eurasia Daily",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "eadaily.com"
+      ]
+    },
+    {
+      "name": "Fondsk",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "fondsk.ru"
+      ]
+    },
+    {
+      "name": "Lenta",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "lenta.ru"
+      ]
+    },
+    {
+      "name": "NewsFront",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "newsfront.info"
+      ]
+    },
+    {
+      "name": "RuBaltic",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "rubaltic.ru"
+      ]
+    },
+    {
+      "name": "SouthFront",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "southfront.press"
+      ]
+    },
+    {
+      "name": "Strategic Culture Foundation",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "strategic-culture.su"
+      ]
+    },
+    {
+      "name": "Krasnaya Zvezda / Tvzvezda",
+      "inserted_by": "32025R0395",
+      "domains": [
+        "redstar.ru",
+        "tvzvezda.ru"
+      ]
+    }
+  ],
+  "domains": [
+    "1tv.ru",
+    "actualidad.rt.com",
+    "arabic.rt.com",
+    "arabic.sputniknews.com",
+    "de.rt.com",
+    "eadaily.com",
+    "fondsk.ru",
+    "francais.rt.com",
+    "iz.ru",
+    "journal-neo.su",
+    "katehon.com",
+    "lenta.ru",
+    "newsfront.info",
+    "ntv.ru",
+    "orientalreview.org",
+    "redstar.ru",
+    "ren.tv",
+    "rg.ru",
+    "ria.ru",
+    "rt.com",
+    "rt.rs",
+    "rtr-planeta.com",
+    "rubaltic.ru",
+    "russia.tv",
+    "southfront.press",
+    "sputnikglobe.com",
+    "sputniknews.com",
+    "strategic-culture.su",
+    "tsargrad.tv",
+    "tvc.ru",
+    "tvzvezda.ru",
+    "vesti.ru",
+    "voiceofeurope.com"
+  ]
+}

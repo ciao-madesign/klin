@@ -1,36 +1,32 @@
-# Proposal – Search engine chosen at first start (also the home page)
+# Proposal – Search engine chosen at first start (also used by the home page)
 
-Status: **candidates for the owner to prune** (owner, 14 Nov 2026: "ask the user at first start, then keep the choice; explain each option; at least 3 aligned with Klin's values and 2 classic ones; propose more than 4").
+Status: **order decided by the owner, 14 Nov 2026.** The screen is not built yet.
 
 ## What is decided
-- At the first start the user picks a search engine from a short list. Nothing is preselected and Klin has no default (same rule as the DNS screen, ADR 0005).
-- The choice becomes the **home page** and the **address-bar search engine**; it is kept until the user changes it (settings). It is stored on the device only.
-- Klin takes **no money** from any engine: no partner or affiliate deal, no referral code in the address. (Firefox itself earns money from its default search deal; Klin does not.)
-- Every option on the screen says who runs it, where, where its results come from, how it earns money, what it knows about you, and one honest drawback. Klin does not rank them and does not call any of them "private": it reports what each states, with a link to its own policy.
-- A search engine always learns what you search and your address (IP). Klin cannot change that; it can only choose which company learns it.
+- At the first start the user picks a search engine from a short list. **Ecosia is preselected** (the owner's choice), labelled "suggested by Klin, not paid by Ecosia", and can be changed with one click. This is an "optional preselected default", as ADR 0005 allows for DNS.
+- Order on the screen: **Ecosia, Mojeek, DuckDuckGo, Qwant, SearXNG (advanced), Google, Brave Search.**
+- The choice is the engine of the address bar and of the search bar of Klin's start page (`extensions/newtab`, a page of Klin's own that opens without any connection until the user searches). It is kept until the user changes it, and stored on the device only.
+- Klin takes **no money** from any engine: no partner or affiliate deal, no referral code in the address.
+- The screen states facts only: who runs it, where, where its results come from, how it is financed, what the operator itself states about data, whether an account is needed. No ranking, no opinion. Each entry links to the operator's own policy.
+- Any search engine receives what you search and your network address (IP). Klin cannot change that; it lets you choose which operator receives it.
 
-## Candidates (the facts below are from general knowledge and the operators' own descriptions; **to check against each operator's own policy and terms before the screen ships**, as for the DNS resolvers)
+## Facts per engine
+Written from general knowledge and the operators' own descriptions; **to check against each operator's policy and terms before the screen ships** (the same rule as for the DNS resolvers). "States" means: according to the operator.
 
-### Aligned with Klin's values (privacy first, independence, low impact). Startpage removed by the owner, 14 Nov 2026. **Order decided by the owner, 14 Nov 2026: 1 Ecosia (preselected: the most complete of those aligned with Klin's values, and close to its environmental concern), 2 Mojeek, 3 DuckDuckGo, 4 Qwant, then SearXNG and Google; Brave Search is last** (the owner does not want controversies: Brave's founder's past donation, an affiliate-code incident in 2020, past plans to replace publishers' ads; from memory, to verify before anything is said on screen). Preselecting is an "optional preselected default", as ADR 0005 allows for DNS: the screen shows it already selected, labelled "suggested by Klin, not paid by Ecosia", and changeable with one click
-| Engine | Who and where | Results come from | How it earns | What it says about your data | Honest drawback |
+| Engine | Operator and country | Results come from | Financing | Operator states about your data | Account |
 |---|---|---|---|---|---|
-| **Ecosia** | Social business, Germany | Bing and Google, plus some of its own | Ads; says it uses most of its profit to plant trees | No account; collects some data to run the service, says it is not sold | Mostly other people's results and ads; the tree-planting claim is the company's own; fits Greenweb's concern for the environment |
-| **Mojeek** | Small independent company, UK | Its own crawler only, no one else's results | Ads, without tracking | Says it stores no personal data and no search history | Smallest index: fewer results, weaker on recent news and other languages |
-| **DuckDuckGo** | Private company, USA | Mostly Bing plus its own crawler and other sources | Ads (served through Microsoft's ad network, with its own privacy rules) | No account; says it does not keep searches linked to a person | US company; relies on Microsoft for much of its results and ads; some optional AI features |
-| **Qwant** | Qwant, France (EU) | Bing plus a growing share of its own index | Ads | Says it does not track or profile | Mostly Microsoft's results so far; smaller user base |
-| **SearXNG instance** (advanced) | Open-source software run by volunteers; many public instances | Mixes many engines at once | Donations, usually no ads | Depends entirely on whoever runs the instance you pick | You must choose and trust an instance; instances come and go; slower; not offered by default |
-
-### Classic (Bing and Yahoo removed by the owner, 14 Nov 2026)
-| Engine | Who and where | Results come from | How it earns | What it says about your data | Honest drawback |
-|---|---|---|---|---|---|
-| **Google** | Google, USA | Its own index, the largest | Ads, built on knowing a lot about users | Stores searches, tied to a Google account if you are signed in; has controls to limit or delete | Most data collected of all; the results are very good, which is why people use it |
-| **Brave Search** | Brave Software, USA | Its own independent index | Ads and an optional paid plan | No account needed; says it does not track searches | US company; own index is smaller than Google's, some results feel thinner; tied to the Brave brand |
+| **Ecosia** | Ecosia GmbH, Germany; a company owned through a trust structure (steward ownership) | Bing and Google, plus results of its own | Advertising; states that it uses most of its profits to fund tree planting | Collects some data to run the service; states it does not sell it | Not needed |
+| **Mojeek** | Mojeek Ltd, United Kingdom | Its own crawler and index only | Advertising without tracking, and paid access to its data | States it stores no personal data and no search history | Not needed |
+| **DuckDuckGo** | Duck Duck Go, Inc., United States | Bing, its own crawler and other sources | Advertising (served through Microsoft's advertising network) | States it does not store searches linked to a person | Not needed |
+| **Qwant** | Qwant, France | Bing and, in growing part, its own index | Advertising | States it does not track or profile users | Not needed |
+| **SearXNG** (a public instance, advanced) | Open-source software; each instance is run by a different volunteer or organisation | Many engines combined | Usually donations, usually no advertising | Depends on the operator of the chosen instance | Not needed |
+| **Google** | Google LLC, United States | Its own index | Advertising | Stores searches; links them to a Google account when signed in; offers settings to limit or delete them | Optional |
+| **Brave Search** | Brave Software, Inc., United States | Its own index, with some partner data | Advertising and an optional paid plan | States it does not track searches | Not needed |
 
 ## Home page (decided, owner, 14 Nov 2026)
-Klin's own start page, separate from the welcome page (`extensions/newtab`; the welcome page `extensions/welcome` only opens at the first start and from the info button): the logo, the name and one wide search bar, like a search engine's home page, and nothing else. It makes **no connection until the user searches**, and the search goes to the engine chosen at the first start. The engine's own page is not the home page, so no company learns that the browser was opened.
+Klin's own start page, separate from the welcome page (`extensions/newtab`; `extensions/welcome` only opens at the first start and from the info button): the logo, the name, one wide search bar, and at the bottom a short text about Klin with a link to the welcome page. It makes no connection until the user searches; the search goes to the chosen engine.
 
 ## To do
-1. The owner prunes the list further (Bing and Yahoo are already out).
-2. Check every sentence above against each operator's own policy and terms.
-3. Build the screen with the style session (it owns screens and wording; it also owns the DNS first-start screen, which should be one flow with this one).
-4. Technical: set the chosen engine as default through the search API of the extension that shows the screen, and the home page through the same choice; test that the choice survives a restart and a change in settings.
+1. Check every cell above against the operator's own policy and terms; record the date.
+2. Build the screen, in one flow with the DNS first-start screen (the style session owns screens and wording; it is stopped for now, so the first version is made here from `klin.css`).
+3. Technical: set the chosen engine as the default through the search API of the extension that shows the screen; test that the choice survives a restart and a change in settings.

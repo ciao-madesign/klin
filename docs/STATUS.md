@@ -69,7 +69,7 @@ python3 tests/acceptance/self-test/run.py klin-ff        # example
 ```
 Some tests rewrite `distribution/policies.json`: use a copy. Network in the cloud environment: `raw.githubusercontent.com` and `addons.mozilla.org` are reachable, `ublockorigin.github.io` is not.
 
-ADR 0009 (support program for P40 level 2 and P41) is written as **proposed**; waiting for the owner.
+ADR 0009 (support program for P40 level 2 and P41) is **accepted** (owner, 14 Nov 2026); nothing built yet. Lists: first catalogue is the EU suspended-media list (on by default), Iffy.news and IPFire Violence (off); 1 MB limit; manual updates (`docs/proposals/third-party-lists.md`, section 4).
 Not yet in the Klin voice or translated (English only, no `_locales`, wording from before the style guide, but already on the shared style and logo): `username-check`, `alias-registry`, `privacy-level`. Their pages are not yet covered by the style check's text/locale rules.
 
 ## 9. Next steps (suggested order)

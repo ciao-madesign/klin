@@ -9,7 +9,7 @@
 | 0005 | DNS over HTTPS: user choice, optional default | accepted | this branch |
 | 0006 | Routing and exclusion rules: browser level first | accepted | default branch |
 | 0007 | Privacy levels: how Standard, Advanced and Maximum are applied (time zone approximated inside the page) | accepted; real-site breakage not verified | this branch |
-| 0009 | Support program for the VPN command (level 2) and the download scan | proposed | this branch |
+| 0009 | Support program for the VPN command (level 2) and the download scan | accepted | this branch |
 
 Rule: the next number is the highest one on the default branch plus one. Before taking a number, look at the other open branches (`git ls-tree origin/<branch> docs/adr/`), so two sessions do not use the same one.
 

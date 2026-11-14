@@ -49,7 +49,7 @@ with Firefox(sys.argv[1]) as ff:
     ff.script("document.getElementById('leak').value = ''; return true"); type_into(ff, "#leak", "nobody@example.org"); click(ff, "#who button")
     check("unknown address says so", "not in your list" in ff.script("return document.getElementById('leakResult').textContent"))
 
-    ff.script("document.querySelector('details').open = true; document.getElementById('site').value = 'https://www.Bank.example/login'; return true")
+    ff.script("document.getElementById('plus').closest('details').open = true; document.getElementById('site').value = 'https://www.Bank.example/login'; return true")
     type_into(ff, "#base", "me@example.org"); click(ff, "#plus button")
     check("plus address helper fills the form", ff.script("return document.getElementById('value').value") == "me+bank.example@example.org")
     ff.script("for (const id of ['value','site','base']) document.getElementById(id).value = ''; return true")

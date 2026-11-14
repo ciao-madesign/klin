@@ -38,6 +38,9 @@
       "Locked": false
     },
     "ExtensionSettings": {
+      "private-window@klin": {
+        "private_browsing": true
+      },
       "uBlock0@raymondhill.net": {
         "installation_mode": "normal_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"

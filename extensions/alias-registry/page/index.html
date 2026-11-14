@@ -26,6 +26,17 @@
       <button type="submit">Save</button>
     </form>
     <p id="error" class="note hidden" role="alert"></p>
+    <details id="disposable">
+      <summary>Make a disposable address (free, no sign-up)</summary>
+      <p class="note">Klin asks the free service <b>mail.tm</b> for a new random address. Fill in the site above first, then press the button. You can read what arrives right here.</p>
+      <ul class="note">
+        <li>Good for sign-ups, trials and anything you can afford to lose.</li>
+        <li><b>mail.tm can read every message sent to it</b> and may delete the address at any time. Never use it for your bank, your main accounts or password recovery.</li>
+        <li>Pressing the button contacts api.mail.tm with your internet address. Klin asks your permission first.</li>
+      </ul>
+      <div class="row"><button type="button" id="makeDisposable">Create a disposable address</button></div>
+      <p id="disposableNote" class="note" role="status"></p>
+    </details>
     <details>
       <summary>Make a plus address from my own email</summary>
       <form class="entry" id="plus" autocomplete="off">
@@ -61,17 +72,26 @@
     <p id="backupNote" class="note" role="status"></p>
   </section>
 
+  <section id="inboxBox" class="hidden">
+    <h2>Inbox of <span id="inboxOf"></span></h2>
+    <p id="inboxNote" class="note" role="status"></p>
+    <ul id="messages"></ul>
+    <pre id="messageText" class="hidden"></pre>
+  </section>
+
   <section class="honest">
     <h2>What this does not do</h2>
     <ul>
       <li><b>It does not create aliases.</b> It remembers the ones you made, with a service you choose.</li>
       <li><b>It is kept on this device only,</b> inside your Klin profile, not encrypted. Anyone who can open your profile can read it. Nothing is sent anywhere, and there is no sync.</li>
       <li><b>It cannot prove who leaked an address.</b> It tells you who you gave it to. A site can also be breached.</li>
+      <li>The password of a disposable address stays in this browser only and is not in a backup file: after loading a backup its inbox cannot be opened.</li>
       <li>A backup is a plain file. Keep it where you keep your private files.</li>
     </ul>
   </section>
 </main>
 <script src="../registry.js"></script>
+<script src="../providers.js"></script>
 <script src="page.js"></script>
 </body>
 </html>

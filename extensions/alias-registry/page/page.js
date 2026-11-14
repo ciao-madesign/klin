@@ -1,7 +1,9 @@
 const $ = (id) => document.getElementById(id);
 let entries = [];
+let secrets = {};   // entry id -> { address, password, accountId } for disposable addresses; never exported
+const ROOT = KlinMailTm.base;
 
-const save = () => browser.storage.local.set({ entries });
+const save = () => browser.storage.local.set({ entries, secrets });
 const fill = () => {
   const rows = $("rows");
   const shown = KlinRegistry.filter(entries, $("search").value);
@@ -11,8 +13,18 @@ const fill = () => {
     const td = document.createElement("td");
     const del = document.createElement("button");
     del.textContent = "Delete"; del.type = "button"; del.setAttribute("aria-label", "Delete " + e.value + " for " + e.site);
-    del.addEventListener("click", async () => { entries = entries.filter((x) => x.id !== e.id); await save(); fill(); });
-    td.append(del); tr.append(td);
+    del.addEventListener("click", async () => {
+      if (secrets[e.id]) { try { await KlinMailTm.remove(fetch, secrets[e.id], ROOT); } catch (err) { /* service unreachable: the local entry still goes */ } delete secrets[e.id]; }
+      entries = entries.filter((x) => x.id !== e.id); await save(); fill();
+    });
+    td.append(del);
+    if (e.provider && secrets[e.id]) {
+      const open = document.createElement("button");
+      open.textContent = "Inbox"; open.type = "button"; open.setAttribute("aria-label", "Open the inbox of " + e.value);
+      open.addEventListener("click", () => showInbox(e));
+      td.prepend(open);
+    }
+    tr.append(td);
     return tr;
   }));
   $("empty").classList.toggle("hidden", entries.length > 0);
@@ -62,4 +74,46 @@ $("importFile").addEventListener("change", async () => {
   $("importFile").value = "";
 });
 
-browser.storage.local.get("entries").then((d) => { entries = d.entries || []; fill(); });
+const askService = async () => {
+  let granted = false;
+  try { granted = await browser.permissions.request({ origins: [new URL(ROOT).protocol + "//" + new URL(ROOT).hostname + "/*"] }); } catch (e) { granted = false; }
+  return granted;
+};
+
+$("makeDisposable").addEventListener("click", async () => {
+  const note = (t) => { $("disposableNote").textContent = t; };
+  const site = $("site").value.trim();
+  if (!site) { note("Write the site this address is for, in the form above, first."); return; }
+  if (!(await askService())) { note("Without your permission to contact the service nothing was sent."); return; }
+  note("Asking the service…");
+  try {
+    const made = await KlinMailTm.create(fetch, ROOT);
+    const r = KlinRegistry.make({ kind: "email", value: made.address, site, note: $("note").value || "disposable, mail.tm", provider: "mail.tm" });
+    entries.push(r.entry); secrets[r.entry.id] = made; await save();
+    for (const id of ["value", "site", "note"]) $(id).value = "";
+    fill(); note("Created " + made.address + " and saved it in your list.");
+  } catch (e) { note("Could not create an address: " + e.message); }
+});
+
+const showInbox = async (entry) => {
+  $("inboxBox").classList.remove("hidden"); $("inboxOf").textContent = entry.value;
+  $("messageText").classList.add("hidden"); $("messages").replaceChildren();
+  $("inboxNote").textContent = "Asking the service…";
+  if (!(await askService())) { $("inboxNote").textContent = "Without your permission to contact the service nothing was sent."; return; }
+  try {
+    const list = await KlinMailTm.inbox(fetch, secrets[entry.id], ROOT);
+    $("inboxNote").textContent = list.length ? "" : "Nothing has arrived yet.";
+    $("messages").replaceChildren(...list.map((m) => {
+      const li = document.createElement("li");
+      const b = document.createElement("button"); b.type = "button"; b.textContent = "Read";
+      b.addEventListener("click", async () => {
+        try { const full = await KlinMailTm.read(fetch, secrets[entry.id], m.id, ROOT); $("messageText").textContent = full.subject + "\n\n" + full.text; $("messageText").classList.remove("hidden"); }
+        catch (e) { $("inboxNote").textContent = "Could not open the message: " + e.message; }
+      });
+      li.append(b, document.createTextNode(m.subject + " — " + m.from));
+      return li;
+    }));
+  } catch (e) { $("inboxNote").textContent = "Could not open the inbox: " + e.message; }
+};
+
+browser.storage.local.get(["entries", "secrets"]).then((d) => { entries = d.entries || []; secrets = d.secrets || {}; fill(); });

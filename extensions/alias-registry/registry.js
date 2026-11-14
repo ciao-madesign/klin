@@ -2,6 +2,7 @@
 // An entry: { id, kind: "email" | "username", value, site, note, created }
 const KlinRegistry = (() => {
   const KINDS = ["email", "username"];
+  const PROVIDERS = ["mail.tm"];
   const clean = (s) => String(s == null ? "" : s).trim();
 
   // Plain "plus" address: base me@example.org + site "shop.example" -> me+shop.example@example.org.
@@ -18,6 +19,7 @@ const KlinRegistry = (() => {
     if (!e.value) return { error: "Write the alias." };
     if (e.kind === "email" && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e.value)) return { error: "That does not look like an email address." };
     if (!e.site) return { error: "Write the site it was given to." };
+    if (PROVIDERS.includes(fields.provider)) e.provider = fields.provider;   // a disposable address made through that service
     return { entry: Object.assign(e, { id: fields.id || now.toString(36) + Math.random().toString(36).slice(2, 7), created: fields.created || now }) };
   };
 

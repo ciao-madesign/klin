@@ -3,7 +3,7 @@
     "message": "Klin Start Page"
   },
   "description": {
-    "message": "Klin's start page and new tab: the logo and a search box. Shows nothing from the internet and keeps no history."
+    "message": "Klin's start page and new tab (logo and search bar), and the first-start choice of the search engine. Shows nothing from the internet and keeps no history."
   },
   "n_title": {
     "message": "New tab"
@@ -19,5 +19,44 @@
   },
   "n_more": {
     "message": "Learn more about Klin"
+  },
+  "c_action": {
+    "message": "Choose the search engine"
+  },
+  "c_title": {
+    "message": "Choose your search engine"
+  },
+  "c_lead": {
+    "message": "A search engine receives what you search and your network address. Klin cannot change that: it lets you choose who receives it. Below, what each one is, in facts. You can change the choice at any time with the toolbar button of this extension."
+  },
+  "c_suggested": {
+    "message": "Suggested by Klin. Klin receives nothing from it."
+  },
+  "c_who": {
+    "message": "Operator"
+  },
+  "c_results": {
+    "message": "Results come from"
+  },
+  "c_money": {
+    "message": "Financing"
+  },
+  "c_says": {
+    "message": "The operator states"
+  },
+  "c_account": {
+    "message": "Account"
+  },
+  "c_continue": {
+    "message": "Continue"
+  },
+  "c_saved": {
+    "message": "Saved. Klin's start page now searches with {1}."
+  },
+  "c_scope": {
+    "message": "This choice is used by the search bar of Klin's start page. The address bar uses the engine set in the browser's search settings (now: {1})."
+  },
+  "c_check": {
+    "message": "These facts come from general knowledge and the operators' own descriptions; each is to be checked against the operator's own policy. Klin takes no money from any search engine."
   }
 }

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="c_title">Choose your search engine</title>
+<link rel="stylesheet" href="../shared/klin.css">
+<link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
+<script src="engines.js"></script>
+</head>
+<body>
+<main class="choose">
+  <h1 data-i18n="c_title">Choose your search engine</h1>
+  <p class="lead" data-i18n="c_lead">A search engine receives what you search and your network address. Klin cannot change that: it lets you choose who receives it. Below, what each one is, in facts. You can change the choice at any time with the toolbar button of this extension.</p>
+  <form id="form">
+    <fieldset id="list"></fieldset>
+    <p class="muted" id="scope"></p>
+    <p><button type="submit" class="btn primary" data-i18n="c_continue">Continue</button> <span id="saved" role="status"></span></p>
+    <p class="muted" data-i18n="c_check">These facts come from general knowledge and the operators' own descriptions; each is to be checked against the operator's own policy. Klin takes no money from any search engine.</p>
+  </form>
+</main>
+<script src="choose.js"></script>
+</body>
+</html>

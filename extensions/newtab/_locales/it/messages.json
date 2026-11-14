@@ -3,7 +3,7 @@
     "message": "Pagina iniziale di Klin"
   },
   "description": {
-    "message": "La pagina iniziale e la nuova scheda di Klin: il logo e un campo di ricerca. Non mostra nulla da internet e non conserva cronologia."
+    "message": "La pagina iniziale e la nuova scheda di Klin (logo e barra di ricerca) e la scelta del motore di ricerca al primo avvio. Non mostra nulla da internet e non conserva cronologia."
   },
   "n_title": {
     "message": "Nuova scheda"
@@ -19,5 +19,44 @@
   },
   "n_more": {
     "message": "Scopri di più su Klin"
+  },
+  "c_action": {
+    "message": "Scegli il motore di ricerca"
+  },
+  "c_title": {
+    "message": "Scegli il tuo motore di ricerca"
+  },
+  "c_lead": {
+    "message": "Un motore di ricerca riceve quello che cerchi e il tuo indirizzo di rete. Klin non può cambiarlo: ti lascia scegliere chi lo riceve. Qui sotto trovi cos'è ciascuno, in fatti. Puoi cambiare la scelta quando vuoi con il pulsante di questa estensione nella barra."
+  },
+  "c_suggested": {
+    "message": "Suggerito da Klin. Klin non riceve nulla."
+  },
+  "c_who": {
+    "message": "Gestore"
+  },
+  "c_results": {
+    "message": "Risultati da"
+  },
+  "c_money": {
+    "message": "Finanziamento"
+  },
+  "c_says": {
+    "message": "Il gestore dichiara"
+  },
+  "c_account": {
+    "message": "Account"
+  },
+  "c_continue": {
+    "message": "Continua"
+  },
+  "c_saved": {
+    "message": "Salvato. La pagina iniziale di Klin ora cerca con {1}."
+  },
+  "c_scope": {
+    "message": "Questa scelta vale per la barra di ricerca della pagina iniziale di Klin. La barra degli indirizzi usa il motore impostato nelle impostazioni di ricerca del browser (ora: {1})."
+  },
+  "c_check": {
+    "message": "Queste informazioni vengono dalla conoscenza generale e dalle descrizioni dei gestori; vanno verificate sulla politica di ciascun gestore. Klin non prende denaro da nessun motore di ricerca."
   }
 }

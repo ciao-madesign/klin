@@ -1,7 +1,23 @@
 {
-  "name": { "message": "Klin Start Page" },
-  "description": { "message": "Klin's start page and new tab: the logo and a search box. Shows nothing from the internet and keeps no history." },
-  "n_title": { "message": "New tab" },
-  "n_search": { "message": "Search" },
-  "n_go": { "message": "Search" }
+  "name": {
+    "message": "Klin Start Page"
+  },
+  "description": {
+    "message": "Klin's start page and new tab: the logo and a search box. Shows nothing from the internet and keeps no history."
+  },
+  "n_title": {
+    "message": "New tab"
+  },
+  "n_search": {
+    "message": "Search"
+  },
+  "n_go": {
+    "message": "Search"
+  },
+  "n_about": {
+    "message": "Klin is a free, independent browser built on Firefox. It works for you, not for advertisers: no account, no cloud, no telemetry, and everything stays on your device."
+  },
+  "n_more": {
+    "message": "Learn more about Klin"
+  }
 }

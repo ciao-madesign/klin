@@ -23,3 +23,8 @@ browser.runtime.onInstalled.addListener(async ({ reason }) => {
 });
 
 browser.action.onClicked.addListener(show);
+
+// Klin's start page (newtab@klin) links here: an extension page cannot open another extension's page itself.
+browser.runtime.onMessageExternal.addListener((message, sender) => {
+  if (sender.id === "newtab@klin" && message && message.type === "show") return show();
+});

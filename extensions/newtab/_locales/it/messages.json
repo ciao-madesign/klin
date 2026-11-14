@@ -1,7 +1,23 @@
 {
-  "name": { "message": "Pagina iniziale di Klin" },
-  "description": { "message": "La pagina iniziale e la nuova scheda di Klin: il logo e un campo di ricerca. Non mostra nulla da internet e non conserva cronologia." },
-  "n_title": { "message": "Nuova scheda" },
-  "n_search": { "message": "Cerca" },
-  "n_go": { "message": "Cerca" }
+  "name": {
+    "message": "Pagina iniziale di Klin"
+  },
+  "description": {
+    "message": "La pagina iniziale e la nuova scheda di Klin: il logo e un campo di ricerca. Non mostra nulla da internet e non conserva cronologia."
+  },
+  "n_title": {
+    "message": "Nuova scheda"
+  },
+  "n_search": {
+    "message": "Cerca"
+  },
+  "n_go": {
+    "message": "Cerca"
+  },
+  "n_about": {
+    "message": "Klin è un browser libero e indipendente, costruito su Firefox. Lavora per te, non per gli inserzionisti: nessun account, nessun cloud, nessuna telemetria, e tutto resta sul tuo dispositivo."
+  },
+  "n_more": {
+    "message": "Scopri di più su Klin"
+  }
 }

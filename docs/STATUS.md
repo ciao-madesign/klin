@@ -66,6 +66,8 @@ python3 tests/acceptance/self-test/run.py klin-ff        # example
 ```
 Some tests rewrite `distribution/policies.json`: use a copy. Network in the cloud environment: `raw.githubusercontent.com` and `addons.mozilla.org` are reachable, `ublockorigin.github.io` is not.
 
+ADR 0007 (support program for P40 level 2 and P41) is written as **proposed**; waiting for the owner.
+
 ## 9. Next steps (suggested order)
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
 2. Privacy levels (P29): write the ADR (Advanced is defined; no site test before release).

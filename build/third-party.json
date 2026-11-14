@@ -7,5 +7,13 @@
     "license": "GPL-3.0-only",
     "note": "Bundle unmodified (Mozilla-signed). Build must pin version and verify sha256; update on each release.",
     "managed-lists": "Klin's policy switches on fanboy-cookiemonster and ublock-cookies-easylist (downloaded, not bundled) and repeats the 1.76.0 default selection. Re-check config/policies/policies.json and tests/acceptance/cookie-banners on each uBlock Origin update."
+  },
+  "sherlock-sites": {
+    "source": "https://github.com/sherlock-project/sherlock",
+    "commit": "c588d7c8b476df9f9c84912a05d1430fb8cdcdae",
+    "path": "sherlock_project/resources/data.json",
+    "sha256": "3fdfc6694c5cd99798881215554b09e617c6d5284a6219fae309882566a9fb30",
+    "license": "MIT",
+    "note": "Site list only (URL patterns and how to tell a profile exists), converted by build/gen-sherlock-sites.py into extensions/username-check/data/sites.json; Sherlock code is not used. Licence file kept next to the data. NSFW sites left out. Update by changing the pin deliberately."
   }
 }

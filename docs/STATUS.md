@@ -26,6 +26,7 @@ Open reconciliations: (1) merge `zealous-maxwell` and renumber its ADR; (2) deci
 | Honest private window | `extensions/private-window` | P22 | `acceptance/private-window` |
 | Collection log (badge and popup, memory only) | `extensions/attempts-log` | P30 | `acceptance/attempts-log` (+ `run-ubo.py`) |
 | Presentation page, first start and info button | `extensions/welcome` | P37 | `acceptance/welcome` |
+| Username check: where a username exists (Sherlock site list, pinned) | `extensions/username-check` | P38 | `acceptance/username-check` (+ `unit.js`) |
 
 Not built yet: workspaces/tabs UI, dashboard, Traffic Engine and monitors, Automation, AI, Search Intelligence, Data Footprint, Tor, mobile. Not shippable yet: see section 6.
 

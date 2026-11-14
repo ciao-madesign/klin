@@ -40,8 +40,8 @@ Standard is the default level; privacy comes first, then low impact, then securi
 - **Style and tone of Klin: decided and applied on 13 Nov 2026**, see `docs/STYLE.md` and `docs/STYLE-CHANGES.md` (what was done, what remains). Existing screens use the shared style (`extensions/_shared`, copied by `build/sync-shared.py`) and have Italian and English strings. Still open: the owner's read-through of the Italian and the logo PNG exports. Decided in the style session: level names (Standard, Avanzato, Massimo), a light/dark switch and a language switch are not built yet (dark and the browser's language for now), technical readouts are translated.
 - Charter (P36): **draft written** in `docs/CHARTER.md`, with the rule for the ethics and source lists: third-party lists, Klin does not curate. The owner approves it and decides the points marked "to confirm". Lists: confirmed again by the owner on 13 Nov 2026 (style session): third-party public lists as published, Klin does not curate or adapt them; any idea of an open review by Klin is only a proposal, not a commitment.
 - Geographic Traffic Controller (system level) versus P32 (browser level): answered by ADR 0006 (**accepted**, owner, 13 Nov 2026): P32 first, the system level stays a proposal.
-- Privacy levels (P29): the Advanced level must be tried on real sites.
-- The resolver list for DoH.
+- Privacy levels (P29): **Advanced decided 14 Nov 2026**: Standard plus a fixed time zone, nothing else (measured on Firefox 160.0 with `tests/acceptance/self-test`: `privacy.resistFingerprinting` would also fix screen and window size, touch and canvas; the owner does not want screen and touch hidden). Maximum = the full package plus Tor (Phase 4), still to test. **No test on real sites before release** (owner, 14 Nov 2026): the cost is known and stated on the screen (times on booking and calendar sites can be shifted by one or two hours) and one click goes back to Standard; problems found later are recorded as they come. Still to do for Advanced: the ADR. The pref values are in `docs/PROPOSALS.md` (P29); they are not applied yet because the levels switch does not exist (Phase 1).
+- The resolver list for DoH: no default and nothing preselected (decided 13 Nov 2026, ADR 0005). Decided 14 Nov 2026: four options (Quad9, Mullvad DNS, Cloudflare 1.1.1.1, keep the current one), each with an explanation of what it implies; draft in `docs/proposals/dns-resolvers.md`. Still to do before the screen ships: check every sentence about a service against its primary documents (so far only secondary pages and the operators' own blogs were read).
 - Languages: Italian and English now, in `_locales` of each extension; more later with human-reviewed machine translation.
 
 ## 6. Pitfalls found (read before changing things)
@@ -67,7 +67,7 @@ Some tests rewrite `distribution/policies.json`: use a copy. Network in the clou
 
 ## 9. Next steps (suggested order)
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
-2. Privacy levels (P29): try Advanced on real sites, write the ADR.
+2. Privacy levels (P29): write the ADR (Advanced is defined; no site test before release).
 3. Signing and distribution of the extensions (ADR), test `onInstalled` and the private-window grant in the signed build.
 4. Connections page step 3 (live state and switches; needs privileged code, ADR).
 5. Dashboard and workspaces (Phase 1), then Phase 2 monitors.

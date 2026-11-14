@@ -1,10 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Klin Self-test",
+  "name": "__MSG_name__",
   "version": "0.2.0",
-  "description": "Shows what the site you are viewing can read about this browser. Fully local: nothing is sent or stored.",
-  "browser_specific_settings": { "gecko": { "id": "self-test@klin", "strict_min_version": "128.0" } },
-  "permissions": ["activeTab", "scripting"],
-  "action": { "default_title": "What can this site see?" },
-  "background": { "scripts": ["background.js"] }
+  "description": "__MSG_description__",
+  "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "self-test@klin",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_title": "__MSG_title__"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  }
 }

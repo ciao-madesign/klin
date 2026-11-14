@@ -1,0 +1,32 @@
+<!doctype html><html lang="it"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Klin – logo, maschera</title>
+<style>
+body{margin:0;padding:20px;background:#0e0e10;color:#f1f1ec;font:14px/1.45 system-ui,sans-serif}
+h1{font:600 18px system-ui;margin:0 0 16px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.c{border:2px solid #f1f1ec;padding:16px}.c h2{font:700 15px system-ui;margin:0 0 4px}.c p{margin:0 0 12px;opacity:.8;font-size:13px}
+.big{background:#000;display:flex;align-items:center;justify-content:center;height:150px;margin-bottom:10px}
+.row{display:flex;gap:10px}.sm,.lt{height:60px;flex:1;display:flex;align-items:center;justify-content:center;gap:10px}
+.sm{background:#000}.lt{background:#f1f1ec}svg{display:block}
+</style>
+<h1>Klin – maschera ninja stilizzata, 3 varianti (grande, piccolo, su chiaro)</h1>
+<svg width="0" height="0" style="position:absolute"><defs>
+<mask id="mA"><rect width="100" height="100" fill="#fff"/><polygon points="18,43 44,53 44,60 18,51" fill="#000"/><polygon points="82,43 56,53 56,60 82,51" fill="#000"/></mask>
+<mask id="mB"><rect width="100" height="100" fill="#fff"/><polygon points="14,38 50,52 86,38 86,56 50,68 14,56" fill="#000"/></mask>
+<g id="A"><rect x="6" y="32" width="88" height="36" rx="10" fill="currentColor" mask="url(#mA)"/></g>
+<g id="B"><circle cx="50" cy="50" r="45" fill="currentColor" mask="url(#mB)"/></g>
+<g id="C"><rect x="6" y="6" width="88" height="88" rx="22" fill="currentColor" mask="url(#mB)"/></g>
+</defs></svg>
+<div class="g">
+<div class="c"><h2>A · Solo la benda</h2><p>Una fascia sul volto con due occhi socchiusi. Pochissimo, riconoscibile come maschera.</p>
+<div class="big" style="color:#d4ff2a"><svg width="110" height="110" viewBox="0 0 100 100"><use href="#A"/></svg></div>
+<div class="row"><div class="sm" style="color:#d4ff2a"><svg width="32" height="32" viewBox="0 0 100 100"><use href="#A"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#A"/></svg></div><div class="lt" style="color:#0e0e10"><svg width="32" height="32" viewBox="0 0 100 100"><use href="#A"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#A"/></svg></div></div></div>
+
+<div class="c"><h2>B · Disco con fessura</h2><p>Un cerchio pieno, coperto, con la sola fessura degli occhi a "V". Il cerchio di prima, ora è una maschera.</p>
+<div class="big" style="color:#d4ff2a"><svg width="110" height="110" viewBox="0 0 100 100"><use href="#B"/></svg></div>
+<div class="row"><div class="sm" style="color:#d4ff2a"><svg width="32" height="32" viewBox="0 0 100 100"><use href="#B"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#B"/></svg></div><div class="lt" style="color:#0e0e10"><svg width="32" height="32" viewBox="0 0 100 100"><use href="#B"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#B"/></svg></div></div></div>
+
+<div class="c"><h2>C · Cappuccio quadrato</h2><p>Stessa fessura in un quadrato dagli angoli morbidi. Più da icona app, meno da simbolo.</p>
+<div class="big" style="color:#d4ff2a"><svg width="110" height="110" viewBox="0 0 100 100"><use href="#C"/></svg></div>
+<div class="row"><div class="sm" style="color:#d4ff2a"><svg width="32" height="32" viewBox="0 0 100 100"><use href="#C"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#C"/></svg></div><div class="lt" style="color:#0e0e10"><svg width="32" height="32" viewBox="0 0 100 100"><use href="#C"/></svg><svg width="16" height="16" viewBox="0 0 100 100"><use href="#C"/></svg></div></div></div>
+</div></html>

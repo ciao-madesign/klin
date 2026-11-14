@@ -1,0 +1,117 @@
+/* Klin shared style. Source of truth: docs/STYLE.md. Edit this file only; build/sync-shared.py copies it into each extension.
+   No outside requests: the fonts are bundled in ./fonts (SIL Open Font License, texts next to them). */
+
+@font-face { font-family: "Chakra Petch"; font-weight: 700; font-style: normal; font-display: swap; src: url(fonts/chakra-petch-700.woff2) format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 400 600; font-style: normal; font-display: swap; src: url(fonts/inter.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-style: normal; font-display: swap; src: url(fonts/jetbrains-mono-500.woff2) format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-weight: 400 600; font-style: normal; font-display: swap; src: url(fonts/source-serif-4.woff2) format("woff2"); }
+
+/* Dark is the default. Light: <html data-theme="light">, or <html data-theme="system"> to follow the system. */
+:root {
+  --bg: #0a0a0a; --surface: #141414; --line: #222222; --line-strong: #3a3a3a;
+  --text: #f1f1ec; --muted: #a8a8a2;
+  --accent: #d4ff2a; --on-accent: #0a0a0a; --accent-text: #d4ff2a;
+  --error: #ff5a6a; --warning: #ffb020;
+  --font-title: "Chakra Petch", system-ui, sans-serif;
+  --font-text: "Inter", system-ui, sans-serif;
+  --font-read: "Source Serif 4", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius: 3px; --cut: 14px; --cut-s: 7px;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f1f1ec; --surface: #ffffff; --line: #dcdcd4; --line-strong: #bdbdb4;
+  --text: #0e0e10; --muted: #55554f;
+  --accent: #d4ff2a; --on-accent: #0e0e10; --accent-text: #4a6600;
+  --error: #c8102e; --warning: #8a5a00;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  :root[data-theme="system"] {
+    --bg: #f1f1ec; --surface: #ffffff; --line: #dcdcd4; --line-strong: #bdbdb4;
+    --text: #0e0e10; --muted: #55554f;
+    --on-accent: #0e0e10; --accent-text: #4a6600;
+    --error: #c8102e; --warning: #8a5a00;
+    color-scheme: light;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--font-text); }
+
+/* Titles: Chakra Petch, bold, normal case. */
+h1, h2, h3, .title-face { font-family: var(--font-title); font-weight: 700; line-height: 1.15; letter-spacing: 0; }
+h1 { font-size: 2rem; margin: 0 0 8px; }
+h2 { font-size: 1.2rem; margin: 28px 0 10px; }
+.lead { color: var(--muted); max-width: 62ch; }
+.mark { font: 700 1.1rem var(--font-title); margin: 0 0 20px; display: flex; align-items: center; gap: 10px; }
+.mark svg { width: 34px; height: 34px; color: var(--accent); flex: none; }
+.label { font: 500 0.72rem/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--font-mono); font-weight: 500; }
+.muted { color: var(--muted); }
+
+/* Long reading: serif. Short UI text stays in Inter. */
+.read p, .read li, p.read { font-family: var(--font-read); font-size: 1.06rem; line-height: 1.65; max-width: 64ch; }
+
+a { color: var(--accent-text); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+code { font-family: var(--font-mono); font-weight: 500; font-size: 0.86em; background: var(--line); padding: 1px 6px; border-radius: var(--radius); display: inline-block; }
+
+/* The highlighter: one phrase per screen, never in a warning. */
+mark { background: var(--accent); color: var(--on-accent); padding: 0 0.25em; font-weight: 600; }
+.name mark { background: var(--warning); color: #0a0a0a; }       /* difference between two names: a warning, not the highlighter */
+
+/* The cut: top-right corner at 45 degrees, same angle as the logo's slit. The edge is redrawn by ::after. */
+.cut, .card, .btn, button.btn, .stat {
+  position: relative; border: 1px solid var(--line-strong); border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
+}
+.cut::after, .card::after, .stat::after, .btn::after {
+  content: ""; position: absolute; top: -1px; right: -1px; width: calc(var(--cut) + 1px); height: calc(var(--cut) + 1px); pointer-events: none;
+  background: linear-gradient(to top right, transparent calc(50% - 0.8px), var(--line-strong) calc(50% - 0.8px), var(--line-strong) calc(50% + 0.8px), transparent calc(50% + 0.8px));
+}
+.card, .stat { background: var(--surface); }
+details.card { padding: 0; }
+
+/* Buttons: 2 px border, small cut. */
+.btn, button.btn { --cut: var(--cut-s); font: 600 0.92rem var(--font-text); padding: 8px 16px; border-width: 2px; border-color: var(--text); background: transparent; color: var(--text); cursor: pointer; text-decoration: none; display: inline-block; }
+.btn::after { top: -2px; right: -2px; width: calc(var(--cut-s) + 2px); height: calc(var(--cut-s) + 2px);
+  background: linear-gradient(to top right, transparent calc(50% - 1.2px), var(--text) calc(50% - 1.2px), var(--text) calc(50% + 1.2px), transparent calc(50% + 1.2px)); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary::after { background: linear-gradient(to top right, transparent calc(50% - 1.2px), var(--accent) calc(50% - 1.2px), var(--accent) calc(50% + 1.2px), transparent calc(50% + 1.2px)); }
+.btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn:hover { border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(0.92); }
+
+/* Focus: a plain 2 px rectangle in the accent colour (the cut is removed while focused so the ring is not clipped). */
+:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; clip-path: none; }
+.btn:focus-visible, .card:focus-visible, summary:focus-visible { clip-path: none; }
+.btn:focus-visible::after, .card:focus-visible::after { display: none; }
+
+/* Inputs: plain 3 px corner, no cut. */
+input[type="search"], input[type="text"] { font: inherit; padding: 9px 12px; border-radius: var(--radius); border: 2px solid var(--line-strong); background: var(--surface); color: var(--text); min-width: 0; }
+input:focus-visible { outline-offset: 2px; }
+
+/* Rows and lists: hairlines between rows. */
+.group { background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.row, .item { border-top: 1px solid var(--line); }
+.row:first-child, .item:first-child { border-top: 0; }
+ul.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+
+/* States: a word and a shape, never colour alone. */
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 1px 9px 1px 7px; border: 1px solid currentColor; border-radius: var(--radius); font: 500 0.72rem/1.6 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.badge::before { content: ""; width: 8px; height: 8px; background: currentColor; flex: none; }
+.badge.protected, .badge.off, .badge.yes { color: var(--accent-text); }
+.badge.protected::before, .badge.off::before { border-radius: 50%; }
+.badge.exposed, .badge.on, .badge.warn { color: var(--warning); }
+.badge.exposed::before, .badge.on::before, .badge.warn::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.badge.visible, .badge.info { color: var(--muted); }
+.badge.error { color: var(--error); }
+
+.stat b { display: block; font: 700 1.7rem/1.2 var(--font-title); }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+
+/* Reduced motion: nothing here animates; keep it that way. */
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+@media (forced-colors: active) { .cut, .card, .btn, .stat { clip-path: none; } .cut::after, .card::after, .btn::after, .stat::after { display: none; } }

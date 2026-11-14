@@ -4,6 +4,15 @@
 "use strict";
 
 (() => {
+  // Wording comes from _locales (the browser's language); the English text here is the fallback.
+  const t = (key, fallback, ...subs) => {
+    let text = "";
+    try { text = browser.i18n.getMessage(key); } catch (e) { /* no i18n: use the fallback */ }
+    text = text || fallback;
+    subs.forEach((v, i) => { text = text.split("{" + (i + 1) + "}").join(String(v)); });
+    return text;
+  };
+  const kindText = (found) => KlinPhotoMetadata.keysOf(found).map((k) => t("p_kind_" + k, KlinPhotoMetadata.labelFor(k)));
   const MAX_BYTES = 40 * 1024 * 1024;            // larger files are passed through unchecked
   const isCandidate = (f) => /^image\/(jpeg|png)$/.test(f.type) || /\.(jpe?g|png)$/i.test(f.name);
   const SYNC_LIMIT = 16 * 1024 * 1024;           // dropped files up to this size are checked at once
@@ -43,17 +52,17 @@
     style.textContent = `
       :host{all:initial}
       .box{pointer-events:auto;position:fixed;left:50%;top:16px;transform:translateX(-50%);width:min(460px,calc(100vw - 24px));
-        font:15px/1.45 system-ui,sans-serif;color:#1c211e;background:#fff;border:1px solid #cfd5cd;border-radius:12px;padding:16px;
-        box-shadow:0 8px 30px rgba(0,0,0,.25)}
-      h2{all:unset;display:block;font-weight:700;font-size:16px;margin-bottom:6px}
-      p{margin:6px 0}.muted{color:#5b655f;font-size:13px}
+        font:15px/1.5 system-ui,sans-serif;color:#f1f1ec;background:#141414;border-top:3px solid #d4ff2a;padding:16px 16px 14px;
+        clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+      h2{all:unset;display:block;font:700 17px/1.2 "Chakra Petch",system-ui,sans-serif;margin-bottom:6px}
+      p{margin:6px 0}.muted{color:#a8a8a2;font-size:13px}
+      mark{background:#d4ff2a;color:#0a0a0a;padding:0 .25em;font-weight:600}
       ul{margin:6px 0;padding-left:20px}
       .row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-      button{font:inherit;padding:7px 14px;border-radius:8px;border:1px solid #cfd5cd;background:#fff;color:inherit;cursor:pointer}
-      button.primary{background:#2f7d5b;border-color:#2f7d5b;color:#fff;font-weight:600}
-      button:focus-visible{outline:2px solid #2f7d5b;outline-offset:2px}
-      @media (prefers-color-scheme:dark){.box{background:#1e2421;color:#e8ece9;border-color:#323a35}.muted{color:#a3ada7}
-        button{background:#1e2421;border-color:#323a35}button.primary{background:#6fc29a;border-color:#6fc29a;color:#151917}}`;
+      button{font:600 14px system-ui,sans-serif;padding:7px 14px;border:2px solid #f1f1ec;border-radius:0;background:transparent;color:#f1f1ec;cursor:pointer;
+        clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,0 100%)}
+      button.primary{background:#d4ff2a;border-color:#d4ff2a;color:#0a0a0a}
+      button:focus-visible{outline:2px solid #d4ff2a;outline-offset:3px;clip-path:none}`;
     root.append(style);
     document.documentElement.append(host);
     return { host, root };
@@ -62,24 +71,24 @@
 
   function ask(items) {
     const withData = items.filter((i) => i.info && i.info.any);
-    const kinds = [...new Set(withData.flatMap((i) => KlinPhotoMetadata.describe(i.info.found)))];
+    const kinds = [...new Set(withData.flatMap((i) => kindText(i.info.found)))];
     const names = withData.map((i) => i.file.name);
     return new Promise((resolve) => {
       const { host, root } = ui();
       const done = (answer) => { host.remove(); resolve(answer); };
       const click = (answer) => (e) => { if (e.isTrusted) done(answer); };
-      const remove = el("button", { className: "primary", type: "button", textContent: "Remove and continue" });
-      const keep = el("button", { type: "button", textContent: "Keep as is" });
-      const cancel = el("button", { type: "button", textContent: "Cancel upload" });
+      const remove = el("button", { className: "primary", type: "button", textContent: t("p_clean", "Clean and continue") });
+      const keep = el("button", { type: "button", textContent: t("p_keep", "Keep it") });
+      const cancel = el("button", { type: "button", textContent: t("p_cancel", "Cancel") });
       remove.addEventListener("click", click("remove"));
       keep.addEventListener("click", click("keep"));
       cancel.addEventListener("click", click("cancel"));
-      const box = el("div", { className: "box", role: "alertdialog", ariaLabel: "Photo privacy" }, [
-        el("h2", { textContent: "This photo shares where it was taken" }),
-        el("p", { textContent: (names.length > 2 ? `${names.length} photos contain` : `${names.join(", ")} contains`) + " hidden data the site can read:" }),
+      const box = el("div", { className: "box", role: "alertdialog", ariaLabel: t("p_label", "Photo privacy") }, [
+        el("h2", { textContent: t("p_title", "This photo says where it was taken.") }),
+        el("p", { textContent: names.length > 2 ? t("p_body_many", "Hidden data in {1} photos. Whoever receives them can read it:", names.length) : t("p_body_one", "Hidden data in {1}. Whoever receives it can read it:", names.join(", ")) }),
         el("ul", {}, kinds.map((k) => el("li", { textContent: k }))),
         el("div", { className: "row" }, [remove, keep, cancel]),
-        el("p", { className: "muted", textContent: "Removing does not change the picture itself. Klin checks photos chosen with the upload button or dropped into the page, not pasted ones, and cannot tell what a site does with a photo you keep." }),
+        el("p", { className: "muted" }, [t("p_note1", "Cleaning does not change the picture. Klin checks photos you pick or drop on the page. Not pasted ones. ") , el("mark", { textContent: t("p_note2", "It cannot know what a site does with a photo you keep.") })]),
       ]);
       box.addEventListener("keydown", (e) => { if (e.isTrusted && e.key === "Escape") done("cancel"); });
       root.append(box);
@@ -116,8 +125,8 @@
     if (answer === "cancel") return null;
     if (answer === "keep") return original;
     if (!location) {
-      const kinds = [...new Set(withData.flatMap((i) => KlinPhotoMetadata.describe(i.info.found)))];
-      notice(`Klin removed hidden details (${kinds.join(", ")}) from ${withData.length === 1 ? withData[0].file.name : withData.length + " photos"}.`);
+      const kinds = [...new Set(withData.flatMap((i) => kindText(i.info.found)))];
+      notice(t("p_removed", "Klin removed hidden details ({1}) from {2}.", kinds.join(", "), withData.length === 1 ? withData[0].file.name : t("p_n_photos", "{1} photos", withData.length)));
     }
     return items.map((i) => (i.info && i.info.any ? cleaned(i) : i.file));
   }
@@ -137,7 +146,7 @@
       console.error("Klin Photo Privacy:", e);
       if (pending.get(input) === token) {
         pending.delete(input);
-        notice("Klin could not check this photo, so it was sent as it is.");
+        notice(t("p_failed", "Klin could not check this photo, so it was sent as it is."));
         deliver(input, original);
       }
     }
@@ -191,7 +200,7 @@
       files = await resolve(original);
     } catch (e) {
       console.error("Klin Photo Privacy:", e);
-      notice("Klin could not check this photo, so it was sent as it is.");
+      notice(t("p_failed", "Klin could not check this photo, so it was sent as it is."));
     }
     if (files === null) return;
     const detail = cloneInto({ data, coords, files: await exportFiles(files) }, window);

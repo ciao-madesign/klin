@@ -1,0 +1,65 @@
+{
+  "name": {
+    "message": "Klin Photo Privacy"
+  },
+  "description": {
+    "message": "Warns you when a photo you are about to upload carries your location or other hidden data, and cleans it on request. Fully local."
+  },
+  "p_label": {
+    "message": "Photo privacy"
+  },
+  "p_title": {
+    "message": "This photo says where it was taken."
+  },
+  "p_body_one": {
+    "message": "Hidden data in {1}. Whoever receives it can read it:"
+  },
+  "p_body_many": {
+    "message": "Hidden data in {1} photos. Whoever receives them can read it:"
+  },
+  "p_clean": {
+    "message": "Clean and continue"
+  },
+  "p_keep": {
+    "message": "Keep it"
+  },
+  "p_cancel": {
+    "message": "Cancel"
+  },
+  "p_note1": {
+    "message": "Cleaning does not change the picture. Klin checks photos you pick or drop on the page. Not pasted ones. "
+  },
+  "p_note2": {
+    "message": "It cannot know what a site does with a photo you keep."
+  },
+  "p_removed": {
+    "message": "Klin removed hidden details ({1}) from {2}."
+  },
+  "p_n_photos": {
+    "message": "{1} photos"
+  },
+  "p_failed": {
+    "message": "Klin could not check this photo, so it was sent as it is."
+  },
+  "p_kind_location": {
+    "message": "location (GPS)"
+  },
+  "p_kind_device": {
+    "message": "camera or phone model"
+  },
+  "p_kind_date": {
+    "message": "date and time"
+  },
+  "p_kind_author": {
+    "message": "author or owner name"
+  },
+  "p_kind_serial": {
+    "message": "device serial number"
+  },
+  "p_kind_software": {
+    "message": "editing software"
+  },
+  "p_kind_other": {
+    "message": "other hidden data"
+  }
+}

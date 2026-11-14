@@ -1,0 +1,266 @@
+{
+  "name": {
+    "message": "Klin Self-test"
+  },
+  "description": {
+    "message": "Shows what the site you are viewing can read about this browser. Nothing is sent or stored."
+  },
+  "title": {
+    "message": "What can this site see?"
+  },
+  "s_title": {
+    "message": "Klin self-test"
+  },
+  "s_h1": {
+    "message": "What a site can see"
+  },
+  "s_lead": {
+    "message": "Klin runs, inside the site you were viewing, the same checks a tracking script would run. Everything stays on your machine: nothing is sent, nothing is stored."
+  },
+  "s_results": {
+    "message": "Results"
+  },
+  "s_running": {
+    "message": "Running the checks…"
+  },
+  "s_legend": {
+    "message": "**Protected**: the site gets nothing useful, or a value that is blurred or shared with many other users. **Exposed**: the site gets a value that helps to recognise you and that could be hidden. **Visible**: normal for any browser, but each value adds to your fingerprint."
+  },
+  "s_foot": {
+    "message": "The test shows what is technically readable, not how rare your combination is: that would need comparing you with other users, which Klin does not do."
+  },
+  "s_protected": {
+    "message": "Protected"
+  },
+  "s_exposed": {
+    "message": "Exposed"
+  },
+  "s_visible": {
+    "message": "Visible"
+  },
+  "s_n_protected": {
+    "message": "protected"
+  },
+  "s_n_exposed": {
+    "message": "exposed"
+  },
+  "s_n_visible": {
+    "message": "visible to any site"
+  },
+  "s_where_page": {
+    "message": "Tested as seen by this page."
+  },
+  "s_where_tab": {
+    "message": "Tested as seen by {1}, in the tab you were viewing."
+  },
+  "s_open": {
+    "message": "Open a website, then click the Klin self-test button in the toolbar."
+  },
+  "s_cannot": {
+    "message": "This page cannot be tested (browser pages and a few protected sites do not allow it). Open an ordinary website and click the button again."
+  },
+  "stg_signals_you_send": {
+    "message": "Signals you send"
+  },
+  "stg_network": {
+    "message": "Network"
+  },
+  "stg_device": {
+    "message": "Device"
+  },
+  "stg_language_and_place": {
+    "message": "Language and place"
+  },
+  "stg_hidden_fingerprints": {
+    "message": "Hidden fingerprints"
+  },
+  "sv_canvas_random": {
+    "message": "random on every read: no usable identifier"
+  },
+  "sv_canvas_altered": {
+    "message": "read-out altered by the browser"
+  },
+  "sv_canvas_exact": {
+    "message": "reads back exactly; stable identifier: {1}"
+  },
+  "sv_na": {
+    "message": "not available"
+  },
+  "sv_audio_id": {
+    "message": "identifier: {1}"
+  },
+  "sv_fonts_n": {
+    "message": "{1} of {2} tested fonts detected"
+  },
+  "sv_fonts_list": {
+    "message": "{1} of {2} tested fonts detected: {3}"
+  },
+  "sv_webrtc_na": {
+    "message": "WebRTC not available"
+  },
+  "sv_webrtc_addr": {
+    "message": "local address readable: {1}"
+  },
+  "sv_webrtc_placeholder": {
+    "message": "only a random placeholder name, no real address"
+  },
+  "sv_webrtc_none": {
+    "message": "no address handed to the page"
+  },
+  "sv_webrtc_blocked": {
+    "message": "WebRTC blocked"
+  },
+  "sv_media_notsecure": {
+    "message": "not readable here: the page is not https"
+  },
+  "sv_media_named": {
+    "message": "{1} microphone(s), {2} camera(s), {3} speaker(s), with device names"
+  },
+  "sv_media_hidden": {
+    "message": "{1} microphone(s), {2} camera(s), {3} speaker(s), names hidden"
+  },
+  "sv_absent": {
+    "message": "not available to sites"
+  },
+  "sv_readable_connection": {
+    "message": "connection type readable"
+  },
+  "sv_readable_memory": {
+    "message": "memory ({1} GB) readable"
+  },
+  "sv_readable_battery": {
+    "message": "battery state readable"
+  },
+  "sv_gpc_sent": {
+    "message": "sent"
+  },
+  "sv_gpc_not_sent": {
+    "message": "not sent"
+  },
+  "sv_cookies_yes": {
+    "message": "accepted"
+  },
+  "sv_cookies_no": {
+    "message": "refused"
+  },
+  "sv_hidden": {
+    "message": "hidden"
+  },
+  "sv_screen": {
+    "message": "screen {1}, window {2}, pixel ratio {3}, {4}-bit colour"
+  },
+  "sv_touch_yes": {
+    "message": "yes ({1} points)"
+  },
+  "sv_touch_no": {
+    "message": "no"
+  },
+  "sv_tz": {
+    "message": "{1} (UTC offset {2} h)"
+  },
+  "sv_failed": {
+    "message": "check failed: {1}"
+  },
+  "st_global_privacy_control_name": {
+    "message": "Global Privacy Control"
+  },
+  "st_global_privacy_control_why": {
+    "message": "Tells every site you refuse the sale and sharing of your data. Legally binding in some jurisdictions."
+  },
+  "st_cookies_name": {
+    "message": "Cookies"
+  },
+  "st_cookies_why": {
+    "message": "Sites you visit can store cookies; Klin keeps each site's cookies separate so they cannot follow you elsewhere. This test cannot check the separation itself."
+  },
+  "st_local_network_address_webrtc_name": {
+    "message": "Local network address (WebRTC)"
+  },
+  "st_local_network_address_webrtc_why": {
+    "message": "Video-call technology can reveal your address inside your home or office network, even behind a VPN."
+  },
+  "st_connection_type_name": {
+    "message": "Connection type"
+  },
+  "st_connection_type_why": {
+    "message": "Wi-Fi, mobile or cable, and its speed."
+  },
+  "st_browser_and_system_name": {
+    "message": "Browser and system"
+  },
+  "st_browser_and_system_why": {
+    "message": "Announced to every site with each request."
+  },
+  "st_processor_cores_name": {
+    "message": "Processor cores"
+  },
+  "st_processor_cores_why": {
+    "message": "A small number that differs between machines."
+  },
+  "st_memory_size_name": {
+    "message": "Memory size"
+  },
+  "st_memory_size_why": {
+    "message": "Another hardware detail that narrows down your device."
+  },
+  "st_battery_level_name": {
+    "message": "Battery level"
+  },
+  "st_battery_level_why": {
+    "message": "Charge level and charging time have been used to follow users across sites."
+  },
+  "st_screen_and_window_name": {
+    "message": "Screen and window"
+  },
+  "st_screen_and_window_why": {
+    "message": "Screen size is common; the exact window size is often unique."
+  },
+  "st_touch_screen_name": {
+    "message": "Touch screen"
+  },
+  "st_touch_screen_why": {
+    "message": "Whether the device has a touch screen."
+  },
+  "st_graphics_card_name": {
+    "message": "Graphics card"
+  },
+  "st_graphics_card_why": {
+    "message": "The model of your graphics hardware."
+  },
+  "st_cameras_and_microphones_name": {
+    "message": "Cameras and microphones"
+  },
+  "st_cameras_and_microphones_why": {
+    "message": "How many devices are connected; their names stay hidden until you grant access."
+  },
+  "st_languages_name": {
+    "message": "Languages"
+  },
+  "st_languages_why": {
+    "message": "Your preferred languages, in order."
+  },
+  "st_time_zone_name": {
+    "message": "Time zone"
+  },
+  "st_time_zone_why": {
+    "message": "Roughly where you are, even when your IP address is hidden."
+  },
+  "st_canvas_drawing_name": {
+    "message": "Canvas drawing"
+  },
+  "st_canvas_drawing_why": {
+    "message": "A site draws an invisible picture and reads it back: tiny differences between machines make a stable identifier."
+  },
+  "st_audio_processing_name": {
+    "message": "Audio processing"
+  },
+  "st_audio_processing_why": {
+    "message": "Same idea with an inaudible sound."
+  },
+  "st_installed_fonts_name": {
+    "message": "Installed fonts"
+  },
+  "st_installed_fonts_why": {
+    "message": "The list of fonts on your machine is rarely the same as anyone else's."
+  }
+}

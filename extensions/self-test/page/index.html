@@ -3,23 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Klin self-test</title>
+<title data-i18n="s_title">Klin self-test</title>
+<link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <main>
   <header>
-    <h1>What a site can see</h1>
-    <p class="lead">Klin runs, inside the site you were viewing, the same checks a tracking script would run. Everything stays on your machine: nothing is sent, nothing is stored.</p>
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1 data-i18n="s_h1">What a site can see</h1>
+    <p class="lead" data-i18n="s_lead">Klin runs, inside the site you were viewing, the same checks a tracking script would run. Everything stays on your machine: nothing is sent, nothing is stored.</p>
     <p id="where" class="lead"></p>
     <div id="summary" class="summary" aria-live="polite"></div>
   </header>
 
-  <section id="results" aria-label="Results"><p id="running">Running the checks…</p></section>
+  <section id="results" aria-label="Results" data-i18n-attr="aria-label:s_results"><p id="running" data-i18n="s_running">Running the checks…</p></section>
 
-  <footer>
-    <p><strong>Protected</strong>: the site gets nothing useful, or a value that is blurred or shared with many other users. <strong>Exposed</strong>: the site gets a value that helps to recognise you and that could be hidden. <strong>Visible</strong>: normal for any browser, but each value adds to your fingerprint.</p>
-    <p>The test shows what is technically readable, not how rare your combination is: that would need comparing you with other users, which Klin does not do.</p>
+  <footer class="read">
+    <p data-i18n="s_legend"><b>Protected</b>: the site gets nothing useful, or a value that is blurred or shared with many other users. <b>Exposed</b>: the site gets a value that helps to recognise you and that could be hidden. <b>Visible</b>: normal for any browser, but each value adds to your fingerprint.</p>
+    <p data-i18n="s_foot">The test shows what is technically readable, not how rare your combination is: that would need comparing you with other users, which Klin does not do.</p>
   </footer>
 </main>
 <script src="checks.js"></script>

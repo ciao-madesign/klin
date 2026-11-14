@@ -3,19 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collection attempts</title>
+<title data-i18n="a_title">Collection attempts</title>
+<link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="popup.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <header>
-  <h1>Collection attempts</h1>
+  <h1 data-i18n="a_h1">Collection attempts</h1>
   <p id="where" class="muted"></p>
   <div id="summary" class="summary" aria-live="polite"></div>
 </header>
 <main id="list"></main>
 <footer>
-  <p class="muted"><b>Not shown:</b> what the site records on its own servers, details Klin does not watch (screen size, fonts, time zone), and anything that happened before this page loaded. Kept in memory only: it disappears when you close Klin.</p>
-  <button id="clear" type="button">Clear this page</button>
+  <p class="muted" data-i18n="a_foot"><b>Not shown:</b> what the site records on its own servers, details Klin does not watch (screen size, fonts, time zone), and anything that happened before this page loaded. Kept in memory only: it disappears when you close Klin.</p>
+  <button id="clear" class="btn" type="button" data-i18n="a_clear">Clear this page</button>
 </footer>
 <script src="popup.js"></script>
 </body>

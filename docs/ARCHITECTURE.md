@@ -9,7 +9,7 @@ Klin = stock Firefox (latest release channel) + `config/` + `branding/` + `patch
 | Privacy Engine | Firefox prefs/policies + bundled uBlock Origin |
 | Traffic Engine | Prefs (prefetch, autoplay, tab unloading) + extension for lazy loading and limits |
 | Traffic / CPU / RAM monitor | Extension for network stats; privileged code (patch) for per-site CPU/RAM |
-| Energy & Carbon Monitor | Extension; values are model-based **estimates**, never measurements |
+| Energy & Carbon Monitor | greenweb, pre-installed as a signed external extension (ADR 0004); values are model-based **estimates**, never measurements |
 | Security Manager | Upstream Gecko sandbox, TLS, auto-update; policies for permissions |
 | Extension Manager | Native WebExtensions; Chrome compatibility documented, not promised |
 | Automation Engine | Extension with visual rule editor; sensitive actions require confirmation |
@@ -33,7 +33,7 @@ Tracked in [PROPOSALS.md](PROPOSALS.md). They are listed here only to show where
 
 | Module | Implementation if accepted | Status |
 |---|---|---|
-| Geographic Traffic Controller | **Outside the browser stack**: system-level filter (Windows WFP driver + service, later nftables / Network Extension), local DNS proxy, local proxy, local GeoIP database; controlled from Klin's UI. Does not fit "config, extension, patch" and needs its own ADR. See [proposals/geographic-traffic-controller.md](proposals/geographic-traffic-controller.md) | Proposed, not scheduled |
+| Geographic Traffic Controller | **Outside the browser stack**: system-level filter (Windows WFP driver + service, later nftables / Network Extension), local DNS proxy, local proxy, local GeoIP database; controlled from Klin's UI. Does not fit "config, extension, patch" and needs its own ADR. See [proposals/geographic-traffic-controller.md](proposals/geographic-traffic-controller.md) | Proposed, deferred (ADR 0006: P32 in the browser comes first) |
 
 ## Principle
 Config first, then extension, then patch. Every patch needs an ADR and must be rebased on each upstream release.

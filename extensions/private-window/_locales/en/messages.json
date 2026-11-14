@@ -1,0 +1,53 @@
+{
+  "name": {
+    "message": "Klin Private Window"
+  },
+  "description": {
+    "message": "Replaces the start page of private windows with the plain truth about what a private window hides and what it does not."
+  },
+  "p_title": {
+    "message": "Private window"
+  },
+  "p_h1": {
+    "message": "Private window"
+  },
+  "p_lead": {
+    "message": "It keeps this computer from remembering what you do here. ==It does not make you invisible.=="
+  },
+  "p_placeholder": {
+    "message": "Search or enter an address"
+  },
+  "p_search": {
+    "message": "Search"
+  },
+  "p_yes_h": {
+    "message": "What it does"
+  },
+  "p_y1": {
+    "message": "Forgets history, cookies, form entries and cached files when you close the window."
+  },
+  "p_y2": {
+    "message": "Keeps what you do here apart from your normal windows."
+  },
+  "p_y3": {
+    "message": "Klin's protections stay on: trackers blocked, fingerprints reduced."
+  },
+  "p_no_h": {
+    "message": "What it does not hide"
+  },
+  "p_n1": {
+    "message": "**Your internet provider**, and the owner of the Wi-Fi network (home, work, school, café): they still see which sites you contact."
+  },
+  "p_n2": {
+    "message": "**The sites you visit**: they see your IP address, and what you do on them."
+  },
+  "p_n3": {
+    "message": "**Your accounts**: once you log in, the site knows who you are."
+  },
+  "p_n4": {
+    "message": "**What you download or bookmark**: it stays on this computer."
+  },
+  "p_next": {
+    "message": "To see what a site can read about you, open it and click **What can this site see?** in the toolbar."
+  }
+}

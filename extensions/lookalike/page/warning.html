@@ -3,24 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Check this address</title>
+<title data-i18n="l_title">This address imitates a site you know</title>
+<link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="warning.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <main>
-  <h1>Check this address</h1>
-  <p class="lead">The site you are opening has a name very close to one you already know. Imitating a familiar name is a common way to steal passwords.</p>
-  <dl>
-    <dt>You are opening</dt><dd id="site" class="name"></dd>
-    <dt>You know</dt><dd id="known" class="name"></dd>
+  <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+  <h1 data-i18n="l_h1">This address imitates a site you know.</h1>
+  <p class="lead" data-i18n="l_lead">The name is almost the same as one you know. It is a common trick to steal passwords.</p>
+  <dl class="card">
+    <dt data-i18n="l_opening">You are opening</dt><dd id="site" class="name"></dd>
+    <dt data-i18n="l_known">You know</dt><dd id="known" class="name"></dd>
   </dl>
   <p id="reason"></p>
   <div class="actions">
-    <button id="go-known" class="primary" type="button"></button>
-    <button id="back" type="button">Go back</button>
-    <button id="continue" type="button"></button>
+    <button id="go-known" class="btn primary" type="button"></button>
+    <button id="back" class="btn" type="button" data-i18n="l_back">Go back</button>
+    <button id="continue" class="btn" type="button"></button>
   </div>
-  <p class="note">Klin compared the name with your bookmarks and often-visited sites, on this machine only. If you continue, Klin will not ask again for this site.</p>
+  <p class="note" data-i18n="l_note">Klin compared the name with your bookmarks and often-visited sites, on this machine only. If you continue, Klin will not ask again for this site.</p>
 </main>
 <script src="warning.js"></script>
 </body>

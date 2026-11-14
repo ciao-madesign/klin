@@ -3,43 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Welcome to Klin</title>
+<title data-i18n="w_title">Welcome to Klin</title>
+<link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <main>
   <header class="hero">
-    <p class="mark">Klin</p>
-    <h1>A browser that works for you, not for advertisers.</h1>
-    <p class="lead">Free, open source, and local-first. No account, no cloud, no telemetry. Built on Firefox, so it stays up to date with its security fixes.</p>
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1 data-i18n="w_tagline">Free. Independent. Yours.</h1>
+    <p class="lead" data-i18n="w_lead">A browser that works for you, not for advertisers. Free, open source, local-first. No account, no cloud, no telemetry. Built on Firefox, so it gets its security fixes.</p>
   </header>
 
-  <section>
-    <h2>What Klin does for you</h2>
-    <ul class="features">
-      <li><b>Makes tracking harder.</b> Blocks advertising and trackers, keeps each site's cookies apart, adds noise to the signals sites use to recognise your device.</li>
-      <li><b>Tells you what is going on.</b> The collection log shows who tried to collect information on the page you are on. The self-test shows what a site can read about you. The connections page lists every connection the browser makes by itself, and why.</li>
-      <li><b>Protects what you share.</b> Warns you before a photo with your location is uploaded, and removes it if you want. Warns you about sites that imitate ones you know.</li>
-      <li><b>Removes the noise.</b> No sponsored shortcuts, no recommendations, no promotions, no cookie banners in the way.</li>
-      <li><b>Stays light.</b> No speculative connections, no autoplay, nothing running in the background that you did not ask for.</li>
+  <section class="read">
+    <h2 data-i18n="w_does_h">What Klin does for you</h2>
+    <ul class="plain features">
+      <li class="card" data-i18n="w_f1"><b>Makes tracking harder.</b> Blocks advertising and trackers, keeps each site's cookies apart, adds noise to the signals sites use to recognise your device.</li>
+      <li class="card" data-i18n="w_f2"><b>Tells you what is going on.</b> The collection log shows who tried to collect information on the page you are on. The self-test shows what a site can read about you. The connections page lists every connection the browser makes by itself, and why.</li>
+      <li class="card" data-i18n="w_f3"><b>Protects what you share.</b> Warns you before a photo with your location is uploaded, and cleans it if you want. Warns you about sites that imitate ones you know.</li>
+      <li class="card" data-i18n="w_f4"><b>Removes the noise.</b> No sponsored shortcuts, no recommendations, no promotions, no cookie banners in the way.</li>
+      <li class="card" data-i18n="w_f5"><b>Stays light.</b> No speculative connections, no autoplay, nothing running in the background that you did not ask for.</li>
     </ul>
+    <p class="more"><a href="greenweb.html" data-i18n="w_more">Klin and Greenweb: how the footprint of your browsing is estimated</a></p>
   </section>
 
-  <section class="honest">
-    <h2>What Klin does not do</h2>
-    <p>Klin does not make you anonymous. It makes you harder to follow. Websites still see your internet address, and your provider still sees which sites you contact. Klin cannot see what a site records on its own servers, and it cannot protect what you choose to give away.</p>
-    <p>It starts at the <b>Standard</b> level of protection, so that sites keep working. A stronger level is one click away, with a few sites that may misbehave.</p>
+  <section class="read honest">
+    <h2 data-i18n="w_not_h">What Klin does not do</h2>
+    <p data-i18n="w_not1"><mark>Klin does not make you anonymous. It makes you harder to follow.</mark> Websites still see your internet address, and your provider still sees which sites you contact. Klin cannot see what a site records on its own servers, and it cannot protect what you choose to give away.</p>
+    <p data-i18n="w_not2">It starts at the <b>Standard</b> level of protection, so that sites keep working. A stronger level is one click away, with a few sites that may misbehave.</p>
   </section>
 
-  <section>
-    <h2>What we stand for</h2>
-    <p>Freedom, independence, equality and brotherhood. Freedom of expression for everyone, and no room for regimes or for fascism. Klin gives you the means to leave out the companies, countries and sources you do not want in your digital world, and never decides for you in secret.</p>
-    <p class="draft">Draft wording. It will be replaced by Klin's charter.</p>
+  <section class="read">
+    <h2 data-i18n="w_stand_h">What we stand for</h2>
+    <p class="values" data-i18n="w_values">Freedom, independence, equality, brotherhood and ecology.</p>
+    <p data-i18n="w_values2">Klin lets you leave out the companies, countries and sources you do not want. It never decides for you in secret.</p>
   </section>
 
   <footer>
-    <p>To read this page again, click the <b>info</b> button <span class="icon" aria-hidden="true">ⓘ</span> in the toolbar.</p>
-    <p class="muted">This page is part of the browser. It loads nothing from the internet.</p>
+    <p data-i18n="w_foot1">To read this page again, click the <b>info</b> button ⓘ in the toolbar.</p>
+    <p class="muted" data-i18n="w_foot2">This page is part of the browser. It loads nothing from the internet.</p>
   </footer>
 </main>
 </body>

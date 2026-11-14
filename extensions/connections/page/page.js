@@ -1,13 +1,16 @@
 // Renders data/connections.json. Read-only: no browser APIs, no network.
 "use strict";
 
+const t = (key, fallback, ...args) => klin.t(key, fallback, ...args);
 const CONTROL_LABEL = {
-  pref: "Preference in about:config",
-  policy: "Enterprise policy",
-  ublock: "uBlock Origin setting",
-  none: "No switch",
+  pref: ["c_ctl_pref", "Preference in about:config"],
+  policy: ["c_ctl_policy", "Enterprise policy"],
+  ublock: ["c_ctl_ublock", "uBlock Origin setting"],
+  none: ["c_ctl_none", "No switch"],
 };
-const WHEN_LABEL = { idle: "In the background", browsing: "While browsing" };
+const WHEN_LABEL = { idle: ["c_when_idle", "In the background"], browsing: ["c_when_browsing", "While browsing"] };
+// Entry texts live in data/connections.json (English). A translation, if present, is looked up as c_<id>_<field>.
+const entry = (c, field, fallback) => t("e_" + c.id.replace(/-/g, "_") + "_" + field, fallback);
 
 function el(tag, props = {}, children = []) {
   const node = document.createElement(tag);
@@ -24,29 +27,29 @@ function card(c) {
   const isOn = c.klin === "on";
   const summary = el("summary", {}, [
     el("span", { className: "title" }, [
-      el("strong", { textContent: c.name }),
+      el("strong", { textContent: entry(c, "name", c.name) }),
       el("small", { textContent: c.hosts.join(", ") }),
     ]),
-    el("span", { className: "tag", textContent: WHEN_LABEL[c.when] }),
-    el("span", { className: "badge " + c.klin, textContent: isOn ? "Active" : "Off" }),
+    el("span", { className: "tag", textContent: t(...WHEN_LABEL[c.when]) }),
+    el("span", { className: "badge " + c.klin, textContent: isOn ? t("c_active", "Active") : t("c_offlabel", "Off") }),
   ]);
 
   const dl = el("dl");
-  row(dl, "Who receives it", c.operator);
-  row(dl, "Purpose", c.purpose);
-  row(dl, "What it can see", c.sees);
-  row(dl, "Klin's choice", c.decision);
-  row(dl, isOn ? "If you turn it off" : "What you lose", c.ifOff);
-  const control = [el("div", { textContent: CONTROL_LABEL[c.control.type] })];
+  row(dl, t("c_r_who", "Who receives it"), entry(c, "operator", c.operator));
+  row(dl, t("c_r_purpose", "Purpose"), entry(c, "purpose", c.purpose));
+  row(dl, t("c_r_sees", "What it can see"), entry(c, "sees", c.sees));
+  row(dl, t("c_r_decision", "Klin's choice"), entry(c, "decision", c.decision));
+  row(dl, isOn ? t("c_r_ifoff", "If you turn it off") : t("c_r_lose", "What you lose"), entry(c, "ifOff", c.ifOff));
+  const control = [el("div", { textContent: t(...CONTROL_LABEL[c.control.type]) })];
   if (c.control.items.length) {
     control.push(el("div", {}, c.control.items.map((i) => el("code", { textContent: i }))));
   }
-  if (c.control.note) control.push(el("div", { textContent: c.control.note }));
-  row(dl, "How to change it", control);
-  row(dl, "In stock Firefox", c.stock ? "Active" : "Not present");
-  row(dl, "Checked by", c.evidence === "audit"
-    ? "Connection audit: seen (or confirmed absent) on the wire"
-    : "Setting value only, not yet observed on the wire");
+  if (c.control.note) control.push(el("div", { textContent: entry(c, "note", c.control.note) }));
+  row(dl, t("c_r_change", "How to change it"), control);
+  row(dl, t("c_r_stock", "In stock Firefox"), c.stock ? t("c_active", "Active") : t("c_absent", "Not present"));
+  row(dl, t("c_r_checked", "Checked by"), c.evidence === "audit"
+    ? t("c_ev_audit", "Connection audit: seen (or confirmed absent) on the wire")
+    : t("c_ev_setting", "Setting value only, not yet observed on the wire"));
 
   const details = el("details", { className: "card" }, [summary, dl]);
   details.dataset.state = c.klin;
@@ -58,12 +61,13 @@ function stat(number, label) {
 }
 
 async function main() {
+  await klin.ready;
   const list = document.getElementById("list");
   let data;
   try {
     data = await (await fetch("../data/connections.json")).json();
   } catch (e) {
-    list.append(el("p", { textContent: "The connection list could not be loaded." }));
+    list.append(el("p", { textContent: t("c_loaderr", "The connection list could not be loaded.") }));
     return;
   }
   const all = data.connections;
@@ -72,15 +76,15 @@ async function main() {
   const stockOn = all.filter((c) => c.stock);
 
   document.getElementById("summary").append(
-    stat(on.length, "active in Klin"),
-    stat(off.length, "turned off by Klin"),
-    stat(stockOn.length, "active in stock Firefox"),
+    stat(on.length, t("c_n_on", "active in Klin")),
+    stat(off.length, t("c_n_off", "turned off by Klin")),
+    stat(stockOn.length, t("c_n_stock", "active in stock Firefox")),
   );
   // Active first: these are the ones that actually leave the machine.
   for (const c of [...on, ...off]) list.append(card(c));
 
   document.getElementById("audit").textContent =
-    `Checked on Firefox ${data.audit.firefox} (${data.audit.platform}). ${data.audit.method} ${data.audit.limits}`;
+    t("c_audit", "Checked on Firefox {1} ({2}). {3} {4}", data.audit.firefox, data.audit.platform, t("c_audit_method", data.audit.method), t("c_audit_limits", data.audit.limits));
 
   const buttons = document.querySelectorAll(".filters button");
   for (const button of buttons) {

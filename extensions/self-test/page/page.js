@@ -113,7 +113,10 @@ const GROUPS = [
     ]
   }
 ];
-const LABEL = { protected: "Protected", exposed: "Exposed", visible: "Visible" };
+const t = (key, fallback, ...args) => klin.t(key, fallback, ...args);
+const LABEL = { protected: ["s_protected", "Protected"], exposed: ["s_exposed", "Exposed"], visible: ["s_visible", "Visible"] };
+const slug = (title) => title.toLowerCase().replace(/[^a-z]+/g, "_").replace(/^_|_$/g, "");
+const key = (id) => id.replace(/-/g, "_");
 
 function el(tag, props = {}, children = []) {
   const node = Object.assign(document.createElement(tag), props);
@@ -137,32 +140,33 @@ function render(results, where) {
       if (!r || !(r.status in counts)) continue;
       counts[r.status]++;
       const row = el("div", { className: "item" }, [
-        el("strong", { textContent: item.name }),
-        el("span", { className: "badge " + r.status, textContent: LABEL[r.status] }),
-        el("div", { className: "value", textContent: r.value }),
-        el("div", { className: "why", textContent: item.why }),
+        el("strong", { textContent: t("st_" + key(item.id) + "_name", item.name) }),
+        el("span", { className: "badge " + r.status, textContent: t(LABEL[r.status][0], LABEL[r.status][1]) }),
+        el("div", { className: "value", textContent: r.k && r.k !== "raw" ? t("sv_" + r.k, r.value, ...(r.a || [])) : r.value }),
+        el("div", { className: "why", textContent: t("st_" + key(item.id) + "_why", item.why) }),
       ]);
-      row.dataset.name = item.name; row.dataset.status = r.status; row.dataset.value = r.value;
+      row.dataset.id = item.id; row.dataset.name = item.name; row.dataset.status = r.status; row.dataset.value = r.value;
       box.append(row);
     }
-    sections.push(el("h2", { textContent: group.title }), box);
+    sections.push(el("h2", { textContent: t("stg_" + slug(group.title), group.title) }), box);
   }
   document.getElementById("results").replaceChildren(...sections);
   document.getElementById("where").textContent = where;
   const stat = (n, label) => el("div", { className: "stat" }, [el("b", { textContent: n }), el("span", { textContent: label })]);
   document.getElementById("summary").replaceChildren(
-    stat(counts.protected, "protected"), stat(counts.exposed, "exposed"), stat(counts.visible, "visible to any site"));
+    stat(counts.protected, t("s_n_protected", "protected")), stat(counts.exposed, t("s_n_exposed", "exposed")), stat(counts.visible, t("s_n_visible", "visible to any site")));
   document.documentElement.dataset.done = "1";
 }
 
 async function main() {
+  await klin.ready;
   const tabId = Number(new URLSearchParams(location.search).get("tab"));
   const inExtension = typeof browser !== "undefined" && browser.scripting;
   if (!inExtension) {
     // Opened as an ordinary web page (development and tests): test this page itself.
-    return render(await klinSelfTestChecks(), "Tested as seen by this page.");
+    return render(await klinSelfTestChecks(), t("s_where_page", "Tested as seen by this page."));
   }
-  if (!tabId) return show("Open a website, then click the Klin self-test button in the toolbar.");
+  if (!tabId) return show(t("s_open", "Open a website, then click the Klin self-test button in the toolbar."));
   let host = "the site";
   try {
     host = new URL((await browser.tabs.get(tabId)).url).host || host;
@@ -170,9 +174,9 @@ async function main() {
     // fingerprinting protection and would give misleading results.
     const [injection] = await browser.scripting.executeScript({ target: { tabId }, world: "MAIN", func: klinSelfTestChecks });
     if (!injection || !Array.isArray(injection.result)) throw new Error(injection && injection.error ? injection.error.message : "no result");
-    render(injection.result, `Tested as seen by ${host}, in the tab you were viewing.`);
+    render(injection.result, t("s_where_tab", "Tested as seen by {1}, in the tab you were viewing.", host));
   } catch (e) {
-    show("This page cannot be tested (browser pages and a few protected sites do not allow it). Open an ordinary website and click the button again.");
+    show(t("s_cannot", "This page cannot be tested (browser pages and a few protected sites do not allow it). Open an ordinary website and click the button again."));
   }
 }
 

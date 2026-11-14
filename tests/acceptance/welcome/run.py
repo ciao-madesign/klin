@@ -40,6 +40,21 @@ with Firefox(sys.argv[1]) as ff:
     external = ff.script("return [...document.querySelectorAll('[src],[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")
     check("it loads nothing from the internet", external == [], external)
 
+    # the linked page about Greenweb: reachable from the welcome page, loads nothing, links back
+    link = ff.script("const a = document.querySelector('a[href=\"greenweb.html\"]'); return a ? a.href : null")
+    check("it links to the Klin and Greenweb page", bool(link), link)
+    if link:
+        ff.script("location.href = arguments[0]", [link]); time.sleep(1)
+        check("the linked page is the Klin and Greenweb page", ff.script("return document.title") == "Klin and Greenweb")
+        check("it says what Greenweb does not do", "does not measure" in ff.script("return document.body.innerText"))
+        loaded = ff.script("return [...document.querySelectorAll('[src],link[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")
+        check("the linked page loads nothing from the internet", loaded == [], loaded)
+        out = ff.script("return [...document.querySelectorAll('a[href]')].map(a => a.href).filter(u => /^https?:/.test(u))")
+        check("its only outside link is Greenweb's project page", out == ["https://github.com/ciao-madesign/greenweb"], out)
+        back = ff.script("const a = document.querySelector('a[href=\"index.html\"]'); return a ? a.href : null")
+        check("it links back to the welcome page", bool(back), back)
+        if back: ff.script("location.href = arguments[0]", [back]); time.sleep(1)
+
     # the info button brings the open page to the front instead of opening a copy
     new = ff.chrome_script("const done = arguments[arguments.length - 1]; const w = Services.wm.getMostRecentWindow('navigator:browser'); w.gBrowser.selectedTab = w.gBrowser.addTab('about:blank', { triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal() }); done(true);")
     time.sleep(1)

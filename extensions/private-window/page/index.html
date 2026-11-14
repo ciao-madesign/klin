@@ -3,40 +3,43 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Private window</title>
+<title data-i18n="p_title">Private window</title>
+<link rel="stylesheet" href="../shared/klin.css">
 <link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
 </head>
 <body>
 <main>
-  <h1>Private window</h1>
-  <p class="lead">It keeps this computer from remembering what you do here. It does not make you invisible.</p>
+  <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+  <h1 data-i18n="p_h1">Private window</h1>
+  <p class="lead" data-i18n="p_lead">It keeps this computer from remembering what you do here. <mark>It does not make you invisible.</mark></p>
 
   <form id="search" role="search">
-    <input id="query" type="search" placeholder="Search or enter an address" aria-label="Search" autofocus>
-    <button type="submit">Search</button>
+    <input id="query" type="search" placeholder="Search or enter an address" aria-label="Search" data-i18n-attr="placeholder:p_placeholder;aria-label:p_search" autofocus>
+    <button class="btn primary" type="submit" data-i18n="p_search">Search</button>
   </form>
 
   <div class="columns">
     <section class="card yes">
-      <h2>What it does</h2>
+      <h2 data-i18n="p_yes_h">What it does</h2>
       <ul>
-        <li>Forgets history, cookies, form entries and cached files when you close the window.</li>
-        <li>Keeps what you do here apart from your normal windows.</li>
-        <li>Klin's protections stay on: trackers blocked, fingerprints reduced.</li>
+        <li data-i18n="p_y1">Forgets history, cookies, form entries and cached files when you close the window.</li>
+        <li data-i18n="p_y2">Keeps what you do here apart from your normal windows.</li>
+        <li data-i18n="p_y3">Klin's protections stay on: trackers blocked, fingerprints reduced.</li>
       </ul>
     </section>
     <section class="card no">
-      <h2>What it does not hide</h2>
+      <h2 data-i18n="p_no_h">What it does not hide</h2>
       <ul>
-        <li><b>Your internet provider</b>, and the owner of the Wi-Fi network (home, work, school, café): they still see which sites you contact.</li>
-        <li><b>The sites you visit</b>: they see your IP address, and what you do on them.</li>
-        <li><b>Your accounts</b>: once you log in, the site knows who you are.</li>
-        <li><b>What you download or bookmark</b>: it stays on this computer.</li>
+        <li data-i18n="p_n1"><b>Your internet provider</b>, and the owner of the Wi-Fi network (home, work, school, café): they still see which sites you contact.</li>
+        <li data-i18n="p_n2"><b>The sites you visit</b>: they see your IP address, and what you do on them.</li>
+        <li data-i18n="p_n3"><b>Your accounts</b>: once you log in, the site knows who you are.</li>
+        <li data-i18n="p_n4"><b>What you download or bookmark</b>: it stays on this computer.</li>
       </ul>
     </section>
   </div>
 
-  <p class="next">To see what a site can read about you, open it and click <b>What can this site see?</b> in the toolbar.</p>
+  <p class="next" data-i18n="p_next">To see what a site can read about you, open it and click <b>What can this site see?</b> in the toolbar.</p>
 </main>
 <script src="page.js"></script>
 </body>

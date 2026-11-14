@@ -34,9 +34,10 @@ function page(tabId) {
 }
 
 // kind: blocked | sent | limited | tracker | fingerprint.  who: host name.  what: short description.
-function note(tabId, kind, who, what, label) {
+// code and args let the popup show the same line in the user's language; what stays English (and is what the tests read).
+function note(tabId, kind, who, what, label, code, args) {
   const p = page(tabId), key = [kind, who, what].join("|");
-  const entry = p.entries[key] || (p.entries[key] = { kind, who, what, label: label || "", count: 0, own: !isThirdParty(who, p.top) });
+  const entry = p.entries[key] || (p.entries[key] = { kind, who, what, label: label || "", code: code || "", args: args || [], count: 0, own: !isThirdParty(who, p.top) });
   entry.count++;
   badge(tabId);
   save();
@@ -47,8 +48,8 @@ function badge(tabId) {
   const total = list.reduce((n, e) => n + e.count, 0);
   const worry = list.some((e) => e.kind !== "blocked");
   browser.action.setBadgeText({ tabId, text: total ? (total > 99 ? "99+" : String(total)) : "" }).catch(() => {});
-  browser.action.setBadgeBackgroundColor({ tabId, color: worry ? "#a35f00" : "#2f7d5b" }).catch(() => {});
-  browser.action.setBadgeTextColor && browser.action.setBadgeTextColor({ tabId, color: "#ffffff" }).catch(() => {});
+  browser.action.setBadgeBackgroundColor({ tabId, color: worry ? "#ffb020" : "#d4ff2a" }).catch(() => {});
+  browser.action.setBadgeTextColor && browser.action.setBadgeTextColor({ tabId, color: "#0a0a0a" }).catch(() => {});
 }
 
 function classOf(details) {
@@ -69,7 +70,7 @@ browser.webRequest.onBeforeRequest.addListener((details) => {
   const host = hostOf(details.url);
   if (!host || !p.top) return;
   requests.set(details.requestId, { tabId: details.tabId, epoch: p.epoch, host, type: details.type });
-  if (BEACONS.has(details.type) && isThirdParty(host, p.top)) note(details.tabId, "sent", host, "sent data in the background (" + details.type + ")");
+  if (BEACONS.has(details.type) && isThirdParty(host, p.top)) note(details.tabId, "sent", host, "sent data in the background (" + details.type + ")", "", "sent_bg", [details.type]);
 }, { urls: ["<all_urls>"] });
 
 browser.webRequest.onHeadersReceived.addListener((details) => {
@@ -79,9 +80,9 @@ browser.webRequest.onHeadersReceived.addListener((details) => {
   if (known.epoch !== p.epoch) return;
   const third = isThirdParty(known.host, p.top);
   const cls = classOf(details);
-  if (cls) note(known.tabId, "tracker", known.host, cls + ", not blocked", cls);
+  if (cls) note(known.tabId, "tracker", known.host, cls + ", not blocked", cls, "tracker_nb", [cls]);
   if (third && (details.responseHeaders || []).some((h) => h.name.toLowerCase() === "set-cookie")) {
-    note(known.tabId, "limited", known.host, "tried to set a cookie (kept apart for this site only)");
+    note(known.tabId, "limited", known.host, "tried to set a cookie (kept apart for this site only)", "", "cookie");
   }
 }, { urls: ["<all_urls>"] }, ["responseHeaders"]);
 
@@ -92,7 +93,7 @@ browser.webRequest.onErrorOccurred.addListener((details) => {
   const p = page(known.tabId);
   if (known.epoch !== p.epoch) return;            // cancelled because the user left the page, not blocked
   const label = classOf(details) || BLOCKED_ERRORS[details.error];
-  note(known.tabId, "blocked", known.host, "blocked " + known.type + " (" + label + ")", label);
+  note(known.tabId, "blocked", known.host, "blocked " + known.type + " (" + label + ")", label, "blocked", [known.type, label]);
 }, { urls: ["<all_urls>"] });
 
 browser.webRequest.onCompleted.addListener((details) => { requests.delete(details.requestId); }, { urls: ["<all_urls>"] });
@@ -107,7 +108,7 @@ browser.runtime.onMessage.addListener(async (message, sender) => {
   await ready;
   if (message.type === "fingerprint" && sender.tab && API_TEXT[message.api]) {
     if (!page(sender.tab.id).top) page(sender.tab.id).top = hostOf(sender.tab.url);
-    note(sender.tab.id, "fingerprint", message.script, API_TEXT[message.api]);
+    note(sender.tab.id, "fingerprint", message.script, API_TEXT[message.api], "", "api_" + message.api.replace(/-/g, "_"));
   } else if (message.type === "get") {
     const p = page(message.tabId);
     return { top: p.top, entries: Object.values(p.entries) };

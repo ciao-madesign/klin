@@ -1,7 +1,8 @@
 # Proposal – Klin Independent Services (KIS), P42
 
 Status: **accepted by the owner on 17 Nov 2026**, with the corrections below and five decisions. First release (hub + catalogue import) can be built now. Nothing is built yet.
-Received 17 Nov 2026 as "Klin Independent Network (KIN) v1.1" (original kept in [`kin-v1.1-original.it.md`](kin-v1.1-original.it.md)); renamed and corrected here as version 1.2.
+Received 17 Nov 2026 as "Klin Independent Network (KIN) v1.1" (original kept in [`kin-v1.1-original.it.md`](kin-v1.1-original.it.md)); renamed and corrected here as version 1.2 (**part 1**).
+**Part 2, Fediverse integration**, received the same day as "KIN — Fediverse Integration v1.0" (original: [`kin-fediverse-v1.0-original.it.md`](kin-fediverse-v1.0-original.it.md)), is at the end of this file, accepted with the decisions below (P43). It is built **after** the first release of part 1.
 
 ## What it is, in three lines
 An optional module of Klin that helps a person find and open independent, community, federated and self-hosted digital services, from catalogues the person chooses. A directory, not a network and not a provider. Klin runs no server for it.
@@ -33,9 +34,24 @@ An optional module of Klin that helps a person find and open independent, commun
 - Catalogue format and trust rule for signatures (before phase 4).
 - Licence check and the list of catalogue addresses (before the first release offers any).
 
+## Part 2 – Fediverse: owner decisions (17 Nov 2026)
+1. **One hub.** The Fediverse is a kind of service inside KIS (extra card fields, a "Federated" filter), not a second hub. New things (federated addresses, links, exploring one instance) are added to the same module.
+2. **ActivityPub first, architecture open to more.** Addresses and links are understood for ActivityPub only at the start; the code is built to take other federated networks (Matrix, XMPP, Bluesky) one at a time, each with its own decision. The catalogue already lists any federated service as a card.
+3. **Links are recognised only on the user's action** (right-click on text or a link, or an address typed in the address bar with a keyword). No page scanning, no hidden request. "Open on my preferred instance" is a click of the user.
+4. **No social client.** Reading timelines, posting, replying, notifications and OAuth are excluded from this specification (they would make Klin an intermediary of communication, which part 1 and this proposal both forbid). Only a separate specification, asked for by the owner, could bring them back.
+5. **Relations as raw data, on request.** For a single instance, when the user asks, Klin shows the lists that instance itself published (who it federates with, who it blocks and the reason if given), with source and date, no score, no judgement, and the line "This is not a complete map". No walk through other instances.
+6. **Order:** after the first release of part 1 (hub + catalogue import).
+
+## Part 2 – corrections applied without a question
+KIN/"Open Services Hub" become KIS/"Services Hub"; "protection against SSRF" becomes protection against requests to the user's own network (loopback, private and link-local addresses, `.local` and `.internal` names, redirects, DNS answers pointing inside) for every request KIS makes, except an address the user types by hand; requests KIS makes (WebFinger, NodeInfo) are HTTPS only, an `http` entry opens only with Klin's HTTPS warning; same catalogue format and safety rules as part 1 (text only, no remote images or avatars, 1 MB); "Fediverse Profiles" folded into favourites and collections (the name clashed with Community Profiles); the six sections shown only when their function exists; no crawling of peer lists; no remote avatars or icons.
+
+## ADRs and checks to add for part 2
+- Which fields the federated card adds and how they are read (NodeInfo, WebFinger): written with the first step of part 2, with tests against stand-in servers (real Fediverse servers are not reachable from the build environment).
+- Rules for blocking requests to local networks, in one place used by every request KIS makes.
+
 ---
 
-# Specifica — Klin Independent Services (KIS) — Versione 1.2
+# Parte 1 — Specifica — Klin Independent Services (KIS) — Versione 1.2
 
 **Stato:** Accettata dal responsabile del progetto (17 nov 2026), con le correzioni elencate sopra  
 **Progetto:** Klin Browser  
@@ -366,3 +382,261 @@ Klin rimane un browser privacy-first. Klin Independent Services è un modulo che
 Il progetto non deve diventare un provider, un'autorità di certificazione, un social network, un catalogo centralizzato o un intermediario tra utenti e gestori. Il suo ruolo è facilitare la scelta e l'accesso, offrendo strumenti di trasparenza e controllo.
 
 **Principio conclusivo: Klin non deve costruire un Internet alternativo. Deve rendere più facile utilizzare quello indipendente che già esiste.**
+
+
+---
+
+---
+
+# Parte 2 — Integrazione del Fediverso in KIS — Versione 1.0
+
+**Stato:** Accettata dal responsabile del progetto (17 nov 2026), con le decisioni e le correzioni elencate sopra  
+**Progetto:** Klin Browser  
+**Modulo:** KIS — Klin Independent Services (stesso modulo della parte 1)  
+**Ordine di costruzione:** dopo la prima versione della parte 1
+
+---
+
+## 1. Obiettivo
+
+Integrare il Fediverso in Klin per facilitare la scoperta, la consultazione e l'utilizzo di servizi digitali federati.
+
+Klin deve consentire all'utente di:
+- scoprire piattaforme e istanze del Fediverso;
+- confrontare le caratteristiche delle diverse istanze;
+- individuare e raggiungere profili federati;
+- riconoscere e aprire collegamenti federati, su un'azione sua;
+- vedere le informazioni pubbliche che una istanza pubblica sulle sue relazioni;
+- conservare localmente preferenze e cataloghi.
+
+Principi: privacy, decentralizzazione, trasparenza, autonomia dell'utente, nessuna infrastruttura Klin obbligatoria.
+
+### 1.1 Principio fondamentale
+
+Klin non diventa un social network, un'istanza federata o un intermediario della comunicazione. Rende più semplice usare i servizi indipendenti e federati che già esistono.
+
+---
+
+## 2. Ambito
+
+Il Fediverso è un **tipo di servizio dentro KIS**, non un secondo hub: le schede e i cataloghi della parte 1 sono gli stessi, con campi in più e un filtro "Federato". Non è un'applicazione autonoma e non introduce dipendenze da servizi gestiti da Klin.
+
+### 2.1 Servizi
+
+Il catalogo è aperto a qualsiasi servizio federato, come nella parte 1. L'elenco seguente è un esempio, non una lista di ammessi:
+
+| Categoria | Software di riferimento |
+|---|---|
+| Microblogging e social | Mastodon, Pleroma, Misskey, GoToSocial, Friendica |
+| Fotografia | Pixelfed |
+| Video | PeerTube |
+| Comunità e forum | Lemmy |
+| Eventi | Mobilizon |
+| Libri e lettura | BookWyrm |
+| Musica | Funkwhale |
+| Blog e pubblicazione | WriteFreely |
+| Altri servizi | Qualsiasi progetto federato compatibile |
+
+La compatibilità si verifica per singolo software, protocollo e funzione. Non si presume che le piattaforme espongano le stesse funzioni.
+
+### 2.2 Protocolli e standard
+
+Architettura estendibile a più reti federate; si parte da **ActivityPub** (decisione 2). Altre reti (Matrix, XMPP, Bluesky) si aggiungono una per volta, ciascuna con una decisione scritta; nel frattempo compaiono come schede del catalogo, senza riconoscimento di indirizzi e link.
+
+Standard usati: ActivityPub e ActivityStreams 2.0 (modello), WebFinger (identità), NodeInfo (informazioni sull'istanza), HTTPS/TLS. **OAuth non è usato**: il client social è escluso (sezione 5).
+
+---
+
+## 3. Componenti
+
+### 3.1 Scoperta
+
+È il Services Hub della parte 1 con il filtro "Federato": ricerca per nome, categoria, software; inserimento manuale di domini; importazione di cataloghi; filtri per lingua, paese, registrazioni e caratteristiche tecniche, quando presenti. Nessun motore di ricerca centrale di Klin.
+
+### 3.2 Scheda dell'istanza
+
+La scheda della parte 1 con campi in più, ognuno con la sua provenienza (dichiarato dal gestore, pubblicato via API, osservato, non disponibile):
+
+| Campo | Descrizione |
+|---|---|
+| Software e versione | Piattaforma e versione dichiarata o rilevata |
+| Lingue | Lingue supportate |
+| Registrazioni | Aperte, chiuse o limitate |
+| Privacy | Collegamento all'informativa |
+| Federazione | Informazioni pubbliche sulle relazioni (vedi 3.5) |
+| Verifica | Data e metodo dell'ultima verifica |
+
+Un dato che deriva solo dalla dichiarazione del gestore non è presentato come verificato. Le informazioni mancanti si scrivono "non disponibile", senza deduzioni.
+
+### 3.3 Risoluzione delle identità federate
+
+Riconosce identificativi `@utente@dominio`, indirizzi WebFinger, URL di profili e collegamenti ActivityPub.
+
+Flusso:
+1. L'utente indica un'identità (testo selezionato con il tasto destro, oppure indirizzo scritto nella barra con la parola chiave).
+2. Klin individua il dominio.
+3. Chiede il WebFinger **a quel dominio, solo HTTPS, solo dopo l'azione dell'utente**; la richiesta mostra a quel dominio il tuo indirizzo IP, e Klin lo dice.
+4. Controlla che dominio chiesto e risorsa restituita coincidano.
+5. Mostra il risultato; l'utente sceglie se aprire il profilo.
+
+Nessuna rubrica centrale e nessun elenco di identità conservato fuori dal dispositivo.
+
+### 3.4 Gestione dei collegamenti federati
+
+Solo su azione dell'utente (decisione 3): tasto destro su un testo o un link, oppure indirizzo con parola chiave nella barra.
+- identifica la piattaforma di profili e post;
+- apre l'originale, oppure sull'**istanza preferita** per quella categoria, con un clic dell'utente;
+- non scansiona le pagine, non mostra barre automatiche, non fa richieste per "controllare" i link che incontri;
+- non riscrive mai un collegamento senza dirlo; il comportamento normale del browser resta com'è.
+
+### 3.5 Esplorazione di una istanza
+
+Per **una istanza alla volta, su richiesta** (decisione 5), Klin mostra le informazioni che l'istanza stessa pubblica: software e protocolli (NodeInfo), con chi federa, chi blocca e il motivo se lo dice.
+- ogni voce ha fonte e data, ed è distinta tra "pubblicata dall'istanza", "dichiarata dal gestore" e "osservata";
+- nessun punteggio, nessun giudizio, nessuna classifica;
+- una riga fissa: "Non è una mappa completa: le relazioni cambiano, possono essere parziali o non pubbliche.";
+- liste lunghe vengono troncate con un avviso (limite di dimensione);
+- **mai** una scansione delle istanze vicine né delle liste che l'istanza pubblica;
+- i dati sull'infrastruttura (hosting, concentrazioni) richiedono un database esterno e sono approssimati, come nella parte 1 (sezione 8).
+
+### 3.6 Preferenze e identità salvate
+
+Nessuna sezione "profili federati" a parte: le istanze preferite, le raccolte, le note, l'istanza predefinita per categoria e le identità federate salvate stanno nei preferiti e nelle raccolte di KIS e si esportano e importano con essi. Contengono solo dati, mai codice, script o permessi impliciti. Restano nel dispositivo, non cifrati, e non vengono inviati.
+
+---
+
+## 4. Livelli
+
+**Livello 1 — Scoperta:** schede con i campi del Fediverso, filtro "Federato", cataloghi federati, apertura diretta. Nessun account.
+
+**Livello 2 — Integrazione contestuale (su azione dell'utente):** risoluzione WebFinger, riconoscimento di identità e link, apertura sull'istanza preferita, esplorazione di una istanza (NodeInfo e relazioni).
+
+**Livello 3 — Client social:** **escluso** da questa specifica (decisione 4).
+
+---
+
+## 5. Autenticazione e identità
+
+Klin non crea un'identità federata. Gli account restano sulle rispettive istanze; l'utente accede dal sito o dall'app dell'istanza.
+
+Klin non conserva account, password, token OAuth o credenziali, non sincronizza nulla e non ha un database di identità.
+
+---
+
+## 6. Cataloghi
+
+Si usano il modello, il formato JSON e le regole di sicurezza della parte 1 (sezioni 6 e 6.4: solo `http` e `https`, solo testo, nessuna immagine remota, 1 MB, struttura controllata, anteprima dei domini). Per i servizi federati il formato ammette in più campi facoltativi: software, versione, protocolli, registrazioni, lingue. Le firme digitali seguono la regola di fiducia della parte 1; una firma valida non dimostra la correttezza delle informazioni.
+
+---
+
+## 7. Privacy e sicurezza
+
+### 7.1 Comunicazioni
+- Le richieste che KIS fa a servizi esterni (WebFinger, NodeInfo, liste pubblicate) sono **solo HTTPS**, solo su azione dell'utente.
+- Una voce `http` di un catalogo si apre solo con l'avviso normale di Klin sui siti non protetti.
+- Nessun proxy o server Klin, nessuna telemetria, nessun polling, nessuna connessione periodica.
+- Ogni comunicazione di rete di KIS è elencata nella pagina Connessioni.
+
+### 7.2 Isolamento
+Ogni istanza è un'origine indipendente. Cookie, token, credenziali, dati di sessione, permessi e dati personali non si condividono mai tra istanze.
+
+### 7.3 Protezione della rete locale e dalle istanze malevole
+Cataloghi e istanze sono non attendibili. Per ogni richiesta che KIS fa:
+- indirizzi **mai** verso `localhost`, indirizzi privati, indirizzi locali del collegamento, nomi `.local` e `.internal`, né verso un nome che risolve a uno di questi; vale anche a ogni redirect (ogni passaggio ricontrollato, solo HTTPS, massimo pochi passaggi). Fa eccezione solo un indirizzo che l'utente scrive a mano;
+- schemi diversi da `https` rifiutati;
+- risposte oltre 1 MB troncate o rifiutate con un avviso; tempi massimi; una richiesta alla volta;
+- errori del certificato TLS non aggirabili;
+- risposte lette come testo, mai come pagina: niente HTML eseguito, niente XSS possibile;
+- le verifiche sono informative: su una istanza, su richiesta, mai scansioni di reti.
+
+### 7.4 Contenuti
+I contenuti federati sono dati non attendibili: nessun codice di post o profili viene eseguito; nessuna risorsa di terzi caricata in automatico (**niente avatar, icone o immagini remote**, che tracciano); Klin non modifica né pubblica contenuti.
+
+---
+
+## 8. Integrazione con Klin
+
+| Modulo | Integrazione |
+|---|---|
+| KIS / Services Hub | Catalogo, schede e apertura dei servizi |
+| Privacy Engine | Protezione delle comunicazioni |
+| Security Manager | Validazione e regole sulla rete locale |
+| Connections | Elenco delle connessioni di KIS verso le istanze |
+| Regole di instradamento (P32, ADR 0006) | Instradamento scelto dall'utente per le richieste di KIS |
+| Search Intelligence | Ricerca di servizi |
+| Data Manager | Archiviazione locale (ADR 0003) |
+| AI | Ricerca e spiegazione facoltative |
+
+Nessun modulo duplicato quando una funzione esiste già nel core.
+
+---
+
+## 9. AI locale
+
+Valgono la sezione 9 della parte 1 e questi vincoli: l'AI locale (Ollama) può cercare istanze per esigenze, confrontare piattaforme, spiegare i protocolli, riassumere policy pubblicate e segnalare dati mancanti; distingue dati verificati, dichiarazioni e inferenze. Non assegna punteggi politici o di reputazione, non dichiara un'istanza "sicura", non fa registrazioni, non autorizza applicazioni, non pubblica, non cambia impostazioni senza consenso. Nessun contenuto va a servizi AI remoti.
+
+---
+
+## 10. Interfaccia
+
+Un solo hub (KIS). La scheda dell'istanza ha i campi della sezione 3.2, il pulsante per aprirla (in una nuova scheda) e l'aggiunta ai preferiti. Una scheda per un'identità federata mostra nome, identificativo, dominio, indirizzo originale del profilo e piattaforma riconosciuta, con apertura sul servizio originale. Le sezioni (Esplora, Preferiti e raccolte, Impostazioni) compaiono solo quando la loro funzione esiste; l'esplorazione compare con il livello 2.
+
+---
+
+## 11. Requisiti non funzionali
+
+Modulo disattivabile; nessuna telemetria; preferenze e cataloghi locali; nessuna infrastruttura Klin; estendibile a nuove implementazioni; nessuna attività periodica; esportazione e importazione dei dati; accessibilità come il resto del browser; componenti separati e documentati; minimo privilegio (permessi dell'estensione ridotti all'indispensabile, accesso ai siti solo su azione dell'utente).
+
+---
+
+## 12. Roadmap (dopo la prima versione della parte 1)
+
+**Passo A — Schede e cataloghi federati:** campi del Fediverso, filtro "Federato", importazione di cataloghi federati (si appoggia alla parte 1).
+
+**Passo B — Identità e link:** WebFinger, tasto destro su testo e link, parola chiave nella barra, apertura sull'istanza preferita, regole sulla rete locale (una sola funzione usata da ogni richiesta).
+
+**Passo C — Esplorazione di una istanza:** NodeInfo, relazioni pubblicate su richiesta, fonti e date.
+
+**Passo D — Ricerca assistita:** con la Fase 4 della parte 1 e il modulo AI.
+
+**Client social:** non pianificato; richiederebbe una specifica separata voluta dal responsabile.
+
+---
+
+## 13. Criteri di accettazione del Passo A
+
+- [ ] Nell'hub si può filtrare per "Federato".
+- [ ] La scheda di un'istanza mostra i campi del Fediverso, ognuno con provenienza; i dati mancanti sono "non disponibili".
+- [ ] Si può inserire a mano un'istanza e aprirla in una nuova scheda.
+- [ ] Si può importare ed esportare un catalogo federato, con le stesse regole e rifiuti della parte 1.
+- [ ] Nessuna richiesta parte da sola; nessun avatar o immagine remota è caricato.
+- [ ] Non serve un account Klin e non c'è un server Klin.
+
+Criteri del Passo B e C da scrivere quando si arriva lì, secondo le decisioni 3 e 5.
+
+---
+
+## 14. Esclusioni
+
+Client social e qualunque suo elemento (timeline, pubblicazione, notifiche, OAuth, token); gestione centralizzata di account; hosting di istanze; proxy o relay; sincronizzazione automatica; catalogo centrale; valutazioni, punteggi o certificazioni; moderazione centralizzata; scansioni automatiche di istanze o delle loro liste; scansione delle pagine alla ricerca di link federati.
+
+---
+
+## 15. Principi di sviluppo
+
+1. Riutilizzare i moduli e l'architettura già presenti.
+2. Nessuna duplicazione di funzioni.
+3. Nessuna dipendenza cloud proprietaria.
+4. Separare le operazioni locali dalle richieste verso servizi esterni.
+5. Documentare ogni comunicazione di rete.
+6. Rendere esplicite le autorizzazioni richieste.
+7. Usare standard aperti quando disponibili.
+8. Compatibilità progressiva con implementazioni differenti.
+9. Modulo disattivabile senza compromettere il browser.
+10. Klin non controlla e non gestisce il Fediverso.
+
+## 16. Visione finale
+
+Il Fediverso è una parte dell'ecosistema di servizi indipendenti raggiungibili con Klin. L'utente sceglie liberamente quale piattaforma e quale istanza usare, quale identità usare, quali informazioni condividere e quali connessioni autorizzare.
+
+**Klin non deve centralizzare il Fediverso. Deve rendere più semplice esplorarlo, comprenderlo e utilizzarlo, preservandone la natura distribuita.**

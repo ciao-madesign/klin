@@ -14,4 +14,4 @@
 
 Rule: the next number is the highest one on the default branch plus one. Before taking a number, look at the other open branches (`git ls-tree origin/<branch> docs/adr/`), so two sessions do not use the same one.
 
-To write (decided or proposed, needs an ADR before work starts): a privileged helper to apply Firefox's own fixed-time-zone protection (replaces the in-page approximation of ADR 0007), P41: native messaging, installation, permissions), Klin's languages.
+To write (decided or proposed, needs an ADR before work starts): KIS catalogue format and the trust rule for signed catalogues (before KIS phase 4), a privileged helper to apply Firefox's own fixed-time-zone protection (replaces the in-page approximation of ADR 0007), P41: native messaging, installation, permissions), Klin's languages.

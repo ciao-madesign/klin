@@ -55,6 +55,8 @@ Standard is the default level; privacy comes first, then low impact, then securi
 - The resolver list for DoH: no default and nothing preselected (decided 13 Nov 2026, ADR 0005). Decided 14 Nov 2026: four options (Quad9, Mullvad DNS, Cloudflare 1.1.1.1, keep the current one), each with an explanation of what it implies; draft in `docs/proposals/dns-resolvers.md`. Still to do before the screen ships: check every sentence about a service against its primary documents (so far only secondary pages and the operators' own blogs were read).
 - Languages: Italian and English now, in `_locales` of each extension; more later with human-reviewed machine translation.
 
+- **Klin Independent Services (KIS, P42):** accepted by the owner on 17 Nov 2026 (decisions in `docs/proposals/klin-independent-services.md`). Before the first release offers any catalogue address, the licence of each candidate must be checked (not done). Signature trust rule: ADR before phase 4.
+
 ## 6. Pitfalls found (read before changing things)
 - **Unsigned extensions cannot be installed permanently in Firefox release.** Every Klin extension must be signed (unlisted, free) or the build must use another route; see ADR 0004. Until then they only run as temporary installs in tests. Update 14 Nov 2026: all Klin extensions are now signed (ADR 0010) and bundled by `build/bundle-third-party.py`; tested on Firefox 160.0 that `onInstalled` fires at the first start (the welcome page opens) and that the `private_browsing` policy grant works for the honest private window.
 - Prefs go in `browser/defaults/preferences/`, not `defaults/pref/`.
@@ -80,6 +82,7 @@ ADR 0009 (support program for P40 level 2 and P41) is **accepted** (owner, 14 No
 The pages of `username-check`, `alias-registry` and `privacy-level` are on the shared style and have English and Italian messages (`_locales`), covered by the style check. The Italian is written by the session and still needs the owner's read-through. Errors coming from the mail.tm service ("The service answered 503") stay in English.
 
 ## 9. Next steps (suggested order)
+0. KIS first release (P42): hub (phase 1), then catalogue import (phase 2), as `extensions/independent-services`; written decisions in `docs/proposals/klin-independent-services.md`.
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
 2. Privacy levels (P29): done in a first form (`extensions/privacy-level`, ADR 0007); next, apply Firefox's own fixed-time-zone protection instead of the in-page approximation (needs a privileged helper), and Maximum with Tor.
 3. ~~Signing of the extensions~~ done 14 Nov 2026 (ADR 0010; pre-release `extensions-0.1`, pinned, bundled). Tested in the signed bundle: `onInstalled` and the private-window grant in the signed build.

@@ -41,7 +41,8 @@ with Firefox(sys.argv[1]) as ff:
     external = ff.script("return [...document.querySelectorAll('[src],[href]')].map(e => e.src || e.href).filter(u => /^https?:/.test(u))")
     check("it loads nothing from the internet", external == [], external)
 
-    check("the start page has a short text about Klin and a link", "Klin is" in text and bool(ff.script("return document.getElementById('more')")))
+    check("the start page has a short text about Klin and a link", "no telemetry" in text and bool(ff.script("return document.getElementById('more')")))
+    check("two shortcuts: self-test and connections", ff.script("return [...document.querySelectorAll('[data-open]')].map(a => a.dataset.open)") == ["self-test@klin", "connections@klin"])
     before = len(ff.handles())
     ff.script("document.getElementById('more').click()"); time.sleep(3)
     ff.cmd("Marionette:SetContext", {"value": "chrome"})

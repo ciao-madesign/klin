@@ -58,5 +58,17 @@
   },
   "c_check": {
     "message": "These facts come from general knowledge and the operators' own descriptions; each is to be checked against the operator's own policy. Klin takes no money from any search engine."
+  },
+  "n_tools": {
+    "message": "Klin tools"
+  },
+  "n_selftest": {
+    "message": "Test your protection"
+  },
+  "n_connections": {
+    "message": "Klin's connections"
+  },
+  "n_about2": {
+    "message": "No account, no cloud, no telemetry."
   }
 }

@@ -13,3 +13,11 @@ document.getElementById("more").addEventListener("click", (e) => {
   e.preventDefault();
   browser.runtime.sendMessage("welcome@klin", { type: "show" }).catch(() => {});
 });
+
+// The two shortcuts do the same: ask the other Klin extension to open its page.
+for (const link of document.querySelectorAll("[data-open]")) {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    browser.runtime.sendMessage(link.dataset.open, { type: "show" }).catch(() => {});
+  });
+}

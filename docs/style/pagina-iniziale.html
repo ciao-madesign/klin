@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagina iniziale: tre strade</title>
+<link rel="stylesheet" href="../../extensions/_shared/klin.css">
+<style>
+body{padding:24px;max-width:1100px;margin:0 auto}
+.opt{margin:28px 0}
+.frame{border:1px solid var(--line-strong);background:var(--bg);min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:32px 20px 70px;position:relative}
+.frame svg{width:64px;height:64px;color:var(--accent)}
+.frame .w{font:700 2.4rem var(--font-title);letter-spacing:.04em;margin:-8px 0 0}
+.bar{display:flex;width:min(520px,100%)}.bar input{flex:1;height:46px}.bar .btn{height:46px}
+.foot{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--muted);font-size:.85rem}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.chip{font:500 .8rem var(--font-mono);color:var(--muted);text-decoration:none;border:1px solid var(--line-strong);padding:4px 10px;border-radius:3px}
+.chip b{color:var(--accent-text)}
+</style></head><body>
+<h1>Pagina iniziale: tre strade</h1>
+<p class="lead">Cosa si vede aprendo una nuova scheda. Non mostra nulla da internet e non salva cronologia.</p>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="l" viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></symbol></defs></svg>
+
+<section class="opt"><h2>A. Solo cerca</h2>
+<div class="frame"><svg><use href="#l"/></svg><p class="w">Klin</p>
+<div class="bar"><input type="search" placeholder="Cerca"><span class="btn primary">Cerca</span></div>
+<p class="foot">Klin è un browser libero e indipendente. Niente account, niente cloud, niente telemetria.</p></div>
+<p class="muted">Pro: veloce, nessuna distrazione. Contro: non dice niente di più su Klin.</p></section>
+
+<section class="opt"><h2>B. Cerca + stato (consigliata)</h2>
+<div class="frame"><svg><use href="#l"/></svg><p class="w">Klin</p>
+<div class="bar"><input type="search" placeholder="Cerca"><span class="btn primary">Cerca</span></div>
+<div class="chips"><a class="chip" href="#">Protezione: <b>Standard</b></a><a class="chip" href="#">Prova la tua protezione</a><a class="chip" href="#">Connessioni di Klin</a></div>
+<p class="foot">Niente account, niente cloud, niente telemetria.</p></div>
+<p class="muted">Pro: collega la pagina alle funzioni vere (livelli, auto-test, connessioni). Contro: tre link in più; il livello va letto dalle impostazioni.</p></section>
+
+<section class="opt"><h2>C. Cerca + frase forte</h2>
+<div class="frame"><svg><use href="#l"/></svg><p class="w">Klin</p>
+<p style="margin:0;font:700 1.2rem var(--font-title)">Il browser <mark>non ti spia</mark>. Verificalo.</p>
+<div class="bar"><input type="search" placeholder="Cerca"><span class="btn primary">Cerca</span></div>
+<p class="foot">Klin non promette anonimato: riduce ciò che si può sapere di te.</p></div>
+<p class="muted">Pro: voce Klin a ogni apertura. Contro: stanca presto; la frase si ripete ogni volta.</p></section>
+</body></html>

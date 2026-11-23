@@ -38,7 +38,7 @@ with Firefox(sys.argv[1]) as ff:
     ff.script("document.getElementById('form').requestSubmit();"); time.sleep(1)
     check("step 2 of 2 is the DNS service", "Step 2 of 2" in ff.script("return document.getElementById('step').textContent"))
     names = ff.script("return [...document.querySelectorAll('#dns h2')].map((h) => h.textContent)")
-    check("four DNS options, 'keep your current one' last", names == ["Quad9", "Mullvad DNS", "Cloudflare 1.1.1.1", "Keep your current one"], names)
+    check("three DNS options, 'keep your current one' last", names == ["Quad9", "Cloudflare 1.1.1.1", "Keep your current one"], names)
     check("nothing is imposed: no service is preselected except 'current'", ff.script("return document.querySelector('#dns input:checked').value") == "current")
     check("the button says Done", ff.script("return document.getElementById('go').textContent") == "Done")
     shot(ff, "step2.png")

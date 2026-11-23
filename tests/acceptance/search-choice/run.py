@@ -27,6 +27,10 @@ with Firefox(sys.argv[1]) as ff:
     ext = ff.install_addon(ROOT / "extensions/newtab")
     time.sleep(4)
     first = tabs(ff)
+    ff.navigate(ff.addon_url(ext, "page/index.html")); time.sleep(1)
+    names = ff.async_script("const done = arguments[arguments.length - 1]; browser.search.get().then((l) => done(l.map((e) => e.name)));")
+    check("(setup) the Firefox copy has Klin's policies: Mojeek and Ecosia are installed engines", "Mojeek" in names and "Ecosia" in names,
+          "engines: %s; copy config/policies/policies.json into FIREFOX_DIR/distribution/" % names)
     check("at first install the choice page opens, once", sum(u.endswith("/page/choose.html") for u in first) == 1, first)
     ff.navigate(ff.addon_url(ext, "page/choose.html?lang=en")); time.sleep(1.5)
     names = ff.script("return [...document.querySelectorAll('.engine h2')].map((h) => h.textContent)")

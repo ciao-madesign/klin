@@ -70,5 +70,32 @@
   },
   "n_about2": {
     "message": "No account, no cloud, no telemetry."
+  },
+  "c_step": {
+    "message": "Step {1} of {2}"
+  },
+  "c_next": {
+    "message": "Next"
+  },
+  "c_back": {
+    "message": "Back"
+  },
+  "c_done": {
+    "message": "Done"
+  },
+  "c_engine_step": {
+    "message": "Search engine"
+  },
+  "d_step": {
+    "message": "DNS service"
+  },
+  "d_title": {
+    "message": "Who do you want to see the sites you look up?"
+  },
+  "d_lead": {
+    "message": "Every time you open a site, your computer asks a service where it is. That service knows which sites you look up. You choose who. No choice makes you anonymous: you move the trust, you do not remove it."
+  },
+  "c_summary": {
+    "message": "Your choices: search engine {1}; DNS service {2}. You can change them later."
   }
 }

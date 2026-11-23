@@ -49,6 +49,7 @@ function badge(tabId) {
   const worry = list.some((e) => e.kind !== "blocked");
   browser.action.setBadgeText({ tabId, text: total ? (total > 99 ? "99+" : String(total)) : "" }).catch(() => {});
   browser.action.setBadgeBackgroundColor({ tabId, color: worry ? "#ffb020" : "#d4ff2a" }).catch(() => {});
+  browser.action.setIcon({ tabId, path: total ? "icon-alert.svg" : "icon.svg" }).catch(() => {});
   browser.action.setBadgeTextColor && browser.action.setBadgeTextColor({ tabId, color: "#0a0a0a" }).catch(() => {});
 }
 

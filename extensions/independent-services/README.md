@@ -36,4 +36,4 @@ English and Italian (`_locales`); `?lang=it` forces one. The Italian still needs
 - Not tried against real catalogues: only against files and an https stand-in made for the tests.
 
 ## Tests
-`node tests/acceptance/independent-services/unit.js` (25) and `unit-catalogue.js` (36); `python3 tests/acceptance/independent-services/run.py FIREFOX_DIR` (23, real Firefox) and `run-import.py` (32, real Firefox, https stand-in).
+`node tests/acceptance/independent-services/unit.js` (25) and `unit-catalogue.js` (36); `python3 tests/acceptance/independent-services/run.py FIREFOX_DIR` (23, real Firefox) and `run-import.py` (31, real Firefox, https stand-in).

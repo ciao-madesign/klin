@@ -26,3 +26,13 @@ a.open { display: inline-block; padding: .5rem 1rem; border: 1px solid var(--acc
 .card .old { color: var(--warning); }
 .card .actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
 .card p { margin: 0; overflow-wrap: anywhere; }
+.preview { background: var(--surface); border: 1px solid var(--accent); border-radius: var(--radius); padding: 1rem; margin: 1rem 0; }
+.preview h3, .preview h4 { margin: .5rem 0; }
+.strong { font-weight: 700; font-size: 1.1em; }
+.error { color: var(--error); }
+.filebox { display: grid; gap: .25rem; margin: .75rem 0; }
+.row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; }
+table { width: 100%; border-collapse: collapse; margin: .5rem 0; }
+th, td { text-align: left; padding: .35rem .5rem; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.flag { color: var(--warning); }
+#catGo, #catImport { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; }

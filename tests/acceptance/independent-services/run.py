@@ -33,7 +33,9 @@ with Firefox(sys.argv[1]) as ff:
     before = ff.handles()
     ff.click_action(kis)
     tab = ff.switch_to_new_tab(before)
-    check("the toolbar button opens the page", tab is not None and "page/index.html" in ff.script("return location.href"))
+    try: ff.wait_for("location.href.includes('page/index.html')", 15); opened = True
+    except Exception: opened = False
+    check("the toolbar button opens the page", tab is not None and opened)
     ff.navigate(ff.addon_url(kis, "page/index.html")); time.sleep(1)
     check("title and empty state", ff.script("return document.title") == "Independent services" and "Nothing here yet" in ff.script("return document.getElementById('empty').textContent") and names(ff) == [])
     text = ff.script("return document.body.innerText")

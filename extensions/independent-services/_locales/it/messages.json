@@ -51,7 +51,7 @@
     "message": "Ordine alfabetico. I tuoi preferiti vengono per primi. Niente punteggi, niente classifica."
   },
   "kis_empty": {
-    "message": "Qui non c'è ancora niente. Aggiungi un servizio a mano qui sotto."
+    "message": "Qui non c'è ancora niente. Carica un catalogo qui sotto, o aggiungi un servizio a mano."
   },
   "kis_nomatch": {
     "message": "Nessun servizio corrisponde."
@@ -236,6 +236,150 @@
   "kis_not_h": {
     "message": "Cosa non fa"
   },
+  "kis_c_h": {
+    "message": "Cataloghi"
+  },
+  "kis_c_lead": {
+    "message": "Un catalogo è un file di servizi fatto da qualcun altro: una comunità, un'associazione, una persona. Non si carica niente finché non lo chiedi, e vedi ogni dominio prima che venga salvato qualcosa."
+  },
+  "kis_c_addr": {
+    "message": "Indirizzo di un catalogo (solo https)"
+  },
+  "kis_c_go": {
+    "message": "Scarica e mostra l'anteprima"
+  },
+  "kis_c_goinfo": {
+    "message": "Questo contatta quel server, che vede il tuo indirizzo IP. Klin chiede il permesso per quel solo server, e lo ritira subito dopo."
+  },
+  "kis_c_file": {
+    "message": "Oppure apri un file da questo dispositivo"
+  },
+  "kis_c_pub_h": {
+    "message": "Cataloghi pubblici"
+  },
+  "kis_c_pub_none": {
+    "message": "Klin non offre ancora nessun catalogo pubblico. Prima di offrirne uno si controlla la sua licenza. Puoi incollare qui sopra l'indirizzo di un catalogo qualsiasi."
+  },
+  "kis_c_pub_use": {
+    "message": "Usa questo indirizzo"
+  },
+  "kis_c_pub_by": {
+    "message": "di {1}, licenza {2}"
+  },
+  "kis_c_prev_h": {
+    "message": "Anteprima: non è ancora stato salvato niente"
+  },
+  "kis_c_prev_from": {
+    "message": "{1}, di {2}"
+  },
+  "kis_c_prev_meta": {
+    "message": "Versione {1}, pubblicato il {2}, licenza {3}"
+  },
+  "kis_c_prev_src": {
+    "message": "Indirizzo: {1}"
+  },
+  "kis_c_prev_profile": {
+    "message": "Questo è un profilo di comunità: un insieme di servizi. Non può cambiare nessuna impostazione del browser."
+  },
+  "kis_c_prev_sum": {
+    "message": "{1} nuovi, {2} cambiati, {3} tolti, {4} invariati, {5} saltati perché l'indirizzo è già nel tuo elenco da un'altra fonte."
+  },
+  "kis_c_prev_ignored": {
+    "message": "Ignorato, mai applicato: {1}"
+  },
+  "kis_c_prev_dom": {
+    "message": "Ogni dominio di questo file"
+  },
+  "kis_c_dom_host": {
+    "message": "Dominio"
+  },
+  "kis_c_dom_n": {
+    "message": "Servizi"
+  },
+  "kis_c_dom_note": {
+    "message": "Nota"
+  },
+  "kis_c_look": {
+    "message": "assomiglia a {1}"
+  },
+  "kis_c_enc": {
+    "message": "scritto con altri alfabeti: {1}"
+  },
+  "kis_c_import": {
+    "message": "Importa"
+  },
+  "kis_c_cancel": {
+    "message": "Annulla"
+  },
+  "kis_c_done": {
+    "message": "Importati {1} servizi da {2}."
+  },
+  "kis_c_inst_h": {
+    "message": "I tuoi cataloghi"
+  },
+  "kis_c_inst_none": {
+    "message": "Ancora nessuno."
+  },
+  "kis_c_inst_line": {
+    "message": "{1} servizi, importato il {2}"
+  },
+  "kis_c_on": {
+    "message": "Mostra i suoi servizi"
+  },
+  "kis_c_update": {
+    "message": "Aggiorna dal suo indirizzo"
+  },
+  "kis_c_restore": {
+    "message": "Torna alla versione precedente"
+  },
+  "kis_c_remove": {
+    "message": "Togli con i suoi servizi"
+  },
+  "kis_c_from": {
+    "message": "Dal catalogo: {1}"
+  },
+  "kis_ce_size": {
+    "message": "Il file supera 1 MB. Non è stato importato niente."
+  },
+  "kis_ce_json": {
+    "message": "Questo non è un file JSON. Non è stato importato niente."
+  },
+  "kis_ce_format": {
+    "message": "Questo non è un catalogo Klin (formato 1). Non è stato importato niente."
+  },
+  "kis_ce_field": {
+    "message": "Il campo “{1}” manca o non è valido. Non è stato importato niente."
+  },
+  "kis_ce_many": {
+    "message": "Ci sono più di {1} servizi. Non è stato importato niente."
+  },
+  "kis_ce_empty": {
+    "message": "Il catalogo non ha servizi. Non è stato importato niente."
+  },
+  "kis_ce_service": {
+    "message": "Il servizio numero {1} non è valido ({2}). Non è stato importato niente."
+  },
+  "kis_cp_name": {
+    "message": "nome mancante"
+  },
+  "kis_cp_url": {
+    "message": "indirizzo non ammesso"
+  },
+  "kis_cp_date": {
+    "message": "data non valida"
+  },
+  "kis_ce_https": {
+    "message": "Si possono scaricare solo indirizzi https://."
+  },
+  "kis_ce_net": {
+    "message": "Non è stato possibile scaricarlo: {1}. Non è stato importato niente."
+  },
+  "kis_ce_perm": {
+    "message": "Il permesso di contattare quel server non è stato dato. Non è stato scaricato niente."
+  },
+  "kis_cat_cap": {
+    "message": "Le schede di un catalogo mostrano da dove vengono. Se spegni un catalogo o lo togli, le sue schede se ne vanno con lui."
+  },
   "kis_not1": {
     "message": "**Non giudica nessuno.** Klin non dà punteggi di indipendenza, fiducia o etica. Decidi tu con i filtri."
   },
@@ -243,7 +387,7 @@
     "message": "==Resta solo su questo dispositivo==, nel tuo profilo Klin, non cifrato. Non viene inviato niente e niente si collega da solo."
   },
   "kis_not3": {
-    "message": "**Non controlla i servizi.** Date e dettagli sono quelli scritti da te o dalla fonte. Klin non li ha verificati."
+    "message": "**Non controlla né i servizi né i cataloghi.** Date e dettagli sono quelli scritti da te o dal catalogo. Klin non li ha verificati."
   },
   "kis_not4": {
     "message": "Apre un servizio in una nuova scheda, nel modo normale. Nessun proxy Klin, nessun account Klin."

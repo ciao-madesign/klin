@@ -190,5 +190,158 @@
   },
   "ar_d_msg_fail": {
     "message": "Could not open the message: {1}"
+  },
+  "g_title": {
+    "message": "Protect your email"
+  },
+  "g_lead": {
+    "message": "In a few steps: stop giving every website your real address. Klin shows you the way. Klin runs nothing for this."
+  },
+  "g_step": {
+    "message": "Step {1} of {2}"
+  },
+  "g_back": {
+    "message": "Back"
+  },
+  "g_next": {
+    "message": "Next"
+  },
+  "g_done": {
+    "message": "Done"
+  },
+  "g_s1_h": {
+    "message": "What this is"
+  },
+  "g_s1_p1": {
+    "message": "Today you give your real email address to every site. They sell it, leak it, or use it to recognise you everywhere."
+  },
+  "g_s1_p2": {
+    "message": "A **mail gateway** gives you a different address for each site. Everything arrives in your normal mailbox, but ==the site never learns who you are==."
+  },
+  "g_s1_p3": {
+    "message": "If one address gets spam, you know who passed it on, and you close only that one. If a site is breached, your real address is not in it."
+  },
+  "g_s1_p4": {
+    "message": "Klin does not run a gateway and never will. You use one that you choose, or one on your own domain. Klin only explains it and keeps your list."
+  },
+  "g_s2_h": {
+    "message": "Which way?"
+  },
+  "g_s2_q": {
+    "message": "Do you own an internet domain (like yourname.org)?"
+  },
+  "g_s2_no": {
+    "message": "No, I want the easy way: a service that does it for me"
+  },
+  "g_s2_yes": {
+    "message": "Yes, I want to use my own domain"
+  },
+  "g_s2_no_d": {
+    "message": "You make an account with a service. It forwards mail to you. It can see the mail that passes through it."
+  },
+  "g_s2_yes_d": {
+    "message": "No third party between the site and you, except your own mail provider. It takes a little more work."
+  },
+  "g_a3_h": {
+    "message": "Pick a service"
+  },
+  "g_a3_p1": {
+    "message": "These two publish their code, so anyone can check it. Plans, limits and prices change: read them on their site before you decide."
+  },
+  "g_a3_sl": {
+    "message": "SimpleLogin (opens in a new tab)"
+  },
+  "g_a3_ad": {
+    "message": "addy.io (opens in a new tab)"
+  },
+  "g_a3_p2": {
+    "message": "Klin does not recommend one. Being named here is not an approval. You make the account on their site, not in Klin, and they see your address and the mail that passes through them."
+  },
+  "g_a4_h": {
+    "message": "Make your first alias"
+  },
+  "g_a4_p1": {
+    "message": "On the service's site, make one new address for one website you use. Give it a name you will recognise, like the site's name."
+  },
+  "g_a4_p2": {
+    "message": "Then use that address on that website, instead of your real one. You can change it in the website's account settings."
+  },
+  "g_d3_h": {
+    "message": "What you need"
+  },
+  "g_d3_p1": {
+    "message": "A domain you own, and a mail provider that lets you ==receive everything sent to that domain== in one mailbox. This is often called “catch-all”."
+  },
+  "g_d3_p2": {
+    "message": "Not every provider offers it, and some charge for it. Check your provider's help pages. Klin cannot see your account and cannot change it."
+  },
+  "g_d4_h": {
+    "message": "Switch it on"
+  },
+  "g_d4_p1": {
+    "message": "In your provider's settings, turn on catch-all for your domain, so that mail to any name before the @ reaches your mailbox."
+  },
+  "g_d4_p2": {
+    "message": "Test it: send a message from another address to a name you invented. If it arrives, it works."
+  },
+  "g_d4_p3": {
+    "message": "Your provider can see your mail, like always. Anyone who guesses a name on your domain can write to you: if one address gets spam, close it by changing that name in your mail settings."
+  },
+  "g_d5_h": {
+    "message": "Make an address for a site"
+  },
+  "g_d5_domain": {
+    "message": "Your domain"
+  },
+  "g_d5_site": {
+    "message": "The website"
+  },
+  "g_d5_make": {
+    "message": "Make the address"
+  },
+  "g_d5_result": {
+    "message": "Use this address on that website:"
+  },
+  "g_d5_err": {
+    "message": "Write your domain and the website."
+  },
+  "g_save_h": {
+    "message": "Write it in your list"
+  },
+  "g_save_p": {
+    "message": "So that later you know who got which address, and who passed it on."
+  },
+  "g_save_alias": {
+    "message": "The address"
+  },
+  "g_save_site": {
+    "message": "Given to (site)"
+  },
+  "g_save_btn": {
+    "message": "Save in my list"
+  },
+  "g_saved": {
+    "message": "Saved. You can see it in your list."
+  },
+  "g_open_list": {
+    "message": "Open my list"
+  },
+  "g_not_h": {
+    "message": "What this does not do"
+  },
+  "g_not1": {
+    "message": "**It does not make you anonymous.** Sites still see your internet address. This hides only your email address."
+  },
+  "g_not2": {
+    "message": "**The service or provider can read the mail that passes through it.** Choose one you trust, and do not use these addresses for your bank."
+  },
+  "g_not3": {
+    "message": "Klin runs no gateway, makes no account for you and sees nothing of your mail. This guide loads nothing from the internet."
+  },
+  "ar_guide_link": {
+    "message": "New here? Protect your email in a few steps"
+  },
+  "ar_guide_back": {
+    "message": "Back to my list"
   }
 }

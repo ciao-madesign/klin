@@ -118,5 +118,17 @@
   },
   "g_foot": {
     "message": "This page is part of the browser. It loads nothing from the internet. The Greenweb link contacts a website only if you click it."
+  },
+  "w_mail_h": {
+    "message": "Protect your email"
+  },
+  "w_mail_p": {
+    "message": "Give each website a different address, so none of them learns your real one. In a few steps, with a service you choose or your own domain. Klin runs nothing for it."
+  },
+  "w_mail_btn": {
+    "message": "Start the guide"
+  },
+  "w_mail_missing": {
+    "message": "The guide is part of the alias registry, which is not installed here."
   }
 }

@@ -34,6 +34,7 @@ Open reconciliation: bring this branch into the default branch (pull request, on
 | Build step that bundles Greenweb (signed `.xpi`, sha256 checked, in `distribution/extensions`, removable for good) | `build/bundle-third-party.py` | ADR 0004 | `acceptance/bundle` |
 | Privacy level (Standard / Advanced; Anonymous waits for Tor) | `extensions/privacy-level` | P29 | `acceptance/privacy-level` |
 | Klin Independent Services, hub (cards, search, favourites, open in a new tab; catalogue import still to come) | `extensions/independent-services` | P42 | `acceptance/independent-services` (+ `unit.js`) |
+| Mail gateway guide ("Protect your email": service or own domain, 5–6 steps) | `extensions/alias-registry` (`page/guide.html`) + card in `extensions/welcome` | P44 | `acceptance/alias-registry/run-guide.py` |
 | Alias registry (which alias went to which site, who leaked it) | `extensions/alias-registry` | P26 | `acceptance/alias-registry` (+ `unit.js`, `run-disposable.py`) |
 | Username check: where a username exists (Sherlock site list, pinned) | `extensions/username-check` | P38 | `acceptance/username-check` (+ `unit.js`) |
 

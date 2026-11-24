@@ -12,6 +12,7 @@
 | `baseline/` | traffic, CPU and RAM against stock Firefox (tools ready, measurement pending) | see its README |
 | `acceptance/ubo` | uBlock Origin blocks ads and trackers on a mock page | `run.sh` |
 | `acceptance/webext`, `acceptance/storage-bench` | WebExtensions capability probe (MV2/MV3) and storage benchmark (from another session) | see their READMEs |
+| `acceptance/alias-registry/run-guide.py` | the mail gateway guide and its link from the welcome page | `python3 tests/acceptance/alias-registry/run-guide.py FIREFOX_DIR` |
 | `acceptance/connections`, `self-test`, `lookalike`, `photo-privacy`, `private-window`, `attempts-log`, `welcome`, `username-check`, `alias-registry`, `privacy-level`, `independent-services` | one per Klin extension | `python3 tests/acceptance/<name>/run.py FIREFOX_DIR` (also `unit.js` with node where present) |
 | `acceptance/cookie-banners` | the cookie-notice lists hide banners, with the real policy | `run.py FIREFOX_DIR` (needs network; modifies `FIREFOX_DIR`, use a copy) |
 

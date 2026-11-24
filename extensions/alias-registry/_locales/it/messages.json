@@ -190,5 +190,158 @@
   },
   "ar_d_msg_fail": {
     "message": "Non sono riuscito ad aprire il messaggio: {1}"
+  },
+  "g_title": {
+    "message": "Proteggi la tua email"
+  },
+  "g_lead": {
+    "message": "In pochi passi: smetti di dare a ogni sito il tuo vero indirizzo. Klin ti mostra la strada. Klin non gestisce niente di tutto questo."
+  },
+  "g_step": {
+    "message": "Passo {1} di {2}"
+  },
+  "g_back": {
+    "message": "Indietro"
+  },
+  "g_next": {
+    "message": "Avanti"
+  },
+  "g_done": {
+    "message": "Fatto"
+  },
+  "g_s1_h": {
+    "message": "Cos'è"
+  },
+  "g_s1_p1": {
+    "message": "Oggi dai il tuo vero indirizzo a ogni sito. Lo vendono, lo perdono, o lo usano per riconoscerti ovunque."
+  },
+  "g_s1_p2": {
+    "message": "Un **gateway di posta** ti dà un indirizzo diverso per ogni sito. Tutto arriva nella tua casella di sempre, ma ==il sito non scopre mai chi sei==."
+  },
+  "g_s1_p3": {
+    "message": "Se un indirizzo riceve spam, sai chi l'ha passato e chiudi solo quello. Se un sito viene violato, il tuo vero indirizzo non c'è."
+  },
+  "g_s1_p4": {
+    "message": "Klin non gestisce un gateway e non lo farà mai. Ne usi uno che scegli tu, oppure uno sul tuo dominio. Klin lo spiega soltanto e tiene il tuo elenco."
+  },
+  "g_s2_h": {
+    "message": "Quale strada?"
+  },
+  "g_s2_q": {
+    "message": "Hai un dominio internet tuo (come tuonome.org)?"
+  },
+  "g_s2_no": {
+    "message": "No, voglio la via facile: un servizio che lo fa per me"
+  },
+  "g_s2_yes": {
+    "message": "Sì, voglio usare il mio dominio"
+  },
+  "g_s2_no_d": {
+    "message": "Crei un account presso un servizio. Lui ti inoltra la posta. Può vedere la posta che passa da lui."
+  },
+  "g_s2_yes_d": {
+    "message": "Nessun terzo tra il sito e te, a parte il tuo provider di posta. Richiede un po' più di lavoro."
+  },
+  "g_a3_h": {
+    "message": "Scegli un servizio"
+  },
+  "g_a3_p1": {
+    "message": "Questi due pubblicano il loro codice, quindi chiunque può controllarlo. Piani, limiti e prezzi cambiano: leggili sul loro sito prima di decidere."
+  },
+  "g_a3_sl": {
+    "message": "SimpleLogin (si apre in una nuova scheda)"
+  },
+  "g_a3_ad": {
+    "message": "addy.io (si apre in una nuova scheda)"
+  },
+  "g_a3_p2": {
+    "message": "Klin non ne consiglia uno. Essere nominato qui non è un'approvazione. L'account lo crei sul loro sito, non in Klin, e loro vedono il tuo indirizzo e la posta che passa da loro."
+  },
+  "g_a4_h": {
+    "message": "Crea il tuo primo alias"
+  },
+  "g_a4_p1": {
+    "message": "Sul sito del servizio, crea un nuovo indirizzo per un sito che usi. Dagli un nome che riconosci, come il nome del sito."
+  },
+  "g_a4_p2": {
+    "message": "Poi usa quell'indirizzo su quel sito, al posto del tuo vero. Lo puoi cambiare nelle impostazioni dell'account del sito."
+  },
+  "g_d3_h": {
+    "message": "Cosa serve"
+  },
+  "g_d3_p1": {
+    "message": "Un dominio tuo e un provider di posta che ti permette di ==ricevere tutto quello che arriva a quel dominio== in una sola casella. Spesso si chiama “catch-all”."
+  },
+  "g_d3_p2": {
+    "message": "Non tutti i provider lo offrono e alcuni lo fanno pagare. Controlla le pagine di aiuto del tuo provider. Klin non vede il tuo account e non può cambiarlo."
+  },
+  "g_d4_h": {
+    "message": "Attivalo"
+  },
+  "g_d4_p1": {
+    "message": "Nelle impostazioni del tuo provider, attiva il catch-all per il tuo dominio, così la posta a qualsiasi nome prima della @ arriva nella tua casella."
+  },
+  "g_d4_p2": {
+    "message": "Provalo: da un altro indirizzo scrivi a un nome inventato. Se arriva, funziona."
+  },
+  "g_d4_p3": {
+    "message": "Il tuo provider vede la tua posta, come sempre. Chiunque indovini un nome sul tuo dominio può scriverti: se un indirizzo riceve spam, chiudilo togliendo quel nome nelle impostazioni della posta."
+  },
+  "g_d5_h": {
+    "message": "Crea un indirizzo per un sito"
+  },
+  "g_d5_domain": {
+    "message": "Il tuo dominio"
+  },
+  "g_d5_site": {
+    "message": "Il sito"
+  },
+  "g_d5_make": {
+    "message": "Crea l'indirizzo"
+  },
+  "g_d5_result": {
+    "message": "Usa questo indirizzo su quel sito:"
+  },
+  "g_d5_err": {
+    "message": "Scrivi il tuo dominio e il sito."
+  },
+  "g_save_h": {
+    "message": "Scrivilo nel tuo elenco"
+  },
+  "g_save_p": {
+    "message": "Così poi sai chi ha avuto quale indirizzo, e chi l'ha passato."
+  },
+  "g_save_alias": {
+    "message": "L'indirizzo"
+  },
+  "g_save_site": {
+    "message": "Dato a (sito)"
+  },
+  "g_save_btn": {
+    "message": "Salva nel mio elenco"
+  },
+  "g_saved": {
+    "message": "Salvato. Lo vedi nel tuo elenco."
+  },
+  "g_open_list": {
+    "message": "Apri il mio elenco"
+  },
+  "g_not_h": {
+    "message": "Cosa non fa"
+  },
+  "g_not1": {
+    "message": "**Non ti rende anonimo.** I siti vedono ancora il tuo indirizzo internet. Qui si nasconde solo il tuo indirizzo email."
+  },
+  "g_not2": {
+    "message": "**Il servizio o il provider può leggere la posta che passa da lui.** Scegline uno di cui ti fidi, e non usare questi indirizzi per la banca."
+  },
+  "g_not3": {
+    "message": "Klin non gestisce nessun gateway, non crea account per te e non vede la tua posta. Questa guida non carica niente da internet."
+  },
+  "ar_guide_link": {
+    "message": "Nuovo qui? Proteggi la tua email in pochi passi"
+  },
+  "ar_guide_back": {
+    "message": "Torna al mio elenco"
   }
 }

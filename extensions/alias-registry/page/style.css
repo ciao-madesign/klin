@@ -27,3 +27,10 @@ fieldset { border: 0; padding: 0; margin: 1rem 0; display: grid; gap: .75rem; }
 .level[aria-disabled=true] { opacity: .6; }
 .level h3 { margin: 0; }
 .level .does, .level .cost, .level .hides { grid-column: 2; margin: .15rem 0; }
+.step h2 { margin-top: 0; }
+.nav { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin: 1.5rem 0; }
+#next { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; }
+.choice { display: flex; gap: .75rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: .75rem 1rem; }
+.links { padding-left: 1.2rem; }
+code { overflow-wrap: anywhere; }
+a.guide { display: inline-block; margin: .5rem 0 1rem; }

@@ -33,6 +33,7 @@ Open reconciliation: bring this branch into the default branch (pull request, on
 | Klin look: theme and start page / new tab; Firefox onboarding off (stage 1 of the identity, no patch) | `extensions/theme`, `extensions/newtab`, `config/` | owner feedback 14 Nov | `acceptance/newtab` |
 | Build step that bundles Greenweb (signed `.xpi`, sha256 checked, in `distribution/extensions`, removable for good) | `build/bundle-third-party.py` | ADR 0004 | `acceptance/bundle` |
 | Privacy level (Standard / Advanced; Anonymous waits for Tor) | `extensions/privacy-level` | P29 | `acceptance/privacy-level` |
+| Klin Independent Services, hub (cards, search, favourites, open in a new tab; catalogue import still to come) | `extensions/independent-services` | P42 | `acceptance/independent-services` (+ `unit.js`) |
 | Alias registry (which alias went to which site, who leaked it) | `extensions/alias-registry` | P26 | `acceptance/alias-registry` (+ `unit.js`, `run-disposable.py`) |
 | Username check: where a username exists (Sherlock site list, pinned) | `extensions/username-check` | P38 | `acceptance/username-check` (+ `unit.js`) |
 
@@ -82,7 +83,7 @@ ADR 0009 (support program for P40 level 2 and P41) is **accepted** (owner, 14 No
 The pages of `username-check`, `alias-registry` and `privacy-level` are on the shared style and have English and Italian messages (`_locales`), covered by the style check. The Italian is written by the session and still needs the owner's read-through. Errors coming from the mail.tm service ("The service answered 503") stay in English.
 
 ## 9. Next steps (suggested order)
-0. KIS first release (P42): hub (phase 1), then catalogue import (phase 2), as `extensions/independent-services`; written decisions in `docs/proposals/klin-independent-services.md`.
+0. KIS first release (P42): hub (phase 1) is built; catalogue import (phase 2) is next, in `extensions/independent-services`; written decisions in `docs/proposals/klin-independent-services.md`.
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
 2. Privacy levels (P29): done in a first form (`extensions/privacy-level`, ADR 0007); next, apply Firefox's own fixed-time-zone protection instead of the in-page approximation (needs a privileged helper), and Maximum with Tor.
 3. ~~Signing of the extensions~~ done 14 Nov 2026 (ADR 0010; pre-release `extensions-0.1`, pinned, bundled). Tested in the signed bundle: `onInstalled` and the private-window grant in the signed build.

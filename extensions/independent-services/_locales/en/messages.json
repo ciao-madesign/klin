@@ -1,0 +1,251 @@
+{
+  "name": {
+    "message": "Klin Independent Services"
+  },
+  "description": {
+    "message": "A local directory of services you can choose from: email, chat, hosting and more. Kept on this device. No Klin servers."
+  },
+  "title": {
+    "message": "Independent services"
+  },
+  "kis_title": {
+    "message": "Independent services"
+  },
+  "kis_lead": {
+    "message": "A directory on your own device. You search it, you add to it, you open what you pick. Klin runs no server for it and does not choose for you."
+  },
+  "kis_fixed1": {
+    "message": "**Being in the list is not an approval.** The service may have changed, disappeared or be malicious."
+  },
+  "kis_fixed2": {
+    "message": "KIS does not certify, guarantee or host anything. Every link takes you to a third party who sees your IP address."
+  },
+  "kis_find_h": {
+    "message": "Find"
+  },
+  "kis_search": {
+    "message": "Search"
+  },
+  "kis_search_ph": {
+    "message": "name, software, country…"
+  },
+  "kis_category": {
+    "message": "Category"
+  },
+  "kis_all": {
+    "message": "All categories"
+  },
+  "kis_model": {
+    "message": "Run by"
+  },
+  "kis_any": {
+    "message": "Anyone"
+  },
+  "kis_favonly": {
+    "message": "Favourites only"
+  },
+  "kis_count": {
+    "message": "{1} of {2} services"
+  },
+  "kis_order": {
+    "message": "Alphabetical. Your favourites come first. There are no scores and no ranking."
+  },
+  "kis_empty": {
+    "message": "Nothing here yet. Add a service by hand below."
+  },
+  "kis_nomatch": {
+    "message": "No service matches."
+  },
+  "cat_email": {
+    "message": "Email and communication"
+  },
+  "cat_chat": {
+    "message": "Chat and messaging"
+  },
+  "cat_social": {
+    "message": "Social networks"
+  },
+  "cat_blog": {
+    "message": "Blogs and publishing"
+  },
+  "cat_hosting": {
+    "message": "Hosting and websites"
+  },
+  "cat_lists": {
+    "message": "Mailing lists and forums"
+  },
+  "cat_video": {
+    "message": "Video calls"
+  },
+  "cat_storage": {
+    "message": "Storage and cloud"
+  },
+  "cat_files": {
+    "message": "File sharing"
+  },
+  "cat_docs": {
+    "message": "Collaboration and documents"
+  },
+  "cat_media": {
+    "message": "Streaming and media"
+  },
+  "cat_search": {
+    "message": "Search and information"
+  },
+  "cat_community": {
+    "message": "Community services"
+  },
+  "cat_other": {
+    "message": "Other digital services"
+  },
+  "model_community": {
+    "message": "A community"
+  },
+  "model_association": {
+    "message": "An association"
+  },
+  "model_personal": {
+    "message": "One person"
+  },
+  "model_commercial": {
+    "message": "A company"
+  },
+  "model_other": {
+    "message": "Other"
+  },
+  "costs_free": {
+    "message": "Free"
+  },
+  "costs_donation": {
+    "message": "Donations"
+  },
+  "costs_subscription": {
+    "message": "Subscription"
+  },
+  "costs_other": {
+    "message": "Other"
+  },
+  "reg_open": {
+    "message": "Open sign-up"
+  },
+  "reg_invite": {
+    "message": "By invitation"
+  },
+  "reg_closed": {
+    "message": "Closed"
+  },
+  "reg_unspecified": {
+    "message": "Sign-up not stated"
+  },
+  "kis_open": {
+    "message": "Open in a new tab"
+  },
+  "kis_open_aria": {
+    "message": "Open {1} in a new tab"
+  },
+  "kis_fav": {
+    "message": "Favourite"
+  },
+  "kis_unfav": {
+    "message": "Remove favourite"
+  },
+  "kis_fav_aria": {
+    "message": "Add {1} to favourites"
+  },
+  "kis_unfav_aria": {
+    "message": "Remove {1} from favourites"
+  },
+  "kis_delete": {
+    "message": "Delete"
+  },
+  "kis_delete_aria": {
+    "message": "Delete {1} from your list"
+  },
+  "kis_checked": {
+    "message": "checked {1}"
+  },
+  "kis_unchecked": {
+    "message": "never checked"
+  },
+  "kis_old": {
+    "message": "checked more than {1} months ago"
+  },
+  "kis_source": {
+    "message": "Source: {1}"
+  },
+  "kis_add_h": {
+    "message": "Add a service"
+  },
+  "kis_f_name": {
+    "message": "Name"
+  },
+  "kis_f_url": {
+    "message": "Address"
+  },
+  "kis_f_desc": {
+    "message": "What it does"
+  },
+  "kis_f_software": {
+    "message": "Software"
+  },
+  "kis_f_protocol": {
+    "message": "Protocol"
+  },
+  "kis_f_operator": {
+    "message": "Run by (name)"
+  },
+  "kis_f_country": {
+    "message": "Country"
+  },
+  "kis_f_costs": {
+    "message": "Cost"
+  },
+  "kis_f_reg": {
+    "message": "Sign-up"
+  },
+  "kis_f_checked": {
+    "message": "Last checked (YYYY-MM-DD)"
+  },
+  "kis_f_source": {
+    "message": "Where you learned this"
+  },
+  "kis_save": {
+    "message": "Save"
+  },
+  "kis_saved": {
+    "message": "Saved."
+  },
+  "kis_err_name": {
+    "message": "Write a name."
+  },
+  "kis_err_url": {
+    "message": "The address must start with http:// or https:// and have no user name or password."
+  },
+  "kis_err_date": {
+    "message": "Write the date as YYYY-MM-DD, or leave it empty."
+  },
+  "kis_err_dup": {
+    "message": "This address is already in your list."
+  },
+  "kis_set_h": {
+    "message": "Settings"
+  },
+  "kis_set_old": {
+    "message": "Call a card old after this many months"
+  },
+  "kis_not_h": {
+    "message": "What this does not do"
+  },
+  "kis_not1": {
+    "message": "**It does not rate anyone.** Klin gives no score for independence, trust or ethics. You decide with the filters."
+  },
+  "kis_not2": {
+    "message": "==It is kept on this device only==, in your Klin profile, not encrypted. Nothing is sent anywhere and nothing connects by itself."
+  },
+  "kis_not3": {
+    "message": "**It does not check the services.** Dates and details are what you or the source wrote. Klin has not verified them."
+  },
+  "kis_not4": {
+    "message": "It opens a service in a new tab, the plain way. There is no Klin proxy and no Klin account."
+  }
+}

@@ -51,7 +51,7 @@
     "message": "Alphabetical. Your favourites come first. There are no scores and no ranking."
   },
   "kis_empty": {
-    "message": "Nothing here yet. Add a service by hand below."
+    "message": "Nothing here yet. Load a catalogue below, or add a service by hand."
   },
   "kis_nomatch": {
     "message": "No service matches."
@@ -236,6 +236,150 @@
   "kis_not_h": {
     "message": "What this does not do"
   },
+  "kis_c_h": {
+    "message": "Catalogues"
+  },
+  "kis_c_lead": {
+    "message": "A catalogue is a file of services made by someone else: a community, an association, a person. Nothing is loaded until you ask, and you see every domain before anything is saved."
+  },
+  "kis_c_addr": {
+    "message": "Address of a catalogue (https only)"
+  },
+  "kis_c_go": {
+    "message": "Download and preview"
+  },
+  "kis_c_goinfo": {
+    "message": "This contacts that server and it sees your IP address. Klin asks your permission for that one server only, and takes the permission back right after."
+  },
+  "kis_c_file": {
+    "message": "Or open a file from this device"
+  },
+  "kis_c_pub_h": {
+    "message": "Public catalogues"
+  },
+  "kis_c_pub_none": {
+    "message": "Klin offers no public catalogue yet. Before one is offered, its licence is checked. You can paste the address of any catalogue above."
+  },
+  "kis_c_pub_use": {
+    "message": "Use this address"
+  },
+  "kis_c_pub_by": {
+    "message": "by {1}, licence {2}"
+  },
+  "kis_c_prev_h": {
+    "message": "Preview: nothing is saved yet"
+  },
+  "kis_c_prev_from": {
+    "message": "{1}, by {2}"
+  },
+  "kis_c_prev_meta": {
+    "message": "Version {1}, published {2}, licence {3}"
+  },
+  "kis_c_prev_src": {
+    "message": "Address: {1}"
+  },
+  "kis_c_prev_profile": {
+    "message": "This is a community profile: a set of services. It cannot change any setting of the browser."
+  },
+  "kis_c_prev_sum": {
+    "message": "{1} new, {2} changed, {3} removed, {4} unchanged, {5} skipped because the address is already in your list from somewhere else."
+  },
+  "kis_c_prev_ignored": {
+    "message": "Ignored, never applied: {1}"
+  },
+  "kis_c_prev_dom": {
+    "message": "Every domain in this file"
+  },
+  "kis_c_dom_host": {
+    "message": "Domain"
+  },
+  "kis_c_dom_n": {
+    "message": "Services"
+  },
+  "kis_c_dom_note": {
+    "message": "Note"
+  },
+  "kis_c_look": {
+    "message": "looks like {1}"
+  },
+  "kis_c_enc": {
+    "message": "written in other alphabets: {1}"
+  },
+  "kis_c_import": {
+    "message": "Import"
+  },
+  "kis_c_cancel": {
+    "message": "Cancel"
+  },
+  "kis_c_done": {
+    "message": "Imported {1} services from {2}."
+  },
+  "kis_c_inst_h": {
+    "message": "Your catalogues"
+  },
+  "kis_c_inst_none": {
+    "message": "None yet."
+  },
+  "kis_c_inst_line": {
+    "message": "{1} services, imported {2}"
+  },
+  "kis_c_on": {
+    "message": "Show its services"
+  },
+  "kis_c_update": {
+    "message": "Update from its address"
+  },
+  "kis_c_restore": {
+    "message": "Go back to the previous version"
+  },
+  "kis_c_remove": {
+    "message": "Remove with its services"
+  },
+  "kis_c_from": {
+    "message": "From catalogue: {1}"
+  },
+  "kis_ce_size": {
+    "message": "The file is bigger than 1 MB. Nothing was imported."
+  },
+  "kis_ce_json": {
+    "message": "This is not a JSON file. Nothing was imported."
+  },
+  "kis_ce_format": {
+    "message": "This is not a Klin catalogue (format 1). Nothing was imported."
+  },
+  "kis_ce_field": {
+    "message": "The field “{1}” is missing or not valid. Nothing was imported."
+  },
+  "kis_ce_many": {
+    "message": "There are more than {1} services. Nothing was imported."
+  },
+  "kis_ce_empty": {
+    "message": "The catalogue has no services. Nothing was imported."
+  },
+  "kis_ce_service": {
+    "message": "Service number {1} is not valid ({2}). Nothing was imported."
+  },
+  "kis_cp_name": {
+    "message": "name missing"
+  },
+  "kis_cp_url": {
+    "message": "address not allowed"
+  },
+  "kis_cp_date": {
+    "message": "date not valid"
+  },
+  "kis_ce_https": {
+    "message": "Only https:// addresses can be downloaded."
+  },
+  "kis_ce_net": {
+    "message": "It could not be downloaded: {1}. Nothing was imported."
+  },
+  "kis_ce_perm": {
+    "message": "Permission to contact that server was not given. Nothing was downloaded."
+  },
+  "kis_cat_cap": {
+    "message": "Cards from a catalogue show where they come from. Turn a catalogue off or remove it and its cards go with it."
+  },
   "kis_not1": {
     "message": "**It does not rate anyone.** Klin gives no score for independence, trust or ethics. You decide with the filters."
   },
@@ -243,7 +387,7 @@
     "message": "==It is kept on this device only==, in your Klin profile, not encrypted. Nothing is sent anywhere and nothing connects by itself."
   },
   "kis_not3": {
-    "message": "**It does not check the services.** Dates and details are what you or the source wrote. Klin has not verified them."
+    "message": "**It does not check the services or the catalogues.** Dates and details are what you or the catalogue wrote. Klin has not verified them."
   },
   "kis_not4": {
     "message": "It opens a service in a new tab, the plain way. There is no Klin proxy and no Klin account."

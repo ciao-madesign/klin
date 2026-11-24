@@ -10,6 +10,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "extensions/_shared"
 TARGETS = ["welcome", "newtab", "connections", "self-test", "lookalike", "private-window", "attempts-log", "username-check", "alias-registry", "privacy-level", "independent-services"]
 
+# Single files that more than one extension needs, copied from where they live.
+COPIES = [("extensions/lookalike/detect.js", "extensions/independent-services/detect.js")]
+
 def files():
     return [p.relative_to(SOURCE) for p in sorted(SOURCE.rglob("*")) if p.is_file()]
 
@@ -24,6 +27,12 @@ def main():
             else:
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(src, dst)
+    for src, dst in COPIES:
+        src, dst = ROOT / src, ROOT / dst
+        if check:
+            if not dst.exists() or not filecmp.cmp(src, dst, shallow=False): bad.append(str(dst.relative_to(ROOT)))
+        else:
+            shutil.copyfile(src, dst)
     if check:
         print("\n".join("differs or missing: " + b for b in bad) or "shared files are in sync")
         sys.exit(1 if bad else 0)

@@ -25,5 +25,8 @@
       "background.js"
     ]
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "optional_host_permissions": [
+    "https://*/*"
+  ]
 }

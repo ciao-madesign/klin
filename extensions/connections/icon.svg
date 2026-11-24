@@ -1,3 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="context-fill" stroke-opacity="context-fill-opacity" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter">
-  <path d="M6 12h24M6 24h36M6 36h18"/><rect x="34" y="8" width="8" height="8" fill="context-fill" stroke="none"/><rect x="28" y="32" width="8" height="8" fill="context-fill" stroke="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="context-fill" stroke-opacity="context-fill-opacity"  stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+  <path d="M3 9h6v6H3z" fill="context-fill" fill-opacity="context-fill-opacity" stroke="none"/>
+  <path d="M9 12h5M14 5v14M14 5h3M14 12h3M14 19h3"/>
+  <path d="M17 3h2l2 2v2h-4z" fill="context-fill" fill-opacity="context-fill-opacity" stroke="none"/>
+  <path d="M17 10h4v4h-4z" fill="context-fill" fill-opacity="context-fill-opacity" stroke="none"/>
+  <path d="M17 17h4v4h-4z" fill="context-fill" fill-opacity="context-fill-opacity" stroke="none"/>
 </svg>

@@ -64,6 +64,7 @@ History: a torn square, a K, an open globe, a dissolving globe, a circle with a 
 - **Honesty:** the mask says "hard to trace", not "anonymous". Texts next to it never claim anonymity.
 - **Future, not V1:** the slit may animate and become the right-hand part of the "k" in "klin". For now the slit stays made of two straight diagonals so it can morph into the arms of a k. Any animation respects "reduce motion" and never runs in the background.
 - Not derived from any Firefox mark or colour (repository rule).
+- **Browser theme** (decided 23 Nov 2026): `extensions/theme` is always dark, whatever the system theme; a light variant comes later with the settings switch.
 
 ### 5.3 Colour
 The first accent (red-orange) was dropped: too close to Claude's identity. Chosen: **acid lime** (`docs/style/colori.html`, option B).

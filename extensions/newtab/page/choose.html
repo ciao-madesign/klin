@@ -8,16 +8,19 @@
 <link rel="stylesheet" href="style.css">
 <script src="../shared/i18n.js"></script>
 <script src="engines.js"></script>
+<script src="dns.js"></script>
 </head>
 <body>
 <main class="choose">
-  <h1 data-i18n="c_title">Choose your search engine</h1>
-  <p class="lead" data-i18n="c_lead">A search engine receives what you search and your network address. Klin cannot change that: it lets you choose who receives it. Below, what each one is, in facts. You can change the choice at any time with the toolbar button of this extension.</p>
+  <p class="label" id="step" hidden></p>
+  <h1 id="h1" data-i18n="c_title">Choose your search engine</h1>
+  <p class="lead" id="lead" data-i18n="c_lead">A search engine receives what you search and your network address. Klin cannot change that: it lets you choose who receives it. Below, what each one is, in facts. You can change the choice at any time with the toolbar button of this extension.</p>
   <form id="form">
     <fieldset id="list"></fieldset>
+    <fieldset id="dns" hidden></fieldset>
     <p class="muted" id="scope"></p>
-    <p><button type="submit" class="btn primary" data-i18n="c_continue">Continue</button> <span id="saved" role="status"></span></p>
-    <p class="muted" data-i18n="c_check">These facts come from general knowledge and the operators' own descriptions; each is to be checked against the operator's own policy. Klin takes no money from any search engine.</p>
+    <p><button type="button" class="btn" id="back" hidden data-i18n="c_back">Back</button> <button type="submit" class="btn primary" id="go" data-i18n="c_continue">Continue</button> <span id="saved" role="status"></span></p>
+    <p class="muted" id="check" data-i18n="c_check">These facts come from general knowledge and the operators' own descriptions; each is to be checked against the operator's own policy. Klin takes no money from any search engine.</p>
   </form>
 </main>
 <script src="choose.js"></script>

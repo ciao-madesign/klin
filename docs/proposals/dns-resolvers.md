@@ -1,6 +1,6 @@
 # Proposal – the short list of DNS services (DoH) for the first-start screen
 
-Status: **list decided by the owner on 14 Nov 2026:** Quad9, Mullvad DNS, Cloudflare 1.1.1.1 and "keep your current one", each with an explanation of what it implies. The wording below is a draft; **no sentence goes to the screen before it is checked against the primary documents named at the end.** Written by the style session for ADR 0005.
+Status: **list decided by the owner on 14 Nov 2026:** Quad9, Mullvad DNS (**since discontinued, see below**), Cloudflare 1.1.1.1 and "keep your current one", each with an explanation of what it implies. The wording below is a draft; **no sentence goes to the screen before it is checked against the primary documents named at the end.** Written by the style session for ADR 0005.
 
 ## Criteria (13 Nov 2026), now used as facts to show, not as a gate (14 Nov 2026)
 The owner chose to offer Quad9, Mullvad and Cloudflare although not all pass every point (Cloudflare keeps sampled logs). Each line on the screen must therefore say plainly which of these hold for that service:
@@ -11,13 +11,20 @@ The owner chose to offer Quad9, Mullvad and Cloudflare although not all pass eve
 5. It supports the more private forms of DoH where they exist.
 Nothing is preselected (ADR 0005).
 
-## What the search found
+## Verified against the operators' own pages (23 Nov 2026)
+Read: Quad9's data and privacy policy, Mullvad's DNS help page and two blog posts, Cloudflare's 1.1.1.1 privacy page and its 2020 examination post.
+- **Mullvad DNS: discontinued.** Its own help page (updated 3 Sep 2026) says the public encrypted DNS service **ended on 2 Nov 2026**. It is removed from the screen. **Owner decided (23 Nov 2026): three options, Quad9, Cloudflare and "keep your current one"; no replacement.**
+- **Quad9:** Swiss foundation (policy: "the Swiss foundation Quad9", Zürich). Says it does not collect or record user IP addresses. It does keep counts of how often each domain is queried (not linked to an address). The word "non-profit" is not on the policy page, so the screen says "foundation". No independent examination of these claims was found on the pages read.
+- **Cloudflare 1.1.1.1:** current policy: no sale or sharing of personal data, no use for ads; source IPs not stored in non-volatile storage except randomly sampled packets from at most 0.05% of traffic; truncated IPs and the "Public Resolver Logs" are deleted **within 25 hours**; anonymised data is shared with APNIC for research. A "top four" accounting firm examined the commitments and published a report (the firm's name was not on the pages read). **The draft's "sampled logs for some weeks" was wrong and is corrected.** The earlier "fails criterion 1" is therefore too strong: it keeps limited logs for up to 25 hours.
+- Still not verified: independent examination of Quad9; the date of the latest Cloudflare report; any replacement for Mullvad.
+
+## What the search found (before the check above; secondary sources)
 Findings come from secondary pages and the operators' own blog posts. **None was checked against the primary documents yet.**
 
 | Service | Operator | What was found | Meets the criteria? |
 |---|---|---|---|
 | Quad9 | Quad9 Foundation, non-profit, Switzerland | Describes itself as a Swiss non-profit; says it does no logging; supports DoH, DoT and DNSCrypt. No independent audit of the no-log claim found. | Probably 1, 2, 4, 5. **Criterion 3 not shown.** |
-| Mullvad DNS | Mullvad (VPN company, Sweden) | Public DoH and DoT, no account; servers run in memory. Its own 2021 post says the DNS service was audited by Assured; a 2023 test of two memory-only servers found no logging of user activity. Dates and scope differ between sources. | Probably 1, 2, 3, 4, 5, **if the audits are confirmed for the public resolver.** It is run by a commercial VPN company. |
+| Mullvad DNS (**discontinued 2 Nov 2026**) | Mullvad (VPN company, Sweden) | Public DoH and DoT, no account; servers run in memory. Its own 2021 post says the DNS service was audited by Assured; a 2023 test of two memory-only servers found no logging of user activity. Dates and scope differ between sources. | Probably 1, 2, 3, 4, 5, **if the audits are confirmed for the public resolver.** It is run by a commercial VPN company. |
 | Cloudflare 1.1.1.1 | Cloudflare, US company | Examined by KPMG on its privacy commitments (2020 and later). Keeps sampled network logs: reported as deleted within 60 days and addresses anonymised within about 25 hours. | **Fails 1**: it does keep (sampled) logs. Large US company. |
 | DNS0.eu | French non-profit | Reported as **shut down** for lack of funds (two news pages); its own site still shows it. | Do not list until its status is confirmed. |
 | DNS4EU | EU-funded public service | Keeps limited logs for security, with anonymised addresses. | **Fails 1.** |

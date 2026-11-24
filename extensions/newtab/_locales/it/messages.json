@@ -58,5 +58,44 @@
   },
   "c_check": {
     "message": "Queste informazioni vengono dalla conoscenza generale e dalle descrizioni dei gestori; vanno verificate sulla politica di ciascun gestore. Klin non prende denaro da nessun motore di ricerca."
+  },
+  "n_tools": {
+    "message": "Strumenti di Klin"
+  },
+  "n_selftest": {
+    "message": "Prova la tua protezione"
+  },
+  "n_connections": {
+    "message": "Connessioni di Klin"
+  },
+  "n_about2": {
+    "message": "Nessun account, nessun cloud, nessuna telemetria."
+  },
+  "c_step": {
+    "message": "Passo {1} di {2}"
+  },
+  "c_next": {
+    "message": "Avanti"
+  },
+  "c_back": {
+    "message": "Indietro"
+  },
+  "c_done": {
+    "message": "Fatto"
+  },
+  "c_engine_step": {
+    "message": "Motore di ricerca"
+  },
+  "d_step": {
+    "message": "Servizio DNS"
+  },
+  "d_title": {
+    "message": "Chi vuoi che veda i siti che cerchi?"
+  },
+  "d_lead": {
+    "message": "Ogni volta che apri un sito, il tuo computer chiede a un servizio dove si trova. Quel servizio sa quali siti cerchi. Scegli tu chi. Nessuna scelta ti rende anonimo: sposti la fiducia, non la elimini."
+  },
+  "c_summary": {
+    "message": "Le tue scelte: motore di ricerca {1}; servizio DNS {2}. Puoi cambiarle più tardi."
   }
 }

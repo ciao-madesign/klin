@@ -50,6 +50,7 @@ old = []
 for f in EXT.rglob("*"):
     if not f.is_file() or f.suffix not in (".html", ".css", ".js", ".svg") or "_shared" in f.parts and False: continue
     t = f.read_text(errors="ignore")
+    t = re.sub(r"<a\b[^>]*>", "", t)       # a link the user clicks is not something the page loads
     for m in re.findall(r'(?:src|href)="(https?://[^"]+)"|url\((https?://[^)]+)\)|@import\s+["\'](https?://[^"\']+)', t):
         u = [x for x in m if x][0]
         if u != "https://github.com/ciao-madesign/greenweb" and "w3.org" not in u: refs.append((f.name, u))

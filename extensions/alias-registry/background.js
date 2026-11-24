@@ -13,6 +13,13 @@ browser.action.onClicked.addListener(async () => {
 // Only one other Klin extension may ask: the username check, which offers the user's own usernames from here.
 // It receives usernames only (no sites, no emails), and only when the user opens the list there.
 browser.runtime.onMessageExternal.addListener(async (message, sender) => {
+  // The welcome page can open the "Protect your email" guide. It learns nothing from this extension.
+  if (sender.id === "welcome@klin" && message && message.type === "open-guide") {
+    const guide = browser.runtime.getURL("page/guide.html");
+    const [open] = await browser.tabs.query({ url: guide });
+    if (open) await browser.tabs.update(open.id, { active: true }); else await browser.tabs.create({ url: guide });
+    return { opened: true };
+  }
   if (sender.id !== "username-check@klin" || !message || message.type !== "usernames") return undefined;
   const { entries = [] } = await browser.storage.local.get("entries");
   return { usernames: KlinRegistry.usernames(entries) };

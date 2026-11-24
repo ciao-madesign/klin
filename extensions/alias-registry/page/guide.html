@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="g_title">Protect your email</title>
+<link rel="stylesheet" href="../shared/klin.css">
+<link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1 data-i18n="g_title">Protect your email</h1>
+    <p class="lead" data-i18n="g_lead">In a few steps: stop giving every website your real address. Klin shows you the way. Klin runs nothing for this.</p>
+    <p id="progress" class="note" role="status"></p>
+  </header>
+
+  <section class="step" data-step="1" data-path="both">
+    <h2 data-i18n="g_s1_h">What this is</h2>
+    <p data-i18n="g_s1_p1">Today you give your real email address to every site. They sell it, leak it, or use it to recognise you everywhere.</p>
+    <p data-i18n="g_s1_p2">A mail gateway gives you a different address for each site. Everything arrives in your normal mailbox, but the site never learns who you are.</p>
+    <p data-i18n="g_s1_p3">If one address gets spam, you know who passed it on, and you close only that one. If a site is breached, your real address is not in it.</p>
+    <p data-i18n="g_s1_p4">Klin does not run a gateway and never will. You use one that you choose, or one on your own domain. Klin only explains it and keeps your list.</p>
+  </section>
+
+  <section class="step hidden" data-step="2" data-path="both">
+    <h2 data-i18n="g_s2_h">Which way?</h2>
+    <p data-i18n="g_s2_q">Do you own an internet domain (like yourname.org)?</p>
+    <fieldset>
+      <label class="choice"><input type="radio" name="path" value="service" checked> <span><b data-i18n="g_s2_no">No, I want the easy way: a service that does it for me</b><br><span class="note" data-i18n="g_s2_no_d">You make an account with a service. It forwards mail to you. It can see the mail that passes through it.</span></span></label>
+      <label class="choice"><input type="radio" name="path" value="domain"> <span><b data-i18n="g_s2_yes">Yes, I want to use my own domain</b><br><span class="note" data-i18n="g_s2_yes_d">No third party between the site and you, except your own mail provider. It takes a little more work.</span></span></label>
+    </fieldset>
+  </section>
+
+  <section class="step hidden" data-step="3" data-path="service">
+    <h2 data-i18n="g_a3_h">Pick a service</h2>
+    <p data-i18n="g_a3_p1">These two publish their code, so anyone can check it. Plans, limits and prices change: read them on their site before you decide.</p>
+    <ul class="links">
+      <li><a href="https://simplelogin.io" target="_blank" rel="noopener noreferrer" data-i18n="g_a3_sl">SimpleLogin (opens in a new tab)</a></li>
+      <li><a href="https://addy.io" target="_blank" rel="noopener noreferrer" data-i18n="g_a3_ad">addy.io (opens in a new tab)</a></li>
+    </ul>
+    <p class="note" data-i18n="g_a3_p2">Klin does not recommend one. Being named here is not an approval. You make the account on their site, not in Klin, and they see your address and the mail that passes through them.</p>
+  </section>
+
+  <section class="step hidden" data-step="4" data-path="service">
+    <h2 data-i18n="g_a4_h">Make your first alias</h2>
+    <p data-i18n="g_a4_p1">On the service's site, make one new address for one website you use. Give it a name you will recognise, like the site's name.</p>
+    <p data-i18n="g_a4_p2">Then use that address on that website, instead of your real one. You can change it in the website's account settings.</p>
+  </section>
+
+  <section class="step hidden" data-step="3" data-path="domain">
+    <h2 data-i18n="g_d3_h">What you need</h2>
+    <p data-i18n="g_d3_p1">A domain you own, and a mail provider that lets you receive everything sent to that domain in one mailbox. This is often called “catch-all”.</p>
+    <p class="note" data-i18n="g_d3_p2">Not every provider offers it, and some charge for it. Check your provider's help pages. Klin cannot see your account and cannot change it.</p>
+  </section>
+
+  <section class="step hidden" data-step="4" data-path="domain">
+    <h2 data-i18n="g_d4_h">Switch it on</h2>
+    <p data-i18n="g_d4_p1">In your provider's settings, turn on catch-all for your domain, so that mail to any name before the @ reaches your mailbox.</p>
+    <p data-i18n="g_d4_p2">Test it: send a message from another address to a name you invented. If it arrives, it works.</p>
+    <p class="note" data-i18n="g_d4_p3">Your provider can see your mail, like always. Anyone who guesses a name on your domain can write to you: if one address gets spam, close it by changing that name in your mail settings.</p>
+  </section>
+
+  <section class="step hidden" data-step="5" data-path="domain">
+    <h2 data-i18n="g_d5_h">Make an address for a site</h2>
+    <form class="entry" id="make" autocomplete="off">
+      <label><span data-i18n="g_d5_domain">Your domain</span> <input type="text" id="domain" placeholder="example.org" spellcheck="false" autocapitalize="off"></label>
+      <label><span data-i18n="g_d5_site">The website</span> <input type="text" id="gsite" placeholder="shop.example" spellcheck="false" autocapitalize="off"></label>
+      <button type="submit">Make the address</button>
+    </form>
+    <p id="makeError" class="note hidden" role="alert" data-i18n="g_d5_err">Write your domain and the website.</p>
+    <p id="made" class="hidden"><span data-i18n="g_d5_result">Use this address on that website:</span> <code id="madeAddress"></code></p>
+  </section>
+
+  <section class="step hidden" data-step="6" data-path="both">
+    <h2 data-i18n="g_save_h">Write it in your list</h2>
+    <p data-i18n="g_save_p">So that later you know who got which address, and who passed it on.</p>
+    <form class="entry" id="save" autocomplete="off">
+      <label><span data-i18n="g_save_alias">The address</span> <input type="text" id="galias" spellcheck="false" autocapitalize="off" required></label>
+      <label><span data-i18n="g_save_site">Given to (site)</span> <input type="text" id="gsite2" spellcheck="false" autocapitalize="off" required></label>
+      <button type="submit">Save in my list</button>
+    </form>
+    <p id="saveError" class="note hidden" role="alert"></p>
+    <p id="savedNote" class="hidden" role="status" data-i18n="g_saved">Saved. You can see it in your list.</p>
+  </section>
+
+  <nav class="nav">
+    <button type="button" id="back" data-i18n="g_back">Back</button>
+    <button type="button" id="next" data-i18n="g_next">Next</button>
+    <a href="index.html" id="toList" data-i18n="ar_guide_back">Back to my list</a>
+  </nav>
+
+  <section class="honest">
+    <h2 data-i18n="g_not_h">What this does not do</h2>
+    <ul>
+      <li data-i18n="g_not1">It does not make you anonymous. Sites still see your internet address. This hides only your email address.</li>
+      <li data-i18n="g_not2">The service or provider can read the mail that passes through it. Choose one you trust, and do not use these addresses for your bank.</li>
+      <li data-i18n="g_not3">Klin runs no gateway, makes no account for you and sees nothing of your mail. This guide loads nothing from the internet.</li>
+    </ul>
+  </section>
+</main>
+<script src="../registry.js"></script>
+<script src="guide.js"></script>
+</body>
+</html>

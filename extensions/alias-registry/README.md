@@ -11,6 +11,14 @@ Status: **v0.1, working and verified in Firefox 160.0.**
 - **Disposable addresses, free and without sign-up (via mail.tm):** one button asks the service for a new random address and saves it in the list for the site you name. You read what arrives inside the page, as plain text only (HTML is never loaded, so no tracking images). Deleting the entry deletes the address on the service. Klin asks permission to contact the service first, and sends no cookies or referrer. The inbox password stays in this browser only and is not in backups.
 - **Link with the username check (P38):** the username check can ask this extension for the usernames in the list (only usernames; only that extension is answered), so you pick a name instead of typing it.
 
+## Guide: "Protect your email" (P44)
+`page/guide.html`, opened from a link on the list page and from a card on the welcome page. A few guided steps, one at a time, that explain what a mail gateway is (a different address for each site, so none learns your real one) and help you set one up **without Klin running anything**:
+- **A service you choose:** names SimpleLogin and addy.io as plain links in a new tab (not an approval, plans and limits to be read on their sites), then how to make the first alias there.
+- **Your own domain:** what is needed (a domain and a provider with "catch-all"), how to test it, and a small maker that turns a site into `site@yourdomain`.
+- The last step saves the address in the list.
+It says plainly that it does not make you anonymous and that the service or provider can read the mail passing through it. The welcome page asks this extension to open the guide (only `welcome@klin` is answered, and only for that). Test: `tests/acceptance/alias-registry/run-guide.py` (23 checks).
+Not verified: the two services' sites and plans (not reachable from the build environment; nothing is claimed about them beyond the names and addresses). Creating aliases from Klin through a service's key is not built.
+
 ## What it does not do
 - It does not create permanent aliases or mailboxes. Klin runs no alias service. The disposable address comes from mail.tm, a third party: **mail.tm can read every message sent to it and may delete the address at any time**, so it is only for sign-ups and things you can afford to lose, never for banks, main accounts or password recovery. A permanent forwarding alias (SimpleLogin, addy.io and similar) needs an account with them; you can make one there and record it here by hand.
 - It is stored on this device only, in your Klin profile, **not encrypted**; anyone who can open the profile can read it. No sync, nothing sent anywhere.

@@ -118,5 +118,17 @@
   },
   "g_foot": {
     "message": "Questa pagina fa parte del browser. Non carica nulla da internet. Il link a Greenweb contatta un sito solo se lo clicchi."
+  },
+  "w_mail_h": {
+    "message": "Proteggi la tua email"
+  },
+  "w_mail_p": {
+    "message": "Dai a ogni sito un indirizzo diverso, così nessuno scopre il tuo vero. In pochi passi, con un servizio che scegli o con il tuo dominio. Klin non gestisce niente."
+  },
+  "w_mail_btn": {
+    "message": "Inizia la guida"
+  },
+  "w_mail_missing": {
+    "message": "La guida fa parte del registro alias, che qui non è installato."
   }
 }

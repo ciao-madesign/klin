@@ -84,7 +84,7 @@ ADR 0009 (support program for P40 level 2 and P41) is **accepted** (owner, 14 No
 The pages of `username-check`, `alias-registry` and `privacy-level` are on the shared style and have English and Italian messages (`_locales`), covered by the style check. The Italian is written by the session and still needs the owner's read-through. Errors coming from the mail.tm service ("The service answered 503") stay in English.
 
 ## 9. Next steps (suggested order)
-0. KIS first release (P42) is built (hub and catalogue import, `extensions/independent-services`); next for it: check licences and fill the short list of public catalogue addresses; written decisions in `docs/proposals/klin-independent-services.md`.
+0. KIS first release (P42) is built (hub and catalogue import, `extensions/independent-services`); licence check of the candidate catalogues attempted on 24 Nov 2026: **no licence could be confirmed and none of the lists is in Klin's format**, so the list of public catalogues stays empty (`proposals/kis-catalogue-sources.md`); needs someone with open internet access to read the licences at the source; written decisions in `docs/proposals/klin-independent-services.md`.
 1. Finish the style follow-ups listed in `docs/STYLE-CHANGES.md` (Italian read-through, technical readouts, language switch, logo PNGs).
 2. Privacy levels (P29): done in a first form (`extensions/privacy-level`, ADR 0007); next, apply Firefox's own fixed-time-zone protection instead of the in-page approximation (needs a privileged helper), and Maximum with Tor.
 3. ~~Signing of the extensions~~ done 14 Nov 2026 (ADR 0010; pre-release `extensions-0.1`, pinned, bundled). Tested in the signed bundle: `onInstalled` and the private-window grant in the signed build.

@@ -1,0 +1,251 @@
+{
+  "name": {
+    "message": "Klin Independent Services"
+  },
+  "description": {
+    "message": "Un elenco locale di servizi tra cui scegliere: posta, chat, hosting e altro. Resta su questo dispositivo. Nessun server Klin."
+  },
+  "title": {
+    "message": "Servizi indipendenti"
+  },
+  "kis_title": {
+    "message": "Servizi indipendenti"
+  },
+  "kis_lead": {
+    "message": "Un elenco sul tuo dispositivo. Lo cerchi, lo completi, apri quello che scegli. Klin non ha nessun server per questo e non sceglie per te."
+  },
+  "kis_fixed1": {
+    "message": "**Essere nell'elenco non è un'approvazione.** Il servizio può essere cambiato, sparito o malevolo."
+  },
+  "kis_fixed2": {
+    "message": "KIS non certifica, non garantisce, non ospita. Ogni collegamento ti porta da un terzo, che vede il tuo indirizzo IP."
+  },
+  "kis_find_h": {
+    "message": "Cerca"
+  },
+  "kis_search": {
+    "message": "Cerca"
+  },
+  "kis_search_ph": {
+    "message": "nome, software, paese…"
+  },
+  "kis_category": {
+    "message": "Categoria"
+  },
+  "kis_all": {
+    "message": "Tutte le categorie"
+  },
+  "kis_model": {
+    "message": "Gestito da"
+  },
+  "kis_any": {
+    "message": "Chiunque"
+  },
+  "kis_favonly": {
+    "message": "Solo preferiti"
+  },
+  "kis_count": {
+    "message": "{1} servizi su {2}"
+  },
+  "kis_order": {
+    "message": "Ordine alfabetico. I tuoi preferiti vengono per primi. Niente punteggi, niente classifica."
+  },
+  "kis_empty": {
+    "message": "Qui non c'è ancora niente. Aggiungi un servizio a mano qui sotto."
+  },
+  "kis_nomatch": {
+    "message": "Nessun servizio corrisponde."
+  },
+  "cat_email": {
+    "message": "Posta e comunicazione"
+  },
+  "cat_chat": {
+    "message": "Chat e messaggistica"
+  },
+  "cat_social": {
+    "message": "Social network"
+  },
+  "cat_blog": {
+    "message": "Blog e pubblicazione"
+  },
+  "cat_hosting": {
+    "message": "Hosting e siti web"
+  },
+  "cat_lists": {
+    "message": "Mailing list e forum"
+  },
+  "cat_video": {
+    "message": "Videoconferenza"
+  },
+  "cat_storage": {
+    "message": "Archiviazione e cloud"
+  },
+  "cat_files": {
+    "message": "Condivisione file"
+  },
+  "cat_docs": {
+    "message": "Collaborazione e documenti"
+  },
+  "cat_media": {
+    "message": "Streaming e contenuti multimediali"
+  },
+  "cat_search": {
+    "message": "Ricerca e informazione"
+  },
+  "cat_community": {
+    "message": "Servizi comunitari"
+  },
+  "cat_other": {
+    "message": "Altri servizi digitali"
+  },
+  "model_community": {
+    "message": "Una comunità"
+  },
+  "model_association": {
+    "message": "Un'associazione"
+  },
+  "model_personal": {
+    "message": "Una persona"
+  },
+  "model_commercial": {
+    "message": "Un'azienda"
+  },
+  "model_other": {
+    "message": "Altro"
+  },
+  "costs_free": {
+    "message": "Gratuito"
+  },
+  "costs_donation": {
+    "message": "Donazioni"
+  },
+  "costs_subscription": {
+    "message": "Abbonamento"
+  },
+  "costs_other": {
+    "message": "Altro"
+  },
+  "reg_open": {
+    "message": "Registrazione libera"
+  },
+  "reg_invite": {
+    "message": "Su invito"
+  },
+  "reg_closed": {
+    "message": "Chiusa"
+  },
+  "reg_unspecified": {
+    "message": "Registrazione non specificata"
+  },
+  "kis_open": {
+    "message": "Apri in una nuova scheda"
+  },
+  "kis_open_aria": {
+    "message": "Apri {1} in una nuova scheda"
+  },
+  "kis_fav": {
+    "message": "Preferito"
+  },
+  "kis_unfav": {
+    "message": "Togli dai preferiti"
+  },
+  "kis_fav_aria": {
+    "message": "Aggiungi {1} ai preferiti"
+  },
+  "kis_unfav_aria": {
+    "message": "Togli {1} dai preferiti"
+  },
+  "kis_delete": {
+    "message": "Elimina"
+  },
+  "kis_delete_aria": {
+    "message": "Elimina {1} dal tuo elenco"
+  },
+  "kis_checked": {
+    "message": "controllato il {1}"
+  },
+  "kis_unchecked": {
+    "message": "mai controllato"
+  },
+  "kis_old": {
+    "message": "controllato più di {1} mesi fa"
+  },
+  "kis_source": {
+    "message": "Fonte: {1}"
+  },
+  "kis_add_h": {
+    "message": "Aggiungi un servizio"
+  },
+  "kis_f_name": {
+    "message": "Nome"
+  },
+  "kis_f_url": {
+    "message": "Indirizzo"
+  },
+  "kis_f_desc": {
+    "message": "Cosa fa"
+  },
+  "kis_f_software": {
+    "message": "Software"
+  },
+  "kis_f_protocol": {
+    "message": "Protocollo"
+  },
+  "kis_f_operator": {
+    "message": "Gestore (nome)"
+  },
+  "kis_f_country": {
+    "message": "Paese"
+  },
+  "kis_f_costs": {
+    "message": "Costo"
+  },
+  "kis_f_reg": {
+    "message": "Registrazione"
+  },
+  "kis_f_checked": {
+    "message": "Ultimo controllo (AAAA-MM-GG)"
+  },
+  "kis_f_source": {
+    "message": "Dove l'hai saputo"
+  },
+  "kis_save": {
+    "message": "Salva"
+  },
+  "kis_saved": {
+    "message": "Salvato."
+  },
+  "kis_err_name": {
+    "message": "Scrivi un nome."
+  },
+  "kis_err_url": {
+    "message": "L'indirizzo deve iniziare con http:// o https:// e non avere nome utente o password."
+  },
+  "kis_err_date": {
+    "message": "Scrivi la data come AAAA-MM-GG, oppure lasciala vuota."
+  },
+  "kis_err_dup": {
+    "message": "Questo indirizzo è già nel tuo elenco."
+  },
+  "kis_set_h": {
+    "message": "Impostazioni"
+  },
+  "kis_set_old": {
+    "message": "Segna una scheda come vecchia dopo questi mesi"
+  },
+  "kis_not_h": {
+    "message": "Cosa non fa"
+  },
+  "kis_not1": {
+    "message": "**Non giudica nessuno.** Klin non dà punteggi di indipendenza, fiducia o etica. Decidi tu con i filtri."
+  },
+  "kis_not2": {
+    "message": "==Resta solo su questo dispositivo==, nel tuo profilo Klin, non cifrato. Non viene inviato niente e niente si collega da solo."
+  },
+  "kis_not3": {
+    "message": "**Non controlla i servizi.** Date e dettagli sono quelli scritti da te o dalla fonte. Klin non li ha verificati."
+  },
+  "kis_not4": {
+    "message": "Apre un servizio in una nuova scheda, nel modo normale. Nessun proxy Klin, nessun account Klin."
+  }
+}

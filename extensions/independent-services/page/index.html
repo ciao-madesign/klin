@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="kis_title">Independent services</title>
+<link rel="stylesheet" href="../shared/klin.css">
+<link rel="stylesheet" href="style.css">
+<script src="../shared/i18n.js"></script>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="mark"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5 50a45 45 0 1 0 90 0a45 45 0 1 0-90 0ZM14 38L50 52L86 38L86 56L50 68L14 56Z"/></svg><span>Klin</span></p>
+    <h1 data-i18n="kis_title">Independent services</h1>
+    <p class="lead" data-i18n="kis_lead">A directory on your own device. You search it, you add to it, you open what you pick. Klin runs no server for it and does not choose for you.</p>
+    <div class="fixed" role="note">
+      <p data-i18n="kis_fixed1">Being in the list is not an approval. The service may have changed, disappeared or be malicious.</p>
+      <p data-i18n="kis_fixed2">KIS does not certify, guarantee or host anything. Every link takes you to a third party who sees your IP address.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2 data-i18n="kis_find_h">Find</h2>
+    <div class="filters">
+      <label><span data-i18n="kis_search">Search</span> <input type="search" id="q" data-i18n-attr="placeholder:kis_search_ph" placeholder="name, software, country…" spellcheck="false" autocomplete="off"></label>
+      <label><span data-i18n="kis_category">Category</span> <select id="cat"><option value="" data-i18n="kis_all">All categories</option><option value="email" data-i18n="cat_email">Email and communication</option><option value="chat" data-i18n="cat_chat">Chat and messaging</option><option value="social" data-i18n="cat_social">Social networks</option><option value="blog" data-i18n="cat_blog">Blogs and publishing</option><option value="hosting" data-i18n="cat_hosting">Hosting and websites</option><option value="lists" data-i18n="cat_lists">Mailing lists and forums</option><option value="video" data-i18n="cat_video">Video calls</option><option value="storage" data-i18n="cat_storage">Storage and cloud</option><option value="files" data-i18n="cat_files">File sharing</option><option value="docs" data-i18n="cat_docs">Collaboration and documents</option><option value="media" data-i18n="cat_media">Streaming and media</option><option value="search" data-i18n="cat_search">Search and information</option><option value="community" data-i18n="cat_community">Community services</option><option value="other" data-i18n="cat_other">Other digital services</option></select></label>
+      <label><span data-i18n="kis_model">Run by</span> <select id="mod"><option value="" data-i18n="kis_any">Anyone</option><option value="community" data-i18n="model_community">A community</option><option value="association" data-i18n="model_association">An association</option><option value="personal" data-i18n="model_personal">One person</option><option value="commercial" data-i18n="model_commercial">A company</option><option value="other" data-i18n="model_other">Other</option></select></label>
+      <label class="own"><input type="checkbox" id="favonly"> <span data-i18n="kis_favonly">Favourites only</span></label>
+    </div>
+    <p id="count" class="note" role="status"></p>
+    <p class="note" data-i18n="kis_order">Alphabetical. Your favourites come first. There are no scores and no ranking.</p>
+    <p id="empty" class="hidden" data-i18n="kis_empty">Nothing here yet. Add a service by hand below.</p>
+    <ul id="cards" class="cards"></ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="kis_add_h">Add a service</h2>
+    <form class="entry" id="form" autocomplete="off">
+      <label><span data-i18n="kis_f_name">Name</span> <input type="text" id="f_name" maxlength="120" required></label>
+      <label><span data-i18n="kis_f_url">Address</span> <input type="text" id="f_url" placeholder="https://example.org" spellcheck="false" autocapitalize="off" required></label>
+      <label><span data-i18n="kis_category">Category</span> <select id="f_category"><option value="email" data-i18n="cat_email">Email and communication</option><option value="chat" data-i18n="cat_chat">Chat and messaging</option><option value="social" data-i18n="cat_social">Social networks</option><option value="blog" data-i18n="cat_blog">Blogs and publishing</option><option value="hosting" data-i18n="cat_hosting">Hosting and websites</option><option value="lists" data-i18n="cat_lists">Mailing lists and forums</option><option value="video" data-i18n="cat_video">Video calls</option><option value="storage" data-i18n="cat_storage">Storage and cloud</option><option value="files" data-i18n="cat_files">File sharing</option><option value="docs" data-i18n="cat_docs">Collaboration and documents</option><option value="media" data-i18n="cat_media">Streaming and media</option><option value="search" data-i18n="cat_search">Search and information</option><option value="community" data-i18n="cat_community">Community services</option><option value="other" data-i18n="cat_other">Other digital services</option></select></label>
+      <label><span data-i18n="kis_f_desc">What it does</span> <input type="text" id="f_description" maxlength="600"></label>
+      <label><span data-i18n="kis_f_software">Software</span> <input type="text" id="f_software" maxlength="80"></label>
+      <label><span data-i18n="kis_f_protocol">Protocol</span> <input type="text" id="f_protocol" maxlength="80"></label>
+      <label><span data-i18n="kis_f_operator">Run by (name)</span> <input type="text" id="f_operator" maxlength="120"></label>
+      <label><span data-i18n="kis_f_country">Country</span> <input type="text" id="f_country" maxlength="60"></label>
+      <label><span data-i18n="kis_model">Run by</span> <select id="f_model"><option value="community" data-i18n="model_community">A community</option><option value="association" data-i18n="model_association">An association</option><option value="personal" data-i18n="model_personal">One person</option><option value="commercial" data-i18n="model_commercial">A company</option><option value="other" data-i18n="model_other">Other</option></select></label>
+      <label><span data-i18n="kis_f_costs">Cost</span> <select id="f_costs"><option value="free" data-i18n="costs_free">Free</option><option value="donation" data-i18n="costs_donation">Donations</option><option value="subscription" data-i18n="costs_subscription">Subscription</option><option value="other" data-i18n="costs_other">Other</option></select></label>
+      <label><span data-i18n="kis_f_reg">Sign-up</span> <select id="f_registration"><option value="open" data-i18n="reg_open">Open sign-up</option><option value="invite" data-i18n="reg_invite">By invitation</option><option value="closed" data-i18n="reg_closed">Closed</option><option value="unspecified" data-i18n="reg_unspecified">Sign-up not stated</option></select></label>
+      <label><span data-i18n="kis_f_checked">Last checked (YYYY-MM-DD)</span> <input type="text" id="f_checked" placeholder="2026-11-17" maxlength="10"></label>
+      <label><span data-i18n="kis_f_source">Where you learned this</span> <input type="text" id="f_source" maxlength="300"></label>
+      <button type="submit">Save</button>
+    </form>
+    <p id="error" class="note hidden" role="alert"></p>
+    <p id="saved" class="note hidden" role="status" data-i18n="kis_saved">Saved.</p>
+  </section>
+
+  <section>
+    <h2 data-i18n="kis_set_h">Settings</h2>
+    <label class="inline"><span data-i18n="kis_set_old">Call a card old after this many months</span> <input type="number" id="months" min="1" max="120" value="12"></label>
+  </section>
+
+  <section class="honest">
+    <h2 data-i18n="kis_not_h">What this does not do</h2>
+    <ul>
+      <li data-i18n="kis_not1">It does not rate anyone. Klin gives no score for independence, trust or ethics. You decide with the filters.</li>
+      <li data-i18n="kis_not2">It is kept on this device only, in your Klin profile, not encrypted. Nothing is sent anywhere and nothing connects by itself.</li>
+      <li data-i18n="kis_not3">It does not check the services. Dates and details are what you or the source wrote. Klin has not verified them.</li>
+      <li data-i18n="kis_not4">It opens a service in a new tab, the plain way. There is no Klin proxy and no Klin account.</li>
+    </ul>
+  </section>
+</main>
+<script src="../services.js"></script>
+<script src="page.js"></script>
+</body>
+</html>
